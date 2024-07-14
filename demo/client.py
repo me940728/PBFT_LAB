@@ -10,25 +10,25 @@ from aiohttp import web
 from random import random
 import hashlib
 
-# 
+# 분산시스템의 뷰, 리더를 선출(새롭게 다시 선출하기도 함)
 class View:
     def __init__(self, view_number, num_nodes):
-        self._view_number = view_number
-        self._num_nodes = num_nodes
-        self._leader = view_number % num_nodes
+        self._view_number = view_number         # 생성자 0번째 인자 : 현재 뷰의 번호
+        self._num_nodes = num_nodes             # 생성자 1번째 인자 : 시스템 내 노드 수
+        self._leader = view_number % num_nodes  # 뷰 번호를 전체 노드로 나눈 나머지 ex : 2 % 3 = 2(몫은 0 나머지 2)
     # To encode to json
     def get(self):
         return self._view_number 
     # Recover from json data.
     def set_view(self, view):
         self._view_number = view
-        self._leader = view % self._num_nodes
+        self._leader = view % self._num_nodes # 새로운 리더 선출
 
 # 상태 객체 => 제안(proposal)에 대한 응답 메시지를 기록하고 업데이트하는 역핳
 class Status:
     # Status 객체의 인스턴스가 생성될 때 초기화하는 메서드(생성자)
     def __init__(self, f):   # 생성자의 0번째 인자는 무조건 self, self는 인스턴스 객체를 참조
-        self.f = f           # 1번째 파라미터의 인자값으로 객체의 변수를 대입
+        self.f = f           # 생성자의 1번째 파라미터의 인자값은 결함(Fault)의 수 이다.
         self.reply_msgs = {} # 빈 딕셔너리로 초기화
         
     # 합의 제안과 제안에 응답한 노드 저장
@@ -42,27 +42,27 @@ class Status:
         응답 메시지를 수신할 때 상태의 기록을 업데이트
         input:
             view: View object of self._follow_view
-            proposal: proposal in json_data
+            proposal: proposal in json_data => {"data", "proposal_data"} 형식으로 예상됨 
             from_node: 메시지를 보낸 노드
         '''
 
         # 제안이 BFT 노드로부터 다르게 올 경우를 대비하여 해시(proposal)를 키에 포함
         # 동일한 문자열을 얻기 위해 json.dumps에서 키를 정렬
         hash_object = hashlib.md5(json.dumps(proposal, sort_keys=True).encode())
-        key = (view.get(), hash_object.digest()) # [1-1] => View객체에서 뷰 넘버를 가져와서 해시 키를 생성
-        if key not in self.reply_msgs:
-            self.reply_msgs[key] = self.SequenceElement(proposal)
-        self.reply_msgs[key].from_nodes.add(from_node)
+        key = (view.get(), hash_object.digest()) # [1-1] => View객체에서 뷰 넘버를 가져와서 (key, hash) 형태 데이터 생성
+        if key not in self.reply_msgs: # 회신 메시지 리스트에 해당하는 key가 없을 경우 => 중복된 응답 방지를 위한 검증
+            self.reply_msgs[key] = self.SequenceElement(proposal) # SequenceElement 인스턴스를 생성하여 reply_msgs에 추가
+        self.reply_msgs[key].from_nodes.add(from_node) # 해당 제안에 응답한 노드는 from_nodes 집합에 추가
 
     def _check_succeed(self):
         '''
-        Check if receive more than f + 1 given type message in the same view.
+        특정 유형의 메시지를 동일한 뷰에서 f + 1개 이상 수신했는지 확인합니다. * f는 결함 허용 임계값
         input:
-            msg_type: self.PREPARE or self.COMMIT
+            msg_type: self.PREPARE 또는 self.COMMIT
         '''
         
         for key in self.reply_msgs:
-            if len(self.reply_msgs[key].from_nodes)>= self.f + 1:
+            if len(self.reply_msgs[key].from_nodes) >= self.f + 1:
                 return True
         return False
 
