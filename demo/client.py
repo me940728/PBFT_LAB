@@ -1,4 +1,4 @@
-#! conda 가상환경 
+# conda 가상환경 
 import logging
 import argparse
 import yaml
@@ -9,7 +9,11 @@ import aiohttp
 from aiohttp import web
 from random import random
 import hashlib
-
+'''
+    작업일 : '24.7.14 ~ 진행중
+    작업자 : 최별규
+    설명 : 합의 메시지를 보내는 클라이언트 객체
+'''
 # 분산시스템의 뷰, 리더를 선출(새롭게 다시 선출하기도 함)
 class View:
     def __init__(self, view_number, num_nodes):
@@ -56,7 +60,7 @@ class Status:
 
     def _check_succeed(self):
         '''
-        특정 유형의 메시지를 동일한 뷰에서 f + 1개 이상 수신했는지 확인합니다. * f는 결함 허용 임계값
+        특정 유형의 메시지를 동일한 뷰에서 f + 1개 이상 수신했는지 확인합니다. => * f는 결함 허용 임계값
         input:
             msg_type: self.PREPARE 또는 self.COMMIT
         '''
@@ -86,16 +90,18 @@ def logging_config(log_level=logging.INFO, log_file=None):
         h.setFormatter(f)
         h.setLevel(log_level)
         root_logger.addHandler(h)
-
+        
+# 커맨드 라인에 전달되는 인자 파싱하는 함수
 def arg_parse():
     # parse command line options
-    parser = argparse.ArgumentParser(description='PBFT Node')
-    parser.add_argument('-id', '--client_id', type=int, help='client id')
-    parser.add_argument('-nm', '--num_messages', default=10, type=int, help='number of message want to send for this client')
-    parser.add_argument('-c', '--config', default='pbft.yaml', type=argparse.FileType('r'), help='use configuration [%(default)s]')
-    args = parser.parse_args()
-    return args
+    parser = argparse.ArgumentParser(description='PBFT Node') # ArgumentParser 객체 생성, description은 프로그램의 간단한 설명임
+    parser.add_argument('-id', '--client_id', type=int, help='client id') # -id 또는 --client_id 옵션을 사용하여 클라이언트 ID 지정, 인자는 int형임, help는 인자 설명
+    parser.add_argument('-nm', '--num_messages', default=10, type=int, help='number of message want to send for this client') # 클라이언트가 보내고자 하는 메시지 수 지정(기본 10개)
+    parser.add_argument('-c', '--config', default='pbft.yaml', type=argparse.FileType('r'), help='use configuration [%(default)s]') # 설정 파일 지정, 기본 PBFY.yaml, 읽기 모드로 염
+    args = parser.parse_args() # parse_args() 함수로 커맨드 라인 인자를 파싱하고 결과를 args로 저장
+    return args # 저장된 args 값 리턴
 
+# yaml 모듈을 활용한 설정 파일을 딕셔너리 형태로 반환하는 함수
 def conf_parse(conf_file) -> dict:
     '''
     Sample config:
@@ -106,7 +112,7 @@ def conf_parse(conf_file) -> dict:
         - host:
           port:
 
-    loss%:
+    loss%: -> 손실율
 
     skip:
 
@@ -116,65 +122,64 @@ def conf_parse(conf_file) -> dict:
 
     election_slice: 10
 
-    sync_interval: 10
+    sync_interval: 10 -> 동기화 간격
 
-    misc:
+    misc: -> 기타 설정
         network_timeout: 10
     '''
-    conf = yaml.load(conf_file)
+    conf = yaml.safe_load(conf_file) # ['24.7.14.CHOI]코드 수정(보안상 이슈) yaml.load -> yaml.safe_load
     return conf
 
 def make_url(node, command):
-    return "http://{}:{}/{}".format(node['host'], node['port'], command)
+    return "http://{}:{}/{}".format(node['host'], node['port'], command) # {}에 format 파라미터와 대응하여 값이 들어감 host : 192.168.1.1, post : 8080, command : start.do
 
+# 요청을 보내고, 응답을 받으면서 뷰 변경을 처리하는 클라이언트 객체(일정 시간 응답을 받지 못하면 뷰 변경)
 class Client:
-    REQUEST = "request"
-    REPLY = "reply"
-    VIEW_CHANGE_REQUEST = 'view_change_request'
-
-    def __init__(self, conf, args, log):
-        self._nodes = conf['nodes']
-        self._resend_interval = conf['misc']['network_timeout']
-        self._client_id = args.client_id
-        self._num_messages = args.num_messages
-        self._session = None
-        self._address = conf['clients'][self._client_id]
-        self._client_url = "http://{}:{}".format(self._address['host'], 
-            self._address['port'])
+    #   [클라이언트가 처리할 수 있는 메시지 유형 정의한 클래스 Level 상수]
+    REQUEST = "request" # 요청
+    REPLY = "reply"     # 회신
+    VIEW_CHANGE_REQUEST = 'view_change_request' # 뷰 변경 요청
+    #=======================================================
+    # 클라이언트 객체 초기화 메서드
+    def __init__(self, conf, args, log): # p1 : yaml 설정 파일, p2 : 명령줄 인자, p3 : log
+        self._nodes = conf['nodes'] # 노드들
+        self._resend_interval = conf['misc']['network_timeout'] # 재전송 간격
+        self._client_id = args.client_id # 클라이언트 아이디
+        self._num_messages = args.num_messages # 메시지 수
+        self._session = None # 세션 정보는 None
+        self._address = conf['clients'][self._client_id] #
+        self._client_url = "http://{}:{}".format(self._address['host'],self._address['port'])
         self._log = log
 
-        self._retry_times = conf['retry_times_before_view_change']
+        self._retry_times = conf['retry_times_before_view_change'] # 재시도 횟수
         # Number of faults tolerant.
-        self._f = (len(self._nodes) - 1) // 3
+        self._f = (len(self._nodes) - 1) // 3 # 장애 허용 수
 
         # Event for sending next request
         self._is_request_succeed = None
         # To record the status of current request
         self._status = None
 
+    # 뷰 변경을 모든 노드에게 비동기로 보내는 함수
     async def request_view_change(self):
         json_data = {
             "action" : "view change"
         }
-        for i in range(len(self._nodes)):
+        for i in range(len(self._nodes)): # 노드 수 만큼 Loop 돌려서 뷰 변경 요청 메시지를 보냄
             try:
-                await self._session.post(make_url(
+                await self._session.post(make_url( # 133line make_url 함수 call
                     self._nodes[i], Client.VIEW_CHANGE_REQUEST), json=json_data)
-            except:
-                self._log.info("---> %d failed to send view change message to node %d.", 
-                    self._client_id, i)
-            else:
-                self._log.info("---> %d succeed in sending view change message to node %d.", 
-                    self._client_id, i)
+            except: # 실패 로그
+                self._log.info("---> %d failed to send view change message to node %d.", self._client_id, i)
+            else:   # 성공 로그
+                self._log.info("---> %d succeed in sending view change message to node %d.", self._client_id, i)
 
-
-
+    # 클라이언트가 노드로부터 회신 받는 함수
     async def get_reply(self, request):
         '''
-        Count the number of valid reply messages and decide whether request succeed:
-            1. Process the request only if timestamp is still valid(not stall)
-            2. Count the number of reply message within same view, 
-               if above f + 1, means success.
+        유효한 응답 메시지의 수를 세고 요청이 성공했는지 결정:
+            1. 타임스탬프가 아직 유효한 경우에만 요청을 처리(타임스탬프가 오래되지 않음).
+            2. 동일한 뷰에서 f + 1 이상의 응답 메시지를 세면, 성공을 의미.
         input:
             request:
                 reply_msg = {
@@ -186,32 +191,34 @@ class Client:
         output:
             Web.Response
         '''
-        json_data = await request.json()
-        if time.time() - json_data['proposal']['timestamp'] >= self._resend_interval:
-            return web.Response()
-
-        view = View(json_data['view'], len(self._nodes))
-        self._status._update_sequence(view, json_data['proposal'], json_data['index'])
-
+        json_data = await request.json() # JSON 데이터 파싱
+        # 타임스탬프 유효성 검사
+        if time.time() - json_data['proposal']['timestamp'] >= self._resend_interval: # 타임스탬프가 아직 유효한 경우에만 요청 처리
+            return web.Response() # 만약 유효하지 않으면 빈 객체 반환
+        # 뷰 객체 생성 및 상태 업데이트
+        view = View(json_data['view'], len(self._nodes)) # ?
+        self._status._update_sequence(view, json_data['proposal'], json_data['index']) #
+        # 동일한 뷰에서 f + 1 이상의 응답 메시지를 수신하면 요청 성공을 반환
         if self._status._check_succeed():
             # self._log.info("Get reply from %d", json_data['index'])
             self._is_request_succeed.set()
 
         return web.Response()
 
-
+    # 클라이언트가 노드로 합의 메시지를 요청하는 함수
     async def request(self):
+        # 세션이 없으묜 새 세션을 형성
         if not self._session:
             timeout = aiohttp.ClientTimeout(self._resend_interval)
             self._session = aiohttp.ClientSession(timeout = timeout)
          
-        for i in range(self._num_messages):
+        for i in range(self._num_messages): # 메시지 수 만큼 Loop
             
             accumulate_failure = 0
             is_sent = False
             dest_ind = 0
             self._is_request_succeed = asyncio.Event()
-            # Every time succeed in sending message, wait for 0 - 1 second.
+            # 성공적으로 메시지를 보낼 때마다 0 - 1초 대기합니다.
             await asyncio.sleep(random())
             json_data = {
                 'id': (self._client_id, i),

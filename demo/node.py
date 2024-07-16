@@ -13,17 +13,22 @@ import aiohttp
 from aiohttp import web
 
 import hashlib
-
+'''
+    작업일 : '24.7.16 ~ 진행중
+    작업자 : 최별규
+    설명 : 합의를 수행하는 노드 객체
+'''
 VIEW_SET_INTERVAL = 10
 
+# PBFT 알고리즘에서 View를 관리하는 역할의 객체
 class View:
-    def __init__(self, view_number, num_nodes):
-        self._view_number = view_number
-        self._num_nodes = num_nodes
-        self._leader = view_number % num_nodes
+    def __init__(self, view_number, num_nodes): 
+        self._view_number = view_number         # 현재 뷰 번호
+        self._num_nodes = num_nodes             # 네트워크 존재하는 노드 수
+        self._leader = view_number % num_nodes  # 현재 리더 노드의 번호 => 현재 뷰 번호를 노드수 만큼 나눈 나머지가 리더
         # Minimum interval to set the view number
-        self._min_set_interval = VIEW_SET_INTERVAL
-        self._last_set_time = time.time()
+        self._min_set_interval = VIEW_SET_INTERVAL # 뷰 설정할 수 있는 최소 간격은 10(전역 변수로 관리되고 있음) ?
+        self._last_set_time = time.time()       # 마지막으로 뷰가 설정된 시간
 
     # To encode to json
     def get_view(self):
@@ -32,8 +37,7 @@ class View:
     # Recover from json data.
     def set_view(self, view):
         '''
-        Retrun True if successfully update view number
-        return False otherwise.
+        뷰 번호를 성공적으로 업데이트하면 True 실패하면 False
         '''
         if time.time() - self._last_set_time < self._min_set_interval:
             return False
@@ -45,6 +49,7 @@ class View:
     def get_leader(self):
         return self._leader
 
+# PBFT에서 각 슬롯의 상태를 기록하는 역할을 가진 객체
 class Status:
     '''
     Record the state for every slot.
@@ -54,16 +59,16 @@ class Status:
     REPLY = "reply"
 
     def __init__(self, f):
-        self.f = f
-        self.request = 0
-        self.prepare_msgs = {}     
-        self.prepare_certificate = None # proposal
-        self.commit_msgs = {}
+        self.f = f              # 허용되는 Byzantine 노드의 수
+        self.request = 0        # 현재 요청의 수
+        self.prepare_msgs = {}  # 준비 메시지를 저장하는 딕셔너리
+        self.prepare_certificate = None # 준비 증명서, proposal(제안)으로 사용
+        self.commit_msgs = {}   # 커밋 메시지들을 저장하는 딕셔너리
         # Only means receive more than 2f + 1 commit message,
         # but can not commit if there are any bubbles previously.
-        self.commit_certificate = None # proposal
+        self.commit_certificate = None # 커밋 증명서, proposal(제안)으로 사용
 
-        # Set it to True only after commit
+        # 커밋이 완료 여부를 나타내는 불리언(무조건 커밋이 완료되어야 True)
         self.is_committed = False
     
     class Certificate:
