@@ -65,18 +65,19 @@ class Status:
         self.prepare_certificate = None # 준비 증명서, proposal(제안)으로 사용
         self.commit_msgs = {}   # 커밋 메시지들을 저장하는 딕셔너리
         # Only means receive more than 2f + 1 commit message,
-        # but can not commit if there are any bubbles previously.
+        # 이전에 어떠한 문제가 발생한다면 커밋할 수 없음
         self.commit_certificate = None # 커밋 증명서, proposal(제안)으로 사용
 
         # 커밋이 완료 여부를 나타내는 불리언(무조건 커밋이 완료되어야 True)
         self.is_committed = False
-    
+        
+    # 제안서와 관련된 증명서 관리하는 역할
     class Certificate:
-        def __init__(self, view, proposal = 0):
+        def __init__(self, view, proposal = 0): # 제안서는 초기 0 값임
             '''
             input:
                 view: object of class View
-                proposal: proposal in json_data(dict)
+                proposal: proposal in json_data(dict) => JSON 형식의 딕셔너리 형태의 제안서
             '''
             self._view = view
             self._proposal = proposal
@@ -84,15 +85,16 @@ class Status:
         def to_dict(self):
             '''
             Convert the Certificate to dictionary
+            증명서를 딕셔너리 형태로 변환하여 반환
             '''
             return {
                 'view': self._view.get_view(),
                 'proposal': self._proposal
             }
-
+        # 딕셔너리 형태에서 증명서 정보를 업데이트
         def dumps_from_dict(self, dictionary):
             '''
-            Update the view from the form after self.to_dict
+            self.to_dict의 형식에서 뷰를 업데이트
             input:
                 dictionay = {
                     'view': self._view.get_view(),
@@ -101,10 +103,11 @@ class Status:
             '''
             self._view.set_view(dictionary['view'])
             self._proposal = dictionary['proposal']
+        # 현재 제안서 반환
         def get_proposal(self):
             return self._proposal
 
-
+    # 
     class SequenceElement:
         def __init__(self, proposal):
             self.proposal = proposal
