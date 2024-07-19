@@ -60,7 +60,7 @@ class Status:
 
     def _check_succeed(self):
         '''
-        특정 유형의 메시지를 동일한 뷰에서 f + 1개 이상 수신했는지 확인합니다. => * f는 결함 허용 임계값
+        특정 유형의 메시지를 동일한 뷰에서 f + 1개 이상 수신했는지 확인 => * f는 결함 허용 임계값
         input:
             msg_type: self.PREPARE 또는 self.COMMIT
         '''
@@ -218,7 +218,7 @@ class Client:
             is_sent = False
             dest_ind = 0
             self._is_request_succeed = asyncio.Event()
-            # 성공적으로 메시지를 보낼 때마다 0 - 1초 대기합니다.
+            # 성공적으로 메시지를 보낼 때마다 0 - 1초 대기
             await asyncio.sleep(random())
             json_data = {
                 'id': (self._client_id, i),
@@ -253,7 +253,7 @@ class Client:
                 if is_sent:
                     break
         await self._session.close()
-    
+# Client 객체를 실행하는 메인 함수    
 def main():
     logging_config()
     log = logging.getLogger()
@@ -261,7 +261,7 @@ def main():
     conf = conf_parse(args.config)
     log.debug(conf)
 
-    addr = conf['clients'][args.client_id]
+    addr = conf['clients'][args.client_id] # 클라이언트의 주소만 가져옴
     log.info("begin")
     
 

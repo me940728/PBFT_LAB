@@ -1,3 +1,4 @@
+# nodes == cluster
 nodes:
     - host: localhost
       port: 30000
