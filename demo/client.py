@@ -254,7 +254,6 @@ class Client:
                     break
         await self._session.close()
     
-
 def main():
     logging_config()
     log = logging.getLogger()

@@ -107,26 +107,26 @@ class Status:
         def get_proposal(self):
             return self._proposal
 
-    # 
+    # 제안서와 제안서를 보낸온 노드들을 저장하는 역할
     class SequenceElement:
         def __init__(self, proposal):
             self.proposal = proposal
-            self.from_nodes = set([])
-
+            self.from_nodes = set([]) # => proposal을 보낸 노드 집합 셋
+    # 주어진 메시지 유형에 따라 상태를 업데이트
     def _update_sequence(self, msg_type, view, proposal, from_node):
         '''
         Update the record in the status by message type
+        p2에 전달된 메시지 인자값에 따라 상태 기록을 업데이트 함
         input:
             msg_type: Status.PREPARE or Status.COMMIT
-            view: View object of self._follow_view
+            view: 현재 뷰
             proposal: proposal in json_data
             from_node: The node send given the message.
         '''
 
-        # The key need to include hash(proposal) in case get different 
-        # preposals from BFT nodes. Need sort key in json.dumps to make 
-        # sure getting the same string. Use hashlib so that we got same 
-        # hash everytime.
+        # BFT 노드로부터 다른 제안서를 받을 경우를 대비해 키에 hash(proposal)을 포함시켜야 함
+        # json.dumps의 정렬 키를 사용하여 동일한 문자열을 얻도록 합니다. hashlib을 사용하여 
+        # 매번 동일한 해시를 얻는다.
         hash_object = hashlib.md5(json.dumps(proposal, sort_keys=True).encode())
         key = (view.get_view(), hash_object.digest())
         if msg_type == Status.PREPARE:
@@ -138,6 +138,7 @@ class Status:
                 self.commit_msgs[key] = self.SequenceElement(proposal)
             self.commit_msgs[key].from_nodes.add(from_node)
 
+    # 동일한 뷰에서 2f + 1 이상 msg_type 메시지를 받았는지 확인
     def _check_majority(self, msg_type):
         '''
         Check if receive more than 2f + 1 given type message in the same view.
@@ -162,24 +163,23 @@ class Status:
 
 class CheckPoint:
     '''
-    Record all the status of the checkpoint for given PBFTHandler.
+    주어진 PBFTHandler에 대한 체크포인트의 모든 상태를 기록
     '''
     RECEIVE_CKPT_VOTE = 'receive_ckpt_vote'
     def __init__(self, checkpoint_interval, nodes, f, node_index, 
             lose_rate = 0, network_timeout = 10):
-        self._checkpoint_interval = checkpoint_interval
-        self._nodes = nodes
-        self._f = f
-        self._node_index = node_index
-        self._loss_rate = lose_rate
+        self._checkpoint_interval = checkpoint_interval # 체크포인트 간격
+        self._nodes = nodes # 노드 리스트
+        self._f = f # 비잔틴 노드 수
+        self._node_index = node_index # 현재 노드의 인덱스
+        self._loss_rate = lose_rate # 메시지 손실율
         self._log = logging.getLogger(__name__) 
-        # Next slot of the given globally accepted checkpoint.
-        # For example, the current checkpoint record until slot 99
-        # next_slot = 100
+        # 승인된 체크포인트의 다음 슬롯
+        # 현재 체크포인트 슬롯이 99면 다음 슬록은 100
         self.next_slot = 0
-        # Globally accepted checkpoint
+        # 전역적으로 승인된 체크포인트
         self.checkpoint = []
-        # Use the hash of the checkpoint to record receive vates for given ckpt.
+        # 체크포인트로부터 받은 투표를 해시값으로 기록
         self._received_votes_by_ckpt = {} 
         self._session = None
         self._network_timeout = network_timeout
