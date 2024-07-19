@@ -272,14 +272,14 @@ def main():
     port = addr['port']
 
 
-    asyncio.ensure_future(client.request())
+    asyncio.ensure_future(client.request()) # 비동기 작업 수행하도록 예약 (ensure_future는 즉시 실행되지 않고 이벤트 루프에 작업 예약을 함)
 
-    app = web.Application()
+    app = web.Application() # 앱 인스턴스 생성
     app.add_routes([
-        web.post('/' + Client.REPLY, client.get_reply),
+        web.post('/' + Client.REPLY, client.get_reply), # Client.REPLY 경로에 POST 작업을 수행할 이벤트 핸들러 추가 / 요청 들어오면 client.get_reply 실행
     ])
 
-    web.run_app(app, host=host, port=port, access_log=None)
+    web.run_app(app, host=host, port=port, access_log=None) # 웹 앱 실행(이벤트 루프 시작)
 
 
     
