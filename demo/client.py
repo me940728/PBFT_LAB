@@ -264,13 +264,11 @@ def main():
     addr = conf['clients'][args.client_id] # 클라이언트의 주소만 가져옴
     log.info("begin")
     
-
     client = Client(conf, args, log)
 
     addr = client._address
     host = addr['host']
     port = addr['port']
-
 
     asyncio.ensure_future(client.request()) # 비동기 작업 수행하도록 예약 (ensure_future는 즉시 실행되지 않고 이벤트 루프에 작업 예약을 함)
 
@@ -281,8 +279,6 @@ def main():
 
     web.run_app(app, host=host, port=port, access_log=None) # 웹 앱 실행(이벤트 루프 시작)
 
-
-    
     # loop = asyncio.get_event_loop()
     # loop.run_until_complete(client.request())
 
