@@ -163,7 +163,7 @@ class Status:
 
 class CheckPoint:
     '''
-    주어진 PBFTHandler에 대한 체크포인트의 모든 상태를 기록
+    주어진 PBFTHandler(핸들러 == 메시지 처리 객체)에 대한 체크포인트의 모든 상태를 기록
     '''
     RECEIVE_CKPT_VOTE = 'receive_ckpt_vote'
     def __init__(self, checkpoint_interval, nodes, f, node_index, 
@@ -1180,11 +1180,12 @@ def conf_parse(conf_file) -> dict:
     misc:
         network_timeout: 5
     '''
-    conf = yaml.load(conf_file)
+    conf = yaml.safe_load(conf_file)
     return conf
 
+# Node 메인 함수
 def main():
-    args = arg_parse()
+    args = arg_parse() # 명령줄 인자값 파싱
     if args.log_to_file:
         logging.basicConfig(filename='log_' + str(args.index),
                             filemode='a', level=logging.DEBUG)

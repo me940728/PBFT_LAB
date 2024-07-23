@@ -253,7 +253,7 @@ class Client:
                 if is_sent:
                     break
         await self._session.close()
-# Client 객체를 실행하는 메인 함수    
+# Client 객체를 실행하는 메인 함수 => 가장 먼저 확인
 def main():
     logging_config()
     log = logging.getLogger()
