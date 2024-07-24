@@ -35,10 +35,11 @@ misc:
 `for i in {0..3}; do python ./node.py -i $i -lf False  &; done`
 
 ## Send request to any one of the nodes
-e.g. `curl -vLX POST --data '{ 'id': (0, 0), 'client_url': http://localhost:20001/reply,
-    'timestamp': time.time(),'data': 'data_string'}' http://localhost:30000/request`
-The `id` here is a tuple of `(client_id, seq_id)`, `client_url` is the url for sending request to the get_reply function,
-`timestamp` is the current time, `data` is whatever data in string format, 
+노드로 요청을 보내는 예시(e.g) : 
+`curl -vLX POST --data '{ 'id': (0, 0), 'client_url': http://localhost:20001/reply, 'timestamp': time.time(), 'data': 'data_string' }' http://localhost:30000/request`
+HTTP 요청을 verbose 모드, 리다이렉션 될 경우 따르며, -x POST 로 요청을 보낸다. --data는 {} 형식으로 http://localhost:30000/로 보낸다.
+여기서 id는 (client_id, seq_id) 형태의 튜플이며, client_url은 get_reply 함수로 요청을 보내기 위한 URL이고, timestamp는 현재 시간이며, data는 문자열 형식의 데이터
+* 먼저 서버들(client, node)들을 실행한 후 요청을 보낸다.
 
 ## Run the clients
 `for i in {0...2}; do python client.py -id $i -nm 5 &; done`
