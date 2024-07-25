@@ -192,7 +192,7 @@ class CheckPoint:
             self.from_nodes = set([])
             self.checkpoint = ckpt
             self.next_slot = next_slot
-
+    # 현재 슬롯과 체크포인트 간격을 이용해서 커밋 가능한 최대 슬롯 번호 계산
     def get_commit_upperbound(self):
         '''
         Return the upperbound that could commit 
@@ -905,8 +905,8 @@ class PBFTHandler:
 
     async def synchronize(self):
         '''
-        Broadcast current checkpoint and all the commit certificate 
-        between next slot of the checkpoint and commit upperbound.
+        현재 체크포인트와 다음 슬롯에서 커밋 상한까지의 모든 커밋 인증서를 브로드캐스트
+        * slot : 특정 시간, 구간 순서의 작업(이벤트, 트랜잭션 메시지등을 처리하는 단위)
 
         output:
             json_data = {
@@ -920,12 +920,12 @@ class PBFTHandler:
         '''
         # TODO: Only send bubble slot message instead of all.
         while 1:
-            await asyncio.sleep(self._sync_interval)
+            await asyncio.sleep(self._sync_interval) # pbft.yaml에 정의된 sync_interval: 5 간격 만큼 잠듬
             commit_certificates = {}
+            # 
             for i in range(self._ckpt.next_slot, self._ckpt.get_commit_upperbound()):
                 slot = str(i)
-                if (slot in self._status_by_slot) and (
-                        self._status_by_slot[slot].commit_certificate):
+                if (slot in self._status_by_slot) and (self._status_by_slot[slot].commit_certificate):
                     status = self._status_by_slot[slot]
                     commit_certificates[slot] = status.commit_certificate.to_dict()
             json_data = {
@@ -1191,25 +1191,28 @@ def main():
                             filemode='a', level=logging.DEBUG)
     logging_config()
     log = logging.getLogger()
-    conf = conf_parse(args.config)
+    conf = conf_parse(args.config) # -c => pbft.yaml 파일(default)
     log.debug(conf)
+    # pbft.yaml 파일에서 설정 정보 가져오기
+    addr = conf['nodes'][args.index] # pbft.yaml 파일에서 nodes 가져옴 args.index는 run_node.sh 파일에서 0~3까지 순차적으로 입력된다.
+    host = addr['host'] # pbft.yaml.nodes[index]에서 host 가져옴
+    port = addr['port'] # pbft.yaml.nodes[index]에서 port 가져옴
 
-    addr = conf['nodes'][args.index]
-    host = addr['host']
-    port = addr['port']
+    pbft = PBFTHandler(args.index, conf) # 인덱스는 외부 파일에서 순차적으로 생성함
 
-    pbft = PBFTHandler(args.index, conf)
-
-    asyncio.ensure_future(pbft.synchronize())
-    asyncio.ensure_future(pbft.garbage_collection())
+    # asyncio.ensure_future() => 백그라운드에서 이벤트 루프 실행 하도록 예약(병렬로 실행)
+    asyncio.ensure_future(pbft.synchronize())        # 시스템 상태 동기화
+    asyncio.ensure_future(pbft.garbage_collection()) # 불필요 데이터 정리
 
     app = web.Application()
+    # HTTP POST 요청 시 각 URL로 라우터하는 핸들러 함수 정의
     app.add_routes([
         web.post('/' + PBFTHandler.REQUEST, pbft.get_request),
         web.post('/' + PBFTHandler.PREPREPARE, pbft.preprepare),
         web.post('/' + PBFTHandler.PREPARE, pbft.prepare),
         web.post('/' + PBFTHandler.COMMIT, pbft.commit),
         web.post('/' + PBFTHandler.REPLY, pbft.reply),
+        # 노드의 형평성, 공정성, 최적의 합의 시간을 위한 동적 그룹 계층 구조 재구성하는 부분?
         web.post('/' + PBFTHandler.RECEIVE_CKPT_VOTE, pbft.receive_ckpt_vote),
         web.post('/' + PBFTHandler.RECEIVE_SYNC, pbft.receive_sync),
         web.post('/' + PBFTHandler.VIEW_CHANGE_REQUEST, pbft.get_view_change_request),
@@ -1217,7 +1220,6 @@ def main():
         ])
 
     web.run_app(app, host=host, port=port, access_log=None)
-
 
 if __name__ == "__main__":
     main()
