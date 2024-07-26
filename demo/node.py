@@ -1183,7 +1183,7 @@ def conf_parse(conf_file) -> dict:
     conf = yaml.safe_load(conf_file)
     return conf
 
-# Node 메인 함수
+# Node 메인 함수 '24.7.26
 def main():
     args = arg_parse() # 명령줄 인자값 파싱
     if args.log_to_file:
