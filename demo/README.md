@@ -31,6 +31,71 @@ misc:
     network_timeout: 5
 ```
 
+## node.py 
+- logging_config()
+- arg_parse()
+- conf_parse()
+- main()
+- View Class
+    - init()
+    - get_view()
+    - set_view()
+    - get_leader()
+- Status Class
+    - global Var : PREPARE, COMMIT, REPLY
+    - init()
+    - Certificate Class
+        - init()
+        - to_dict()
+        - dumps_from_dict()
+        - get_proposal()
+    - SequenceElement Classs
+        - init()
+    - _update_sequence()
+    - _check_majority()
+- CheckPoint Class
+    - init()
+    - ReceiveVotes Class - init()
+    - get_commit_upperbound()
+    - _hash_ckpt()
+    - async receive_vote()
+    - async propose_vote()
+    - async _post()
+    - @staticmethod make_url()
+    - async _broadcast_checkpoint()
+    - get_ckpt_info()
+    - update_checkpoint()
+    - async receive_sync()
+    - async garbage_collection()
+- ViewChangeVotes Class
+    - init()
+    - receive_vote()
+- PBFTHandler Class
+    - global Var :
+        - REQUEST, PREPREPARE, PREPARE, COMMIT, REPLY, NO_OP, RECEIVE_SYNC, RESEIVE_CKPT_VOTE, VIEW_CHANGE_REQUEST, VIEW_CHANGE_VOTE
+    - init()
+    - @staticmethod make_url()
+    - async _make_requests()
+    - async _make_response()
+    - async _post()
+    - _legal_slot()
+    - async preprepare()
+    - async get_request()
+    - async prepare()
+    - async commit()
+    - async reply()
+    - get_commit_decisions()
+    - async _commit_action()
+    - async receive_ckpt_vote()
+    - async receive_sync()
+    - async synchronize()
+    - async get_prepare_certificates()
+    - async post_view_change_vote()
+    - async get_view_change_request()
+    - async receive_view_change_vote()
+    - async fill_bubbles()
+    - async garbage_collection()
+
 ## Run the nodes
 `for i in {0..3}; do python ./node.py -i $i -lf False  &; done`
 
