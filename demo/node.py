@@ -3,21 +3,21 @@ import logging
 import argparse
 import yaml
 import time
-from random import random, randint
-from collections import Counter
+from random import random
 import json
-import sys
 
 import asyncio
 import aiohttp
 from aiohttp import web
 
 import hashlib
+
 '''
     작업일 : '24.7.16 ~ 진행중
     작업자 : 최별규
     설명 : 합의를 수행하는 노드 객체
 '''
+
 VIEW_SET_INTERVAL = 10
 
 # PBFT 알고리즘에서 View를 관리하는 역할의 객체
@@ -26,8 +26,7 @@ class View:
         self._view_number = view_number         # 현재 뷰 번호
         self._num_nodes = num_nodes             # 네트워크 존재하는 노드 수
         self._leader = view_number % num_nodes  # 현재 리더 노드의 번호 => 현재 뷰 번호를 노드수 만큼 나눈 나머지가 리더
-        # Minimum interval to set the view number
-        self._min_set_interval = VIEW_SET_INTERVAL # 뷰 설정할 수 있는 최소 간격은 10(전역 변수로 관리되고 있음) ?
+        self._min_set_interval = VIEW_SET_INTERVAL # 뷰 설정할 수 있는 최소 간격은 10(전역 변수로 관리되고 있음)
         self._last_set_time = time.time()       # 마지막으로 뷰가 설정된 시간
 
     # To encode to json
@@ -64,13 +63,9 @@ class Status:
         self.prepare_msgs = {}  # 준비 메시지를 저장하는 딕셔너리
         self.prepare_certificate = None # 준비 증명서, proposal(제안)으로 사용
         self.commit_msgs = {}   # 커밋 메시지들을 저장하는 딕셔너리
-        # Only means receive more than 2f + 1 commit message,
-        # 이전에 어떠한 문제가 발생한다면 커밋할 수 없음
         self.commit_certificate = None # 커밋 증명서, proposal(제안)으로 사용
+        self.is_committed = False  # 커밋 완료 여부를 나타내는 불리언 값
 
-        # 커밋이 완료 여부를 나타내는 불리언(무조건 커밋이 완료되어야 True)
-        self.is_committed = False
-        
     # 제안서와 관련된 증명서 관리하는 역할
     class Certificate:
         def __init__(self, view, proposal = 0): # 제안서는 초기 0 값임
@@ -149,7 +144,7 @@ class Status:
             if self.prepare_certificate:
                 return True
             for key in self.prepare_msgs:
-                if len(self.prepare_msgs[key].from_nodes)>= 2 * self.f + 1:
+                if len(self.prepare_msgs[key].from_nodes) >= 2 * self.f + 1:
                     return True
             return False
 
@@ -175,7 +170,7 @@ class CheckPoint:
         self._loss_rate = lose_rate # 메시지 손실율
         self._log = logging.getLogger(__name__) 
         # 승인된 체크포인트의 다음 슬롯
-        # 현재 체크포인트 슬롯이 99면 다음 슬록은 100
+        # 현재 체크포인트 슬롯이 99면 다음 슬롯은 100
         self.next_slot = 0
         # 전역적으로 승인된 체크포인트
         self.checkpoint = []
@@ -211,7 +206,6 @@ class CheckPoint:
         hash_object = hashlib.md5(json.dumps(ckpt, sort_keys=True).encode())
         return hash_object.digest()  
 
-
     async def receive_vote(self, ckpt_vote):
         '''
         Trigger when PBFTHandler receive checkpoint votes.
@@ -244,10 +238,9 @@ class CheckPoint:
                 self.next_slot = self._received_votes_by_ckpt[hash_ckpt].next_slot
                 self.checkpoint = self._received_votes_by_ckpt[hash_ckpt].checkpoint
 
-
     async def propose_vote(self, commit_decisions):
         '''
-        When node the slots of committed message exceed self._next_slot 
+        When node the slots of committed message exceed self.next_slot 
         plus self._checkpoint_interval, propose new checkpoint and 
         broadcast to every node
 
@@ -260,7 +253,6 @@ class CheckPoint:
         proposed_checkpoint = self.checkpoint + commit_decisions
         await self._broadcast_checkpoint(proposed_checkpoint, 
             'vote', CheckPoint.RECEIVE_CKPT_VOTE)
-
 
     async def _post(self, nodes, command, json_data):
         '''
@@ -280,7 +272,6 @@ class CheckPoint:
                     _ = await self._session.post(
                         self.make_url(node, command), json=json_data)
                 except Exception as e:
-                    #resp_list.append((i, e))
                     self._log.error(e)
                     pass
 
@@ -295,7 +286,6 @@ class CheckPoint:
         '''
         return "http://{}:{}/{}".format(node['host'], node['port'], command)
 
-
     async def _broadcast_checkpoint(self, ckpt, msg_type, command):
         json_data = {
             'node_index': self._node_index,
@@ -306,7 +296,6 @@ class CheckPoint:
         await self._post(self._nodes, command, json_data)
 
     def get_ckpt_info(self):
-
         '''
         Get the checkpoint serialized information.Called 
         by synchronize function to get the checkpoint
@@ -334,9 +323,8 @@ class CheckPoint:
             self._log.info("---> %d: Update checkpoint by synchronization.", self._node_index)
             self.next_slot = json_data['next_slot']
             self.checkpoint = json.loads(json_data['ckpt'])
-        
 
-    async def receive_sync(sync_ckpt):
+    async def receive_sync(self, request):
         '''
         Trigger when recieve checkpoint synchronization messages.
         input: 
@@ -348,9 +336,11 @@ class CheckPoint:
             }
         '''
         self._log.debug("receive_sync in checkpoint: current next_slot:"
-            " %d; update to: %d" , self.next_slot, json_data['next_slot'])
+            " %d; update to: %d" , self.next_slot, request.json['next_slot'])
 
-        if sync_ckpt['next_slot'] > self._next_slot:
+        sync_ckpt = await request.json()
+
+        if sync_ckpt['next_slot'] > self.next_slot:
             self.next_slot = sync_ckpt['next_slot']
             self.checkpoint = json.loads(sync_ckpt['ckpt'])
 
@@ -361,65 +351,10 @@ class CheckPoint:
         '''
         deletes = []
         for hash_ckpt in self._received_votes_by_ckpt:
-            if self._received_votes_by_ckpt[hash_ckpt].next_slot <= next_slot:
+            if self._received_votes_by_ckpt[hash_ckpt].next_slot <= self.next_slot:
                 deletes.append(hash_ckpt)
         for hash_ckpt in deletes:
             del self._received_votes_by_ckpt[hash_ckpt]
-
-
-class ViewChangeVotes:
-    """
-    Record which nodes vote for the proposed view change. 
-    In addition, store all the information including:
-    (1)checkpoints who has the largest information(largest 
-    next_slot) (2) prepare certificate with largest for each 
-    slot sent from voted nodes.
-    """
-    def __init__(self, node_index, num_total_nodes):
-        # Current node index.
-        self._node_index = node_index
-        # Total number of node in the system.
-        self._num_total_nodes = num_total_nodes
-        # Number of faults tolerand
-        self._f = (self._num_total_nodes - 1) // 3
-        # Record the which nodes vote for current view.
-        self.from_nodes = set([])
-        # The prepare_certificate with highest view for each slot
-        self.prepare_certificate_by_slot = {}
-        self.lastest_checkpoint = None
-        self._log = logging.getLogger(__name__)
-
-    def receive_vote(self, json_data):
-        '''
-        Receive the vote message and make the update:
-        (1) Update the inforamtion in given vote storage - 
-        prepare certificate.(2) update the node in from_nodes.
-        input: 
-            json_data: the json_data received by view change vote broadcast:
-                {
-                    "node_index": self._index,
-                    "view_number": self._follow_view.get_view(),
-                    "checkpoint":self._ckpt.get_ckpt_info(),
-                    "prepared_certificates":self.get_prepare_certificates(),
-                }
-        '''
-        update_view = None
-
-        prepare_certificates = json_data["prepare_certificates"]
-
-        self._log.debug("%d update prepare_certificate for view %d", 
-            self._node_index, json_data['view_number'])
-
-        for slot in prepare_certificates:
-            prepare_certificate = Status.Certificate(View(0, self._num_total_nodes))
-            prepare_certificate.dumps_from_dict(prepare_certificates[slot])
-            # Keep the prepare certificate who has the largest view number
-            if slot not in self.prepare_certificate_by_slot or (
-                    self.prepare_certificate_by_slot[slot]._view.get_view() < (
-                    prepare_certificate._view.get_view())):
-                self.prepare_certificate_by_slot[slot] = prepare_certificate
-
-        self.from_nodes.add(json_data['node_index'])
 
 
 class PBFTHandler:
@@ -428,12 +363,9 @@ class PBFTHandler:
     PREPARE = 'prepare'
     COMMIT = 'commit'
     REPLY = 'reply'
-
     NO_OP = 'NOP'
-
     RECEIVE_SYNC = 'receive_sync'
     RECEIVE_CKPT_VOTE = 'receive_ckpt_vote'
-
     VIEW_CHANGE_REQUEST = 'view_change_request'
     VIEW_CHANGE_VOTE = "view_change_vote"
 
@@ -476,8 +408,6 @@ class PBFTHandler:
 
         # The largest view either promised or accepted
         self._follow_view = View(0, self._node_cnt)
-        # Restore the votes number and information for each view number
-        self._view_change_votes_by_view_number = {}
         
         # Record all the status of the given slot
         # To adjust json key, slot is string integer.
@@ -502,43 +432,6 @@ class PBFTHandler:
         '''
         return "http://{}:{}/{}".format(node['host'], node['port'], command)
 
-    async def _make_requests(self, nodes, command, json_data):
-        '''
-        Send json data:
-
-        input:
-            nodes: list of dictionary with key: host, port
-            command: Command to execute.
-            json_data: Json data.
-        output:
-            list of tuple: (node_index, response)
-
-        '''
-        resp_list = []
-        for i, node in enumerate(nodes):
-            if random() > self._loss_rate:
-                if not self._session:
-                    timeout = aiohttp.ClientTimeout(self._network_timeout)
-                    self._session = aiohttp.ClientSession(timeout=timeout)
-                self._log.debug("make request to %d, %s", i, command)
-                try:
-                    resp = await self._session.post(self.make_url(node, command), json=json_data)
-                    resp_list.append((i, resp))
-                    
-                except Exception as e:
-                    #resp_list.append((i, e))
-                    self._log.error(e)
-                    pass
-        return resp_list 
-
-    async def _make_response(self, resp):
-        '''
-        Drop response by chance, via sleep for sometime.
-        '''
-        if random() < self._loss_rate:
-            await asyncio.sleep(self._network_timeout)
-        return resp
-
     async def _post(self, nodes, command, json_data):
         '''
         Broadcast json_data to all node in nodes with given command.
@@ -556,7 +449,6 @@ class PBFTHandler:
                 try:
                     _ = await self._session.post(self.make_url(node, command), json=json_data)
                 except Exception as e:
-                    #resp_list.append((i, e))
                     self._log.error(e)
                     pass
 
@@ -572,10 +464,10 @@ class PBFTHandler:
             return False
         else:
             return True
-
+    # [PREPREPARE Phase-3] : Group Primary Node로 부터 받은 요청메시지를 RN에게 브로드 캐스팅 하는 단계 
     async def preprepare(self, json_data):
         '''
-        Prepare: Deal with request from the client and broadcast to other replicas.
+        클라이언트로부터 받은 JSON 형식의 요청 데이터를 처리하고, 다른 복제 노드들에게 브로드캐스팅
         input:
             json_data: Json-transformed web request from client
                 {
@@ -586,8 +478,6 @@ class PBFTHandler:
                 }
 
         '''
-
-        
         this_slot = str(self._next_propose_slot)
         self._next_propose_slot = int(this_slot) + 1
 
@@ -609,25 +499,27 @@ class PBFTHandler:
         
         await self._post(self._nodes, PBFTHandler.PREPARE, preprepare_msg)
 
-
-
+    # [REQUEST Phase] : Phase-2으로 Client에서 Cluster Manage Node로 보낸 후 Group 에게 전달하는 단계
     async def get_request(self, request):
         '''
-        Handle the request from client if leader, otherwise 
-        redirect to the leader.
+        [비동기 함수 핸들러]
+        REQUEST 단계 : 요청 메시지가 클러스터에 브로드캐스팅 되었고, 각 요청 메시지는 클러스터내 그룹에게 전달이 되는 단계
+        그룹의 리더 노드일 경우 요청을 처리하고 아닐경우 리더로 리다이렉트 함.
         '''
         self._log.info("---> %d: on request", self._index)
 
-        if not self._is_leader:
-            if self._leader != None:
+        if not self._is_leader: # 리더 노드가 아닌 경우
+            if self._leader != None: # 리더 노드 정보를 확인 (None 이 아닌경우)
+                # Client 에게 HTTP 307 리다이렉트 보냄
                 raise web.HTTPTemporaryRedirect(self.make_url(
                     self._nodes[self._leader], PBFTHandler.REQUEST))
-            else:
+            else: # 리더 노드가 존재하지 않는 경우 HTTP 503을 보냄
                 raise web.HTTPServiceUnavailable()
+        # 리더 노드인 경우    
         else:
-            json_data = await request.json()
-            await self.preprepare(json_data)
-            return web.Response()
+            json_data = await request.json() # 요청 데이터를 JSON으로 비동기적 파싱
+            await self.preprepare(json_data) # PRE-Prepare 단계를 수행함
+            return web.Response()            # HTTP 200 OK 응답
 
     async def prepare(self, request):
         '''
@@ -825,7 +717,7 @@ class PBFTHandler:
         commit_decisions = []
         for i in range(self._ckpt.next_slot, self._last_commit_slot + 1):
             status = self._status_by_slot[str(i)]
-            proposal = status.commit_certificate._proposal
+            proposal = status.commit_certificate.get_proposal()
             commit_decisions.append((proposal['id'], proposal['data']))
 
         return commit_decisions
@@ -902,7 +794,6 @@ class PBFTHandler:
 
         return web.Response()
         
-
     async def synchronize(self):
         '''
         현재 체크포인트와 다음 슬롯에서 커밋 상한까지의 모든 커밋 인증서를 브로드캐스트
@@ -933,175 +824,6 @@ class PBFTHandler:
                 'commit_certificates':commit_certificates
             }
             await self._post(self._nodes, PBFTHandler.RECEIVE_SYNC, json_data)
-
-    async def get_prepare_certificates(self):
-        '''
-        For view change, get all prepare certificates in the valid commit interval.
-        output:
-            prepare_certificate_by_slot: dictionary which contains the mapping between
-            each slot and its prepare_certificate if exists.
-
-        '''
-        prepare_certificate_by_slot = {}
-        for i in range(self._ckpt.next_slot, self._ckpt.get_commit_upperbound()):
-            slot = str(i)
-            if slot in self._status_by_slot:
-                status = self._status_by_slot[slot]
-                if status.prepare_certificate:
-                    prepare_certificate_by_slot[slot] = (
-                        status.prepare_certificate.to_dict())
-        return prepare_certificate_by_slot
-
-    async def _post_view_change_vote(self):
-        '''
-        Broadcast the view change vote messages to all the nodes. 
-        View change vote messages contain current node index, 
-        proposed new view number, checkpoint info, and all the 
-        prepare certificate between valid slots.
-        '''
-        view_change_vote = {
-            "node_index": self._index,
-            "view_number": self._follow_view.get_view(),
-            "checkpoint":self._ckpt.get_ckpt_info(),
-            "prepare_certificates":await self.get_prepare_certificates(),
-
-        }
-        await self._post(self._nodes, PBFTHandler.VIEW_CHANGE_VOTE, view_change_vote)
-
-    async def get_view_change_request(self, request):
-        '''
-        Get view change request from client. Broadcast the view change vote and 
-        all the information needed for view change(checkpoint, prepared_certificate)
-        to every replicas.
-        input:
-            request: view change request messages from client.
-                json_data{
-                    "action" : "view change"
-                }
-        '''
-
-        self._log.info("---> %d: receive view change request from client.", self._index)
-        json_data = await request.json()
-        # Make sure the message is valid.
-        if json_data['action'] != "view change":
-            return web.Response()
-        # Update view number by 1 and change the followed leader. In addition,
-        # if receive view update message within update interval, do nothing.   
-        if not self._follow_view.set_view(self._follow_view.get_view() + 1):
-            return web.Response()
-
-        self._leader = self._follow_view.get_leader()
-        if self._is_leader:
-            self._log.info("%d is not leader anymore. View number: %d", 
-                    self._index, self._follow_view.get_view())
-            self._is_leader = False
-
-        self._log.debug("%d: vote for view change to %d.", 
-            self._index, self._follow_view.get_view())
-
-        await self._post_view_change_vote()
-
-        return web.Response()
-
-
-
-
-    async def receive_view_change_vote(self, request):
-        '''
-        Receive the vote message for view change. (1) Update the checkpoint 
-        if receive messages has larger checkpoint. (2) Update votes message 
-        (Node comes from and prepare-certificate). (3) View change if receive
-        f + 1 votes (4) if receive more than 2f + 1 node and is the leader 
-        of the current view, become leader and preprepare the valid slot.
-
-        input: 
-            request. After transform to json:
-                json_data = {
-                    "node_index": self._index,
-                    "view_number": self._follow_view.get_view(),
-                    "checkpoint":self._ckpt.get_ckpt_info(),
-                    "prepared_certificates":self.get_prepare_certificates(),
-                }
-        '''
-
-        self._log.info("%d receive view change vote.", self._index)
-        json_data = await request.json()
-        view_number = json_data['view_number']
-        if view_number not in self._view_change_votes_by_view_number:
-            self._view_change_votes_by_view_number[view_number]= (
-                ViewChangeVotes(self._index, self._node_cnt))
-
-
-        self._ckpt.update_checkpoint(json_data['checkpoint'])
-        self._last_commit_slot = max(self._last_commit_slot, self._ckpt.next_slot - 1)
-
-        votes = self._view_change_votes_by_view_number[view_number]
-
-        votes.receive_vote(json_data)
-
-        # Receive more than 2f + 1 votes. If the node is the 
-        # charged leader for current view, become leader and 
-        # propose preprepare for all slots.
-
-        if len(votes.from_nodes) >= 2 * self._f + 1:
-
-            if self._follow_view.get_leader() == self._index and not self._is_leader:
-
-                self._log.info("%d: Change to be leader!! view_number: %d", 
-                    self._index, self._follow_view.get_view())
-
-                self._is_leader = True
-                self._view.set_view(self._follow_view.get_view())
-                # TODO: More efficient way to find last slot with prepare certificate.
-                last_certificate_slot = max(
-                    [int(slot) for slot in votes.prepare_certificate_by_slot] + [-1])
-
-                # Update the next_slot!!
-                self._next_propose_slot = last_certificate_slot + 1
-
-                proposal_by_slot = {}
-                for i in range(self._ckpt.next_slot, last_certificate_slot + 1):
-                    slot = str(i)
-                    if slot not in votes.prepare_certificate_by_slot:
-
-                        self._log.debug("%d decide no_op for slot %d", 
-                            self._index, int(slot))
-
-                        proposal = {
-                            'id': (-1, -1),
-                            'client_url': "no_op",
-                            'timestamp':"no_op",
-                            'data': PBFTHandler.NO_OP
-                        }
-                        proposal_by_slot[slot] = proposal
-                    elif not self._status_by_slot[slot].commit_certificate:
-                        proposal = votes.prepare_certificate_by_slot[slot].get_proposal()
-                        proposal_by_slot[slot] = proposal
-
-                await self.fill_bubbles(proposal_by_slot)
-        return web.Response()
-
-    async def fill_bubbles(self, proposal_by_slot):
-        '''
-        Fill the bubble during view change. Basically, it's a 
-        preprepare that assign the proposed slot instead of using 
-        new slot.
-
-        input: 
-            proposal_by_slot: dictionary that keyed by slot and 
-            the values are the preprepared proposals
-        '''
-        self._log.info("---> %d: on fill bubbles.", self._index)
-        self._log.debug("Number of bubbles: %d", len(proposal_by_slot))
-
-        bubbles = {
-            'leader': self._index,
-            'view': self._view.get_view(),
-            'proposal': proposal_by_slot,
-            'type': 'preprepare'
-        }
-        
-        await self._post(self._nodes, PBFTHandler.PREPARE, bubbles)
 
     async def garbage_collection(self):
         '''
@@ -1207,15 +929,16 @@ def main():
     app = web.Application()
     # HTTP POST 요청 시 각 URL로 라우터하는 핸들러 함수 정의
     app.add_routes([
+        # [POST] /request 요청이 들어오면 pbft.get_request 함수를 실행함
+        # Pre-Request는 사전에 curl로 요청을 함
         web.post('/' + PBFTHandler.REQUEST, pbft.get_request),
         web.post('/' + PBFTHandler.PREPREPARE, pbft.preprepare),
         web.post('/' + PBFTHandler.PREPARE, pbft.prepare),
         web.post('/' + PBFTHandler.COMMIT, pbft.commit),
         web.post('/' + PBFTHandler.REPLY, pbft.reply)
-        ])
+    ])
 
     web.run_app(app, host=host, port=port, access_log=None)
 
 if __name__ == "__main__":
     main()
-

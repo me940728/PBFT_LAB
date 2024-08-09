@@ -2,3 +2,1619 @@ DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost'
 INFO:__main__:---> 0: Create checkpoint.
 DEBUG:asyncio:Using selector: KqueueSelector
 DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost', 'port': 30001}, {'host': 'localhost', 'port': 30002}, {'host': 'localhost', 'port': 30003}], 'clients': [{'host': 'localhost', 'port': 20001}, {'host': 'localhost', 'port': 20002}], 'loss%': 0, 'ckpt_interval': 10, 'retry_times_before_view_change': 2, 'sync_interval': 5, 'misc': {'network_timeout': 5}}
+INFO:__main__:---> 0: Create checkpoint.
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost', 'port': 30001}, {'host': 'localhost', 'port': 30002}, {'host': 'localhost', 'port': 30003}], 'clients': [{'host': 'localhost', 'port': 20001}, {'host': 'localhost', 'port': 20002}], 'loss%': 0, 'ckpt_interval': 10, 'retry_times_before_view_change': 2, 'sync_interval': 5, 'misc': {'network_timeout': 5}}
+INFO:__main__:---> 0: Create checkpoint.
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:asyncio:Using selector: KqueueSelector
+INFO:__main__:---> 0: on request
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "./node.py", line 628, in get_request
+    json_data = await request.json() # 요청 데이터를 JSON으로 비동기적 파싱
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_request.py", line 686, in json
+    return loads(body)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+INFO:__main__:---> 0: on request
+ERROR:aiohttp.server:Error handling request
+Traceback (most recent call last):
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_protocol.py", line 452, in _handle_request
+    resp = await request_handler(request)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_app.py", line 543, in _handle
+    resp = await handler(request)
+  File "./node.py", line 628, in get_request
+    json_data = await request.json() # 요청 데이터를 JSON으로 비동기적 파싱
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/site-packages/aiohttp/web_request.py", line 686, in json
+    return loads(body)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/__init__.py", line 357, in loads
+    return _default_decoder.decode(s)
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Users/admin/Downloads/ll/envs/pbft/lib/python3.8/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 3 (char 2)
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 0
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 0
+INFO:__main__:0 reply to http://localhost:20001/reply successfully!!
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 1
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 1
+INFO:__main__:0 reply to http://localhost:20001/reply successfully!!
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 2
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 2
+INFO:__main__:0 reply to http://localhost:20001/reply successfully!!
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost', 'port': 30001}, {'host': 'localhost', 'port': 30002}, {'host': 'localhost', 'port': 30003}], 'clients': [{'host': 'localhost', 'port': 20001}, {'host': 'localhost', 'port': 20002}], 'loss%': 0, 'ckpt_interval': 10, 'retry_times_before_view_change': 2, 'sync_interval': 5, 'misc': {'network_timeout': 5}}
+INFO:__main__:---> 0: Create checkpoint.
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:asyncio:Using selector: KqueueSelector
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<PBFTHandler.synchronize() running at ./node.py:797>>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<PBFTHandler.garbage_collection() running at ./node.py:828>>
+DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost', 'port': 30001}, {'host': 'localhost', 'port': 30002}, {'host': 'localhost', 'port': 30003}], 'clients': [{'host': 'localhost', 'port': 20001}, {'host': 'localhost', 'port': 20002}], 'loss%': 0, 'ckpt_interval': 10, 'retry_times_before_view_change': 2, 'sync_interval': 5, 'misc': {'network_timeout': 5}}
+INFO:__main__:---> 0: Create checkpoint.
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:asyncio:Using selector: KqueueSelector
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<PBFTHandler.synchronize() running at ./node.py:797>>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<PBFTHandler.garbage_collection() running at ./node.py:828>>
+DEBUG:root:{'nodes': [{'host': 'localhost', 'port': 30000}, {'host': 'localhost', 'port': 30001}, {'host': 'localhost', 'port': 30002}, {'host': 'localhost', 'port': 30003}], 'clients': [{'host': 'localhost', 'port': 20001}, {'host': 'localhost', 'port': 20002}], 'loss%': 0, 'ckpt_interval': 10, 'retry_times_before_view_change': 2, 'sync_interval': 5, 'misc': {'network_timeout': 5}}
+INFO:__main__:---> 0: Create checkpoint.
+DEBUG:asyncio:Using selector: KqueueSelector
+DEBUG:asyncio:Using selector: KqueueSelector
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<PBFTHandler.synchronize() running at ./node.py:797>>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<PBFTHandler.garbage_collection() running at ./node.py:828>>
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 0
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 0
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 1
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 1
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 2
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 2
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 3
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 3, prepare
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 3
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 4
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 4
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 5
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 5
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 6
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 6
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 7
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 7
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 8
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 8
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 9
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 9
+DEBUG:__main__:make request to 0, receive_ckpt_vote
+DEBUG:__main__:make request to 1, receive_ckpt_vote
+DEBUG:__main__:make request to 2, receive_ckpt_vote
+DEBUG:__main__:make request to 3, receive_ckpt_vote
+INFO:__main__:---> 0: Propose checkpoint with last slot: 9. In addition, current checkpoint's next_slot is: 0
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 10
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 10
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 11
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 11
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 12
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 12
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 13
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 13
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 14
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 14
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 15
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 15
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 16
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 16
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 17
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 17
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 18
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 18
+ERROR:__main__:Send message failed to http://localhost:20001/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 19
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 0, commit
+INFO:__main__:---> 0: receive prepare msg from 0
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 1, commit
+DEBUG:__main__:make request to 2, commit
+DEBUG:__main__:make request to 3, commit
+DEBUG:__main__:make request to 1, prepare
+INFO:__main__:---> 0: receive prepare msg from 1
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 2, prepare
+INFO:__main__:---> 0: receive prepare msg from 2
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+DEBUG:__main__:Add commit certifiacte to slot 19
+DEBUG:__main__:make request to 0, receive_ckpt_vote
+DEBUG:__main__:make request to 1, receive_ckpt_vote
+DEBUG:__main__:make request to 2, receive_ckpt_vote
+DEBUG:__main__:make request to 3, receive_ckpt_vote
+INFO:__main__:---> 0: Propose checkpoint with last slot: 19. In addition, current checkpoint's next_slot is: 0
+ERROR:__main__:Send message failed to http://localhost:20002/reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: receive prepare msg from 3
+INFO:__main__:---> 0: on commit
+DEBUG:__main__:make request to 0, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 0
+DEBUG:__main__:make request to 1, reply
+DEBUG:__main__:make request to 2, reply
+DEBUG:__main__:make request to 3, reply
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 1
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 2
+INFO:__main__:---> 0: on reply
+INFO:__main__:---> 0: receive commit msg from 3
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 20
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 21
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 22
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 23
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 24
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 25
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 26
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 27
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 28
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 29
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 30
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 31
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 32
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 33
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 34
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 35
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 36
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 37
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 38
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 39
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 40
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 41
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 42
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 43
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 44
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 45
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 46
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 47
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 48
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 49
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 50
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 51
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 52
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 53
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 54
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 55
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 56
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 57
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 58
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 59
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 60
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 61
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 62
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 63
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 64
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 65
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 66
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 67
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 68
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 69
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 70
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 71
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 72
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 73
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 74
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 75
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 76
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 77
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 78
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare
+INFO:__main__:---> 0: on request
+INFO:__main__:---> 0: on preprepare, propose at slot: 79
+DEBUG:__main__:make request to 0, prepare
+INFO:__main__:---> 0: receive preprepare msg from 0
+INFO:__main__:---> 0: on prepare
+DEBUG:__main__:make request to 1, prepare
+DEBUG:__main__:make request to 2, prepare
+DEBUG:__main__:make request to 3, prepare

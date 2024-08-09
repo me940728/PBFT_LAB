@@ -1,4 +1,3 @@
-# conda 가상환경 
 import logging
 import argparse
 import yaml
@@ -9,26 +8,30 @@ import aiohttp
 from aiohttp import web
 from random import random
 import hashlib
+
 '''
     작업일 : '24.7.14 ~ 진행중
     작업자 : 최별규
     설명 : 합의 메시지를 보내는 클라이언트 객체
 '''
+
 # 분산시스템의 뷰, 리더를 선출(새롭게 다시 선출하기도 함)
 class View:
     def __init__(self, view_number, num_nodes):
         self._view_number = view_number         # 생성자 0번째 인자 : 현재 뷰의 번호
         self._num_nodes = num_nodes             # 생성자 1번째 인자 : 시스템 내 노드 수
         self._leader = view_number % num_nodes  # 뷰 번호를 전체 노드로 나눈 나머지 ex : 2 % 3 = 2(몫은 0 나머지 2)
+    
     # To encode to json
     def get(self):
         return self._view_number 
+    
     # Recover from json data.
     def set_view(self, view):
         self._view_number = view
         self._leader = view % self._num_nodes # 새로운 리더 선출
 
-# 상태 객체 => 제안(proposal)에 대한 응답 메시지를 기록하고 업데이트하는 역핳
+# 상태 객체 => 제안(proposal)에 대한 응답 메시지를 기록하고 업데이트하는 역할
 class Status:
     # Status 객체의 인스턴스가 생성될 때 초기화하는 메서드(생성자)
     def __init__(self, f):   # 생성자의 0번째 인자는 무조건 self, self는 인스턴스 객체를 참조
@@ -139,7 +142,7 @@ class Client:
     REQUEST = "request" # 요청
     REPLY = "reply"     # 회신
     VIEW_CHANGE_REQUEST = 'view_change_request' # 뷰 변경 요청
-    #=======================================================
+
     # 클라이언트 객체 초기화 메서드
     def __init__(self, conf, args, log): # p1 : yaml 설정 파일, p2 : 명령줄 인자, p3 : log
         self._nodes = conf['nodes'] # 노드들
@@ -207,7 +210,7 @@ class Client:
 
     # 클라이언트가 노드로 합의 메시지를 요청하는 함수
     async def request(self):
-        # 세션이 없으묜 새 세션을 형성
+        # 세션이 없으면 새 세션을 형성
         if not self._session:
             timeout = aiohttp.ClientTimeout(self._resend_interval)
             self._session = aiohttp.ClientSession(timeout = timeout)
@@ -253,8 +256,9 @@ class Client:
                 if is_sent:
                     break
         await self._session.close()
+
 # Client 객체를 실행하는 메인 함수 => 가장 먼저 확인
-def main():
+async def main():
     logging_config()
     log = logging.getLogger()
     args = arg_parse()
@@ -266,24 +270,16 @@ def main():
     
     client = Client(conf, args, log)
 
-    addr = client._address
-    host = addr['host']
-    port = addr['port']
-
-    asyncio.ensure_future(client.request()) # 비동기 작업 수행하도록 예약 (ensure_future는 즉시 실행되지 않고 이벤트 루프에 작업 예약을 함)
+    #asyncio.ensure_future(client.request()) # 비동기 작업 수행하도록 예약 (ensure_future는 즉시 실행되지 않고 이벤트 루프에 작업 예약을 함) => '24.8.9 삭제
+    await client.request()
 
     app = web.Application() # 앱 인스턴스 생성
     app.add_routes([
         web.post('/' + Client.REPLY, client.get_reply), # Client.REPLY 경로에 POST 작업을 수행할 이벤트 핸들러 추가 / 요청 들어오면 client.get_reply 실행
     ])
 
-    web.run_app(app, host=host, port=port, access_log=None) # 웹 앱 실행(이벤트 루프 시작)
-
-    # loop = asyncio.get_event_loop()
-    # loop.run_until_complete(client.request())
+    web.run_app(app, host=addr['host'], port=addr['port'], access_log=None) # 웹 앱 실행(이벤트 루프 시작)
 
 if __name__ == "__main__":
-    main()
-
-            
-    
+    # asyncio.run()으로 메인 비동기 함수 실행
+    asyncio.run(main())
