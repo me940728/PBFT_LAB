@@ -1211,12 +1211,7 @@ def main():
         web.post('/' + PBFTHandler.PREPREPARE, pbft.preprepare),
         web.post('/' + PBFTHandler.PREPARE, pbft.prepare),
         web.post('/' + PBFTHandler.COMMIT, pbft.commit),
-        web.post('/' + PBFTHandler.REPLY, pbft.reply),
-        # 노드의 형평성, 공정성, 최적의 합의 시간을 위한 동적 그룹 계층 구조 재구성하는 부분?
-        web.post('/' + PBFTHandler.RECEIVE_CKPT_VOTE, pbft.receive_ckpt_vote),
-        web.post('/' + PBFTHandler.RECEIVE_SYNC, pbft.receive_sync),
-        web.post('/' + PBFTHandler.VIEW_CHANGE_REQUEST, pbft.get_view_change_request),
-        web.post('/' + PBFTHandler.VIEW_CHANGE_VOTE, pbft.receive_view_change_vote),
+        web.post('/' + PBFTHandler.REPLY, pbft.reply)
         ])
 
     web.run_app(app, host=host, port=port, access_log=None)
