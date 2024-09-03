@@ -1,0 +1,358 @@
+[2024-09-03 16:13:07,305] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:13:07,315] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:13:07,315] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:13:07,316] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:13:07,316] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:13:07,318] [ERROR] - unhandled exception during asyncio.run() shutdown
+task: <Task finished coro=<_run_app() done, defined at /home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py:289> exception=OSError(98, "error while attempting to bind on address ('127.0.0.1', 30001): address already in use")>
+Traceback (most recent call last):
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py", line 516, in run_app
+    loop.run_until_complete(main_task)
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py", line 415, in _run_app
+    await site.start()
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web_runner.py", line 128, in start
+    reuse_port=self._reuse_port,
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/asyncio/base_events.py", line 1389, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 30001): address already in use
+[2024-09-03 16:13:23,110] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:13:23,112] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:13:23,112] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:13:23,113] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:13:23,113] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:15:21,392] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:15:21,393] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:15:21,393] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:15:21,394] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:15:21,394] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:16:41,642] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:16:41,643] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:16:41,643] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:16:41,644] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:16:41,644] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:18:10,874] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:18:10,875] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:18:10,875] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:18:10,876] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:18:10,876] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:18:26,391] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,395] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,398] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,402] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,405] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,406] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,410] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,410] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:26,411] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:26,417] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,420] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,422] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,423] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,425] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,428] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,538] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,543] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,545] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,549] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,550] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,551] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,555] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,555] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:26,555] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:26,560] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,563] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,564] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,565] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,568] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,570] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,605] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,607] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,608] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,611] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,613] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,614] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,617] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,618] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:26,619] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:26,624] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,627] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,628] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,629] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,631] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,634] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,705] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,708] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,709] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,713] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,714] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,715] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,719] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,719] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:26,719] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:26,723] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,725] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,727] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,728] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,730] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,732] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,338] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,341] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,342] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,346] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,347] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,349] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,352] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,353] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:27,353] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:27,357] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,360] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,362] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,363] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,365] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,367] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,380] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,382] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,382] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,385] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,387] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,387] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,390] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,391] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:27,391] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:27,395] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,398] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,399] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,400] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,402] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,405] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,692] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,697] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,698] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,701] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,703] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,704] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,707] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,707] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:27,708] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:27,711] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,714] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,715] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,716] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,719] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,721] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,372] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,375] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,376] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,379] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,381] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,382] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,386] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,386] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:28,386] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:28,387] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,388] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,389] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,390] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,392] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,393] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,394] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,395] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,395] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,396] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,399] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,399] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:28,399] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:28,400] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,403] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,404] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,407] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,408] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,409] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,412] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,414] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,817] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,821] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,823] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,829] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,831] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,833] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,840] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,844] [INFO] - Node 1: Proposing checkpoint with last slot: 9
+[2024-09-03 16:18:28,844] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:18:28,845] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:28,855] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,858] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,860] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,861] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,863] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,865] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:43,197] [INFO] - Node 1: Starting PBFT node
+[2024-09-03 16:20:43,199] [INFO] - Node 1: Create checkpoint
+[2024-09-03 16:20:43,199] [INFO] - Node 1: Initialized PBFT handler.
+[2024-09-03 16:20:43,200] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:20:43,200] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:20:58,218] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,221] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,223] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,228] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,231] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,232] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,236] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,236] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:58,237] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:58,242] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,246] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,248] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,248] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,251] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,253] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,444] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,448] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,449] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,453] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,455] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,456] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,459] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,460] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:58,460] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:20:58,465] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,468] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,469] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,470] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,472] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,475] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,709] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,716] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,718] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,722] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,723] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,724] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,727] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,727] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:58,728] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:58,732] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,735] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,736] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,737] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,739] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,741] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,222] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,227] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,229] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,233] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,235] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,236] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,239] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,239] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:59,240] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:59,243] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,246] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,247] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,248] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,250] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,252] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,302] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,306] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,307] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,311] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,313] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,315] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,318] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,318] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:59,319] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:20:59,322] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,325] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,326] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,327] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,329] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,331] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,841] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,844] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,845] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,848] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,850] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,851] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,854] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,855] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:20:59,855] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:59,859] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,862] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,863] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,864] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,866] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,869] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,243] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,247] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,248] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,251] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,253] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,254] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,257] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,258] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:21:00,258] [INFO] - Node 1: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:21:00,262] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,264] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,266] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,267] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,269] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,272] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,332] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,337] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,339] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,344] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,346] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,347] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,351] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,351] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:21:00,351] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:00,355] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,358] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,359] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,360] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,362] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,364] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,954] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,957] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,958] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,962] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,964] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,965] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,968] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,969] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:21:00,969] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:00,974] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,977] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,979] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,979] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,982] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,984] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:01,518] [INFO] - Node 1: Received PREPARE message from Node 0
+[2024-09-03 16:21:01,522] [INFO] - Node 1: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:01,523] [INFO] - Node 1: Received PREPARE message from Node 1
+[2024-09-03 16:21:01,526] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:01,528] [INFO] - Node 1: Received PREPARE message from Node 2
+[2024-09-03 16:21:01,529] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:01,536] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:01,540] [INFO] - Node 1: Proposing checkpoint with last slot: 9
+[2024-09-03 16:21:01,540] [INFO] - Node 1: Committed decisions to log/1.dump
+[2024-09-03 16:21:01,541] [INFO] - Node 1: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:01,552] [INFO] - Node 1: Received COMMIT message from Node 3
+[2024-09-03 16:21:01,555] [INFO] - Node 1: Received COMMIT message from Node 0
+[2024-09-03 16:21:01,556] [INFO] - Node 1: Received PREPARE message from Node 3
+[2024-09-03 16:21:01,557] [INFO] - Node 1: Received COMMIT message from Node 1
+[2024-09-03 16:21:01,560] [INFO] - Node 1: Received COMMIT message from Node 2
+[2024-09-03 16:21:01,562] [INFO] - Node 1: Received COMMIT message from Node 3

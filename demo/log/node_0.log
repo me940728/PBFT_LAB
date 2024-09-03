@@ -1,0 +1,418 @@
+[2024-09-03 16:13:07,314] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:13:07,316] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:13:07,316] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:13:07,317] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:13:07,317] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:13:07,318] [ERROR] - unhandled exception during asyncio.run() shutdown
+task: <Task finished coro=<_run_app() done, defined at /home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py:289> exception=OSError(98, "error while attempting to bind on address ('127.0.0.1', 30000): address already in use")>
+Traceback (most recent call last):
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py", line 516, in run_app
+    loop.run_until_complete(main_task)
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web.py", line 415, in _run_app
+    await site.start()
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/site-packages/aiohttp/web_runner.py", line 128, in start
+    reuse_port=self._reuse_port,
+  File "/home/k-lab/anaconda3/envs/PBFT/lib/python3.7/asyncio/base_events.py", line 1389, in create_server
+    % (sa, err.strerror.lower())) from None
+OSError: [Errno 98] error while attempting to bind on address ('127.0.0.1', 30000): address already in use
+[2024-09-03 16:13:23,111] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:13:23,113] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:13:23,113] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:13:23,114] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:13:23,114] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:15:21,390] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:15:21,392] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:15:21,392] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:15:21,393] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:15:21,393] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:16:41,641] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:16:41,642] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:16:41,642] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:16:41,643] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:16:41,643] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:18:10,874] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:18:10,875] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:18:10,875] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:18:10,876] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:18:10,876] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:18:26,384] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:26,385] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:26,385] [INFO] - Node 0: Preprepare phase, proposing at slot: 0
+[2024-09-03 16:18:26,388] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,389] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,396] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,401] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,401] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,405] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,409] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,409] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:26,410] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:26,415] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,419] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,420] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,422] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,425] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,427] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,532] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:26,532] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:26,533] [INFO] - Node 0: Preprepare phase, proposing at slot: 1
+[2024-09-03 16:18:26,534] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,536] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,544] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,548] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,548] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,551] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,553] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,553] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:26,554] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:26,559] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,562] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,562] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,565] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,567] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,569] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,602] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:26,602] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:26,602] [INFO] - Node 0: Preprepare phase, proposing at slot: 2
+[2024-09-03 16:18:26,603] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,604] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,608] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,611] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,611] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,613] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,616] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,616] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:26,617] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:26,623] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,626] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,626] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,629] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,631] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,633] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,700] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:26,701] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:26,701] [INFO] - Node 0: Preprepare phase, proposing at slot: 3
+[2024-09-03 16:18:26,702] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:26,703] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:26,709] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:26,712] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:26,712] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,715] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,717] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,717] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:26,718] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:26,722] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:26,725] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:26,725] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:26,727] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:26,730] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:26,732] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,332] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:27,333] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:27,333] [INFO] - Node 0: Preprepare phase, proposing at slot: 4
+[2024-09-03 16:18:27,335] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,336] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,342] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,345] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,345] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,348] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,351] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,351] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:27,352] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:27,356] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,359] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,360] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,362] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,365] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,367] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,379] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:27,379] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:27,379] [INFO] - Node 0: Preprepare phase, proposing at slot: 5
+[2024-09-03 16:18:27,379] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,380] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,382] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,384] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,384] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,387] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,389] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,389] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:27,390] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:27,395] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,397] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,397] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,400] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,402] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,404] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,686] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:27,687] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:27,687] [INFO] - Node 0: Preprepare phase, proposing at slot: 6
+[2024-09-03 16:18:27,689] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:27,690] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:27,697] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:27,700] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:27,701] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,703] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,706] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,706] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:27,707] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:27,711] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:27,713] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:27,714] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:27,716] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:27,718] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:27,720] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,367] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:28,368] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:28,368] [INFO] - Node 0: Preprepare phase, proposing at slot: 7
+[2024-09-03 16:18:28,369] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,370] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,375] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,379] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,379] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,382] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,384] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,384] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:28,385] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:28,386] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:28,386] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:28,386] [INFO] - Node 0: Preprepare phase, proposing at slot: 8
+[2024-09-03 16:18:28,386] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,386] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,389] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,390] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,391] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,392] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,392] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,393] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,394] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,396] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,397] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,398] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:28,398] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:18:28,399] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,403] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,404] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,406] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,406] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,409] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,411] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,414] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,811] [INFO] - Node 0: Received request from client
+[2024-09-03 16:18:28,812] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:18:28,812] [INFO] - Node 0: Preprepare phase, proposing at slot: 9
+[2024-09-03 16:18:28,813] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:18:28,815] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:18:28,822] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:18:28,828] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:18:28,828] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,832] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,835] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,838] [INFO] - Node 0: Proposing checkpoint with last slot: 9
+[2024-09-03 16:18:28,839] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:18:28,839] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:18:28,855] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:18:28,857] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:18:28,858] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:18:28,860] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:18:28,863] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:18:28,865] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:43,196] [INFO] - Node 0: Starting PBFT node
+[2024-09-03 16:20:43,198] [INFO] - Node 0: Create checkpoint
+[2024-09-03 16:20:43,198] [INFO] - Node 0: Initialized PBFT handler.
+[2024-09-03 16:20:43,199] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.synchronize() running at ./node.py:658>>
+[2024-09-03 16:20:43,199] [ERROR] - Task was destroyed but it is pending!
+task: <Task pending coro=<PBFTHandler.garbage_collection() running at ./node.py:673>>
+[2024-09-03 16:20:58,214] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:58,215] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:58,215] [INFO] - Node 0: Preprepare phase, proposing at slot: 0
+[2024-09-03 16:20:58,216] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,216] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,222] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,227] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,228] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,231] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,234] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,234] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:58,235] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:58,241] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,245] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,246] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,248] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,250] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,253] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,439] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:58,440] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:58,440] [INFO] - Node 0: Preprepare phase, proposing at slot: 1
+[2024-09-03 16:20:58,442] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,443] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,449] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,452] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,453] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,455] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,458] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,458] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:58,459] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:20:58,465] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,467] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,467] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,470] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,472] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,474] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,702] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:58,703] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:58,703] [INFO] - Node 0: Preprepare phase, proposing at slot: 2
+[2024-09-03 16:20:58,705] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:58,707] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:58,717] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:58,721] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:58,721] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,723] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,726] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,726] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:58,726] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:58,731] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:58,734] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:58,734] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:58,737] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:58,739] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:58,741] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,216] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:59,216] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:59,216] [INFO] - Node 0: Preprepare phase, proposing at slot: 3
+[2024-09-03 16:20:59,218] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,220] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,228] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,232] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,233] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,235] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,238] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,238] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:59,238] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:59,243] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,245] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,245] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,247] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,250] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,252] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,296] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:59,296] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:59,296] [INFO] - Node 0: Preprepare phase, proposing at slot: 4
+[2024-09-03 16:20:59,298] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,300] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,306] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,310] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,311] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,314] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,317] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,317] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:59,318] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:20:59,322] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,324] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,324] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,327] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,329] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,331] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,835] [INFO] - Node 0: Received request from client
+[2024-09-03 16:20:59,836] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:20:59,836] [INFO] - Node 0: Preprepare phase, proposing at slot: 5
+[2024-09-03 16:20:59,838] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:20:59,839] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:20:59,845] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:20:59,848] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:20:59,848] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,850] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,853] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,853] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:20:59,854] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:20:59,858] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:20:59,861] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:20:59,861] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:20:59,863] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:20:59,866] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:20:59,868] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,237] [INFO] - Node 0: Received request from client
+[2024-09-03 16:21:00,237] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:21:00,237] [INFO] - Node 0: Preprepare phase, proposing at slot: 6
+[2024-09-03 16:21:00,239] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,241] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,247] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,251] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,251] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,254] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,256] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,256] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:21:00,257] [INFO] - Node 0: Successfully replied to client at http://localhost:20001/reply
+[2024-09-03 16:21:00,261] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,264] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,264] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,267] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,269] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,271] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,327] [INFO] - Node 0: Received request from client
+[2024-09-03 16:21:00,327] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:21:00,327] [INFO] - Node 0: Preprepare phase, proposing at slot: 7
+[2024-09-03 16:21:00,329] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,331] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,338] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,343] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,344] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,347] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,349] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,349] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:21:00,350] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:00,355] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,357] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,357] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,360] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,362] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,364] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,949] [INFO] - Node 0: Received request from client
+[2024-09-03 16:21:00,950] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:21:00,950] [INFO] - Node 0: Preprepare phase, proposing at slot: 8
+[2024-09-03 16:21:00,952] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:00,953] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:21:00,958] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:21:00,961] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:21:00,961] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,965] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,967] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,967] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:21:00,968] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:00,973] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:00,976] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:21:00,976] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:00,979] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:00,981] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:00,983] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:01,513] [INFO] - Node 0: Received request from client
+[2024-09-03 16:21:01,514] [INFO] - Node 0: Processing request as leader
+[2024-09-03 16:21:01,514] [INFO] - Node 0: Preprepare phase, proposing at slot: 9
+[2024-09-03 16:21:01,516] [INFO] - Node 0: Received PRE-PREPARE message from Node 0
+[2024-09-03 16:21:01,517] [INFO] - Node 0: Received PREPARE message from Node 0
+[2024-09-03 16:21:01,523] [INFO] - Node 0: Received PREPARE message from Node 1
+[2024-09-03 16:21:01,525] [INFO] - Node 0: Received PREPARE message from Node 2
+[2024-09-03 16:21:01,526] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:01,528] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:01,531] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:01,534] [INFO] - Node 0: Proposing checkpoint with last slot: 9
+[2024-09-03 16:21:01,534] [INFO] - Node 0: Committed decisions to log/0.dump
+[2024-09-03 16:21:01,535] [INFO] - Node 0: Successfully replied to client at http://localhost:20002/reply
+[2024-09-03 16:21:01,551] [INFO] - Node 0: Received COMMIT message from Node 3
+[2024-09-03 16:21:01,554] [INFO] - Node 0: Received PREPARE message from Node 3
+[2024-09-03 16:21:01,554] [INFO] - Node 0: Received COMMIT message from Node 0
+[2024-09-03 16:21:01,557] [INFO] - Node 0: Received COMMIT message from Node 1
+[2024-09-03 16:21:01,559] [INFO] - Node 0: Received COMMIT message from Node 2
+[2024-09-03 16:21:01,562] [INFO] - Node 0: Received COMMIT message from Node 3
