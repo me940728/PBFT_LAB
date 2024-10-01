@@ -1,0 +1,16 @@
+2024-10-01 15:52:26,173 Received distance request from client at (36.6261519, 127.4590123)
+2024-10-01 15:52:26,174 client:20001 -> drone:30000 0.00m, altitude: 0m
+2024-10-01 15:52:26,174 client:20001 -> drone:30001 39.59m, altitude: 0m
+2024-10-01 15:52:26,174 client:20001 -> drone:30002 29.05m, altitude: 0m
+2024-10-01 15:52:26,174 client:20001 -> drone:30003 211.69m, altitude: 0m
+2024-10-01 15:52:26,174 client:20001 -> drone:30004 229.29m, altitude: 0m
+2024-10-01 15:52:26,174 client:20001 -> drone:30005 251.55m, altitude: 0m
+2024-10-01 15:52:26,175 127.0.0.1 [01/Oct/2024:06:52:26 +0000] "POST /get/distance HTTP/1.1" 200 619 "-" "curl/7.84.0"
+2024-10-01 15:54:08,039 Received distance request from client at (36.6264133, 127.4582464)
+2024-10-01 15:54:08,040 client:20001 -> drone:30000 74.39m, altitude: 0m
+2024-10-01 15:54:08,040 client:20001 -> drone:30001 112.51m, altitude: 0m
+2024-10-01 15:54:08,040 client:20001 -> drone:30002 103.18m, altitude: 0m
+2024-10-01 15:54:08,040 client:20001 -> drone:30003 280.92m, altitude: 0m
+2024-10-01 15:54:08,040 client:20001 -> drone:30004 300.68m, altitude: 0m
+2024-10-01 15:54:08,040 client:20001 -> drone:30005 319.86m, altitude: 0m
+2024-10-01 15:54:08,041 127.0.0.1 [01/Oct/2024:06:54:08 +0000] "POST /get/distance HTTP/1.1" 200 635 "-" "curl/7.84.0"

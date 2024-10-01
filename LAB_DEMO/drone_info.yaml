@@ -1,0 +1,39 @@
+drones:
+# G-1
+    - host: localhost
+      port: 30000
+      latitude: 36.6261519
+      longitude: 127.4590123
+      altitude: 0
+    - host: localhost
+      port: 30001
+      latitude: 36.6261296
+      longitude: 127.459454
+      altitude: 0
+    - host: localhost
+      port: 30002
+      latitude: 36.6260123
+      longitude: 127.4592871
+      altitude: 0
+# G-2
+    - host: localhost
+      port: 30003
+      latitude: 36.6262161
+      longitude: 127.4613776
+      altitude: 0
+    - host: localhost
+      port: 30004
+      latitude: 36.6260012
+      longitude: 127.4615689
+      altitude: 0
+    - host: localhost
+      port: 30005
+      latitude: 36.6262915
+      longitude: 127.4618193
+      altitude: 0
+# 
+    - host: localhost
+      port: 20001
+      latitude: 36.6264133
+      longitude: 127.4582464
+      altitude: 0
