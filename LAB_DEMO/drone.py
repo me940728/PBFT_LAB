@@ -7,7 +7,12 @@ from geopy.distance import geodesic
 import os
 import logging
 from datetime import datetime
-
+'''
+합의 Request 예시
+curl -X POST http://localhost:20001/get/distance \
+-H "Content-Type: application/json" \
+-d '{"latitude":36.6261519,"longitude":127.4590123, "altitude":100}'
+'''
 # YAML 파일에서 노드 정보를 읽어오기
 def load_config(yaml_file):
     with open(yaml_file, 'r') as file:
@@ -27,7 +32,7 @@ class PBFTHandler:
     PRE_REQUEST = 'distance'
 
     def __init__(self, node, nodes, session):
-        self.node = node  # 현재 드론의 정보
+        self.node = node    # 현재 드론의 정보
         self.nodes = nodes  # 전체 드론 리스트
         self.session = session  # aiohttp 세션 재사용
 
@@ -37,11 +42,12 @@ class PBFTHandler:
             data = await request.json()
             client_latitude = data['latitude']
             client_longitude = data['longitude']
+            client_altitude = data['altitude']
 
-            logging.info(f"Received distance request from client at ({client_latitude}, {client_longitude})")
+            logging.info(f"Received distance request from client at ({client_latitude}, {client_longitude}, {client_altitude})")
 
             # 자신을 제외한 다른 드론들에게 거리 요청
-            distances = await self.request_distances_from_other_drones(client_latitude, client_longitude)
+            distances = await self.request_distances_from_other_drones(client_latitude, client_longitude, client_altitude)
 
             # 응답 반환
             return web.json_response({'status': 'Distances processed and logged', 'distances': distances})
@@ -62,9 +68,9 @@ class PBFTHandler:
             logging.error(f"Error retrieving distance from {target_node['host']}:{target_node['port']} - {str(e)}")
             return None
 
-    async def request_distances_from_other_drones(self, client_latitude, client_longitude):
-        tasks = []
-        client_coords = (client_latitude, client_longitude)
+    async def request_distances_from_other_drones(self, client_latitude, client_longitude, client_altitude):
+        tasks = []  # 비동기 요청들을 담을 리스트
+        client_coords = (client_latitude, client_longitude, client_altitude)  # 클라이언트의 위치 정보 포함
         for target_node in self.nodes:
             if target_node != self.node:  # 자신을 제외한 다른 노드들에게 요청
                 tasks.append(self.handle_request(target_node, client_coords))
@@ -74,15 +80,22 @@ class PBFTHandler:
         for i, res in enumerate(responses):
             if res:
                 # 거리 계산 후 로그에 기록
-                drone_coords = (res['latitude'], res['longitude'])
-                distance = geodesic(client_coords, drone_coords).meters
-                distances.append({'drone_port': self.nodes[i]['port'], 'distance': distance, 'altitude': res['altitude']})
+                drone_coords = (res['latitude'], res['longitude'], res['altitude'])
+                distance = geodesic((client_coords[0], client_coords[1]), (drone_coords[0], drone_coords[1])).meters
 
-                # 로그에 기록
+                # 고도 차이 고려한 실제 거리 계산 (3차원 거리)
+                altitude_difference = abs(client_coords[2] - drone_coords[2])
+                distance_3d = (distance**2 + altitude_difference**2)**0.5  # 피타고라스 정리
+
+                distances.append({'drone_port': self.nodes[i]['port'], 'distance': distance_3d, 'altitude': res['altitude']})
+
+                # 응답받은 드론의 위치 정보를 그대로 로그에 기록
                 client_port = self.node['port']
                 drone_port = self.nodes[i]['port']
-                logging.info(f"client:{client_port} -> drone:{drone_port} {distance:.2f}m, altitude: {res['altitude']}m")
-
+                logging.info(
+                    f"client:{client_port} -> drone:{drone_port} {distance_3d:.2f}m, "
+                    f"altitude: {res['altitude']}m, lat: {res['latitude']}, lon: {res['longitude']}"
+                )
         return distances
 
 # main 함수

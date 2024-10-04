@@ -14,3 +14,29 @@
 2024-10-01 15:54:08,040 client:20001 -> drone:30004 300.68m, altitude: 0m
 2024-10-01 15:54:08,040 client:20001 -> drone:30005 319.86m, altitude: 0m
 2024-10-01 15:54:08,041 127.0.0.1 [01/Oct/2024:06:54:08 +0000] "POST /get/distance HTTP/1.1" 200 635 "-" "curl/7.84.0"
+2024-10-04 19:35:31,900 Received distance request from client at (36.6264133, 127.4582464)
+2024-10-04 19:35:31,901 client:20001 -> drone:30000 74.39m, altitude: 0m
+2024-10-04 19:35:31,901 client:20001 -> drone:30001 112.51m, altitude: 0m
+2024-10-04 19:35:31,901 client:20001 -> drone:30002 103.18m, altitude: 0m
+2024-10-04 19:35:31,901 client:20001 -> drone:30003 280.92m, altitude: 0m
+2024-10-04 19:35:31,901 client:20001 -> drone:30004 300.68m, altitude: 0m
+2024-10-04 19:35:31,901 client:20001 -> drone:30005 319.86m, altitude: 0m
+2024-10-04 19:35:31,901 127.0.0.1 [04/Oct/2024:19:35:31 +0900] "POST /get/distance HTTP/1.1" 200 633 "-" "curl/7.86.0"
+2024-10-04 20:13:19,917 Error handling distance request: 'altitude'
+2024-10-04 20:13:19,918 127.0.0.1 [04/Oct/2024:20:13:19 +0900] "POST /get/distance HTTP/1.1" 500 199 "-" "curl/7.86.0"
+2024-10-04 20:14:40,257 Received distance request from client at (36.6261519, 127.4590123, 100)
+2024-10-04 20:14:40,258 client:20001 -> drone:30000 100.00m, altitude: 0m
+2024-10-04 20:14:40,258 client:20001 -> drone:30001 107.55m, altitude: 0m
+2024-10-04 20:14:40,259 client:20001 -> drone:30002 104.14m, altitude: 0m
+2024-10-04 20:14:40,259 client:20001 -> drone:30003 234.12m, altitude: 0m
+2024-10-04 20:14:40,259 client:20001 -> drone:30004 250.15m, altitude: 0m
+2024-10-04 20:14:40,259 client:20001 -> drone:30005 270.70m, altitude: 0m
+2024-10-04 20:14:40,260 127.0.0.1 [04/Oct/2024:20:14:40 +0900] "POST /get/distance HTTP/1.1" 200 622 "-" "curl/7.86.0"
+2024-10-04 20:20:45,026 Received distance request from client at (36.6261519, 127.4590123, 100)
+2024-10-04 20:20:45,026 client:20001 -> drone:30000 100.00m, altitude: 0m, lat: 36.6261519, lon: 127.4590123
+2024-10-04 20:20:45,027 client:20001 -> drone:30001 107.55m, altitude: 0m, lat: 36.6261296, lon: 127.459454
+2024-10-04 20:20:45,027 client:20001 -> drone:30002 104.14m, altitude: 0m, lat: 36.6260123, lon: 127.4592871
+2024-10-04 20:20:45,027 client:20001 -> drone:30003 234.12m, altitude: 0m, lat: 36.6262161, lon: 127.4613776
+2024-10-04 20:20:45,027 client:20001 -> drone:30004 250.15m, altitude: 0m, lat: 36.6260012, lon: 127.4615689
+2024-10-04 20:20:45,028 client:20001 -> drone:30005 270.70m, altitude: 0m, lat: 36.6262915, lon: 127.4618193
+2024-10-04 20:20:45,028 127.0.0.1 [04/Oct/2024:20:20:45 +0900] "POST /get/distance HTTP/1.1" 200 622 "-" "curl/7.86.0"
