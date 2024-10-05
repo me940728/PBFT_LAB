@@ -9,7 +9,7 @@ import logging
 from datetime import datetime
 '''
 합의 Request 예시
-curl -X POST http://localhost:20001/get/distance \
+curl -X POST http://localhost:20001/pre-request/distance \
 -H "Content-Type: application/json" \
 -d '{"latitude":36.6261519,"longitude":127.4590123, "altitude":100}'
 '''
@@ -27,27 +27,31 @@ def setup_logging(drone_index):
     log_file = os.path.join(LOG_DIR, f'drone_{drone_index}_log.txt')
     logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s %(message)s')
 
-# PBFTHandler 클래스
-class PBFTHandler:
-    PRE_REQUEST = 'distance'
+class LLAPBFTHandler:
+    # 드론들에게 보내는 요청과 응답 상수
+    PRE_REQUEST = 'distance-request'    # 거리 요청을 의미하는 상수
+    DISTANCE_RES = 'distance-response'  # 거리 응답을 의미하는 상수
 
-    def __init__(self, node, nodes, session):
+    def __init__(self, index, node, nodes, session):
+        self.index = index  # 고유 아이디(run시 부여)
         self.node = node    # 현재 드론의 정보
         self.nodes = nodes  # 전체 드론 리스트
         self.session = session  # aiohttp 세션 재사용
-
+        
+    # 합의를 요청 시작 전 사전 요청(거리 계산 후 그룹)하는 함수
     async def get_distance(self, request):
         # 클라이언트가 다른 드론들에게 거리 요청을 보내는 역할
         try:
             data = await request.json()
+            client_num = self.index
             client_latitude = data['latitude']
             client_longitude = data['longitude']
             client_altitude = data['altitude']
 
-            logging.info(f"Received distance request from client at ({client_latitude}, {client_longitude}, {client_altitude})")
+            logging.info(f"[Client]Received distance request from client at ({client_num}, {client_latitude}, {client_longitude}, {client_altitude})")
 
             # 자신을 제외한 다른 드론들에게 거리 요청
-            distances = await self.request_distances_from_other_drones(client_latitude, client_longitude, client_altitude)
+            distances = await self.request_distances_from_other_drones(client_num, client_latitude, client_longitude, client_altitude)
 
             # 응답 반환
             return web.json_response({'status': 'Distances processed and logged', 'distances': distances})
@@ -56,10 +60,11 @@ class PBFTHandler:
             logging.error(f"Error handling distance request: {str(e)}")
             return web.json_response({'error': str(e)}, status=500)
 
-    async def handle_request(self, target_node, client_coords):
+    async def handle_request(self, client_num, target_node, client_coords):
         # 각 드론에게 위치 정보를 요청
         try:
             return {
+                'client_num' : client_num,
                 'latitude': target_node['latitude'],
                 'longitude': target_node['longitude'],
                 'altitude': target_node['altitude']
@@ -68,12 +73,12 @@ class PBFTHandler:
             logging.error(f"Error retrieving distance from {target_node['host']}:{target_node['port']} - {str(e)}")
             return None
 
-    async def request_distances_from_other_drones(self, client_latitude, client_longitude, client_altitude):
+    async def request_distances_from_other_drones(self, client_num, client_latitude, client_longitude, client_altitude):
         tasks = []  # 비동기 요청들을 담을 리스트
-        client_coords = (client_latitude, client_longitude, client_altitude)  # 클라이언트의 위치 정보 포함
+        client_coords = (client_latitude, client_longitude, client_altitude)  # 클라이언트의 위치 정보 포함 coordinates
         for target_node in self.nodes:
             if target_node != self.node:  # 자신을 제외한 다른 노드들에게 요청
-                tasks.append(self.handle_request(target_node, client_coords))
+                tasks.append(self.handle_request(client_num, target_node, client_coords))
 
         responses = await asyncio.gather(*tasks)
         distances = []
@@ -85,7 +90,7 @@ class PBFTHandler:
 
                 # 고도 차이 고려한 실제 거리 계산 (3차원 거리)
                 altitude_difference = abs(client_coords[2] - drone_coords[2])
-                distance_3d = (distance**2 + altitude_difference**2)**0.5  # 피타고라스 정리
+                distance_3d = (distance**2 + altitude_difference**2)**0.5  # 유클리드 거리 d : 평면 거리, h : 높이 3d = (d^2 + h^2의 루트)
 
                 distances.append({'drone_port': self.nodes[i]['port'], 'distance': distance_3d, 'altitude': res['altitude']})
 
@@ -123,18 +128,20 @@ async def main():
     # aiohttp 세션 생성
     async with aiohttp.ClientSession() as session:
         # PBFTHandler 객체 생성
-        pbft = PBFTHandler(node, nodes, session)
+        pbft = LLAPBFTHandler(index, node, nodes, session)
 
         # 웹 애플리케이션 생성
         app = web.Application()
         app.add_routes([
-            web.post('/get/' + PBFTHandler.PRE_REQUEST, pbft.get_distance),  # /get/distance로 POST 요청 처리
+            web.post('/pre-request/' + LLAPBFTHandler.PRE_REQUEST, pbft.get_distance),  # 클라이언트 제외 모든 드론에게 위치 정보 요청
+            web.post('/pre-request/' + LLAPBFTHandler.DISTANCE_RES, pbft.respond_distance),  # 클라이언트에게 자신의 위치를 응답
         ])
 
         # 웹 애플리케이션 실행
         host = node['host']
         port = node['port']
-
+        print(f"[run] =======> index : {index} / host : {host} / port : {port}")
+        
         try:
             runner = web.AppRunner(app)
             await runner.setup()

@@ -31,7 +31,7 @@ drones:
       latitude: 36.6262915
       longitude: 127.4618193
       altitude: 14
-# 
+# client
     - host: localhost
       port: 20001
       latitude: 36.6264133
