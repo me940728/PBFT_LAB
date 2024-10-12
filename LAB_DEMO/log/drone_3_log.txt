@@ -19,3 +19,279 @@
 2024-10-10 20:38:06,497 Latency for response: 0.0001253333s
 2024-10-10 20:38:06,497 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
 2024-10-10 20:38:06,497 ::1 [10/Oct/2024:20:38:06 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 16:32:58,770 Received distance-request from client for sequence 1
+2024-10-12 16:32:58,771 Latency for response: 0.0001253333s
+2024-10-12 16:32:58,772 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 16:32:58,772 127.0.0.1 [12/Oct/2024:16:32:58 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 16:48:31,093 Received distance-request from client for sequence 1
+2024-10-12 16:48:31,094 Latency for response: 0.0001253333s
+2024-10-12 16:48:31,094 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 16:48:31,094 127.0.0.1 [12/Oct/2024:16:48:31 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 16:57:33,393 Received distance-request from client for sequence 1
+2024-10-12 16:57:33,393 Latency for response: 0.0001253333s
+2024-10-12 16:57:33,394 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 16:57:33,394 127.0.0.1 [12/Oct/2024:16:57:33 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:03:11,422 Received distance-request from client for sequence 2
+2024-10-12 17:03:11,422 Latency for response: 0.0001253333s
+2024-10-12 17:03:11,422 Responding to client with {'seq': 2, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:03:11,423 127.0.0.1 [12/Oct/2024:17:03:11 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:51:56,144 Received distance-request from client for sequence 1
+2024-10-12 17:51:56,144 Latency for response: 0.0001253333s
+2024-10-12 17:51:56,144 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:51:56,145 127.0.0.1 [12/Oct/2024:17:51:56 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:52:33,440 Received distance-request from client for sequence 1
+2024-10-12 17:52:33,441 Latency for response: 0.0001253333s
+2024-10-12 17:52:33,441 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:52:33,441 127.0.0.1 [12/Oct/2024:17:52:33 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:55:37,136 Error running web app: [Errno 48] error while attempting to bind on address ('::1', 30003, 0, 0): address already in use
+2024-10-12 17:55:50,092 Received distance-request from client for sequence 1
+2024-10-12 17:55:50,092 Latency for response: 0.0001253333s
+2024-10-12 17:55:50,092 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:55:50,093 127.0.0.1 [12/Oct/2024:17:55:50 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:55:56,095 Received distance-request from client for sequence 2
+2024-10-12 17:55:56,096 Latency for response: 0.0001253333s
+2024-10-12 17:55:56,097 Responding to client with {'seq': 2, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:55:56,097 127.0.0.1 [12/Oct/2024:17:55:56 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:02,100 Received distance-request from client for sequence 3
+2024-10-12 17:56:02,101 Latency for response: 0.0001253333s
+2024-10-12 17:56:02,101 Responding to client with {'seq': 3, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:02,102 127.0.0.1 [12/Oct/2024:17:56:02 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:08,106 Received distance-request from client for sequence 4
+2024-10-12 17:56:08,107 Latency for response: 0.0001253333s
+2024-10-12 17:56:08,108 Responding to client with {'seq': 4, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:08,109 127.0.0.1 [12/Oct/2024:17:56:08 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:14,111 Received distance-request from client for sequence 5
+2024-10-12 17:56:14,112 Latency for response: 0.0001253333s
+2024-10-12 17:56:14,114 Responding to client with {'seq': 5, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:14,114 127.0.0.1 [12/Oct/2024:17:56:14 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:20,114 Received distance-request from client for sequence 6
+2024-10-12 17:56:20,115 Latency for response: 0.0001253333s
+2024-10-12 17:56:20,116 Responding to client with {'seq': 6, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:20,117 127.0.0.1 [12/Oct/2024:17:56:20 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:26,120 Received distance-request from client for sequence 7
+2024-10-12 17:56:26,122 Latency for response: 0.0001253333s
+2024-10-12 17:56:26,123 Responding to client with {'seq': 7, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:26,123 127.0.0.1 [12/Oct/2024:17:56:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:32,125 Received distance-request from client for sequence 8
+2024-10-12 17:56:32,126 Latency for response: 0.0001253333s
+2024-10-12 17:56:32,127 Responding to client with {'seq': 8, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:32,128 127.0.0.1 [12/Oct/2024:17:56:32 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:38,131 Received distance-request from client for sequence 9
+2024-10-12 17:56:38,132 Latency for response: 0.0001253333s
+2024-10-12 17:56:38,134 Responding to client with {'seq': 9, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:38,135 127.0.0.1 [12/Oct/2024:17:56:38 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:44,134 Received distance-request from client for sequence 10
+2024-10-12 17:56:44,135 Latency for response: 0.0001266667s
+2024-10-12 17:56:44,137 Responding to client with {'seq': 10, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:44,138 127.0.0.1 [12/Oct/2024:17:56:44 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:50,139 Received distance-request from client for sequence 11
+2024-10-12 17:56:50,140 Latency for response: 0.0001266667s
+2024-10-12 17:56:50,141 Responding to client with {'seq': 11, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:50,142 127.0.0.1 [12/Oct/2024:17:56:50 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:56:56,144 Received distance-request from client for sequence 12
+2024-10-12 17:56:56,145 Latency for response: 0.0001266667s
+2024-10-12 17:56:56,147 Responding to client with {'seq': 12, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:56:56,147 127.0.0.1 [12/Oct/2024:17:56:56 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:02,146 Received distance-request from client for sequence 13
+2024-10-12 17:57:02,147 Latency for response: 0.0001266667s
+2024-10-12 17:57:02,148 Responding to client with {'seq': 13, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:02,149 127.0.0.1 [12/Oct/2024:17:57:02 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:08,155 Received distance-request from client for sequence 14
+2024-10-12 17:57:08,156 Latency for response: 0.0001266667s
+2024-10-12 17:57:08,157 Responding to client with {'seq': 14, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:08,157 127.0.0.1 [12/Oct/2024:17:57:08 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:14,156 Received distance-request from client for sequence 15
+2024-10-12 17:57:14,158 Latency for response: 0.0001266667s
+2024-10-12 17:57:14,159 Responding to client with {'seq': 15, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:14,160 127.0.0.1 [12/Oct/2024:17:57:14 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:20,162 Received distance-request from client for sequence 16
+2024-10-12 17:57:20,163 Latency for response: 0.0001266667s
+2024-10-12 17:57:20,164 Responding to client with {'seq': 16, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:20,165 127.0.0.1 [12/Oct/2024:17:57:20 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:26,167 Received distance-request from client for sequence 17
+2024-10-12 17:57:26,168 Latency for response: 0.0001266667s
+2024-10-12 17:57:26,169 Responding to client with {'seq': 17, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:26,170 127.0.0.1 [12/Oct/2024:17:57:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:32,174 Received distance-request from client for sequence 18
+2024-10-12 17:57:32,175 Latency for response: 0.0001266667s
+2024-10-12 17:57:32,176 Responding to client with {'seq': 18, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:32,177 127.0.0.1 [12/Oct/2024:17:57:32 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:38,177 Received distance-request from client for sequence 19
+2024-10-12 17:57:38,178 Latency for response: 0.0001266667s
+2024-10-12 17:57:38,180 Responding to client with {'seq': 19, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:38,180 127.0.0.1 [12/Oct/2024:17:57:38 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:44,182 Received distance-request from client for sequence 20
+2024-10-12 17:57:44,184 Latency for response: 0.0001266667s
+2024-10-12 17:57:44,185 Responding to client with {'seq': 20, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:44,186 127.0.0.1 [12/Oct/2024:17:57:44 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:50,188 Received distance-request from client for sequence 21
+2024-10-12 17:57:50,189 Latency for response: 0.0001266667s
+2024-10-12 17:57:50,190 Responding to client with {'seq': 21, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:50,191 127.0.0.1 [12/Oct/2024:17:57:50 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:57:56,193 Received distance-request from client for sequence 22
+2024-10-12 17:57:56,194 Latency for response: 0.0001266667s
+2024-10-12 17:57:56,196 Responding to client with {'seq': 22, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:57:56,196 127.0.0.1 [12/Oct/2024:17:57:56 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:02,198 Received distance-request from client for sequence 23
+2024-10-12 17:58:02,199 Latency for response: 0.0001266667s
+2024-10-12 17:58:02,200 Responding to client with {'seq': 23, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:02,201 127.0.0.1 [12/Oct/2024:17:58:02 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:08,204 Received distance-request from client for sequence 24
+2024-10-12 17:58:08,205 Latency for response: 0.0001266667s
+2024-10-12 17:58:08,206 Responding to client with {'seq': 24, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:08,207 127.0.0.1 [12/Oct/2024:17:58:08 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:14,209 Received distance-request from client for sequence 25
+2024-10-12 17:58:14,210 Latency for response: 0.0001266667s
+2024-10-12 17:58:14,211 Responding to client with {'seq': 25, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:14,212 127.0.0.1 [12/Oct/2024:17:58:14 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:20,214 Received distance-request from client for sequence 26
+2024-10-12 17:58:20,215 Latency for response: 0.0001266667s
+2024-10-12 17:58:20,216 Responding to client with {'seq': 26, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:20,217 127.0.0.1 [12/Oct/2024:17:58:20 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:26,219 Received distance-request from client for sequence 27
+2024-10-12 17:58:26,220 Latency for response: 0.0001266667s
+2024-10-12 17:58:26,222 Responding to client with {'seq': 27, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:26,222 127.0.0.1 [12/Oct/2024:17:58:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:32,225 Received distance-request from client for sequence 28
+2024-10-12 17:58:32,226 Latency for response: 0.0001266667s
+2024-10-12 17:58:32,227 Responding to client with {'seq': 28, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:32,227 127.0.0.1 [12/Oct/2024:17:58:32 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:38,230 Received distance-request from client for sequence 29
+2024-10-12 17:58:38,231 Latency for response: 0.0001266667s
+2024-10-12 17:58:38,232 Responding to client with {'seq': 29, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:38,232 127.0.0.1 [12/Oct/2024:17:58:38 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:44,232 Received distance-request from client for sequence 30
+2024-10-12 17:58:44,233 Latency for response: 0.0001266667s
+2024-10-12 17:58:44,234 Responding to client with {'seq': 30, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:44,235 127.0.0.1 [12/Oct/2024:17:58:44 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:50,240 Received distance-request from client for sequence 31
+2024-10-12 17:58:50,242 Latency for response: 0.0001266667s
+2024-10-12 17:58:50,243 Responding to client with {'seq': 31, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:50,243 127.0.0.1 [12/Oct/2024:17:58:50 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:58:56,241 Received distance-request from client for sequence 32
+2024-10-12 17:58:56,242 Latency for response: 0.0001266667s
+2024-10-12 17:58:56,243 Responding to client with {'seq': 32, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:58:56,243 127.0.0.1 [12/Oct/2024:17:58:56 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:02,248 Received distance-request from client for sequence 33
+2024-10-12 17:59:02,250 Latency for response: 0.0001266667s
+2024-10-12 17:59:02,251 Responding to client with {'seq': 33, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:02,251 127.0.0.1 [12/Oct/2024:17:59:02 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:08,253 Received distance-request from client for sequence 34
+2024-10-12 17:59:08,254 Latency for response: 0.0001266667s
+2024-10-12 17:59:08,256 Responding to client with {'seq': 34, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:08,257 127.0.0.1 [12/Oct/2024:17:59:08 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:14,255 Received distance-request from client for sequence 35
+2024-10-12 17:59:14,255 Latency for response: 0.0001266667s
+2024-10-12 17:59:14,257 Responding to client with {'seq': 35, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:14,258 127.0.0.1 [12/Oct/2024:17:59:14 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:20,263 Received distance-request from client for sequence 36
+2024-10-12 17:59:20,264 Latency for response: 0.0001266667s
+2024-10-12 17:59:20,265 Responding to client with {'seq': 36, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:20,266 127.0.0.1 [12/Oct/2024:17:59:20 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:26,268 Received distance-request from client for sequence 37
+2024-10-12 17:59:26,269 Latency for response: 0.0001266667s
+2024-10-12 17:59:26,270 Responding to client with {'seq': 37, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:26,271 127.0.0.1 [12/Oct/2024:17:59:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 17:59:32,272 Received distance-request from client for sequence 38
+2024-10-12 17:59:32,273 Latency for response: 0.0001266667s
+2024-10-12 17:59:32,274 Responding to client with {'seq': 38, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 17:59:32,274 127.0.0.1 [12/Oct/2024:17:59:32 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 246 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:01:24,844 Received distance-request from client for sequence 1
+2024-10-12 18:01:24,845 Latency for response: 0.0001253333s
+2024-10-12 18:01:24,845 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:01:24,846 ::1 [12/Oct/2024:18:01:24 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:01:30,849 Received distance-request from client for sequence 2
+2024-10-12 18:01:30,850 Latency for response: 0.0001253333s
+2024-10-12 18:01:30,851 Responding to client with {'seq': 2, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:01:30,852 ::1 [12/Oct/2024:18:01:30 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:01:36,856 Received distance-request from client for sequence 3
+2024-10-12 18:01:36,857 Latency for response: 0.0001253333s
+2024-10-12 18:01:36,858 Responding to client with {'seq': 3, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:01:36,858 ::1 [12/Oct/2024:18:01:36 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:01:42,859 Received distance-request from client for sequence 4
+2024-10-12 18:01:42,859 Latency for response: 0.0001253333s
+2024-10-12 18:01:42,861 Responding to client with {'seq': 4, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:01:42,861 ::1 [12/Oct/2024:18:01:42 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:01:48,864 Received distance-request from client for sequence 5
+2024-10-12 18:01:48,865 Latency for response: 0.0001253333s
+2024-10-12 18:01:48,865 Responding to client with {'seq': 5, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:01:48,866 ::1 [12/Oct/2024:18:01:48 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:09:50,693 Received distance-request from client for sequence 1
+2024-10-12 18:09:50,693 Latency for response: 0.0001253333s
+2024-10-12 18:09:50,693 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:09:50,694 ::1 [12/Oct/2024:18:09:50 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:21:35,090 Error running web app: [Errno 48] error while attempting to bind on address ('::1', 30003, 0, 0): address already in use
+2024-10-12 18:21:38,622 Received distance-request from client for sequence 2
+2024-10-12 18:21:38,623 Latency for response: 0.0001253333s
+2024-10-12 18:21:38,623 Responding to client with {'seq': 2, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:21:38,624 ::1 [12/Oct/2024:18:21:38 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:26:14,021 Error running web app: [Errno 48] error while attempting to bind on address ('127.0.0.1', 30003): address already in use
+2024-10-12 18:27:06,204 Error running web app: [Errno 48] error while attempting to bind on address ('::1', 30003, 0, 0): address already in use
+2024-10-12 18:27:40,917 Error running web app: [Errno 48] error while attempting to bind on address ('::1', 30003, 0, 0): address already in use
+2024-10-12 18:36:46,919 Received distance-request from client for sequence 1
+2024-10-12 18:36:46,919 Latency for response: 0.0001253333s
+2024-10-12 18:36:46,920 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:36:46,920 ::1 [12/Oct/2024:18:36:46 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:40:59,798 Received distance-request from client for sequence 1
+2024-10-12 18:40:59,798 Latency for response: 0.0001253333s
+2024-10-12 18:40:59,799 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:40:59,799 ::1 [12/Oct/2024:18:40:59 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:48:46,930 Received distance-request from client for sequence 1
+2024-10-12 18:48:46,931 Latency for response: 0.0001253333s
+2024-10-12 18:48:46,931 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:48:46,932 ::1 [12/Oct/2024:18:48:46 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:49:19,685 Received distance-request from client for sequence 1
+2024-10-12 18:49:19,687 Latency for response: 0.0001253333s
+2024-10-12 18:49:19,687 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6262161, 'longitude': 127.4613776, 'altitude': 13}
+2024-10-12 18:49:19,687 ::1 [12/Oct/2024:18:49:19 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:53:10,413 Received distance-request from client for sequence 1
+2024-10-12 18:53:10,414 Latency for response: 0.0000417778s
+2024-10-12 18:53:10,414 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6260123, 'longitude': 127.4592871, 'altitude': 13}
+2024-10-12 18:53:10,414 ::1 [12/Oct/2024:18:53:10 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 18:59:16,882 Error running web app: [Errno 48] error while attempting to bind on address ('127.0.0.1', 30003): address already in use
+2024-10-12 18:59:25,800 Received distance-request from client for sequence 1
+2024-10-12 18:59:25,801 Latency for response: 0.0000417778s
+2024-10-12 18:59:25,801 Responding to client with {'seq': 1, 'index': 3, 'latitude': 36.6260123, 'longitude': 127.4592871, 'altitude': 13}
+2024-10-12 18:59:25,801 ::1 [12/Oct/2024:18:59:25 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-12 19:02:51,081 Received distance-request from client for sequence 1
+2024-10-12 19:02:51,081 Latency for response: infs
+2024-10-12 19:03:11,101 Received distance-request from client for sequence 2
+2024-10-12 19:03:11,102 Latency for response: infs
+2024-10-12 19:03:31,028 Received distance-request from client for sequence 3
+2024-10-12 19:03:31,028 Latency for response: infs
+2024-10-12 19:03:51,044 Received distance-request from client for sequence 4
+2024-10-12 19:03:51,045 Latency for response: infs
+2024-10-12 19:04:11,066 Received distance-request from client for sequence 5
+2024-10-12 19:04:11,067 Latency for response: infs
+2024-10-12 19:04:31,086 Received distance-request from client for sequence 6
+2024-10-12 19:04:31,087 Latency for response: infs
+2024-10-12 19:04:51,106 Received distance-request from client for sequence 7
+2024-10-12 19:04:51,106 Latency for response: infs
+2024-10-12 19:09:12,494 Received distance-request from client for sequence 1
+2024-10-12 19:09:12,495 Latency for response: infs
+2024-10-12 19:09:40,521 Received distance-request from client for sequence 1
+2024-10-12 19:09:40,522 Latency for response: infs
+2024-10-12 19:09:55,538 Received distance-request from client for sequence 2
+2024-10-12 19:09:55,539 Latency for response: infs
+2024-10-12 19:10:10,557 Received distance-request from client for sequence 3
+2024-10-12 19:10:10,558 Latency for response: infs
+2024-10-12 19:10:25,574 Received distance-request from client for sequence 4
+2024-10-12 19:10:25,575 Latency for response: infs
+2024-10-12 19:10:40,593 Received distance-request from client for sequence 5
+2024-10-12 19:10:40,594 Latency for response: infs
+2024-10-12 19:15:50,448 Received distance-request from client for sequence 1
+2024-10-12 19:15:50,448 Latency for response: infs
+2024-10-12 19:16:05,467 Received distance-request from client for sequence 2
+2024-10-12 19:16:05,468 Latency for response: infs
+2024-10-12 19:16:20,495 Received distance-request from client for sequence 3
+2024-10-12 19:16:20,496 Latency for response: infs
+2024-10-12 19:16:35,526 Received distance-request from client for sequence 4
+2024-10-12 19:16:35,527 Latency for response: infs
+2024-10-12 19:16:50,548 Received distance-request from client for sequence 5
+2024-10-12 19:16:50,549 Latency for response: infs
+2024-10-12 19:17:05,582 Received distance-request from client for sequence 6
+2024-10-12 19:17:05,583 Latency for response: infs
+2024-10-12 19:17:20,603 Received distance-request from client for sequence 7
+2024-10-12 19:17:20,604 Latency for response: infs
+2024-10-12 19:17:26,826 Received distance-request from client for sequence 1
+2024-10-12 19:17:26,826 Latency for response: infs

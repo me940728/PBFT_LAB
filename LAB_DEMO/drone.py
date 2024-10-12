@@ -9,8 +9,13 @@ import logging
 from datetime import datetime
 import math
 import time
-
-# 유클리드 거리 계산 함수 (전역 함수로 정의)
+'''
+req message ex : 
+curl -X POST http://localhost:20001/pre-request/llapbft-start \
+-H "Content-Type: application/json" \
+-d '{"latitude":36.6261519,"longitude":127.4590123, "altitude":100}'
+'''
+# 유클리드 거리 계산 함수 (Global)
 def calculate_euclidean_distance(coords1, coords2):
     """
     두 좌표 간의 유클리드 거리를 계산하는 함수.
@@ -22,16 +27,16 @@ def calculate_euclidean_distance(coords1, coords2):
     euclidean_distance = math.sqrt(flat_distance**2 + altitude_difference**2)  # 유클리드 거리 계산
     return euclidean_distance
 
-# YAML 파일에서 노드 정보를 읽어오기
+# YAML 파일에서 노드 정보를 읽어오기 (Global)
 def load_config(yaml_file):
     with open(yaml_file, 'r') as file:
         return yaml.safe_load(file)
 
-# 로그 파일 저장 디렉터리 설정
+# 로그 파일 저장 디렉터리 설정 (Global)
 LOG_DIR = 'log'
 os.makedirs(LOG_DIR, exist_ok=True)  # 디렉토리 존재 여부를 확인하고 없으면 생성
 
-# 로그 설정 함수
+# 로그 설정 함수 (Global)
 def setup_logging(drone_index):
     log_file = os.path.join(LOG_DIR, f'drone_{drone_index}_log.txt')
     logging.basicConfig(filename=log_file, level=logging.INFO, format='%(asctime)s %(message)s')
@@ -48,9 +53,10 @@ class LLAPBFTHandler:
         self.nodes = nodes      # 전체 드론 리스트
         self.session = session  # aiohttp 세션 재사용
         self.f = 1              # 악의 노드 수 설정 (여기서 조정 가능)
+        self.pr_timeout = 5.0   # 사전 요청 메시지 수신 타임아웃
         self.seq = 0            # 메시지 시퀀스 번호
         self.responses = {}     # 시퀀스 번호별 응답 저장
-        # LatencySimulation 객체 생성 매번 호출하는 것이 비효율적임
+        # LatencySimulation 객체 생성 매번 호출하는 것이 비효율적
         self.latency_simulation = LatencySimulation(bandwidth_file)
 
     def increment_seq(self, amount=1):
@@ -107,29 +113,51 @@ class LLAPBFTHandler:
     async def request_distances_from_other_drones(self, client_num, message_seq, client_latitude, client_longitude, client_altitude):
         tasks = []  # 비동기 요청들을 담을 리스트
         client_coords = (client_latitude, client_longitude, client_altitude)
-        
-        # 멀티캐스트 시작 시각 기록
+
+    # 멀티캐스트 시작 시각 기록
         start_time = time.time()
-        #logging.info(f"Multicast start time: {start_time:.10f}")
-
-        # 클라이언트 제외 모든 드론에게 위치정보 요청 메시지 보냄
-        for target_node in self.nodes:
-            if target_node != self.node:
-                tasks.append(self.handle_request(client_num, target_node, client_coords, message_seq))
-
-        # 응답 수집 (모든 드론의 응답을 기다림)
-        responses = await asyncio.gather(*tasks)
-
-        # 응답 완료 시각 기록
-        end_time = time.time()
-        #logging.info(f"Responses received time: {end_time:.10f}")
         
-        # 전체 소요 시간 계산
-        total_time = end_time - start_time
-        logging.info(f"Total time for multicast and responses: {total_time:.10f} seconds")
+        while True:  # 유효한 응답 수가 충분히 올 때까지 반복
+            tasks = []
+            for target_node in self.nodes:
+                if target_node != self.node:
+                    tasks.append(self.handle_request(client_num, target_node, client_coords, message_seq))
 
-        # 응답받은 메시지로부터 유클리드 거리를 계산하고 로그를 남김
-        self.group_by_distance(responses, client_coords)
+            # 유효한 응답을 실시간으로 체크하기 위한 결과 수집
+            valid_responses = []
+            pending = []
+
+            # asyncio.as_completed는 각 태스크가 완료될 때마다 순차적으로 처리할 수 있게 해줌
+            for task in asyncio.as_completed(tasks):
+                try:
+                    result = await asyncio.wait_for(task, timeout=5.0)  # 각 태스크에 타임아웃 설정
+                    if isinstance(result, dict) and result.get('seq') == message_seq:
+                        valid_responses.append(result)
+                    
+                    # 유효한 응답이 3f+1 개가 도착하면 바로 다음 단계로 진행
+                    if len(valid_responses) >= self.get_bft():
+                        logging.info(f"Received {len(valid_responses)} valid responses with seq {message_seq}")
+    # 응답 완료 시각 기록
+                        end_time = time.time()
+                        total_time = end_time - start_time
+                        logging.info(f"Total time for multicast and responses: {total_time:.10f} seconds")
+
+                        # 유효한 응답이 충분히 수신되었으므로 거리 계산 함수로 넘어감
+                        self.group_by_distance(valid_responses, client_coords)
+                        return  # 유효한 응답이 충분하면 반복을 종료
+
+                except asyncio.TimeoutError:
+                    pending.append(task)
+
+            # 아직 응답이 부족하면 시퀀스 번호를 증가시키고 다시 요청
+            if len(valid_responses) < self.get_bft():
+                logging.warning(f"Only {len(valid_responses)} valid responses received for seq {message_seq}, increasing sequence and retrying...")
+                message_seq = self.increment_seq()  # 시퀀스 번호 증가
+
+    # 시퀀스 번호를 증가시킨 후 다시 전송하는 함수
+    async def retry_with_new_sequence(self, client_num, new_message_seq, client_latitude, client_longitude, client_altitude):
+        await asyncio.sleep(1)  # 잠시 대기 후 재시도
+        await self.request_distances_from_other_drones(client_num, new_message_seq, client_latitude, client_longitude, client_altitude)
         
     # 드론 요청 정보를 종합하여 그룹핑 후 리더 드론에게 합의 요청하는 함수
     def group_by_distance(self, responses, client_coords):
@@ -138,28 +166,37 @@ class LLAPBFTHandler:
         """
         client_port = self.node['port']
         
-        for i, res in enumerate(responses):
+        for res in responses:
             if res:
-                drone_coords = (res['latitude'], res['longitude'], res['altitude'])
-                # 유클리드 거리 계산 (전역 함수를 사용)
-                euclidean_distance = calculate_euclidean_distance(client_coords, drone_coords)
+                # 응답에서 index를 추출하고 유효한지 확인
+                index = res.get('index')
+                # 중요 키값에 index가 포함되어 있는지, index가 양수 인지, 전체 리스트 보다 작은지 검증
+                if index is not None and 0 <= index < len(self.nodes):
+                    # 유효한 인덱스가 있으면 드론 포트 매핑
+                    drone_coords = (res['latitude'], res['longitude'], res['altitude'])
+                    # 유클리드 거리 계산 (전역 함수를 사용)
+                    euclidean_distance = calculate_euclidean_distance(client_coords, drone_coords)
 
-                drone_port = self.nodes[i]['port']
-                altitude = res['altitude']
+                    # 응답된 index에 따른 포트 번호를 정확히 가져옴
+                    drone_port = self.nodes[index]['port']
+                    altitude = res['altitude']
 
-                # 메시지 크기 계산
-                message = f"{res}"
-                _, message_size_bits = self.latency_simulation.get_message_size(message)
+                    # 메시지 크기 계산
+                    message = f"{res}"
+                    _, message_size_bits = self.latency_simulation.get_message_size(message)
 
-                # 지연 시간 계산
-                latency = self.latency_simulation.get_latency(euclidean_distance, message_size_bits)
+                    # 지연 시간 계산
+                    latency = self.latency_simulation.get_latency(euclidean_distance, message_size_bits)
 
-                # 로그 기록 (정수부 4자리, 소수부 10자리 포맷팅)
-                logging.info(
-                    f"client:{client_port} -> drone:{drone_port} {euclidean_distance:14.10f}m, "
-                    f"altitude: {altitude:14.10f}m, lat: {res['latitude']:14.10f}, lon: {res['longitude']:14.10f}, "
-                    f"latency: {latency:.10f}s"
-                )
+                    # 로그 기록 (정수부 4자리, 소수부 10자리 포맷팅)
+                    logging.info(
+                        f"client:{client_port} -> drone:{drone_port} {euclidean_distance:14.10f}m, "
+                        f"altitude: {altitude:14.10f}m, lat: {res['latitude']:14.10f}, lon: {res['longitude']:14.10f}, "
+                        f"latency: {latency:.10f}s"
+                    )
+                else:
+                    # 유효하지 않은 index 값을 가진 응답을 무시
+                    logging.warning(f"Invalid or missing index in response: {res}")
     # 드론이 클라이언트 요청에 응답하는 함수
     async def respond_distance(self, request):
         try:
@@ -221,7 +258,7 @@ class LatencySimulation:
         return byte_size, bit_size
 
     # YAML 파일에서 구간별 대역폭 정보를 읽어오는 함수
-    @staticmethod
+    @staticmethod # => 인스턴스화 하지 않고도 접근 가능함
     def load_bandwidth_config(yaml_file):
         with open(yaml_file, 'r') as file:
             return yaml.safe_load(file)
@@ -241,15 +278,21 @@ class LatencySimulation:
                     if distance >= lower:
                         return entry['bandwidth']
         return 0
-
-    # 거리와 메시지 크기에 따른 지연 시간 계산 함수
+    '''
+    거리와 메시지 크기에 따른 지연 시간 계산 함수
+    - 대역폭 단위는 Mbps로 주어짐. 데이터를 비트 단위로 전송하므로 1Mbps = 1,000,000bps로 변환하여 사용함.
+    - 예시: 50M 이내 대역폭이 54Mbps인 경우, 54 * 1,000,000 = 54,000,000bps로 변환.
+    - 메시지 크기를 대역폭으로 나누면 전송 시간을 초 단위로 계산할 수 있음.
+    - 이 전송 시간을 지연 시간으로 가정하고(양방향 통신), 
+       **송신자 -> 수신자**의 전송뿐만 아니라, **수신자 -> 송신자**의 응답 시간도 고려해야 하므로, 최종적으로 2를 곱하여 왕복 지연 시간을 구함.
+    '''
     def get_latency(self, distance, message_size_bits):
-        bandwidth_mbps = self.get_bandwidth_by_distance(distance)
-        if bandwidth_mbps == 0:
+        bandwidth_mbps = self.get_bandwidth_by_distance(distance) # bandwidth_info의 거리별 대역폭을 기준으로 반환
+        if bandwidth_mbps == 0: # 대역폭이 0 일 경우는 inf 메시지 반환
             return float('inf')
-        bandwidth_bps = bandwidth_mbps * 1_000_000
+        bandwidth_bps = bandwidth_mbps * 1_000_000 # 메가비트를 bit로 변환
         latency_seconds = message_size_bits / bandwidth_bps
-        return latency_seconds * 2  # 송신과 수신을 고려해 지연 시간 2배 반환
+        return latency_seconds * 2  # 송신측 수신측 양방향 통신을 지연 시간으로 가정 2배 반환
 '''
 class-2 end
 '''
