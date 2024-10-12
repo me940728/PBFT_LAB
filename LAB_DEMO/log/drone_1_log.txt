@@ -1,0 +1,21 @@
+2024-10-09 18:51:19,175 Received distance-request from client for sequence 1
+2024-10-09 18:51:19,175 Responding to client with {'seq': 1, 'index': 1, 'latitude': 36.6261296, 'longitude': 127.459454, 'altitude': 11}
+2024-10-09 18:51:19,175 ::1 [09/Oct/2024:18:51:19 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 244 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-10 20:05:38,824 Received distance-request from client for sequence 1
+2024-10-10 20:05:38,824 Responding to client with {'seq': 1, 'index': 1, 'latitude': 36.6261296, 'longitude': 127.459454, 'altitude': 11}
+2024-10-10 20:05:38,825 ::1 [10/Oct/2024:20:05:38 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 244 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-10 20:29:54,837 Received distance-request from client for sequence 1
+2024-10-10 20:29:54,837 Responding to client: distance 97.4064387685m, latency 0.0000417778s
+2024-10-10 20:29:54,838 ::1 [10/Oct/2024:20:29:54 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 310 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-10 20:33:10,073 Received distance-request from client for sequence 1
+2024-10-10 20:33:10,073 Latency for response: 0.0000417778s
+2024-10-10 20:33:10,074 Responding to client with {'seq': 1, 'index': 1, 'latitude': 36.6261296, 'longitude': 127.459454, 'altitude': 11}
+2024-10-10 20:33:10,074 ::1 [10/Oct/2024:20:33:10 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 244 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-10 20:34:35,851 Received distance-request from client for sequence 1
+2024-10-10 20:34:35,851 Latency for response: 0.0000417778s
+2024-10-10 20:34:35,851 Responding to client with {'seq': 1, 'index': 1, 'latitude': 36.6261296, 'longitude': 127.459454, 'altitude': 11}
+2024-10-10 20:34:35,852 ::1 [10/Oct/2024:20:34:35 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 244 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-10 20:38:06,496 Received distance-request from client for sequence 1
+2024-10-10 20:38:06,496 Latency for response: 0.0000417778s
+2024-10-10 20:38:06,497 Responding to client with {'seq': 1, 'index': 1, 'latitude': 36.6261296, 'longitude': 127.459454, 'altitude': 11}
+2024-10-10 20:38:06,497 ::1 [10/Oct/2024:20:38:06 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 244 "-" "Python/3.8 aiohttp/3.9.5"

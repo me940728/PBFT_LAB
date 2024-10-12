@@ -13,5 +13,5 @@ bandwidth_by_distance:
     bandwidth: 12
   - range: "250-299"
     bandwidth: 6
-  - range: "300+"
+  - range: "300-"
     bandwidth: 0
