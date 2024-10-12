@@ -1,0 +1,17 @@
+# 각 거리별 대역폭 정의(Mbps 1 = 10^6 = 1,000,000 bit)
+# 관련 근거 : 1) https://inet.omnetpp.org/docs/showcases/wireless/errorrate/doc/index.html, 2) Performance Evaluation of the IEEE802.11ax Amendment
+bandwidth_by_distance:
+  - range: "0-50"
+    bandwidth: 54
+  - range: "51-100"
+    bandwidth: 36
+  - range: "101-150"
+    bandwidth: 24
+  - range: "151-200"
+    bandwidth: 18
+  - range: "201-249"
+    bandwidth: 12
+  - range: "250-299"
+    bandwidth: 6
+  - range: "300-"
+    bandwidth: 0
