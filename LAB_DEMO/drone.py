@@ -10,10 +10,13 @@ from datetime import datetime
 import math
 import time
 '''
-req message ex : 
+1. req message ex : 
 curl -X POST http://localhost:20001/pre-request/llapbft-start \
 -H "Content-Type: application/json" \
 -d '{"latitude":36.6261519,"longitude":127.4590123, "altitude":100}'
+
+2. proposal message ex :
+message = { msg_type, n, v, H(m) } => n : 시퀀스, v : view, H(m) : 메시지를 해시한 데이터
 '''
 # 유클리드 거리 계산 함수 (Global)
 def calculate_euclidean_distance(coords1, coords2):
@@ -44,8 +47,13 @@ def setup_logging(drone_index):
 class-1 위도, 경도, 고도 PBFT 객체
 '''
 class LLAPBFTHandler:
+    '''---------[ 상수 정의 영역 ]------------'''
+    # Phase-1 PRE-REQUEST
     LLAPBFT_START = 'llapbft-start'
     DISTANCE_REQ = 'distance-request'
+    # Phase-2 Request
+    
+    '''------------------------------------'''
 
     def __init__(self, index, node, nodes, session, bandwidth_file):
         self.index = index      # 고유 아이디(run시 부여)
@@ -53,8 +61,7 @@ class LLAPBFTHandler:
         self.nodes = nodes      # 전체 드론 리스트
         self.session = session  # aiohttp 세션 재사용
         self.f = 1              # 악의 노드 수 설정 (여기서 조정 가능)
-        self.pr_timeout = 5.0   # 사전 요청 메시지 수신 타임아웃
-        self.seq = 0            # 메시지 시퀀스 번호
+        self.seq = 0            # 메시지 시퀀스 번호(메시지 진행 단계 체크용)
         self.responses = {}     # 시퀀스 번호별 응답 저장
         # LatencySimulation 객체 생성 매번 호출하는 것이 비효율적
         self.latency_simulation = LatencySimulation(bandwidth_file)
@@ -69,8 +76,12 @@ class LLAPBFTHandler:
         self.seq = 0
 
     def get_bft(self):
-        """3f + 1 계산을 기반으로 응답 임계값 반환"""
+        """3f + 1 안전 노드 총 수"""
         return 3 * self.f + 1
+    
+    def get_bft_message(self):
+        """2f + 1 메시지 내결함성 수식"""
+        return 2 * self.f + 1
 
     async def start_llapbft(self, request):
         try:
@@ -283,8 +294,8 @@ class LatencySimulation:
     - 대역폭 단위는 Mbps로 주어짐. 데이터를 비트 단위로 전송하므로 1Mbps = 1,000,000bps로 변환하여 사용함.
     - 예시: 50M 이내 대역폭이 54Mbps인 경우, 54 * 1,000,000 = 54,000,000bps로 변환.
     - 메시지 크기를 대역폭으로 나누면 전송 시간을 초 단위로 계산할 수 있음.
-    - 이 전송 시간을 지연 시간으로 가정하고(양방향 통신), 
-       **송신자 -> 수신자**의 전송뿐만 아니라, **수신자 -> 송신자**의 응답 시간도 고려해야 하므로, 최종적으로 2를 곱하여 왕복 지연 시간을 구함.
+    - 이 전송 시간을 지연 시간으로 가정하고(양방향 통신)
+       송신자 -> 수신자의 전송뿐만 아니라, 수신자 -> 송신자의 응답 시간도 고려해야 하므로, 최종적으로 2를 곱하여 왕복 지연 시간을 구했음
     '''
     def get_latency(self, distance, message_size_bits):
         bandwidth_mbps = self.get_bandwidth_by_distance(distance) # bandwidth_info의 거리별 대역폭을 기준으로 반환

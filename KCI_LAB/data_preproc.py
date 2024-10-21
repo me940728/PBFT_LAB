@@ -1,74 +1,81 @@
-import yaml
+import openpyxl
 
-# 멀티캐스트 지연 시간을 재현하기 위한 지연 객체
-class LatencySimulation:
-    def __init__(self, yaml_file):
-        # YAML 파일 로드
-        self.bandwidth_config = self.load_bandwidth_config(yaml_file)
+# 엑셀 파일 경로 설정 (파일 경로에 맞게 수정 필요)
+file_path = '/Users/admin/Downloads/ll/envs/pbft/source/KCI_LAB/origin_data/YELLOWDUST-1_1.xlsx'
 
-    # 메시지 크기를 바이트와 비트로 반환하는 함수
-    def get_message_size(self, message: str):
-        message_bytes = message.encode('utf-8')
-        byte_size = len(message_bytes)  # 바이트 크기
-        bit_size = byte_size * 8        # 비트 크기
-        return byte_size, bit_size
+# 전역 변수 정의
+data_json = []
+gloss_id_list = []
+start_list = []
 
-    # YAML 파일에서 구간별 대역폭 정보를 읽어오는 함수
-    @staticmethod #=> 클래스 인스턴스 만들지 않고도 접근 가능
-    def load_bandwidth_config(yaml_file):
-        with open(yaml_file, 'r') as file:
-            return yaml.safe_load(file)
+# 엑셀 파일 열기
+workbook = openpyxl.load_workbook(file_path)
+sheet = workbook.active
 
-    # 거리 구간에 따른 대역폭 반환 함수
-    def get_bandwidth_by_distance(self, distance):
-        for entry in self.bandwidth_config['bandwidth_by_distance']:
-            range_str = entry['range']
-            if '-' in range_str:
-                lower, upper = range_str.split('-')
-                lower = int(lower)
-                if upper:  # 상한이 있을 경우
-                    upper = int(upper)
-                    if lower <= distance <= upper:
-                        return entry['bandwidth']
-                else:  # 상한이 없을 경우
-                    if distance >= lower:
-                        return entry['bandwidth']
-        return 0  # 대역폭이 없을 경우 0 반환
+# A~AZ까지의 알파벳 생성
+columns = [chr(i) for i in range(ord('A'), ord('Z') + 1)]
+columns += [f'A{chr(i)}' for i in range(ord('A'), ord('Z') + 1)]
 
-    # 거리와 메시지 크기에 따른 지연 시간 계산 함수
-    def get_latency(self, distance, message_size_bits):
-        bandwidth_mbps = self.get_bandwidth_by_distance(distance)  # 메가비트 단위
-        if bandwidth_mbps == 0:
-            return float('inf')  # 대역폭이 0이면 전송 불가로 무한대 시간 반환
-        
-        bandwidth_bps = bandwidth_mbps * 1_000_000  # 메가비트를 비트로 변환
-        latency_seconds = message_size_bits / bandwidth_bps  # 전송 시간 계산 (초 단위)
-        
-        return latency_seconds * 2  # 송신과 수신을 고려해 지연 시간 2배 반환
-        
+# Korean sentence 임시 저장 변수
+kor_sentence = None
 
-# 테스트 코드
-if __name__ == "__main__":
-    # YAML 파일 경로
-    yaml_file = '/Users/admin/Downloads/ll/envs/pbft/source/KCI_LAB/bandwidth_info.yaml'
+# 엑셀 순회
+for row in range(1, sheet.max_row + 1):
+    row_data = [sheet[f'{col}{row}'].value for col in columns]
+    row_data = [val for val in row_data if val is not None]
+
+    if not row_data:
+        continue
+
+    first_cell = row_data[0]
+
+    if first_cell == 'Korean sentence : ':
+        # 이전에 저장된 데이터로 JSON 생성
+        if kor_sentence is not None:
+            # start_list와 gloss_id_list 정렬
+            sorted_pairs = sorted(zip(start_list, gloss_id_list))
+            sorted_start, sorted_gloss_id = zip(*sorted_pairs) if sorted_pairs else ([], [])
+            # ksl 값 생성
+            ksl_value = ' '.join(sorted_gloss_id)
+            # JSON 데이터 생성
+            data_json.append({
+                'kor': kor_sentence,
+                'ksl': ksl_value,
+                'time': list(sorted_start)
+            })
+        # 새 Korean sentence 저장
+        kor_sentence = row_data[1] if len(row_data) > 1 else None
+        # start_list 초기화
+        start_list = []
+
+    elif first_cell == 'gloss_id : ':
+        # gloss_id 값 추가
+        for value in row_data[1:]:
+            if value not in [None, '']:
+                gloss_id_list.append(value)
+
+    elif first_cell == 'start(s) : ':
+        # start 값 추가
+        for value in row_data[1:]:
+            if value not in [None, '']:
+                start_list.append(value)
+
+# 마지막 Korean sentence에 대한 JSON 생성
+if kor_sentence is not None:
+    # start_list와 gloss_id_list 정렬
+    sorted_pairs = sorted(zip(start_list, gloss_id_list))
+    sorted_start, sorted_gloss_id = zip(*sorted_pairs) if sorted_pairs else ([], [])
+    # ksl 값 생성
+    ksl_value = ' '.join(sorted_gloss_id)
+    # JSON 데이터 생성
+    data_json.append({
+        'kor': kor_sentence,
+        'ksl': ksl_value,
+        'time': list(sorted_start)
+    })
+
+# 결과 출력
+for data in data_json:
+    print(data)
     
-    # LatencySimulation 객체 생성
-    latency_sim = LatencySimulation(yaml_file)
-    
-    # 테스트할 메시지
-    message = """{
-        'client_num': '1',
-        'latitude': 36.1234551,
-        'longitude': 127.5555454,
-        'altitude': 200,
-        'seq': 1
-    }"""
-
-    # 메시지 크기 계산
-    byte_size, bit_size = latency_sim.get_message_size(message)
-    print(f"메시지 크기: {byte_size} 바이트, {bit_size} 비트")
-
-    # 테스트 거리 및 메시지 크기
-    test_distance = 52  # 52미터 예시
-    latency = latency_sim.get_latency(test_distance, bit_size)
-    print(f"거리 {test_distance}m에서 메시지 전송 지연 시간: {latency:.10f}초") # 보통 마이크로초로 끝날 거임
+print(start_list)
