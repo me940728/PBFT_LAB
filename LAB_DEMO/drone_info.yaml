@@ -10,6 +10,7 @@ drones:
       latitude: 36.6261296
       longitude: 127.459454
       altitude: 11
+    # Malicious 31km 거리임.
     - host: localhost
       port: 30002
       #latitude: 36.344697   # 31키로 거리
@@ -39,7 +40,7 @@ drones:
       latitude: 36.6262915
       longitude: 127.4618193
       altitude: 14
-
+#--------->     
 # client
     - host: localhost
       port: 20001

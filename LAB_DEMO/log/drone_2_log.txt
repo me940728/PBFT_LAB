@@ -197,3 +197,5 @@
 2024-10-12 19:17:20,604 Latency for response: infs
 2024-10-12 19:17:26,826 Received distance-request from client for sequence 1
 2024-10-12 19:17:26,827 Latency for response: infs
+2024-10-22 19:00:18,915 Received distance-request from client for sequence 1
+2024-10-22 19:00:18,915 Latency for response: infs

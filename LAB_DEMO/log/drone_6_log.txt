@@ -244,3 +244,12 @@ asyncio.exceptions.CancelledError
 2024-10-12 19:17:26,826 Latency for response: 0.0002533333s
 2024-10-12 19:17:26,827 Responding to client with {'seq': 1, 'index': 6, 'latitude': 36.6262915, 'longitude': 127.4618193, 'altitude': 14}
 2024-10-12 19:17:26,827 ::1 [12/Oct/2024:19:17:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-22 19:00:18,911 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-22 19:00:18,916 Received 4 valid responses with seq 1
+2024-10-22 19:00:18,916 Total time for multicast and responses: 0.0051217079 seconds
+2024-10-22 19:00:18,916 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000391111s
+2024-10-22 19:00:18,916 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001173333s
+2024-10-22 19:00:18,917 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000386667s
+2024-10-22 19:00:18,917 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001173333s
+2024-10-22 19:00:18,917 127.0.0.1 [22/Oct/2024:19:00:18 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-22 19:05:19,652 Error retrieving distance from localhost:30002 - 

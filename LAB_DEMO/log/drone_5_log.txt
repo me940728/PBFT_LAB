@@ -321,3 +321,7 @@
 2024-10-12 19:17:26,825 Latency for response: 0.0002533333s
 2024-10-12 19:17:26,826 Responding to client with {'seq': 1, 'index': 5, 'latitude': 36.6262915, 'longitude': 127.4618193, 'altitude': 14}
 2024-10-12 19:17:26,826 ::1 [12/Oct/2024:19:17:26 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 245 "-" "Python/3.8 aiohttp/3.9.5"
+2024-10-22 19:00:18,915 Received distance-request from client for sequence 1
+2024-10-22 19:00:18,915 Latency for response: 0.0002506667s
+2024-10-22 19:00:18,916 Responding to client with {'seq': 1, 'index': 5, 'latitude': 36.6262915, 'longitude': 127.4618193, 'altitude': 14}
+2024-10-22 19:00:18,916 ::1 [22/Oct/2024:19:00:18 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"

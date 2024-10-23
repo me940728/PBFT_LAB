@@ -1,9 +1,10 @@
+# conda activate pbft
 import sys
-import yaml
+import yaml     # conda install -c conda-forge pyyaml
 import asyncio
 import aiohttp
-from aiohttp import web
-from geopy.distance import geodesic
+from aiohttp  import web # conda install -c conda-forge aiohttp
+from geopy.distance import geodesic # conda install -c conda-forge geopy
 import os
 import logging
 from datetime import datetime
