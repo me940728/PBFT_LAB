@@ -147,7 +147,8 @@ class LLAPBFTHandler:
                         valid_responses.append(result)
                     
                     # 유효한 응답이 3f+1 개가 도착하면 바로 다음 단계로 진행
-                    if len(valid_responses) >= self.get_bft():
+                    #if len(valid_responses) >= self.get_bft():
+                    if len(valid_responses) == len(self.nodes) - 2: # 2? 본인 -1, 악의 노드[2] -1
                         logging.info(f"Received {len(valid_responses)} valid responses with seq {message_seq}")
     # 응답 완료 시각 기록
                         end_time = time.time()
@@ -209,6 +210,7 @@ class LLAPBFTHandler:
                 else:
                     # 유효하지 않은 index 값을 가진 응답을 무시
                     logging.warning(f"Invalid or missing index in response: {res}")
+                    
     # 드론이 클라이언트 요청에 응답하는 함수
     async def respond_distance(self, request):
         try:
@@ -231,8 +233,17 @@ class LLAPBFTHandler:
             # 지연 시간 계산
             latency = self.latency_simulation.get_latency(euclidean_distance, message_size_bits)
 
+            # 지연 시간과 거리 정보 함께 로그에 기록
+            if latency == float('inf'):
+                logging.info(
+                    f"Latency for response: inf, Distance between client and drone: {euclidean_distance:.10f}m"
+                )
+            else:
+                logging.info(
+                    f"Latency for response: {latency:.10f}s, Distance between client and drone: {euclidean_distance:.10f}m"
+                )
+
             # 지연 시간만큼 대기
-            logging.info(f"Latency for response: {latency:.10f}s")
             await asyncio.sleep(latency)
 
             # 자신의 위치 정보와 시퀀스 번호를 반환
@@ -251,6 +262,7 @@ class LLAPBFTHandler:
         except Exception as e:
             logging.error(f"Error in responding to distance request: {str(e)}")
             return web.json_response({'error': str(e)}, status=500)
+
 '''
 class-1 end
 '''
