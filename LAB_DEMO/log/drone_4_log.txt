@@ -311,3 +311,47 @@
 2024-10-26 14:05:15,223 Latency for response: 0.0001253333s, Distance between client and drone: 244.8850969850m
 2024-10-26 14:05:15,224 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14}
 2024-10-26 14:05:15,224 ::1 [26/Oct/2024:14:05:15 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 14:27:33,037 Received distance-request from client for sequence 1
+2024-10-26 14:27:33,037 Latency for response: 0.0001253333s, Distance between client and drone: 244.8850969850m
+2024-10-26 14:27:33,038 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14}
+2024-10-26 14:27:33,038 ::1 [26/Oct/2024:14:27:33 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 14:31:33,845 Received distance-request from client for sequence 1
+2024-10-26 14:31:33,845 Latency for response: 0.0001253333s, Distance between client and drone: 244.8850969850m
+2024-10-26 14:31:33,845 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14}
+2024-10-26 14:31:33,846 ::1 [26/Oct/2024:14:31:33 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 16:27:30,938 Received distance-request from client for sequence 1
+2024-10-26 16:27:30,939 Latency for response: 0.0001253333s, Distance between client and drone: 244.8850969850m
+2024-10-26 16:27:30,939 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14}
+2024-10-26 16:27:30,940 ::1 [26/Oct/2024:16:27:30 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 16:33:39,633 Received distance-request from client for sequence 1
+2024-10-26 16:33:39,634 Latency for response: 0.0001253333s, Distance between client and drone: 244.8850969850m
+2024-10-26 16:33:39,634 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14}
+2024-10-26 16:33:39,634 ::1 [26/Oct/2024:16:33:39 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 247 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 17:00:53,431 Received distance-request from client for sequence 1
+2024-10-26 17:00:53,431 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 17:00:53,432 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 17:00:53,432 ::1 [26/Oct/2024:17:00:53 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 17:57:16,702 Received distance-request from client for sequence 1
+2024-10-26 17:57:16,702 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 17:57:16,703 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 17:57:16,703 ::1 [26/Oct/2024:17:57:16 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 17:59:09,672 Received distance-request from client for sequence 1
+2024-10-26 17:59:09,672 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 17:59:09,672 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 17:59:09,673 ::1 [26/Oct/2024:17:59:09 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 18:04:24,002 Received distance-request from client for sequence 1
+2024-10-26 18:04:24,002 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 18:04:24,003 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 18:04:24,003 ::1 [26/Oct/2024:18:04:24 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 18:13:44,734 Received distance-request from client for sequence 1
+2024-10-26 18:13:44,735 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 18:13:44,735 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 18:13:44,735 ::1 [26/Oct/2024:18:13:44 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 18:17:23,873 Received distance-request from client for sequence 1
+2024-10-26 18:17:23,874 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 18:17:23,874 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 18:17:23,875 ::1 [26/Oct/2024:18:17:23 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"
+2024-10-26 18:29:35,380 Received distance-request from client for sequence 1
+2024-10-26 18:29:35,381 Latency for response: 0.0001269659s, Distance between client and drone: 244.8850969850m
+2024-10-26 18:29:35,381 Responding to client with {'seq': 1, 'index': 4, 'latitude': 36.6260012, 'longitude': 127.4615689, 'altitude': 14, 'latency': 0.00012696590064656667}
+2024-10-26 18:29:35,381 ::1 [26/Oct/2024:18:29:35 +0900] "POST /pre-request/distance-request HTTP/1.1" 200 283 "-" "Python/3.8 aiohttp/3.10.10"

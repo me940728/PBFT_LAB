@@ -26,9 +26,13 @@ def calculate_euclidean_distance(coords1, coords2):
     coords1: (위도, 경도, 고도)로 구성된 첫 번째 좌표
     coords2: (위도, 경도, 고도)로 구성된 두 번째 좌표
     """
-    flat_distance = geodesic(coords1[:2], coords2[:2]).meters  # 평면 거리 계산
-    altitude_difference = abs(coords1[2] - coords2[2])  # 고도 차이 계산
-    euclidean_distance = math.sqrt(flat_distance**2 + altitude_difference**2)  # 유클리드 거리 계산
+    # 위도, 경도로 평면 거리 계산
+    flat_distance = geodesic(coords1[:2], coords2[:2]).meters
+    # 고도 계산
+    altitude_difference = abs(coords1[2] - coords2[2])
+    # 유클리드 거리 계산
+    #euclidean_distance = math.sqrt(flat_distance**2 + altitude_difference**2)
+    euclidean_distance = round(math.sqrt(flat_distance**2 + altitude_difference**2), 10) # 소수점 이하 자릿수 일관성 유지
     return euclidean_distance
 
 # YAML 파일에서 노드 정보를 읽어오기 (Global)
@@ -144,7 +148,13 @@ class LLAPBFTHandler:
                 try:
                     result = await asyncio.wait_for(task, timeout=5.0)  # 각 태스크에 타임아웃 설정
                     if isinstance(result, dict) and result.get('seq') == message_seq:
+                        response_time = time.time()  # 응답 도착 시각 기록
                         valid_responses.append(result)
+                        # 로그에 응답 시각과 응답된 노드 정보 기록
+                        logging.info(
+                            f"Response from drone {result['index']} received at {response_time:.10f}, "
+                            f"Latency: {response_time - start_time:.10f} seconds"
+                        )
                     
                     # 유효한 응답이 3f+1 개가 도착하면 바로 다음 단계로 진행
                     #if len(valid_responses) >= self.get_bft():
@@ -194,18 +204,11 @@ class LLAPBFTHandler:
                     drone_port = self.nodes[index]['port']
                     altitude = res['altitude']
 
-                    # 메시지 크기 계산
-                    message = f"{res}"
-                    _, message_size_bits = self.latency_simulation.get_message_size(message)
-
-                    # 지연 시간 계산
-                    latency = self.latency_simulation.get_latency(euclidean_distance, message_size_bits)
-
                     # 로그 기록 (정수부 4자리, 소수부 10자리 포맷팅)
                     logging.info(
                         f"client:{client_port} -> drone:{drone_port} {euclidean_distance:14.10f}m, "
                         f"altitude: {altitude:14.10f}m, lat: {res['latitude']:14.10f}, lon: {res['longitude']:14.10f}, "
-                        f"latency: {latency:.10f}s"
+                        f"latency: {res['latency']:.10f}s"
                     )
                 else:
                     # 유효하지 않은 index 값을 가진 응답을 무시
@@ -252,7 +255,8 @@ class LLAPBFTHandler:
                 'index': self.index,
                 'latitude': self.node['latitude'],
                 'longitude': self.node['longitude'],
-                'altitude': self.node['altitude']
+                'altitude': self.node['altitude'],
+                'latency' : latency
             }
 
             # 요청받은 드론의 로그 기록
@@ -311,12 +315,23 @@ class LatencySimulation:
        송신자 -> 수신자의 전송뿐만 아니라, 수신자 -> 송신자의 응답 시간도 고려해야 하므로, 최종적으로 2를 곱하여 왕복 지연 시간을 구했음
     '''
     def get_latency(self, distance, message_size_bits):
-        bandwidth_mbps = self.get_bandwidth_by_distance(distance) # bandwidth_info의 거리별 대역폭을 기준으로 반환
-        if bandwidth_mbps == 0: # 대역폭이 0 일 경우는 inf 메시지 반환
+        bandwidth_mbps = self.get_bandwidth_by_distance(distance)  # 대역폭 정보 가져오기
+        if bandwidth_mbps == 0:  # 대역폭이 0일 경우는 inf 반환
             return float('inf')
-        bandwidth_bps = bandwidth_mbps * 1_000_000 # 메가비트를 bit로 변환
-        latency_seconds = message_size_bits / bandwidth_bps
-        return latency_seconds * 2  # 송신측 수신측 양방향 통신을 지연 시간으로 가정 2배 반환
+        
+        # 전송 지연 시간 (대역폭에 따른 지연 시간)
+        bandwidth_bps = bandwidth_mbps * 1_000_000  # 메가비트를 bit로 변환
+        transmission_delay = message_size_bits / bandwidth_bps
+
+        # 전파 지연 시간 (거리와 전파 속도에 따른 지연 시간)
+        propagation_speed = 3 * 10**8  # 무선 통신 환경의 전파 속도 (m/s) => 공기 중의 전파 속도도 빛의 속도(2.9 * 10^8) 과 같다고 간주하고 근사값 3 상수로
+        propagation_delay = distance / propagation_speed
+
+        # 총 지연 시간: 전송 지연 시간 + 전파 지연 시간 (양방향 통신을 가정하여 2배)
+        total_latency = (transmission_delay + propagation_delay) * 2
+
+        return total_latency
+
 '''
 class-2 end
 '''

@@ -207,3 +207,25 @@
 2024-10-26 13:58:33,520 Latency for response: inf, Distance between client and drone: 318.8433942144m
 2024-10-26 14:05:15,222 Received distance-request from client for sequence 1
 2024-10-26 14:05:15,222 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 14:27:33,036 Received distance-request from client for sequence 1
+2024-10-26 14:27:33,036 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 14:31:33,844 Received distance-request from client for sequence 1
+2024-10-26 14:31:33,845 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 16:27:30,939 Received distance-request from client for sequence 1
+2024-10-26 16:27:30,939 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 16:33:39,632 Received distance-request from client for sequence 1
+2024-10-26 16:33:39,633 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 17:00:53,433 Received distance-request from client for sequence 1
+2024-10-26 17:00:53,433 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 17:57:16,703 Received distance-request from client for sequence 1
+2024-10-26 17:57:16,703 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 17:59:09,672 Received distance-request from client for sequence 1
+2024-10-26 17:59:09,672 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 18:04:24,002 Received distance-request from client for sequence 1
+2024-10-26 18:04:24,003 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 18:13:44,735 Received distance-request from client for sequence 1
+2024-10-26 18:13:44,736 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 18:17:23,874 Received distance-request from client for sequence 1
+2024-10-26 18:17:23,874 Latency for response: inf, Distance between client and drone: 318.8433942144m
+2024-10-26 18:29:35,379 Received distance-request from client for sequence 1
+2024-10-26 18:29:35,379 Latency for response: inf, Distance between client and drone: 318.8433942144m

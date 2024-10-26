@@ -280,3 +280,160 @@ asyncio.exceptions.CancelledError
 2024-10-26 14:05:15,226 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001173333s
 2024-10-26 14:05:15,226 127.0.0.1 [26/Oct/2024:14:05:15 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
 2024-10-26 14:10:15,884 Error retrieving distance from localhost:30002 - 
+2024-10-26 14:27:33,031 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 14:27:33,039 Received 5 valid responses with seq 1
+2024-10-26 14:27:33,039 Total time for multicast and responses: 0.0080761909 seconds
+2024-10-26 14:27:33,039 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000386667s
+2024-10-26 14:27:33,039 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001173333s
+2024-10-26 14:27:33,040 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002346667s
+2024-10-26 14:27:33,040 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001173333s
+2024-10-26 14:27:33,040 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000391111s
+2024-10-26 14:27:33,040 127.0.0.1 [26/Oct/2024:14:27:33 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 14:31:33,838 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 14:31:33,845 Response from drone 1 received at 1729920693.8449668884, Latency: 0.0058679581 seconds
+2024-10-26 14:31:33,845 Response from drone 0 received at 1729920693.8456289768, Latency: 0.0065300465 seconds
+2024-10-26 14:31:33,845 Response from drone 5 received at 1729920693.8458030224, Latency: 0.0067040920 seconds
+2024-10-26 14:31:33,846 Response from drone 3 received at 1729920693.8463218212, Latency: 0.0072228909 seconds
+2024-10-26 14:31:33,846 Response from drone 4 received at 1729920693.8464570045, Latency: 0.0073580742 seconds
+2024-10-26 14:31:33,846 Received 5 valid responses with seq 1
+2024-10-26 14:31:33,846 Total time for multicast and responses: 0.0074300766 seconds
+2024-10-26 14:31:33,846 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000386667s
+2024-10-26 14:31:33,846 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000391111s
+2024-10-26 14:31:33,847 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002346667s
+2024-10-26 14:31:33,847 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001173333s
+2024-10-26 14:31:33,847 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001173333s
+2024-10-26 14:31:33,847 127.0.0.1 [26/Oct/2024:14:31:33 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 14:36:56,853 Error retrieving distance from localhost:30002 - 
+2024-10-26 16:27:30,933 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 16:27:30,941 Received 5 valid responses with seq 1
+2024-10-26 16:27:30,941 Total time for multicast and responses: 0.0082869530 seconds
+2024-10-26 16:27:30,941 Error handling distance request: 'latitude'
+2024-10-26 16:27:30,942 127.0.0.1 [26/Oct/2024:16:27:30 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 500 201 "-" "curl/7.86.0"
+2024-10-26 16:32:31,062 Error retrieving distance from localhost:30002 - 
+2024-10-26 16:33:39,627 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 16:33:39,633 Response from drone 0 received at 1729928019.6339421272, Latency: 0.0066561699 seconds
+2024-10-26 16:33:39,634 Response from drone 3 received at 1729928019.6341278553, Latency: 0.0068418980 seconds
+2024-10-26 16:33:39,634 Response from drone 1 received at 1729928019.6347980499, Latency: 0.0075120926 seconds
+2024-10-26 16:33:39,634 Response from drone 4 received at 1729928019.6349849701, Latency: 0.0076990128 seconds
+2024-10-26 16:33:39,635 Response from drone 5 received at 1729928019.6351029873, Latency: 0.0078170300 seconds
+2024-10-26 16:33:39,635 Received 5 valid responses with seq 1
+2024-10-26 16:33:39,635 Total time for multicast and responses: 0.0079140663 seconds
+2024-10-26 16:33:39,635 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000391111s
+2024-10-26 16:33:39,635 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001173333s
+2024-10-26 16:33:39,635 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000386667s
+2024-10-26 16:33:39,636 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001173333s
+2024-10-26 16:33:39,636 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002346667s
+2024-10-26 16:33:39,636 127.0.0.1 [26/Oct/2024:16:33:39 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 16:38:40,327 Error retrieving distance from localhost:30002 - 
+2024-10-26 17:00:53,427 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 17:00:53,433 Response from drone 4 received at 1729929653.4334399700, Latency: 0.0057849884 seconds
+2024-10-26 17:00:53,434 Response from drone 1 received at 1729929653.4342029095, Latency: 0.0065479279 seconds
+2024-10-26 17:00:53,434 Response from drone 5 received at 1729929653.4344530106, Latency: 0.0067980289 seconds
+2024-10-26 17:00:53,434 Response from drone 0 received at 1729929653.4346518517, Latency: 0.0069968700 seconds
+2024-10-26 17:00:53,434 Response from drone 3 received at 1729929653.4347710609, Latency: 0.0071160793 seconds
+2024-10-26 17:00:53,434 Received 5 valid responses with seq 1
+2024-10-26 17:00:53,434 Total time for multicast and responses: 0.0071849823 seconds
+2024-10-26 17:00:53,435 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s
+2024-10-26 17:00:53,435 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s
+2024-10-26 17:00:53,435 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s
+2024-10-26 17:00:53,435 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s
+2024-10-26 17:00:53,435 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s
+2024-10-26 17:00:53,436 127.0.0.1 [26/Oct/2024:17:00:53 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 17:05:53,595 Error retrieving distance from localhost:30002 - 
+2024-10-26 17:57:16,698 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 17:57:16,704 Response from drone 4 received at 1729933036.7040691376, Latency: 0.0058841705 seconds
+2024-10-26 17:57:16,705 Response from drone 0 received at 1729933036.7051038742, Latency: 0.0069189072 seconds
+2024-10-26 17:57:16,705 Response from drone 3 received at 1729933036.7052788734, Latency: 0.0070939064 seconds
+2024-10-26 17:57:16,705 Response from drone 1 received at 1729933036.7053298950, Latency: 0.0071449280 seconds
+2024-10-26 17:57:16,705 Response from drone 5 received at 1729933036.7054259777, Latency: 0.0072410107 seconds
+2024-10-26 17:57:16,705 Received 5 valid responses with seq 1
+2024-10-26 17:57:16,705 Total time for multicast and responses: 0.0077319145 seconds
+2024-10-26 17:57:16,706 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s, response_time: 1729933036.7040691376s
+2024-10-26 17:57:16,706 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s, response_time: 1729933036.7051038742s
+2024-10-26 17:57:16,706 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s, response_time: 1729933036.7052788734s
+2024-10-26 17:57:16,706 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s, response_time: 1729933036.7053298950s
+2024-10-26 17:57:16,706 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s, response_time: 1729933036.7054259777s
+2024-10-26 17:57:16,707 127.0.0.1 [26/Oct/2024:17:57:16 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 17:59:09,665 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 17:59:09,672 Response from drone 3 received at 1729933149.6717960835, Latency: 0.0060920715 seconds
+2024-10-26 17:59:09,672 Response from drone 1 received at 1729933149.6719999313, Latency: 0.0062959194 seconds
+2024-10-26 17:59:09,672 Response from drone 0 received at 1729933149.6725740433, Latency: 0.0068700314 seconds
+2024-10-26 17:59:09,673 Response from drone 5 received at 1729933149.6732091904, Latency: 0.0075051785 seconds
+2024-10-26 17:59:09,673 Response from drone 4 received at 1729933149.6733579636, Latency: 0.0076539516 seconds
+2024-10-26 17:59:09,673 Received 5 valid responses with seq 1
+2024-10-26 17:59:09,673 Total time for multicast and responses: 0.0079209805 seconds
+2024-10-26 17:59:09,673 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s, response_time: 09.671 seconds
+2024-10-26 17:59:09,674 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s, response_time: 09.672 seconds
+2024-10-26 17:59:09,674 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s, response_time: 09.672 seconds
+2024-10-26 17:59:09,674 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s, response_time: 09.673 seconds
+2024-10-26 17:59:09,674 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s, response_time: 09.673 seconds
+2024-10-26 17:59:09,674 127.0.0.1 [26/Oct/2024:17:59:09 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 18:04:10,379 Error retrieving distance from localhost:30002 - 
+2024-10-26 18:04:23,996 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 18:04:24,003 Response from drone 3 received at 1729933464.0033180714, Latency: 0.0066051483 seconds
+2024-10-26 18:04:24,004 Response from drone 4 received at 1729933464.0038778782, Latency: 0.0071649551 seconds
+2024-10-26 18:04:24,004 Response from drone 0 received at 1729933464.0040829182, Latency: 0.0073699951 seconds
+2024-10-26 18:04:24,004 Response from drone 1 received at 1729933464.0043079853, Latency: 0.0075950623 seconds
+2024-10-26 18:04:24,004 Response from drone 5 received at 1729933464.0044281483, Latency: 0.0077152252 seconds
+2024-10-26 18:04:24,004 Received 5 valid responses with seq 1
+2024-10-26 18:04:24,004 Total time for multicast and responses: 0.0080711842 seconds
+2024-10-26 18:04:24,005 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s, response_time: 24.003 seconds
+2024-10-26 18:04:24,005 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s, response_time: 24.003 seconds
+2024-10-26 18:04:24,005 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s, response_time: 24.004 seconds
+2024-10-26 18:04:24,005 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s, response_time: 24.004 seconds
+2024-10-26 18:04:24,005 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s, response_time: 24.004 seconds
+2024-10-26 18:04:24,006 127.0.0.1 [26/Oct/2024:18:04:23 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 18:09:24,339 Error retrieving distance from localhost:30002 - 
+2024-10-26 18:13:44,728 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 18:13:44,736 Response from drone 3 received at 1729934024.7357840538, Latency: 0.0065701008 seconds
+2024-10-26 18:13:44,736 Response from drone 1 received at 1729934024.7359690666, Latency: 0.0067551136 seconds
+2024-10-26 18:13:44,736 Response from drone 4 received at 1729934024.7361350060, Latency: 0.0069210529 seconds
+2024-10-26 18:13:44,736 Response from drone 0 received at 1729934024.7365481853, Latency: 0.0073342323 seconds
+2024-10-26 18:13:44,736 Response from drone 5 received at 1729934024.7367560863, Latency: 0.0075421333 seconds
+2024-10-26 18:13:44,736 Received 5 valid responses with seq 1
+2024-10-26 18:13:44,736 Total time for multicast and responses: 0.0077559948 seconds
+2024-10-26 18:13:44,737 Drone 3 individual latency: 0.0065701008 seconds
+2024-10-26 18:13:44,737 Drone 1 individual latency: 0.0067551136 seconds
+2024-10-26 18:13:44,737 Drone 4 individual latency: 0.0069210529 seconds
+2024-10-26 18:13:44,737 Drone 0 individual latency: 0.0073342323 seconds
+2024-10-26 18:13:44,737 Drone 5 individual latency: 0.0075421333 seconds
+2024-10-26 18:13:44,737 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s, response_time: 44.735s
+2024-10-26 18:13:44,737 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s, response_time: 44.735s
+2024-10-26 18:13:44,737 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s, response_time: 44.736s
+2024-10-26 18:13:44,737 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s, response_time: 44.736s
+2024-10-26 18:13:44,738 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s, response_time: 44.736s
+2024-10-26 18:13:44,738 127.0.0.1 [26/Oct/2024:18:13:44 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 18:17:23,867 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 18:17:23,874 Response from drone 3 received at 1729934243.8748300076, Individual Latency: 0.0068421364 seconds
+2024-10-26 18:17:23,875 Response from drone 4 received at 1729934243.8753321171, Individual Latency: 0.0073442459 seconds
+2024-10-26 18:17:23,875 Response from drone 1 received at 1729934243.8753998280, Individual Latency: 0.0074119568 seconds
+2024-10-26 18:17:23,875 Response from drone 0 received at 1729934243.8755252361, Individual Latency: 0.0075373650 seconds
+2024-10-26 18:17:23,876 Response from drone 5 received at 1729934243.8756217957, Individual Latency: 0.0076339245 seconds
+2024-10-26 18:17:23,876 Received 5 valid responses with seq 1
+2024-10-26 18:17:23,876 Total time for multicast and responses: 0.0081059933 seconds
+2024-10-26 18:17:23,876 Drone 3 individual latency: 0.0068421364 seconds
+2024-10-26 18:17:23,876 Drone 4 individual latency: 0.0073442459 seconds
+2024-10-26 18:17:23,876 Drone 1 individual latency: 0.0074119568 seconds
+2024-10-26 18:17:23,876 Drone 0 individual latency: 0.0075373650 seconds
+2024-10-26 18:17:23,876 Drone 5 individual latency: 0.0076339245 seconds
+2024-10-26 18:17:23,876 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s, response_time: 23.874 seconds
+2024-10-26 18:17:23,876 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s, response_time: 23.875 seconds
+2024-10-26 18:17:23,877 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s, response_time: 23.875 seconds
+2024-10-26 18:17:23,877 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s, response_time: 23.875 seconds
+2024-10-26 18:17:23,877 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s, response_time: 23.875 seconds
+2024-10-26 18:17:23,877 127.0.0.1 [26/Oct/2024:18:17:23 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
+2024-10-26 18:22:24,480 Error retrieving distance from localhost:30002 - 
+2024-10-26 18:29:35,374 [Client]Received distance request from client at (6, 36.6261519, 127.4590123, 100)
+2024-10-26 18:29:35,381 Response from drone 1 received at 1729934975.3814468384, Latency: 0.0069849491 seconds
+2024-10-26 18:29:35,381 Response from drone 5 received at 1729934975.3816361427, Latency: 0.0071742535 seconds
+2024-10-26 18:29:35,382 Response from drone 4 received at 1729934975.3820338249, Latency: 0.0075719357 seconds
+2024-10-26 18:29:35,382 Response from drone 3 received at 1729934975.3822488785, Latency: 0.0077869892 seconds
+2024-10-26 18:29:35,382 Response from drone 0 received at 1729934975.3823649883, Latency: 0.0079030991 seconds
+2024-10-26 18:29:35,382 Received 5 valid responses with seq 1
+2024-10-26 18:29:35,382 Total time for multicast and responses: 0.0079710484 seconds
+2024-10-26 18:29:35,382 client:20001 -> drone:30001  97.4064387685m, altitude:  11.0000000000m, lat:  36.6261296000, lon: 127.4594540000, latency: 0.0000424272s
+2024-10-26 18:29:35,382 client:20001 -> drone:30005 265.8455530477m, altitude:  14.0000000000m, lat:  36.6262915000, lon: 127.4618193000, latency: 0.0002524390s
+2024-10-26 18:29:35,383 client:20001 -> drone:30004 244.8850969850m, altitude:  14.0000000000m, lat:  36.6260012000, lon: 127.4615689000, latency: 0.0001269659s
+2024-10-26 18:29:35,383 client:20001 -> drone:30003 228.8661328469m, altitude:  13.0000000000m, lat:  36.6262161000, lon: 127.4613776000, latency: 0.0001268591s
+2024-10-26 18:29:35,383 client:20001 -> drone:30000  90.0000000000m, altitude:  10.0000000000m, lat:  36.6261519000, lon: 127.4590123000, latency: 0.0000423778s
+2024-10-26 18:29:35,383 127.0.0.1 [26/Oct/2024:18:29:35 +0900] "POST /pre-request/llapbft-start HTTP/1.1" 200 221 "-" "curl/7.86.0"
