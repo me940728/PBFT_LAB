@@ -1,0 +1,335 @@
+2025-02-25 09:10:20,458 [INFO] Logging initialized.
+2025-02-25 09:10:20,458 [INFO] Starting node index=68, host=localhost, port=30067, is_client=False
+2025-02-25 09:10:20,462 [INFO] Server started at http://localhost:30067
+2025-02-25 09:10:28,803 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PRE-PREPARE: {'type': 'LLAPBFT_PRE-PREPARE', 'seq': 0, 'client_data': {'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}, 'leader': 30064, 'hash': 'd7b8b8c652a5d1a04755233e90f4451d', 'cluster_members': [30002, 30010, 30012, 30014, 30027, 30032, 30034, 30035, 30053, 30054, 30055, 30064, 30067, 30073, 30076]}
+2025-02-25 09:10:29,569 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,571 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,571 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,572 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,572 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,572 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,573 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,573 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,573 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,574 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,574 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,577 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,578 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,578 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PREPARE to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,580 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30010) for seq=0
+2025-02-25 09:10:29,581 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,581 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30073) for seq=0
+2025-02-25 09:10:29,582 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,583 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30076) for seq=0
+2025-02-25 09:10:29,584 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,584 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30054) for seq=0
+2025-02-25 09:10:29,584 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,597 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,598 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,598 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,599 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,599 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,610 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,616 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30012) for seq=0
+2025-02-25 09:10:29,616 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,620 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,630 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30014) for seq=0
+2025-02-25 09:10:29,630 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,644 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,655 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30034) for seq=0
+2025-02-25 09:10:29,655 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,906 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,907 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,907 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30073) for seq=0
+2025-02-25 09:10:29,907 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,907 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30012) for seq=0
+2025-02-25 09:10:29,907 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,908 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,911 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,915 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30034) for seq=0
+2025-02-25 09:10:29,916 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,916 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30076) for seq=0
+2025-02-25 09:10:29,917 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,917 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30010) for seq=0
+2025-02-25 09:10:29,917 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,919 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30054) for seq=0
+2025-02-25 09:10:29,919 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,920 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30055) for seq=0
+2025-02-25 09:10:29,920 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,920 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30027) for seq=0
+2025-02-25 09:10:29,923 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:29,923 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,936 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:29,936 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30035) for seq=0
+2025-02-25 09:10:29,940 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30035) for seq=0
+2025-02-25 09:10:29,940 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30035) for seq=0
+2025-02-25 09:10:29,941 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30034) for seq=0
+2025-02-25 09:10:29,941 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30010) for seq=0
+2025-02-25 09:10:29,941 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30012) for seq=0
+2025-02-25 09:10:29,941 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30073) for seq=0
+2025-02-25 09:10:29,941 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30076) for seq=0
+2025-02-25 09:10:29,942 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,942 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:29,942 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,942 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:29,943 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,944 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,944 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,945 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,945 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,945 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,946 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,946 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,947 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,948 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,948 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,949 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,950 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,950 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,951 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_PRE-REPLY to leader (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,952 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,952 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,952 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,953 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,953 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,953 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,953 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,954 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,954 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,954 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,954 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,955 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,955 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,955 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,957 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30032) for seq=0
+2025-02-25 09:10:29,959 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:29,962 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,963 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:29,963 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,964 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,964 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:29,967 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30032) for seq=0
+2025-02-25 09:10:29,968 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,968 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30032) for seq=0
+2025-02-25 09:10:29,968 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,968 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,968 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:29,968 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,969 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,969 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,970 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:29,970 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,970 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,970 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:29,971 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30032) for seq=0
+2025-02-25 09:10:29,971 [INFO] 127.0.0.1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:29,971 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:29,971 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:29,982 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:29,983 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30014) for seq=0
+2025-02-25 09:10:29,984 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,010 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,010 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,013 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30014) for seq=0
+2025-02-25 09:10:30,013 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,016 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30014) for seq=0
+2025-02-25 09:10:30,016 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,131 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30027) for seq=0
+2025-02-25 09:10:30,148 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,148 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30055) for seq=0
+2025-02-25 09:10:30,148 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,149 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,149 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,149 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,323 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,323 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,323 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,323 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,324 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30035) for seq=0
+2025-02-25 09:10:30,325 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/prepare | Response: {'status': 'LLAPBFT_PREPARE processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,325 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,328 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30055) for seq=0
+2025-02-25 09:10:30,328 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,328 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30055) for seq=0
+2025-02-25 09:10:30,328 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,328 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,328 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,329 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,330 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,330 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,330 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/prereply | Response: {'status': 'FINAL_REPLY already sent'}
+2025-02-25 09:10:30,330 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,330 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,330 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,332 [INFO] ::1 [25/Feb/2025:09:10:28 +0900] "POST /llapbft/pre-prepare HTTP/1.1" 200 202 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,333 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30054) for seq=0
+2025-02-25 09:10:30,333 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,334 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30010) for seq=0
+2025-02-25 09:10:30,334 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,334 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30073) for seq=0
+2025-02-25 09:10:30,334 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,335 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30010) for seq=0
+2025-02-25 09:10:30,335 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,335 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30076) for seq=0
+2025-02-25 09:10:30,335 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30073) for seq=0
+2025-02-25 09:10:30,336 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30076) for seq=0
+2025-02-25 09:10:30,336 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30012) for seq=0
+2025-02-25 09:10:30,336 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30035) for seq=0
+2025-02-25 09:10:30,336 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30014) for seq=0
+2025-02-25 09:10:30,336 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,336 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:30,337 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,337 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:30,337 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,337 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,337 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,337 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30002) for seq=0
+2025-02-25 09:10:30,342 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30034) for seq=0
+2025-02-25 09:10:30,343 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,343 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30002) for seq=0
+2025-02-25 09:10:30,343 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30054) for seq=0
+2025-02-25 09:10:30,344 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30002) for seq=0
+2025-02-25 09:10:30,344 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30054) for seq=0
+2025-02-25 09:10:30,344 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:30,344 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:30,345 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:30,346 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:30,346 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:30,346 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:30,346 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:30,347 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,347 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,348 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,348 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,348 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,351 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,374 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,378 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30027) for seq=0
+2025-02-25 09:10:30,379 [INFO] 127.0.0.1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,380 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,382 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30032) for seq=0
+2025-02-25 09:10:30,382 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,400 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,401 [INFO] ::1 [25/Feb/2025:09:10:29 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,401 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,402 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,405 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,405 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,429 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30055) for seq=0
+2025-02-25 09:10:30,430 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,430 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30034) for seq=0
+2025-02-25 09:10:30,430 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,431 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,431 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:30,439 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:30,442 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30027) for seq=0
+2025-02-25 09:10:30,443 [INFO] ::1 [25/Feb/2025:09:10:30 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,877 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_PREPARE from node (port 30053) for seq=0
+2025-02-25 09:10:33,922 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30032) for seq=0
+2025-02-25 09:10:33,922 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,923 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30014) for seq=0
+2025-02-25 09:10:33,923 [INFO] 127.0.0.1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,923 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30054) for seq=0
+2025-02-25 09:10:33,923 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,924 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30032) (distance: 46.34 m) (Delay: 0.0003 s)
+2025-02-25 09:10:33,924 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30055) (distance: 47.62 m) (Delay: 0.0003 s)
+2025-02-25 09:10:33,928 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30014) (distance: 99.97 m) (Delay: 0.0005 s)
+2025-02-25 09:10:33,928 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30034) (distance: 71.74 m) (Delay: 0.0005 s)
+2025-02-25 09:10:33,928 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30053) (distance: 84.07 m) (Delay: 0.0005 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30035) (distance: 125.93 m) (Delay: 0.0007 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30073) (distance: 112.17 m) (Delay: 0.0007 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30012) (distance: 164.71 m) (Delay: 0.0009 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30027) (distance: 177.56 m) (Delay: 0.0009 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30054) (distance: 165.17 m) (Delay: 0.0009 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30076) (distance: 185.34 m) (Delay: 0.0009 s)
+2025-02-25 09:10:33,929 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30002) (distance: 205.92 m) (Delay: 0.0014 s)
+2025-02-25 09:10:33,930 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30010) (distance: 242.55 m) (Delay: 0.0014 s)
+2025-02-25 09:10:33,930 [INFO] [LLAPBFT Follower (port 30067)] Sending LLAPBFT_COMMIT to node (port 30064) (distance: 235.87 m) (Delay: 0.0014 s)
+2025-02-25 09:10:33,940 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30034) for seq=0
+2025-02-25 09:10:33,940 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,940 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30002) for seq=0
+2025-02-25 09:10:33,940 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,941 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30002/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,941 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30055) for seq=0
+2025-02-25 09:10:33,954 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,954 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30012/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,954 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30034/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,954 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30035) for seq=0
+2025-02-25 09:10:33,955 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30073/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30014/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30027/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30053/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30027) for seq=0
+2025-02-25 09:10:33,955 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,955 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30076) for seq=0
+2025-02-25 09:10:33,955 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,956 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30076/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,965 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30055/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,965 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30032/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,965 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30035/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,974 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30010/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,975 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30054/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,975 [INFO] [LLAPBFT Node (port 30067)] Posted to http://localhost:30064/llapbft/commit | Response: {'status': 'LLAPBFT_COMMIT processed'}
+2025-02-25 09:10:33,977 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/prepare HTTP/1.1" 200 198 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,979 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30012) for seq=0
+2025-02-25 09:10:33,980 [INFO] 127.0.0.1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,984 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30053) for seq=0
+2025-02-25 09:10:33,985 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:33,987 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30073) for seq=0
+2025-02-25 09:10:33,987 [INFO] ::1 [25/Feb/2025:09:10:33 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:34,177 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30002) for seq=0
+2025-02-25 09:10:34,177 [INFO] ::1 [25/Feb/2025:09:10:34 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:34,710 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30002) for seq=0
+2025-02-25 09:10:34,710 [INFO] ::1 [25/Feb/2025:09:10:34 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:34,833 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30027) for seq=0
+2025-02-25 09:10:34,834 [INFO] ::1 [25/Feb/2025:09:10:34 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:34,834 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30012) for seq=0
+2025-02-25 09:10:34,834 [INFO] 127.0.0.1 [25/Feb/2025:09:10:34 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:38,851 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30064) for seq=0
+2025-02-25 09:10:38,852 [INFO] 127.0.0.1 [25/Feb/2025:09:10:38 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"
+2025-02-25 09:10:38,852 [INFO] [LLAPBFT Follower (port 30067)] Received LLAPBFT_COMMIT from node (port 30010) for seq=0
+2025-02-25 09:10:38,852 [INFO] ::1 [25/Feb/2025:09:10:38 +0900] "POST /llapbft/commit HTTP/1.1" 200 197 "-" "Python/3.8 aiohttp/3.10.10"

@@ -1,0 +1,39 @@
+# 각 거리별 대역폭 정의(Mbps 1 = 10^6 = 1,000,000 bit)
+# 관련 근거 : 
+# 1) https://inet.omnetpp.org/docs/showcases/wireless/errorrate/doc/index.html
+# 2) Performance Evaluation of the IEEE802.11ax Amendment
+# 저대역 통신할 경우
+bandwidth_by_distance:
+  - range: "0-50"
+    bandwidth: 54
+  - range: "51-100"
+    bandwidth: 36
+  - range: "101-150"
+    bandwidth: 24
+  - range: "151-200"
+    bandwidth: 18
+  - range: "201-249"
+    bandwidth: 12
+  - range: "250-299"
+    bandwidth: 6
+  - range: "300-"
+    bandwidth: 0
+
+# 4G LTE 기준, 3GPP(3rd Generation Partnership Project, 이동통신 기술 표준화 기구)
+# 관련 근거 : 
+# 1) https://www.3gpp.org/ftp/Specs/archive/38_series/38.901/ => 
+# 고대역으로 장거리 통신할 경우     
+bandwidth_by_long_distance:
+  - range: "0-1000"
+    bandwidth: 150  # 최대 이론적 속도, 단위: Mbps
+  - range: "1001-3000"
+    bandwidth: 100  # 사용자 밀도와 간섭 고려한 예상 속도
+  - range: "3001-5000"
+    bandwidth: 70   # 거리 증가에 따른 신호 감쇠
+  - range: "5001-10000"
+    bandwidth: 30   # 장거리에서 데이터 전송 감소
+  - range: "10001-15000"
+    bandwidth: 20   # 매우 장거리 통신의 실제 예상 속도
+  - range: "15001-"
+    bandwidth: 5    # 극장거리 통신의 제한적인 속도
+

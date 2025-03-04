@@ -1,0 +1,32 @@
+nodes:
+    - host: localhost
+      port: 40000
+    - host: localhost
+      port: 40001
+    - host: localhost
+      port: 40002
+    - host: localhost
+      port: 40003
+
+clients:
+    - host: localhost
+      port: 20001
+
+loss%: 0
+
+ckpt_interval: 10
+
+retry_times_before_view_change: 1
+
+sync_interval: 10
+
+misc:
+    network_timeout: 20
+
+k : 4
+
+r : 30
+
+client_latency : 0.010
+propagation_latency : 0.001
+group_latency : 0.001

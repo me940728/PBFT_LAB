@@ -1,0 +1,948 @@
+nodes:
+#========cluster 0=========
+    - host: localhost
+      port: 30000
+      leader: True
+      leaf: True
+      leaf_list:
+        - 64
+        - 68
+        - 72
+    - host: localhost
+      port: 30001
+    - host: localhost
+      port: 30002
+    - host: localhost
+      port: 30003
+
+    - host: localhost
+      port: 30004
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30005
+    - host: localhost
+      port: 30006
+    - host: localhost
+      port: 30007
+
+    - host: localhost
+      port: 30008
+      leader: True
+      leaf: False
+      
+    - host: localhost
+      port: 30009
+    - host: localhost
+      port: 30010
+    - host: localhost
+      port: 30011
+
+    - host: localhost
+      port: 30012
+      leader: True
+      leaf: False
+      
+    - host: localhost
+      port: 30013
+    - host: localhost
+      port: 30014
+    - host: localhost
+      port: 30015
+
+    - host: localhost
+      port: 30016
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30017
+    - host: localhost
+      port: 30018
+    - host: localhost
+      port: 30019
+
+    - host: localhost
+      port: 30020
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30021
+    - host: localhost
+      port: 30022
+    - host: localhost
+      port: 30023
+
+    - host: localhost
+      port: 30024
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30025
+    - host: localhost
+      port: 30026
+    - host: localhost
+      port: 30027
+
+    - host: localhost
+      port: 30028
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30029
+    - host: localhost
+      port: 30030
+    - host: localhost
+      port: 30031
+
+    - host: localhost
+      port: 30032
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30033
+    - host: localhost
+      port: 30034
+    - host: localhost
+      port: 30035
+
+    - host: localhost
+      port: 30036
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30037
+    - host: localhost
+      port: 30038
+    - host: localhost
+      port: 30039
+
+    - host: localhost
+      port: 30040
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30041
+    - host: localhost
+      port: 30042
+    - host: localhost
+      port: 30043
+
+    - host: localhost
+      port: 30044
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30045
+    - host: localhost
+      port: 30046
+    - host: localhost
+      port: 30047
+
+    - host: localhost
+      port: 30048
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30049
+    - host: localhost
+      port: 30050
+    - host: localhost
+      port: 30051
+
+    - host: localhost
+      port: 30052
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30053
+    - host: localhost
+      port: 30054
+    - host: localhost
+      port: 30055
+
+    - host: localhost
+      port: 30056
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30057
+    - host: localhost
+      port: 30058
+    - host: localhost
+      port: 30059
+    
+    - host: localhost
+      port: 30060
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30061
+    - host: localhost
+      port: 30062
+    - host: localhost
+      port: 30063
+
+    - host: localhost
+      port: 30064
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30065
+    - host: localhost
+      port: 30066
+    - host: localhost
+      port: 30067
+
+    - host: localhost
+      port: 30068
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30069
+    - host: localhost
+      port: 30070
+    - host: localhost
+      port: 30071
+
+    - host: localhost
+      port: 30072
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30073
+    - host: localhost
+      port: 30074
+
+#========cluster 1=========
+    - host: localhost
+      port: 30075
+      leader: True
+      leaf: True
+      leaf_list: 
+        - 139
+        - 143
+        - 147
+    - host: localhost
+      port: 30076
+    - host: localhost
+      port: 30077
+    - host: localhost
+      port: 30078
+
+    - host: localhost
+      port: 30079
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30080
+    - host: localhost
+      port: 30081
+    - host: localhost
+      port: 30082
+
+    - host: localhost
+      port: 30083
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30084
+    - host: localhost
+      port: 30085
+    - host: localhost
+      port: 30086
+
+    - host: localhost
+      port: 30087
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30088
+    - host: localhost
+      port: 30089
+    - host: localhost
+      port: 30090
+
+    - host: localhost
+      port: 30091
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30092
+    - host: localhost
+      port: 30093
+    - host: localhost
+      port: 30094
+
+    - host: localhost
+      port: 30095
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30096
+    - host: localhost
+      port: 30097
+    - host: localhost
+      port: 30098
+
+    - host: localhost
+      port: 30099
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30100
+    - host: localhost
+      port: 30101
+    - host: localhost
+      port: 30102
+
+    - host: localhost
+      port: 30103
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30104
+    - host: localhost
+      port: 30105
+    - host: localhost
+      port: 30106
+
+    - host: localhost
+      port: 30107
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30108
+    - host: localhost
+      port: 30109
+    - host: localhost
+      port: 30110
+
+    - host: localhost
+      port: 30111
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30112
+    - host: localhost
+      port: 30113
+    - host: localhost
+      port: 30114
+
+    - host: localhost
+      port: 30115
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30116
+    - host: localhost
+      port: 30117
+    - host: localhost
+      port: 30118
+
+    - host: localhost
+      port: 30119
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30120
+    - host: localhost
+      port: 30121
+    - host: localhost
+      port: 30122
+
+    - host: localhost
+      port: 30123
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30124
+    - host: localhost
+      port: 30125
+    - host: localhost
+      port: 30126
+
+    - host: localhost
+      port: 30127
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30128
+    - host: localhost
+      port: 30129
+    - host: localhost
+      port: 30130
+
+    - host: localhost
+      port: 30131
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30132
+    - host: localhost
+      port: 30133
+    - host: localhost
+      port: 30134
+    
+    - host: localhost
+      port: 30135
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30136
+    - host: localhost
+      port: 30137
+    - host: localhost
+      port: 30138
+
+    - host: localhost
+      port: 30139
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30140
+    - host: localhost
+      port: 30141
+    - host: localhost
+      port: 30142
+
+    - host: localhost
+      port: 30143
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30144
+    - host: localhost
+      port: 30145
+    - host: localhost
+      port: 30146
+
+    - host: localhost
+      port: 30147
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30148
+    - host: localhost
+      port: 30149
+
+#========cluster 2=========
+    - host: localhost
+      port: 30150
+      leader: True
+      leaf: True
+      leaf_list: 
+        - 214
+        - 218
+        - 222
+    - host: localhost
+      port: 30151
+    - host: localhost
+      port: 30152
+    - host: localhost
+      port: 30153
+
+    - host: localhost
+      port: 30154
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30155
+    - host: localhost
+      port: 30156
+    - host: localhost
+      port: 30157
+
+    - host: localhost
+      port: 30158
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30159
+    - host: localhost
+      port: 30160
+    - host: localhost
+      port: 30161
+
+    - host: localhost
+      port: 30162
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30163
+    - host: localhost
+      port: 30164
+    - host: localhost
+      port: 30165
+
+    - host: localhost
+      port: 30166
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30167
+    - host: localhost
+      port: 30168
+    - host: localhost
+      port: 30169
+
+    - host: localhost
+      port: 30170
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30171
+    - host: localhost
+      port: 30172
+    - host: localhost
+      port: 30173
+
+    - host: localhost
+      port: 30174
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30175
+    - host: localhost
+      port: 30176
+    - host: localhost
+      port: 30177
+
+    - host: localhost
+      port: 30178
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30179
+    - host: localhost
+      port: 30180
+    - host: localhost
+      port: 30181
+
+    - host: localhost
+      port: 30182
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30183
+    - host: localhost
+      port: 30184
+    - host: localhost
+      port: 30185
+
+    - host: localhost
+      port: 30186
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30187
+    - host: localhost
+      port: 30188
+    - host: localhost
+      port: 30189
+
+    - host: localhost
+      port: 30190
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30191
+    - host: localhost
+      port: 30192
+    - host: localhost
+      port: 30193
+
+    - host: localhost
+      port: 30194
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30195
+    - host: localhost
+      port: 30196
+    - host: localhost
+      port: 30197
+
+    - host: localhost
+      port: 30198
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30199
+    - host: localhost
+      port: 30200
+    - host: localhost
+      port: 30201
+
+    - host: localhost
+      port: 30202
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30203
+    - host: localhost
+      port: 30204
+    - host: localhost
+      port: 30205
+
+    - host: localhost
+      port: 30206
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30207
+    - host: localhost
+      port: 30208
+    - host: localhost
+      port: 30209
+    
+    - host: localhost
+      port: 30210
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30211
+    - host: localhost
+      port: 30212
+    - host: localhost
+      port: 30213
+
+    - host: localhost
+      port: 30214
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30215
+    - host: localhost
+      port: 30216
+    - host: localhost
+      port: 30217
+
+    - host: localhost
+      port: 30218
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30219
+    - host: localhost
+      port: 30220
+    - host: localhost
+      port: 30221
+
+    - host: localhost
+      port: 30222
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30223
+    - host: localhost
+      port: 30224
+
+#========cluster 3=========
+    - host: localhost
+      port: 30225
+      leader: True
+      leaf: True
+      leaf_list: 
+        - 289
+        - 293
+        - 297
+    - host: localhost
+      port: 30226
+    - host: localhost
+      port: 30227
+    - host: localhost
+      port: 30228
+
+    - host: localhost
+      port: 30229
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30230
+    - host: localhost
+      port: 30231
+    - host: localhost
+      port: 30232
+
+    - host: localhost
+      port: 30233
+      leader: True
+      leaf: False
+      
+    - host: localhost
+      port: 30234
+    - host: localhost
+      port: 30235
+    - host: localhost
+      port: 30236
+
+    - host: localhost
+      port: 30237
+      leader: True
+      leaf: False
+      
+    - host: localhost
+      port: 30238
+    - host: localhost
+      port: 30239
+    - host: localhost
+      port: 30240
+
+    - host: localhost
+      port: 30241
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30242
+    - host: localhost
+      port: 30243
+    - host: localhost
+      port: 30244
+
+    - host: localhost
+      port: 30245
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30246
+    - host: localhost
+      port: 30247
+    - host: localhost
+      port: 30248
+
+    - host: localhost
+      port: 30249
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30250
+    - host: localhost
+      port: 30251
+    - host: localhost
+      port: 30252
+
+    - host: localhost
+      port: 30253
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30254
+    - host: localhost
+      port: 30255
+    - host: localhost
+      port: 30256
+
+    - host: localhost
+      port: 30257
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30258
+    - host: localhost
+      port: 30259
+    - host: localhost
+      port: 30260
+
+    - host: localhost
+      port: 30261
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30262
+    - host: localhost
+      port: 30263
+    - host: localhost
+      port: 30264
+
+    - host: localhost
+      port: 30265
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30266
+    - host: localhost
+      port: 30267
+    - host: localhost
+      port: 30268
+
+    - host: localhost
+      port: 30269
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30270
+    - host: localhost
+      port: 30271
+    - host: localhost
+      port: 30272
+
+    - host: localhost
+      port: 30273
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30274
+    - host: localhost
+      port: 30275
+    - host: localhost
+      port: 30276
+
+    - host: localhost
+      port: 30277
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30278
+    - host: localhost
+      port: 30279
+    - host: localhost
+      port: 30280
+
+    - host: localhost
+      port: 30281
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30282
+    - host: localhost
+      port: 30283
+    - host: localhost
+      port: 30284
+    
+    - host: localhost
+      port: 30285
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30286
+    - host: localhost
+      port: 30287
+    - host: localhost
+      port: 30288
+
+    - host: localhost
+      port: 30289
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30290
+    - host: localhost
+      port: 30291
+    - host: localhost
+      port: 30292
+
+    - host: localhost
+      port: 30293
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30294
+    - host: localhost
+      port: 30295
+    - host: localhost
+      port: 30296
+
+    - host: localhost
+      port: 30297
+      leader: True
+      leaf: False
+
+    - host: localhost
+      port: 30298
+    - host: localhost
+      port: 30299
+clients:
+    - host: localhost
+      port: 20001
+    # - host: localhost
+    #   port: 20002
+    # - host: localhost
+    #   port: 20003
+    # - host: localhost
+    #   port: 20004
+
+loss%: 0
+
+ckpt_interval: 10
+
+retry_times_before_view_change: 1
+
+sync_interval: 10
+
+misc:
+    network_timeout: 20
+
+k : 4
+
+r : 16
+
+client_latency : 0.010
+propagation_latency : 0.001
+group_latency : 0.001

@@ -1,0 +1,49 @@
+drones:
+# G-1
+    - host: localhost
+      port: 30000
+      latitude: 36.6261519
+      longitude: 127.4590123
+      altitude: 10
+    - host: localhost
+      port: 30001
+      latitude: 36.6261296
+      longitude: 127.459454
+      altitude: 11
+    # D[2] Malicious Client distance + 318.8433942144m
+    - host: localhost
+      port: 30002
+      #latitude: 36.344697   # 31키로 거리
+      #longitude: 127.396321 # 31키로 거리
+      latitude: 36.624870
+      longitude: 127.462047
+      altitude: 12
+# G-2
+    - host: localhost
+      port: 30003
+      #latitude: 36.344697   # 31키로 거리
+      #longitude: 127.396321 # 31키로 거리
+      latitude: 36.6262161
+      longitude: 127.4613776
+      altitude: 13
+    - host: localhost
+      port: 30004
+      #latitude: 36.344697   # 31키로 거리
+      #longitude: 127.396321 # 31키로 거리
+      latitude: 36.6260012
+      longitude: 127.4615689
+      altitude: 14
+    - host: localhost
+      port: 30005
+      #latitude: 36.344697   # 31키로 거리
+      #longitude: 127.396321 # 31키로 거리
+      latitude: 36.6262915
+      longitude: 127.4618193
+      altitude: 14
+#--------->     
+# client
+    - host: localhost
+      port: 20001
+      latitude: 36.6264133
+      longitude: 127.4582464
+      altitude: 0
