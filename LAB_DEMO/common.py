@@ -34,7 +34,7 @@ async def simulate_delay(distance, message_size_bits, bandwidth_data):
     """
     bw = get_bandwidth(distance, bandwidth_data)
     if bw <= 0:
-        delay = 5
+        delay = 0
     else:
         delay = message_size_bits / (bw * 1_000_000)
     await asyncio.sleep(delay)

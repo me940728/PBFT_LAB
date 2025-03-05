@@ -7,7 +7,7 @@ LLAPBFT 합의 시뮬레이션 코드
 - 클라이언트(DCC, port 20001)는 모든 드론(복제자)로부터 위치 정보를 받아, scikit-learn KMeans를 통해 클러스터링을 수행합니다.
 - 각 클러스터에서는 클라이언트와 거리가 가장 가까운 드론을 클러스터 매니저로, 클러스터 중심에 가장 가까운 드론(매니저 제외)을 클러스터 리더로 선출합니다.
 - 클러스터링 결과는 log/cluster_info.log 에 저장되며, 가독성 높은 형식으로 기록됩니다.
-- 이후 클라이언트는 각 클러스터 매니저에게 REQUEST 메시지를 보내고, 클러스터 매니저는 메시지를 클러스터 리더에게 전달합니다.
+- 이후 클러스터 매니저에게 REQUEST 메시지를 보내고, 클러스터 매니저는 메시지를 클러스터 리더에게 전달합니다.
 - 클러스터 리더는 PRE_PREPARE를 시작으로, 클러스터 내부(클러스터 매니저 제외)에서 합의를 진행하고, 최종적으로 클러스터 매니저를 통해 클라이언트에게 REPLY를 전달합니다.
 """
 
@@ -29,8 +29,8 @@ def perform_clustering(client_location, drones, k):
     k: 클러스터 수
     반환: 클러스터링 결과 리스트. 각 클러스터는 dict 형식으로
         {
-            "manager": drone dict,   # 클라이언트에 가장 가까운 드론
-            "leader": drone dict,    # 클러스터 중심에 가장 가까운 드론 (manager 제외)
+            "manager": drone dict,   # 클라이언트에 가장 가까운 드론 (fault가 없는 후보)
+            "leader": drone dict,    # 클러스터 중심에 가장 가까운 드론 (manager 제외, fault가 없는 후보)
             "members": [drone dict, ...]  # 클러스터에 속한 모든 드론
         }
     """
@@ -47,15 +47,31 @@ def perform_clustering(client_location, drones, k):
         cluster_members = [d for d, label in zip(drones, labels) if label == cluster_id]
         if not cluster_members:
             continue
-        # 클라이언트 위치와의 거리를 기준으로 클러스터 매니저 선정
-        manager = min(cluster_members, key=lambda d: calculate_distance(
-            (d['latitude'], d['longitude'], d['altitude']),
-            client_location))
-        # 클러스터 중심과의 거리를 기준으로 리더 선정 (manager 제외)
+
+        # 건강한(healthy) 후보: fault flag가 False인 드론들 (fault 정보가 없다면 기본값 False)
+        healthy_members = [d for d in cluster_members if not d.get("fault", False)]
+        # 클라이언트와의 거리를 기준으로 건강한 후보 중 가장 가까운 드론을 매니저로 선출
+        if healthy_members:
+            manager = min(healthy_members, key=lambda d: calculate_distance(
+                (d['latitude'], d['longitude'], d['altitude']),
+                client_location))
+        else:
+            # 건강한 후보가 없으면 모든 후보 중 선택
+            manager = min(cluster_members, key=lambda d: calculate_distance(
+                (d['latitude'], d['longitude'], d['altitude']),
+                client_location))
+        
+        # 매니저를 제외한 후보들
         non_manager = [d for d in cluster_members if d['port'] != manager['port']]
-        leader = min(non_manager, key=lambda d: calculate_distance(
-            (d['latitude'], d['longitude'], d['altitude']),
-            centroids[cluster_id])) if non_manager else manager
+        # 건강한 후보 중에서 클러스터 중심과의 거리를 기준으로 리더 선출
+        healthy_non_manager = [d for d in non_manager if not d.get("fault", False)]
+        if healthy_non_manager:
+            leader = min(healthy_non_manager, key=lambda d: calculate_distance(
+                (d['latitude'], d['longitude'], d['altitude']),
+                centroids[cluster_id]))
+        else:
+            leader = manager  # 건강한 후보가 없으면 매니저를 리더로 설정
+
         clusters.append({
             "manager": manager,
             "leader": leader,
@@ -141,7 +157,7 @@ class LLAPBFTClient:
                 self.bandwidth_data = yaml.safe_load(f)
         else:
             self.bandwidth_data = None
-        self.total_rounds = 2  # 합의 라운드 수
+        self.total_rounds = 1  # 합의 라운드 수
         # 각 라운드별 REPLY 카운트 저장
         self.reply_counts = {}
 
@@ -209,6 +225,10 @@ class LLAPBFTClient:
 
     async def handle_reply(self, request):
         data = await request.json()
+        # fault flag가 있는 경우 REPLY 무시
+        if data.get("fault", False):
+            self.logger.info(f"[CLIENT] Ignoring FAULT reply: {data}")
+            return web.json_response({"status": "Fault reply ignored"})
         req_id = data.get("request_id")
         self.reply_counts.setdefault(req_id, 0)
         self.reply_counts[req_id] += 1
@@ -252,6 +272,10 @@ class LLAPBFTNode:
 
     async def handle_request(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REQUEST: {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault request"})
         req_id = data.get("request_id")
         cluster_info = data.get("cluster_info")
         self.logger.info(f"[NODE {self.node_info['port']}] Received REQUEST {req_id} with cluster_info: Manager {cluster_info['manager']['port']}, Leader {cluster_info['leader']['port']}")
@@ -269,6 +293,10 @@ class LLAPBFTNode:
 
     async def handle_request_leader(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REQUEST_LEADER: {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault request_leader"})
         req_id = data.get("request_id")
         cluster_info = data.get("cluster_info")
         self.logger.info(f"[NODE {self.node_info['port']}] (Cluster Leader) Received REQUEST {req_id}")
@@ -291,6 +319,10 @@ class LLAPBFTNode:
 
     async def handle_preprepare(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PRE-PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault preprepare"})
         req_id = data.get("request_id")
         cluster_info = data.get("cluster_info")
         self.logger.info(f"[NODE {self.node_info['port']}] Received PRE-PREPARE for REQUEST {req_id}")
@@ -312,6 +344,10 @@ class LLAPBFTNode:
 
     async def handle_prepare(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault prepare"})
         req_id = data.get("request_id")
         cluster_info = data.get("cluster_info")
         self.logger.info(f"[NODE {self.node_info['port']}] Received PREPARE for REQUEST {req_id} from {data.get('sender')}")
@@ -335,6 +371,10 @@ class LLAPBFTNode:
 
     async def handle_commit(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT COMMIT for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault commit"})
         req_id = data.get("request_id")
         cluster_info = data.get("cluster_info")
         self.logger.info(f"[NODE {self.node_info['port']}] Received COMMIT for REQUEST {req_id} from {data.get('sender')}")
@@ -357,6 +397,10 @@ class LLAPBFTNode:
 
     async def handle_pre_reply(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PRE_REPLY for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault pre_reply"})
         req_id = data.get("request_id")
         self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Received PRE_REPLY for REQUEST {req_id} from {data.get('sender')}")
         status = self.get_status(req_id)
@@ -377,6 +421,10 @@ class LLAPBFTNode:
 
     async def handle_reply(self, request):
         data = await request.json()
+        # fault flag 체크
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REPLY (for logging): {data}")
+            return web.json_response({"status": "Ignored fault reply"})
         self.logger.info(f"[NODE {self.node_info['port']}] Received REPLY (for logging): {data}")
         return web.json_response({"status": "REPLY received"})
 
@@ -398,6 +446,8 @@ async def send_with_delay(session, source, target, url, data, bandwidth_data):
         data["simulated_delay"] = delay
         data["distance"] = distance
         data["message_size_bits"] = message_size_bits
+        # 딜레이가 0이면 fault로 간주하여 flag 추가
+        data["fault"] = True if delay == 0 else False
     async with session.post(url, json=data) as resp:
         return await resp.text()
 

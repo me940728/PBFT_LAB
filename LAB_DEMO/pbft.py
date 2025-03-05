@@ -36,6 +36,8 @@ async def send_with_delay(session, source, target, url, data, bandwidth_data):
         data["simulated_delay"] = delay
         data["distance"] = distance
         data["message_size_bits"] = message_size_bits
+        # 딜레이가 0이면 fault로 간주 (fault flag 추가)
+        data["fault"] = True if delay == 0 else False
     async with session.post(url, json=data) as resp:
         return await resp.text()
 
@@ -115,7 +117,11 @@ class PBFTClient:
         self.reply_events = {}  # request_id별 asyncio.Event
 
     def get_leader(self):
+        # 포트 순으로 정렬한 후, fault flag가 없는(건강한) 드론을 선택
         sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
+        for replica in sorted_replicas:
+            if not replica.get("fault", False):
+                return replica
         return sorted_replicas[0]
 
     async def send_request(self):
@@ -155,6 +161,10 @@ class PBFTClient:
 
     async def handle_reply(self, request):
         data = await request.json()
+        # fault flag가 있는 경우 reply 무시
+        if data.get("fault", False):
+            self.logger.info(f"[CLIENT] Ignoring FAULT reply: {data}")
+            return web.json_response({"status": "Fault reply ignored"})
         req_id = data.get("request_id")
         self.logger.info(f"[CLIENT] REPLY: {data}")
         if req_id in self.reply_events:
@@ -189,7 +199,11 @@ class PBFTNode:
             self.bandwidth_data = None
 
     def get_leader(self):
+        # 포트 순으로 정렬한 후 fault flag가 없는 드론을 선택
         sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
+        for replica in sorted_replicas:
+            if not replica.get("fault", False):
+                return replica
         return sorted_replicas[0]
 
     async def send_message(self, target, endpoint, data):
@@ -229,6 +243,10 @@ class PBFTNode:
 
     async def handle_preprepare(self, request):
         data = await request.json()
+        # fault 플래그가 있는 경우 메시지 무시
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PRE-PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault preprepare"})
         req_id = data.get("request_id")
         self.logger.info(f"[NODE {self.node_info['port']}] Received PRE-PREPARE for REQUEST {req_id} from Leader({data.get('leader')})")
         if "simulated_delay" in data and "distance" in data:
@@ -248,6 +266,10 @@ class PBFTNode:
 
     async def handle_prepare(self, request):
         data = await request.json()
+        # fault 플래그가 있는 경우 메시지 무시
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault prepare"})
         req_id = data.get("request_id")
         sender = data.get("sender")
         self.logger.info(f"[NODE {self.node_info['port']}] Received PREPARE for REQUEST {req_id} from {sender}")
@@ -270,6 +292,10 @@ class PBFTNode:
 
     async def handle_commit(self, request):
         data = await request.json()
+        # fault 플래그가 있는 경우 메시지 무시
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT COMMIT for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault commit"})
         req_id = data.get("request_id")
         sender = data.get("sender")
         self.logger.info(f"[NODE {self.node_info['port']}] Received COMMIT for REQUEST {req_id} from {sender}")
@@ -293,6 +319,10 @@ class PBFTNode:
 
     async def handle_reply(self, request):
         data = await request.json()
+        # fault 플래그가 있는 경우 메시지 무시
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REPLY (for logging): {data}")
+            return web.json_response({"status": "Ignored fault reply"})
         self.logger.info(f"[NODE {self.node_info['port']}] Received REPLY (for logging): {data}")
         return web.json_response({"status": "REPLY received"})
 
