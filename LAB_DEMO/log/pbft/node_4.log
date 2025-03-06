@@ -1,0 +1,5 @@
+[2025-03-06 11:02:42,742] [INFO] Starting node at localhost:30003 | index=  4 | f=1, k=6 | Role: Replica
+[2025-03-06 11:05:51,020] [INFO] Starting node at localhost:30003 | index=  4 | f=1, k=6 | Role: Replica
+[2025-03-06 11:06:09,492] [INFO] Starting node at localhost:30003 | index=  4 | f=1, k=6 | Role: Replica
+[2025-03-06 11:06:54,405] [INFO] Starting node at localhost:30003 | index=  4 | f=1, k=6 | Role: Replica
+[2025-03-06 11:10:25,745] [INFO] Starting node at localhost:30003 | index=  4 | f=1, k=6 | Role: Replica

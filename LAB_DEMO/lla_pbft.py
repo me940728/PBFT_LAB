@@ -1,42 +1,51 @@
 #!/usr/bin/env python3
 """
-llapbft.py
-
-LLAPBFT 합의 시뮬레이션 코드
-- 확장된 합의 프로토콜: PRE_REQUEST, REQUEST, PRE_PREPARE, PREPARE, COMMIT, PRE_REPLY, REPLY
-- 클라이언트(DCC, port 20001)는 모든 드론(복제자)로부터 위치 정보를 받아, scikit-learn KMeans를 통해 클러스터링을 수행합니다.
-- 각 클러스터에서는 클라이언트와 거리가 가장 가까운 드론을 클러스터 매니저로, 클러스터 중심에 가장 가까운 드론(매니저 제외)을 클러스터 리더로 선출합니다.
-- 클러스터링 결과는 log/cluster_info.log 에 저장되며, 가독성 높은 형식으로 기록됩니다.
-- 이후 클러스터 매니저에게 REQUEST 메시지를 보내고, 클러스터 매니저는 메시지를 클러스터 리더에게 전달합니다.
-- 클러스터 리더는 PRE_PREPARE를 시작으로, 클러스터 내부(클러스터 매니저 제외)에서 합의를 진행하고, 최종적으로 클러스터 매니저를 통해 클라이언트에게 REPLY를 전달합니다.
+리팩터링된 LLAPBFT 합의 시뮬레이션 코드
+- 공통 네트워크 전송 및 fault 체크 로직을 BaseEntity 클래스로 분리
+- 상태 관리, 로깅, 타임아웃 처리를 개선하여 코드 중복을 줄임
+- 클라이언트와 노드 역할별 핸들러는 공통 기능을 재사용함
 """
 
 import asyncio, aiohttp, logging, time, argparse, os, yaml, json
 from aiohttp import web
 from common import calculate_distance, simulate_delay
-
-# scikit-learn KMeans와 numpy 임포트
 from sklearn.cluster import KMeans
 import numpy as np
 
 ##########################################################################
-# 클러스터링 및 로그 기록 (PRE-REQUEST 단계)
+# 공통 유틸리티 함수 및 클래스
 ##########################################################################
+def setup_logging(name: str, log_file_name: str) -> logging.Logger:
+    log_dir = os.path.join(os.getcwd(), "log", "llapbft")
+    os.makedirs(log_dir, exist_ok=True)
+    log_file_path = os.path.join(log_dir, log_file_name)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(logging.INFO)
+    formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s')
+
+    # 중복 핸들러 추가 방지
+    if not logger.handlers:
+        ch = logging.StreamHandler()
+        ch.setFormatter(formatter)
+        logger.addHandler(ch)
+
+        fh = logging.FileHandler(log_file_path, mode='a')
+        fh.setFormatter(formatter)
+        logger.addHandler(fh)
+    return logger
+
+def load_config(path: str) -> dict:
+    with open(path, 'r') as f:
+        return yaml.safe_load(f)
+
 def perform_clustering(client_location, drones, k):
     """
-    client_location: (lat, lon, alt)
-    drones: 클러스터링 대상 드론 리스트 (포트 20001 제외)
-    k: 클러스터 수
-    반환: 클러스터링 결과 리스트. 각 클러스터는 dict 형식으로
-        {
-            "manager": drone dict,   # 클라이언트에 가장 가까운 드론 (fault가 없는 후보)
-            "leader": drone dict,    # 클러스터 중심에 가장 가까운 드론 (manager 제외, fault가 없는 후보)
-            "members": [drone dict, ...]  # 클러스터에 속한 모든 드론
-        }
+    클라이언트 위치와 드론 리스트를 바탕으로 KMeans 클러스터링을 수행하고,
+    각 클러스터에서 매니저, 리더, 멤버 정보를 포함하는 리스트를 반환합니다.
     """
     if len(drones) < k:
         k = len(drones)
-    # 3차원 좌표 배열 구성
     coords = np.array([[d['latitude'], d['longitude'], d['altitude']] for d in drones])
     kmeans = KMeans(n_clusters=k, random_state=0).fit(coords)
     labels = kmeans.labels_
@@ -48,29 +57,21 @@ def perform_clustering(client_location, drones, k):
         if not cluster_members:
             continue
 
-        # 건강한(healthy) 후보: fault flag가 False인 드론들 (fault 정보가 없다면 기본값 False)
         healthy_members = [d for d in cluster_members if not d.get("fault", False)]
-        # 클라이언트와의 거리를 기준으로 건강한 후보 중 가장 가까운 드론을 매니저로 선출
         if healthy_members:
             manager = min(healthy_members, key=lambda d: calculate_distance(
                 (d['latitude'], d['longitude'], d['altitude']),
                 client_location))
         else:
-            # 건강한 후보가 없으면 모든 후보 중 선택
             manager = min(cluster_members, key=lambda d: calculate_distance(
                 (d['latitude'], d['longitude'], d['altitude']),
                 client_location))
         
-        # 매니저를 제외한 후보들
         non_manager = [d for d in cluster_members if d['port'] != manager['port']]
-        # 건강한 후보 중에서 클러스터 중심과의 거리를 기준으로 리더 선출
         healthy_non_manager = [d for d in non_manager if not d.get("fault", False)]
-        if healthy_non_manager:
-            leader = min(healthy_non_manager, key=lambda d: calculate_distance(
+        leader = min(healthy_non_manager, key=lambda d: calculate_distance(
                 (d['latitude'], d['longitude'], d['altitude']),
-                centroids[cluster_id]))
-        else:
-            leader = manager  # 건강한 후보가 없으면 매니저를 리더로 설정
+                centroids[cluster_id])) if healthy_non_manager else manager
 
         clusters.append({
             "manager": manager,
@@ -94,345 +95,32 @@ def log_cluster_info(clusters):
                 f.write(f"    - Port {m['port']}, Location ({m['latitude']}, {m['longitude']}, {m['altitude']})\n")
         f.write("============================================\n")
 
-##########################################################################
-# 로깅 설정
-##########################################################################
-def setup_logging(name, log_file_name):
-    log_dir = os.path.join(os.getcwd(), "log", "llapbft")
-    os.makedirs(log_dir, exist_ok=True)
-    log_file_path = os.path.join(log_dir, log_file_name)
-    
-    logger = logging.getLogger(name)
-    logger.setLevel(logging.INFO)
-    
-    formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s')
-    
-    ch = logging.StreamHandler()
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
-    
-    fh = logging.FileHandler(log_file_path, mode='a')
-    fh.setFormatter(formatter)
-    logger.addHandler(fh)
-    
-    return logger
-
-##########################################################################
-# 확장된 Status 클래스 (7단계 추적)
-##########################################################################
-class LLAPBFTStatus:
-    # 단계: PRE_REQUEST → REQUEST → PRE_PREPARE → PREPARE → COMMIT → PRE_REPLY → REPLY
-    def __init__(self, f):
-        self.f = f
-        self.phase = "PRE_REQUEST"
-        self.msgs = {}  # 각 단계별 메시지 저장
-        self.cluster_info = None  # {"manager":..., "leader":..., "members":...}
-        self.reply_received = False
-
-    def update_phase(self, new_phase):
-        self.phase = new_phase
-
-    def add_message(self, phase, msg):
-        if phase not in self.msgs:
-            self.msgs[phase] = []
-        self.msgs[phase].append(msg)
-
-##########################################################################
-# LLAPBFT Client 클래스 (DCC, port 20001)
-##########################################################################
-class LLAPBFTClient:
-    def __init__(self, config, logger, bandwidth_file=None):
-        self.config = config
-        self.logger = logger
-        # 클라이언트: drones 리스트 중 port가 20001
-        self.client = next(d for d in config['drones'] if d['port'] == 20001)
-        # 합의 대상 드론: port 20001 제외
-        self.drones = [d for d in config['drones'] if d['port'] != 20001]
-        self.f = config.get('f', 1)
-        self.k = config.get('k', 2)  # 클러스터 개수 (필요에 따라 수정)
+class BaseEntity:
+    """
+    네트워크 메시지 전송과 공통 fault flag 체크를 수행하는 기본 클래스.
+    클라이언트, 노드 모두에서 상속받아 사용.
+    """
+    def __init__(self, entity_info, bandwidth_file: str = None):
+        self.entity_info = entity_info
         self.session = aiohttp.ClientSession()
-        self.bandwidth_file = bandwidth_file
-        if self.bandwidth_file and os.path.exists(self.bandwidth_file):
-            with open(self.bandwidth_file, 'r') as f:
+        self.bandwidth_data = None
+        if bandwidth_file and os.path.exists(bandwidth_file):
+            with open(bandwidth_file, 'r', encoding='utf-8') as f:
                 self.bandwidth_data = yaml.safe_load(f)
-        else:
-            self.bandwidth_data = None
-        self.total_rounds = 1  # 합의 라운드 수
-        # 각 라운드별 REPLY 카운트 저장
-        self.reply_counts = {}
 
-    async def send_request_to_cluster_manager(self, cluster, request_data):
-        """
-        클러스터 매니저에게 REQUEST 메시지 전송.
-        메시지에는 cluster_info (manager, leader, members)와 클라이언트의 위치 및 원본 데이터 포함.
-        """
-        manager = cluster['manager']
-        url = f"http://{manager['host']}:{manager['port']}/request"
-        data = {
-            "request_id": request_data["request_id"],
-            "phase": "REQUEST",
-            "client_data": request_data,
-            "cluster_info": {
-                "manager": cluster['manager'],
-                "leader": cluster['leader'],
-                "members": cluster['members']
-            }
-        }
-        self.logger.info(f"[CLIENT] >> REQUEST {data['request_id']} to Cluster Manager (Port {manager['port']})")
-        await send_with_delay(self.session, self.client, manager, url, data, self.bandwidth_data)
-
-    async def start_protocol(self, request):
-        req_json = await request.json()
-        client_location = (req_json.get("latitude"), req_json.get("longitude"), req_json.get("altitude"))
-        self.logger.info("★★★ /start-protocol 요청 수신: LLAPBFT 합의 라운드를 시작합니다. ★★★")
-        total_processing_time = 0.0  # 대기 시간 제외한 전체 처리 시간
-        for round_number in range(1, self.total_rounds + 1):
-            # PRE-REQUEST: 클러스터링 수행
-            clusters = perform_clustering(client_location, self.drones, self.k)
-            log_cluster_info(clusters)
-            
-            round_start_time = time.time()
-            req_id = int(time.time() * 1000)
-            req_data = {
-                "request_id": req_id,
-                "timestamp": time.time(),
-                "data": f"message_{req_id}",
-                "client_location": client_location
-            }
-            self.reply_counts[req_id] = 0
-
-            # 각 클러스터 매니저에게 REQUEST 메시지 전송
-            await asyncio.gather(*(self.send_request_to_cluster_manager(cluster, req_data) for cluster in clusters))
-
-            # REPLY 대기 (f+1개의 REPLY 수신 또는 타임아웃)
-            timeout = 30  # seconds
-            start_wait = time.time()
-            while self.reply_counts[req_id] < (self.f + 1):
-                await asyncio.sleep(0.5)
-                if time.time() - start_wait > timeout:
-                    self.logger.error("타임아웃: 충분한 REPLY 메시지를 받지 못했습니다.")
-                    break
-
-            round_end_time = time.time()
-            round_processing_time = round_end_time - round_start_time
-            total_processing_time += round_processing_time
-
-            self.logger.info(f"[CLIENT] 라운드 {round_number} 완료: 처리 시간 = {round_processing_time:.4f} seconds")
-            await asyncio.sleep(5)  # 안정화 대기 (측정 제외)
-
-        self.logger.info("★★★ CONSENSUS COMPLETED: Total Consensus Time = {:.4f} seconds ★★★".format(total_processing_time))
-        return web.json_response({"status": "protocol started", "total_time": total_processing_time})
-
-    async def handle_reply(self, request):
-        data = await request.json()
-        # fault flag가 있는 경우 REPLY 무시
-        if data.get("fault", False):
-            self.logger.info(f"[CLIENT] Ignoring FAULT reply: {data}")
-            return web.json_response({"status": "Fault reply ignored"})
-        req_id = data.get("request_id")
-        self.reply_counts.setdefault(req_id, 0)
-        self.reply_counts[req_id] += 1
-        self.logger.info(f"[CLIENT] REPLY: {data} (현재 REPLY 수: {self.reply_counts[req_id]})")
-        return web.json_response({"status": "reply received"})
-
-    async def close(self):
-        await self.session.close()
-
-##########################################################################
-# LLAPBFT Node 클래스 (모든 드론: 역할은 메시지에 따라 동적 결정)
-##########################################################################
-class LLAPBFTNode:
-    def __init__(self, index, config, logger, bandwidth_file=None):
-        self.index = index
-        self.config = config
-        self.logger = logger
-        self.node_info = config['drones'][index]
-        self.f = config.get('f', 1)
-        self.session = aiohttp.ClientSession()
-        self.bandwidth_file = bandwidth_file
-        if self.bandwidth_file and os.path.exists(self.bandwidth_file):
-            with open(self.bandwidth_file, 'r') as f:
-                self.bandwidth_data = yaml.safe_load(f)
-        else:
-            self.bandwidth_data = None
-        # 각 요청에 대한 상태를 저장 (request_id -> LLAPBFTStatus)
-        self.statuses = {}
-
-    def get_status(self, req_id):
-        if req_id not in self.statuses:
-            self.statuses[req_id] = LLAPBFTStatus(self.f)
-        return self.statuses[req_id]
-
-    async def send_message(self, target, endpoint, data):
+    async def send_message(self, target, endpoint, data, logger: logging.Logger):
         url = f"http://{target['host']}:{target['port']}{endpoint}"
         try:
-            await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+            response = await send_with_delay(self.session, self.entity_info, target, url, data, self.bandwidth_data)
+            return response
         except Exception as e:
-            self.logger.error(f"[NODE {self.node_info['port']}] Error sending to {url}: {e}")
-
-    async def handle_request(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REQUEST: {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault request"})
-        req_id = data.get("request_id")
-        cluster_info = data.get("cluster_info")
-        self.logger.info(f"[NODE {self.node_info['port']}] Received REQUEST {req_id} with cluster_info: Manager {cluster_info['manager']['port']}, Leader {cluster_info['leader']['port']}")
-        if self.node_info['port'] == cluster_info['manager']['port']:
-            status = self.get_status(req_id)
-            status.cluster_info = cluster_info
-            leader = cluster_info['leader']
-            url = f"http://{leader['host']}:{leader['port']}/request_leader"
-            self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Forwarding REQUEST {req_id} to Cluster Leader (Port {leader['port']})")
-            await send_with_delay(self.session, self.node_info, leader, url, data, self.bandwidth_data)
-            return web.json_response({"status": "REQUEST forwarded to leader"})
-        else:
-            self.logger.warning(f"[NODE {self.node_info['port']}] Received REQUEST but not acting as Cluster Manager")
-            return web.json_response({"status": "not cluster manager"})
-
-    async def handle_request_leader(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REQUEST_LEADER: {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault request_leader"})
-        req_id = data.get("request_id")
-        cluster_info = data.get("cluster_info")
-        self.logger.info(f"[NODE {self.node_info['port']}] (Cluster Leader) Received REQUEST {req_id}")
-        status = self.get_status(req_id)
-        status.cluster_info = cluster_info
-        preprepare_msg = {
-            "request_id": req_id,
-            "phase": "PRE_PREPARE",
-            "data": data.get("client_data"),
-            "timestamp": time.time(),
-            "sender": self.node_info['port'],
-            "cluster_info": cluster_info
-        }
-        status.update_phase("PRE_PREPARE")
-        self.logger.info(f"[CLUSTER LEADER {self.node_info['port']}] Broadcasting PRE-PREPARE for REQUEST {req_id}")
-        await asyncio.gather(*(self.send_message(member, '/preprepare', preprepare_msg)
-                               for member in cluster_info['members']
-                               if member['port'] not in [cluster_info['manager']['port'], self.node_info['port']]))
-        return web.json_response({"status": "PRE-PREPARE broadcasted"})
-
-    async def handle_preprepare(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PRE-PREPARE for REQUEST {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault preprepare"})
-        req_id = data.get("request_id")
-        cluster_info = data.get("cluster_info")
-        self.logger.info(f"[NODE {self.node_info['port']}] Received PRE-PREPARE for REQUEST {req_id}")
-        status = self.get_status(req_id)
-        status.update_phase("PREPARE")
-        prepare_msg = {
-            "request_id": req_id,
-            "phase": "PREPARE",
-            "data": data.get("data"),
-            "timestamp": time.time(),
-            "sender": self.node_info['port'],
-            "cluster_info": cluster_info
-        }
-        self.logger.info(f"[NODE {self.node_info['port']}] Broadcasting PREPARE for REQUEST {req_id}")
-        await asyncio.gather(*(self.send_message(member, '/prepare', prepare_msg)
-                               for member in cluster_info['members']
-                               if member['port'] not in [cluster_info['manager']['port'], self.node_info['port']]))
-        return web.json_response({"status": "PREPARE broadcasted"})
-
-    async def handle_prepare(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PREPARE for REQUEST {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault prepare"})
-        req_id = data.get("request_id")
-        cluster_info = data.get("cluster_info")
-        self.logger.info(f"[NODE {self.node_info['port']}] Received PREPARE for REQUEST {req_id} from {data.get('sender')}")
-        status = self.get_status(req_id)
-        status.add_message("PREPARE", data)
-        if len(status.msgs.get("PREPARE", [])) >= (2 * self.f) and status.phase != "COMMIT":
-            status.update_phase("COMMIT")
-            commit_msg = {
-                "request_id": req_id,
-                "phase": "COMMIT",
-                "data": data.get("data"),
-                "timestamp": time.time(),
-                "sender": self.node_info['port'],
-                "cluster_info": cluster_info
-            }
-            self.logger.info(f"[NODE {self.node_info['port']}] Broadcasting COMMIT for REQUEST {req_id}")
-            await asyncio.gather(*(self.send_message(member, '/commit', commit_msg)
-                                   for member in cluster_info['members']
-                                   if member['port'] not in [cluster_info['manager']['port'], self.node_info['port']]))
-        return web.json_response({"status": "PREPARE processed"})
-
-    async def handle_commit(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT COMMIT for REQUEST {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault commit"})
-        req_id = data.get("request_id")
-        cluster_info = data.get("cluster_info")
-        self.logger.info(f"[NODE {self.node_info['port']}] Received COMMIT for REQUEST {req_id} from {data.get('sender')}")
-        status = self.get_status(req_id)
-        status.add_message("COMMIT", data)
-        if len(status.msgs.get("COMMIT", [])) >= (2 * self.f + 1) and status.phase != "PRE_REPLY":
-            status.update_phase("PRE_REPLY")
-            pre_reply_msg = {
-                "request_id": req_id,
-                "phase": "PRE_REPLY",
-                "data": data.get("data"),
-                "timestamp": time.time(),
-                "sender": self.node_info['port'],
-                "cluster_info": cluster_info
-            }
-            manager = cluster_info['manager']
-            self.logger.info(f"[NODE {self.node_info['port']}] Sending PRE_REPLY for REQUEST {req_id} to Cluster Manager (Port {manager['port']})")
-            await self.send_message(manager, '/pre_reply', pre_reply_msg)
-        return web.json_response({"status": "COMMIT processed"})
-
-    async def handle_pre_reply(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT PRE_REPLY for REQUEST {data.get('request_id')}")
-            return web.json_response({"status": "Ignored fault pre_reply"})
-        req_id = data.get("request_id")
-        self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Received PRE_REPLY for REQUEST {req_id} from {data.get('sender')}")
-        status = self.get_status(req_id)
-        status.add_message("PRE_REPLY", data)
-        if len(status.msgs.get("PRE_REPLY", [])) >= (self.f + 1) and not status.reply_received:
-            status.reply_received = True
-            reply_msg = {
-                "request_id": req_id,
-                "phase": "REPLY",
-                "data": data.get("data"),
-                "timestamp": time.time(),
-                "sender": self.node_info['port']
-            }
-            client = next(d for d in self.config['drones'] if d['port'] == 20001)
-            self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Sending REPLY for REQUEST {req_id} to Client (Port {client['port']})")
-            await self.send_message(client, '/reply', reply_msg)
-        return web.json_response({"status": "PRE_REPLY processed"})
-
-    async def handle_reply(self, request):
-        data = await request.json()
-        # fault flag 체크
-        if data.get("fault", False):
-            self.logger.info(f"[NODE {self.node_info['port']}] Ignoring FAULT REPLY (for logging): {data}")
-            return web.json_response({"status": "Ignored fault reply"})
-        self.logger.info(f"[NODE {self.node_info['port']}] Received REPLY (for logging): {data}")
-        return web.json_response({"status": "REPLY received"})
+            logger.error(f"[Entity {self.entity_info['port']}] Error sending to {url}: {e}")
 
     async def close(self):
         await self.session.close()
 
 ##########################################################################
-# 헬퍼 함수: send_with_delay (공통)
+# 공통 메시지 전송 함수 (send_with_delay)
 ##########################################################################
 async def send_with_delay(session, source, target, url, data, bandwidth_data):
     if bandwidth_data:
@@ -446,20 +134,287 @@ async def send_with_delay(session, source, target, url, data, bandwidth_data):
         data["simulated_delay"] = delay
         data["distance"] = distance
         data["message_size_bits"] = message_size_bits
-        # 딜레이가 0이면 fault로 간주하여 flag 추가
         data["fault"] = True if delay == 0 else False
     async with session.post(url, json=data) as resp:
         return await resp.text()
 
 ##########################################################################
-# 설정 파일 파싱 함수
+# 상태 관리 클래스
 ##########################################################################
-def load_config(path):
-    with open(path, 'r') as f:
-        return yaml.safe_load(f)
+class LLAPBFTStatus:
+    """
+    합의 프로토콜의 각 단계를 추적하며 메시지를 저장합니다.
+    단계: PRE_REQUEST → REQUEST → PRE_PREPARE → PREPARE → COMMIT → PRE_REPLY → REPLY
+    """
+    def __init__(self, f):
+        self.f = f
+        self.phase = "PRE_REQUEST"
+        self.msgs = {}
+        self.cluster_info = None
+        self.reply_received = False
+
+    def update_phase(self, new_phase):
+        self.phase = new_phase
+
+    def add_message(self, phase, msg):
+        self.msgs.setdefault(phase, []).append(msg)
 
 ##########################################################################
-# 메인 함수: --index 인자에 따라 클라이언트(DCC)와 노드(드론) 역할 분리
+# LLAPBFT Client 클래스
+##########################################################################
+class LLAPBFTClient(BaseEntity):
+    def __init__(self, config, logger, bandwidth_file=None):
+        client_info = next(d for d in config['drones'] if d['port'] == 20001)
+        super().__init__(client_info, bandwidth_file)
+        self.config = config
+        self.logger = logger
+        self.drones = [d for d in config['drones'] if d['port'] != 20001]
+        self.f = config.get('f', 1)
+        self.k = config.get('k', 2)
+        self.total_rounds = 1  # 합의 라운드 수
+        self.reply_counts = {}  # {request_id: count}
+
+    async def send_request_to_cluster_manager(self, cluster, request_data):
+        manager = cluster['manager']
+        url = f"http://{manager['host']}:{manager['port']}/request"
+        data = {
+            "request_id": request_data["request_id"],
+            "phase": "REQUEST",
+            "client_data": request_data,
+            "cluster_info": {
+                "manager": cluster['manager'],
+                "leader": cluster['leader'],
+                "members": cluster['members']
+            }
+        }
+        self.logger.info(f"[CLIENT] >> REQUEST {data['request_id']} to Cluster Manager (Port {manager['port']})")
+        await self.send_message(manager, '/request', data, self.logger)
+
+    async def start_protocol(self, request):
+        req_json = await request.json()
+        client_location = (req_json.get("latitude"), req_json.get("longitude"), req_json.get("altitude"))
+        self.logger.info("★★★ /start-protocol 요청 수신: LLAPBFT 합의 라운드를 시작합니다. ★★★")
+        total_consensus_time = 0.0
+        for round_number in range(1, self.total_rounds + 1):
+            clusters = perform_clustering(client_location, self.drones, self.k)
+            log_cluster_info(clusters)
+            
+            round_start_time = time.time()
+            req_id = int(time.time() * 1000)
+            req_data = {
+                "request_id": req_id,
+                "timestamp": time.time(),
+                "data": f"message_{req_id}",
+                "client_location": client_location
+            }
+            self.reply_counts[req_id] = 0
+
+            await asyncio.gather(*(self.send_request_to_cluster_manager(cluster, req_data) for cluster in clusters))
+            
+            # f+1개의 REPLY가 도착하는 순간까지 기다림
+            try:
+                await asyncio.wait_for(self.wait_for_replies(req_id), timeout=30)
+                consensus_time = time.time() - round_start_time
+                self.logger.info("★★★ CONSENSUS COMPLETED: Total Consensus Time = {:.4f} seconds ★★★".format(consensus_time))
+            except asyncio.TimeoutError:
+                self.logger.error("타임아웃: 충분한 REPLY 메시지를 받지 못했습니다.")
+                consensus_time = time.time() - round_start_time
+                self.logger.info("★★★ CONSENSUS COMPLETED (타임아웃): Total Consensus Time = {:.4f} seconds ★★★".format(consensus_time))
+
+            # 안정화 대기 (합의 시간 측정에는 포함하지 않음)
+            await asyncio.sleep(5)
+            total_consensus_time += consensus_time
+
+            self.logger.info(f"[CLIENT] 라운드 {round_number} 완료: 처리 시간 = {consensus_time:.4f} seconds")
+            
+        self.logger.info("★★★ 전체 합의 완료: Total Consensus Time = {:.4f} seconds ★★★".format(total_consensus_time))
+        return web.json_response({"status": "protocol started", "total_time": total_consensus_time})
+
+    async def wait_for_replies(self, req_id):
+        while self.reply_counts.get(req_id, 0) < (self.f + 1):
+            await asyncio.sleep(0.5)
+
+    async def handle_reply(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[CLIENT] Ignoring FAULT reply: {data}")
+            return web.json_response({"status": "Fault reply ignored"})
+        req_id = data.get("request_id")
+        self.reply_counts.setdefault(req_id, 0)
+        self.reply_counts[req_id] += 1
+        self.logger.info(f"[CLIENT] REPLY: {data} (현재 REPLY 수: {self.reply_counts[req_id]})")
+        return web.json_response({"status": "reply received"})
+
+##########################################################################
+# LLAPBFT Node 클래스
+##########################################################################
+class LLAPBFTNode(BaseEntity):
+    def __init__(self, index, config, logger, bandwidth_file=None):
+        node_info = config['drones'][index]
+        super().__init__(node_info, bandwidth_file)
+        self.index = index
+        self.config = config
+        self.logger = logger
+        self.f = config.get('f', 1)
+        self.statuses = {}
+
+    def get_status(self, req_id):
+        if req_id not in self.statuses:
+            self.statuses[req_id] = LLAPBFTStatus(self.f)
+        return self.statuses[req_id]
+
+    async def handle_request(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT REQUEST: {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault request"})
+        req_id = data.get("request_id")
+        cluster_info = data.get("cluster_info")
+        self.logger.info(f"[NODE {self.entity_info['port']}] Received REQUEST {req_id} with cluster_info: Manager {cluster_info['manager']['port']}, Leader {cluster_info['leader']['port']}")
+        if self.entity_info['port'] == cluster_info['manager']['port']:
+            status = self.get_status(req_id)
+            status.cluster_info = cluster_info
+            leader = cluster_info['leader']
+            self.logger.info(f"[CLUSTER MANAGER {self.entity_info['port']}] Forwarding REQUEST {req_id} to Cluster Leader (Port {leader['port']})")
+            await self.send_message(leader, '/request_leader', data, self.logger)
+            return web.json_response({"status": "REQUEST forwarded to leader"})
+        else:
+            self.logger.warning(f"[NODE {self.entity_info['port']}] Received REQUEST but not acting as Cluster Manager")
+            return web.json_response({"status": "not cluster manager"})
+
+    async def handle_request_leader(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT REQUEST_LEADER: {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault request_leader"})
+        req_id = data.get("request_id")
+        cluster_info = data.get("cluster_info")
+        self.logger.info(f"[NODE {self.entity_info['port']}] (Cluster Leader) Received REQUEST {req_id}")
+        status = self.get_status(req_id)
+        status.cluster_info = cluster_info
+        preprepare_msg = {
+            "request_id": req_id,
+            "phase": "PRE_PREPARE",
+            "data": data.get("client_data"),
+            "timestamp": time.time(),
+            "sender": self.entity_info['port'],
+            "cluster_info": cluster_info
+        }
+        status.update_phase("PRE_PREPARE")
+        self.logger.info(f"[CLUSTER LEADER {self.entity_info['port']}] Broadcasting PRE-PREPARE for REQUEST {req_id}")
+        await asyncio.gather(*(self.send_message(member, '/preprepare', preprepare_msg, self.logger)
+                               for member in cluster_info['members']
+                               if member['port'] not in [cluster_info['manager']['port'], self.entity_info['port']]))
+        return web.json_response({"status": "PRE-PREPARE broadcasted"})
+
+    async def handle_preprepare(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT PRE-PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault preprepare"})
+        req_id = data.get("request_id")
+        cluster_info = data.get("cluster_info")
+        self.logger.info(f"[NODE {self.entity_info['port']}] Received PRE-PREPARE for REQUEST {req_id}")
+        status = self.get_status(req_id)
+        status.update_phase("PREPARE")
+        prepare_msg = {
+            "request_id": req_id,
+            "phase": "PREPARE",
+            "data": data.get("data"),
+            "timestamp": time.time(),
+            "sender": self.entity_info['port'],
+            "cluster_info": cluster_info
+        }
+        self.logger.info(f"[NODE {self.entity_info['port']}] Broadcasting PREPARE for REQUEST {req_id}")
+        await asyncio.gather(*(self.send_message(member, '/prepare', prepare_msg, self.logger)
+                               for member in cluster_info['members']
+                               if member['port'] not in [cluster_info['manager']['port'], self.entity_info['port']]))
+        return web.json_response({"status": "PREPARE broadcasted"})
+
+    async def handle_prepare(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT PREPARE for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault prepare"})
+        req_id = data.get("request_id")
+        cluster_info = data.get("cluster_info")
+        self.logger.info(f"[NODE {self.entity_info['port']}] Received PREPARE for REQUEST {req_id} from {data.get('sender')}")
+        status = self.get_status(req_id)
+        status.add_message("PREPARE", data)
+        if len(status.msgs.get("PREPARE", [])) >= (2 * self.f) and status.phase != "COMMIT":
+            status.update_phase("COMMIT")
+            commit_msg = {
+                "request_id": req_id,
+                "phase": "COMMIT",
+                "data": data.get("data"),
+                "timestamp": time.time(),
+                "sender": self.entity_info['port'],
+                "cluster_info": cluster_info
+            }
+            self.logger.info(f"[NODE {self.entity_info['port']}] Broadcasting COMMIT for REQUEST {req_id}")
+            await asyncio.gather(*(self.send_message(member, '/commit', commit_msg, self.logger)
+                                   for member in cluster_info['members']
+                                   if member['port'] not in [cluster_info['manager']['port'], self.entity_info['port']]))
+        return web.json_response({"status": "PREPARE processed"})
+
+    async def handle_commit(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT COMMIT for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault commit"})
+        req_id = data.get("request_id")
+        cluster_info = data.get("cluster_info")
+        self.logger.info(f"[NODE {self.entity_info['port']}] Received COMMIT for REQUEST {req_id} from {data.get('sender')}")
+        status = self.get_status(req_id)
+        status.add_message("COMMIT", data)
+        if len(status.msgs.get("COMMIT", [])) >= (2 * self.f + 1) and status.phase != "PRE_REPLY":
+            status.update_phase("PRE_REPLY")
+            pre_reply_msg = {
+                "request_id": req_id,
+                "phase": "PRE_REPLY",
+                "data": data.get("data"),
+                "timestamp": time.time(),
+                "sender": self.entity_info['port'],
+                "cluster_info": cluster_info
+            }
+            manager = cluster_info['manager']
+            self.logger.info(f"[NODE {self.entity_info['port']}] Sending PRE_REPLY for REQUEST {req_id} to Cluster Manager (Port {manager['port']})")
+            await self.send_message(manager, '/pre_reply', pre_reply_msg, self.logger)
+        return web.json_response({"status": "COMMIT processed"})
+
+    async def handle_pre_reply(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT PRE_REPLY for REQUEST {data.get('request_id')}")
+            return web.json_response({"status": "Ignored fault pre_reply"})
+        req_id = data.get("request_id")
+        self.logger.info(f"[CLUSTER MANAGER {self.entity_info['port']}] Received PRE_REPLY for REQUEST {req_id} from {data.get('sender')}")
+        status = self.get_status(req_id)
+        status.add_message("PRE_REPLY", data)
+        if len(status.msgs.get("PRE_REPLY", [])) >= (self.f + 1) and not status.reply_received:
+            status.reply_received = True
+            reply_msg = {
+                "request_id": req_id,
+                "phase": "REPLY",
+                "data": data.get("data"),
+                "timestamp": time.time(),
+                "sender": self.entity_info['port']
+            }
+            client = next(d for d in self.config['drones'] if d['port'] == 20001)
+            self.logger.info(f"[CLUSTER MANAGER {self.entity_info['port']}] Sending REPLY for REQUEST {req_id} to Client (Port {client['port']})")
+            await self.send_message(client, '/reply', reply_msg, self.logger)
+        return web.json_response({"status": "PRE_REPLY processed"})
+
+    async def handle_reply(self, request):
+        data = await request.json()
+        if data.get("fault", False):
+            self.logger.info(f"[NODE {self.entity_info['port']}] Ignoring FAULT REPLY (for logging): {data}")
+            return web.json_response({"status": "Ignored fault reply"})
+        self.logger.info(f"[NODE {self.entity_info['port']}] Received REPLY (for logging): {data}")
+        return web.json_response({"status": "REPLY received"})
+
+##########################################################################
+# 메인 함수: 역할에 따라 클라이언트 또는 노드 서버 실행
 ##########################################################################
 async def main():
     parser = argparse.ArgumentParser(description="LLAPBFT Simulation")
@@ -480,11 +435,6 @@ async def main():
     if role == "client":
         logger = setup_logging("LLAPBFT_Client", "client.log")
         logger.info(f"LLAPBFT Scenario: f={config.get('f')}, k={config.get('k')} | Role: CLIENT")
-    else:
-        logger = setup_logging(f"LLAPBFT_Node_{args.index}", f"node_{args.index}.log")
-        logger.info(f"[NODE] Starting node at {node['host']}:{node['port']} | index={args.index:3} | f={config.get('f')}, k={config.get('k')}")
-
-    if role == "client":
         client = LLAPBFTClient(config, logger, bandwidth_file=args.bandwidth)
         app = web.Application()
         app.add_routes([
@@ -493,7 +443,7 @@ async def main():
         ])
         runner = web.AppRunner(app)
         await runner.setup()
-        client_addr = client.client
+        client_addr = client.entity_info
         site = web.TCPSite(runner, host=client_addr['host'], port=client_addr['port'])
         await site.start()
         logger.info(f"[CLIENT] Server started at http://{client_addr['host']}:{client_addr['port']}")
@@ -503,6 +453,8 @@ async def main():
         await client.close()
         await runner.cleanup()
     else:
+        logger = setup_logging(f"LLAPBFT_Node_{args.index}", f"node_{args.index}.log")
+        logger.info(f"[NODE] Starting node at {node['host']}:{node['port']} | index={args.index:3} | f={config.get('f')}, k={config.get('k')}")
         node_instance = LLAPBFTNode(args.index, config, logger, bandwidth_file=args.bandwidth)
         app = web.Application()
         app.add_routes([
@@ -516,7 +468,7 @@ async def main():
         ])
         runner = web.AppRunner(app)
         await runner.setup()
-        node_addr = node_instance.node_info
+        node_addr = node_instance.entity_info
         site = web.TCPSite(runner, host=node_addr['host'], port=node_addr['port'])
         await site.start()
         try:

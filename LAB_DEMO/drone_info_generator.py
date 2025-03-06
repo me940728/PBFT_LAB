@@ -16,9 +16,9 @@ import os
 import yaml
 
 # --- 설정 파라미터 ---
-TOTAL_DRONES = 200     # 클라이언트를 포함한 전체 드론 수
-K = 6                  # 군집 내 드론은 3f+1개 이상이어야 함
-PROTOCOL = "llapbft"   # 프로토콜: "llapbft" || "pbft" || "random"
+TOTAL_DRONES = 13     # 클라이언트를 포함한 전체 드론 수
+K = 4                  # 군집 내 드론은 3f+1개 이상이어야 함
+PROTOCOL = "llaspbft"   # 프로토콜: "llapbft" || "pbft" || "random"
 F_VALUE = 1           # 허용되는 악의적 드론 수
 
 CLIENT_INFO = {

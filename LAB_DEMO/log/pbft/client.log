@@ -1,0 +1,40 @@
+[2025-03-06 11:02:41,946] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-06 11:02:41,966] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-06 11:02:43,647] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-06 11:02:43,647] [INFO] [CLIENT] >> REQUEST 1741226563647 ¡æ Leader(30000)
+[2025-03-06 11:02:43,710] [INFO] [CLIENT] REPLY: {'request_id': 1741226563647, 'data': 'message_1741226563647', 'timestamp': 1741226563.6982222, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 208.19437489576842, 'message_size_bits': 896}
+[2025-03-06 11:02:43,710] [INFO] [CLIENT] << REPLY received for REQUEST 1741226563647
+[2025-03-06 11:02:44,714] [INFO] [CLIENT] Round 1 completed: duration = 1.0666 seconds
+[2025-03-06 11:02:44,714] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0666 seconds
+[2025-03-06 11:02:44,716] [INFO] Fault Nodes: [30003]
+[2025-03-06 11:05:50,210] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-06 11:05:50,225] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-06 11:05:52,589] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-06 11:05:52,589] [INFO] [CLIENT] >> REQUEST 1741226752589 ¡æ Leader(30000)
+[2025-03-06 11:05:52,653] [INFO] [CLIENT] REPLY: {'request_id': 1741226752589, 'data': 'message_1741226752589', 'timestamp': 1741226752.6421883, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 208.19437489576842, 'message_size_bits': 896}
+[2025-03-06 11:05:52,653] [INFO] [CLIENT] << REPLY received for REQUEST 1741226752589
+[2025-03-06 11:05:53,659] [INFO] [CLIENT] Round 1 completed: duration = 1.0700 seconds
+[2025-03-06 11:05:53,659] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0700 seconds
+[2025-03-06 11:05:53,659] [INFO] Fault Nodes: [30003]
+[2025-03-06 11:06:08,684] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-06 11:06:08,700] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-06 11:06:10,925] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-06 11:06:10,925] [INFO] [CLIENT] >> REQUEST 1741226770925 ¡æ Leader(30000)
+[2025-03-06 11:06:10,973] [INFO] [CLIENT] REPLY: {'request_id': 1741226770925, 'data': 'message_1741226770925', 'timestamp': 1741226770.962101, 'sender': 30000, 'simulated_delay': 7.4e-05, 'distance': 208.19437489576842, 'message_size_bits': 888}
+[2025-03-06 11:06:10,973] [INFO] [CLIENT] << REPLY received for REQUEST 1741226770925
+[2025-03-06 11:06:11,980] [INFO] [CLIENT] Round 1 completed: duration = 1.0549 seconds
+[2025-03-06 11:06:11,980] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0549 seconds
+[2025-03-06 11:06:11,982] [INFO] Fault Nodes: [30003]
+[2025-03-06 11:06:53,574] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-06 11:06:53,582] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-06 11:07:02,039] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-06 11:07:02,039] [INFO] [CLIENT] >> REQUEST 1741226822039 ¡æ Leader(30000)
+[2025-03-06 11:07:02,102] [INFO] [CLIENT] REPLY: {'request_id': 1741226822039, 'data': 'message_1741226822039', 'timestamp': 1741226822.087431, 'sender': 30000, 'simulated_delay': 7.4e-05, 'distance': 208.19437489576842, 'message_size_bits': 888}
+[2025-03-06 11:07:02,102] [INFO] [CLIENT] << REPLY received for REQUEST 1741226822039
+[2025-03-06 11:07:03,104] [INFO] [CLIENT] Round 1 completed: duration = 1.0655 seconds
+[2025-03-06 11:07:03,104] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0655 seconds
+[2025-03-06 11:07:03,104] [INFO] Fault Nodes: [30003]
+[2025-03-06 11:10:24,942] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-06 11:10:24,955] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-06 11:10:27,199] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-06 11:10:27,199] [INFO] [CLIENT] >> REQUEST 1741227027199 ¡æ Leader(30000)
