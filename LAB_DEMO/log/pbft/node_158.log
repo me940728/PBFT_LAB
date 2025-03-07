@@ -1,0 +1,2149 @@
+[2025-03-07 13:53:34,289] [INFO] Starting node at localhost:30157 | index=158 | f=1, k=4 | Role: Replica
+[2025-03-07 13:53:39,051] [INFO] [30157] Received PREPARE: id:1741323218379, from:30017, delay:0.0000s, distance:200.49m (Euclidean)
+[2025-03-07 13:53:39,051] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:40,071] [INFO] [30157] Received COMMIT: id:1741323218379, from:30017, delay:0.0000s, distance:200.49m (Euclidean)
+[2025-03-07 13:53:40,079] [INFO] [30157] Received PREPARE: id:1741323218379, from:30005, delay:0.0000s, distance:121.65m (Euclidean)
+[2025-03-07 13:53:40,079] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:40,845] [INFO] [30157] Received PREPARE: id:1741323218379, from:30021, delay:0.0002s, distance:252.66m (Euclidean)
+[2025-03-07 13:53:40,845] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:40,845] [INFO] [30157] Received COMMIT: id:1741323218379, from:30021, delay:0.0002s, distance:252.66m (Euclidean)
+[2025-03-07 13:53:40,925] [INFO] [30157] Received PREPARE: id:1741323218379, from:30049, delay:0.0000s, distance:91.12m (Euclidean)
+[2025-03-07 13:53:40,925] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,257] [INFO] [30157] Received PREPARE: id:1741323218379, from:30073, delay:0.0000s, distance:103.64m (Euclidean)
+[2025-03-07 13:53:41,257] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,257] [INFO] [30157] Received COMMIT: id:1741323218379, from:30073, delay:0.0000s, distance:103.64m (Euclidean)
+[2025-03-07 13:53:41,294] [INFO] [30157] Received COMMIT: id:1741323218379, from:30005, delay:0.0000s, distance:121.65m (Euclidean)
+[2025-03-07 13:53:41,354] [INFO] [30157] Received PREPARE: id:1741323218379, from:30002, delay:0.0000s, distance:131.24m (Euclidean)
+[2025-03-07 13:53:41,354] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,354] [INFO] [30157] Received COMMIT: id:1741323218379, from:30002, delay:0.0000s, distance:131.24m (Euclidean)
+[2025-03-07 13:53:41,873] [INFO] [30157] Received PREPARE: id:1741323218379, from:30086, delay:0.0001s, distance:161.16m (Euclidean)
+[2025-03-07 13:53:41,873] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,873] [INFO] [30157] Received COMMIT: id:1741323218379, from:30086, delay:0.0001s, distance:161.16m (Euclidean)
+[2025-03-07 13:53:41,905] [INFO] [30157] Received PREPARE: id:1741323218379, from:30052, delay:0.0001s, distance:244.82m (Euclidean)
+[2025-03-07 13:53:41,905] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,905] [INFO] [30157] Received COMMIT: id:1741323218379, from:30052, delay:0.0001s, distance:244.82m (Euclidean)
+[2025-03-07 13:53:41,947] [INFO] [30157] Received PREPARE: id:1741323218379, from:30088, delay:0.0001s, distance:164.20m (Euclidean)
+[2025-03-07 13:53:41,947] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:41,947] [INFO] [30157] Received COMMIT: id:1741323218379, from:30088, delay:0.0001s, distance:164.20m (Euclidean)
+[2025-03-07 13:53:42,143] [INFO] [30157] Received PREPARE: id:1741323218379, from:30061, delay:0.0001s, distance:152.37m (Euclidean)
+[2025-03-07 13:53:42,143] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,143] [INFO] [30157] Received COMMIT: id:1741323218379, from:30061, delay:0.0001s, distance:152.37m (Euclidean)
+[2025-03-07 13:53:42,222] [INFO] [30157] Received PREPARE: id:1741323218379, from:30020, delay:0.0002s, distance:263.70m (Euclidean)
+[2025-03-07 13:53:42,222] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,222] [INFO] [30157] Received COMMIT: id:1741323218379, from:30020, delay:0.0002s, distance:263.70m (Euclidean)
+[2025-03-07 13:53:42,305] [INFO] [30157] Received PREPARE: id:1741323218379, from:30046, delay:0.0001s, distance:179.85m (Euclidean)
+[2025-03-07 13:53:42,305] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,305] [INFO] [30157] Received COMMIT: id:1741323218379, from:30046, delay:0.0001s, distance:179.85m (Euclidean)
+[2025-03-07 13:53:42,553] [INFO] [30157] Received PREPARE: id:1741323218379, from:30040, delay:0.0000s, distance:124.30m (Euclidean)
+[2025-03-07 13:53:42,553] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,553] [INFO] [30157] Received COMMIT: id:1741323218379, from:30040, delay:0.0000s, distance:124.30m (Euclidean)
+[2025-03-07 13:53:42,590] [INFO] [30157] Received PREPARE: id:1741323218379, from:30070, delay:0.0000s, distance:129.40m (Euclidean)
+[2025-03-07 13:53:42,590] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,590] [INFO] [30157] Received COMMIT: id:1741323218379, from:30070, delay:0.0000s, distance:129.40m (Euclidean)
+[2025-03-07 13:53:42,711] [INFO] [30157] Received PREPARE: id:1741323218379, from:30062, delay:0.0001s, distance:178.77m (Euclidean)
+[2025-03-07 13:53:42,711] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,711] [INFO] [30157] Received COMMIT: id:1741323218379, from:30062, delay:0.0001s, distance:178.77m (Euclidean)
+[2025-03-07 13:53:42,860] [INFO] [30157] Received PREPARE: id:1741323218379, from:30099, delay:0.0001s, distance:230.36m (Euclidean)
+[2025-03-07 13:53:42,860] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,860] [INFO] [30157] Received PREPARE: id:1741323218379, from:30090, delay:0.0000s, distance:33.32m (Euclidean)
+[2025-03-07 13:53:42,860] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:42,860] [INFO] [30157] Received COMMIT: id:1741323218379, from:30090, delay:0.0000s, distance:33.32m (Euclidean)
+[2025-03-07 13:53:42,860] [INFO] [30157] Received COMMIT: id:1741323218379, from:30099, delay:0.0001s, distance:230.36m (Euclidean)
+[2025-03-07 13:53:43,138] [INFO] [30157] Received PREPARE: id:1741323218379, from:30058, delay:0.0001s, distance:153.47m (Euclidean)
+[2025-03-07 13:53:43,138] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,139] [INFO] [30157] Received PREPARE: id:1741323218379, from:30087, delay:0.0000s, distance:85.50m (Euclidean)
+[2025-03-07 13:53:43,139] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,146] [INFO] [30157] Received COMMIT: id:1741323218379, from:30087, delay:0.0000s, distance:85.50m (Euclidean)
+[2025-03-07 13:53:43,148] [INFO] [30157] Received COMMIT: id:1741323218379, from:30058, delay:0.0001s, distance:153.47m (Euclidean)
+[2025-03-07 13:53:43,314] [INFO] [30157] Received PREPARE: id:1741323218379, from:30060, delay:0.0001s, distance:241.75m (Euclidean)
+[2025-03-07 13:53:43,314] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,314] [INFO] [30157] Received COMMIT: id:1741323218379, from:30060, delay:0.0001s, distance:241.75m (Euclidean)
+[2025-03-07 13:53:43,328] [INFO] [30157] Received PREPARE: id:1741323218379, from:30033, delay:0.0001s, distance:167.00m (Euclidean)
+[2025-03-07 13:53:43,328] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,328] [INFO] [30157] Received COMMIT: id:1741323218379, from:30033, delay:0.0001s, distance:167.00m (Euclidean)
+[2025-03-07 13:53:43,436] [INFO] [30157] Received PREPARE: id:1741323218379, from:30034, delay:0.0002s, distance:271.60m (Euclidean)
+[2025-03-07 13:53:43,436] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,436] [INFO] [30157] Received PREPARE: id:1741323218379, from:30030, delay:0.0002s, distance:257.78m (Euclidean)
+[2025-03-07 13:53:43,436] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,436] [INFO] [30157] Received COMMIT: id:1741323218379, from:30034, delay:0.0002s, distance:271.60m (Euclidean)
+[2025-03-07 13:53:43,436] [INFO] [30157] Received COMMIT: id:1741323218379, from:30030, delay:0.0002s, distance:257.78m (Euclidean)
+[2025-03-07 13:53:43,614] [INFO] [30157] Received PREPARE: id:1741323218379, from:30010, delay:0.0000s, distance:168.66m (Euclidean)
+[2025-03-07 13:53:43,614] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,675] [INFO] [30157] Received PREPARE: id:1741323218379, from:30089, delay:0.0001s, distance:228.24m (Euclidean)
+[2025-03-07 13:53:43,675] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,713] [INFO] [30157] Received PREPARE: id:1741323218379, from:30032, delay:0.0000s, distance:165.08m (Euclidean)
+[2025-03-07 13:53:43,713] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,713] [INFO] [30157] Received COMMIT: id:1741323218379, from:30032, delay:0.0000s, distance:165.08m (Euclidean)
+[2025-03-07 13:53:43,735] [INFO] [30157] Received COMMIT: id:1741323218379, from:30089, delay:0.0001s, distance:228.24m (Euclidean)
+[2025-03-07 13:53:43,867] [INFO] [30157] Received PREPARE: id:1741323218379, from:30047, delay:0.0002s, distance:252.47m (Euclidean)
+[2025-03-07 13:53:43,867] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:43,867] [INFO] [30157] Received COMMIT: id:1741323218379, from:30047, delay:0.0002s, distance:252.47m (Euclidean)
+[2025-03-07 13:53:44,091] [INFO] [30157] Received COMMIT: id:1741323218379, from:30049, delay:0.0000s, distance:91.12m (Euclidean)
+[2025-03-07 13:53:44,102] [INFO] [30157] Received PREPARE: id:1741323218379, from:30094, delay:0.0002s, distance:269.36m (Euclidean)
+[2025-03-07 13:53:44,102] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,118] [INFO] [30157] Received COMMIT: id:1741323218379, from:30094, delay:0.0002s, distance:269.36m (Euclidean)
+[2025-03-07 13:53:44,118] [INFO] [30157] Received PREPARE: id:1741323218379, from:30117, delay:0.0001s, distance:224.59m (Euclidean)
+[2025-03-07 13:53:44,118] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,133] [INFO] [30157] Received COMMIT: id:1741323218379, from:30117, delay:0.0001s, distance:224.59m (Euclidean)
+[2025-03-07 13:53:44,181] [INFO] [30157] Received PREPARE: id:1741323218379, from:30014, delay:0.0001s, distance:241.44m (Euclidean)
+[2025-03-07 13:53:44,181] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,181] [INFO] [30157] Received COMMIT: id:1741323218379, from:30014, delay:0.0001s, distance:241.44m (Euclidean)
+[2025-03-07 13:53:44,231] [INFO] [30157] Received PREPARE: id:1741323218379, from:30081, delay:0.0002s, distance:272.14m (Euclidean)
+[2025-03-07 13:53:44,231] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,231] [INFO] [30157] Received COMMIT: id:1741323218379, from:30081, delay:0.0002s, distance:272.14m (Euclidean)
+[2025-03-07 13:53:44,323] [INFO] [30157] Received PREPARE: id:1741323218379, from:30035, delay:0.0001s, distance:176.77m (Euclidean)
+[2025-03-07 13:53:44,323] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,418] [INFO] [30157] Received PREPARE: id:1741323218379, from:30053, delay:0.0000s, distance:145.37m (Euclidean)
+[2025-03-07 13:53:44,418] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,418] [INFO] [30157] Received COMMIT: id:1741323218379, from:30053, delay:0.0000s, distance:145.37m (Euclidean)
+[2025-03-07 13:53:44,529] [INFO] [30157] Received PREPARE: id:1741323218379, from:30006, delay:0.0001s, distance:232.42m (Euclidean)
+[2025-03-07 13:53:44,529] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,529] [INFO] [30157] Received COMMIT: id:1741323218379, from:30006, delay:0.0001s, distance:232.42m (Euclidean)
+[2025-03-07 13:53:44,624] [INFO] [30157] Received PREPARE: id:1741323218379, from:30072, delay:0.0002s, distance:278.24m (Euclidean)
+[2025-03-07 13:53:44,624] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,624] [INFO] [30157] Received COMMIT: id:1741323218379, from:30072, delay:0.0002s, distance:278.24m (Euclidean)
+[2025-03-07 13:53:44,640] [INFO] [30157] Received PREPARE: id:1741323218379, from:30083, delay:0.0000s, distance:57.02m (Euclidean)
+[2025-03-07 13:53:44,640] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,656] [INFO] [30157] Received COMMIT: id:1741323218379, from:30083, delay:0.0000s, distance:57.02m (Euclidean)
+[2025-03-07 13:53:44,829] [INFO] [30157] Received PREPARE: id:1741323218379, from:30039, delay:0.0001s, distance:201.36m (Euclidean)
+[2025-03-07 13:53:44,879] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,956] [INFO] [30157] Received COMMIT: id:1741323218379, from:30039, delay:0.0001s, distance:201.36m (Euclidean)
+[2025-03-07 13:53:44,956] [INFO] [30157] Received COMMIT: id:1741323218379, from:30010, delay:0.0000s, distance:168.66m (Euclidean)
+[2025-03-07 13:53:44,956] [INFO] [30157] Received PREPARE: id:1741323218379, from:30097, delay:0.0000s, distance:111.35m (Euclidean)
+[2025-03-07 13:53:44,956] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,956] [INFO] [30157] Received COMMIT: id:1741323218379, from:30097, delay:0.0000s, distance:111.35m (Euclidean)
+[2025-03-07 13:53:44,956] [INFO] [30157] Received PREPARE: id:1741323218379, from:30102, delay:0.0002s, distance:259.60m (Euclidean)
+[2025-03-07 13:53:44,956] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:44,956] [INFO] [30157] Received COMMIT: id:1741323218379, from:30102, delay:0.0002s, distance:259.60m (Euclidean)
+[2025-03-07 13:53:45,027] [INFO] [30157] Received PREPARE: id:1741323218379, from:30019, delay:0.0002s, distance:292.33m (Euclidean)
+[2025-03-07 13:53:45,027] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,027] [INFO] [30157] Received COMMIT: id:1741323218379, from:30019, delay:0.0002s, distance:292.33m (Euclidean)
+[2025-03-07 13:53:45,066] [INFO] [30157] Received PREPARE: id:1741323218379, from:30104, delay:0.0001s, distance:202.49m (Euclidean)
+[2025-03-07 13:53:45,066] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,066] [INFO] [30157] Received COMMIT: id:1741323218379, from:30104, delay:0.0001s, distance:202.49m (Euclidean)
+[2025-03-07 13:53:45,066] [INFO] [30157] Received PREPARE: id:1741323218379, from:30026, delay:0.0000s, distance:69.24m (Euclidean)
+[2025-03-07 13:53:45,066] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,066] [INFO] [30157] Received COMMIT: id:1741323218379, from:30026, delay:0.0000s, distance:69.24m (Euclidean)
+[2025-03-07 13:53:45,241] [INFO] [30157] Received PREPARE: id:1741323218379, from:30095, delay:0.0001s, distance:188.14m (Euclidean)
+[2025-03-07 13:53:45,241] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,241] [INFO] [30157] Received COMMIT: id:1741323218379, from:30095, delay:0.0001s, distance:188.14m (Euclidean)
+[2025-03-07 13:53:45,399] [INFO] [30157] Received PREPARE: id:1741323218379, from:30037, delay:0.0001s, distance:213.34m (Euclidean)
+[2025-03-07 13:53:45,400] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,400] [INFO] [30157] Received COMMIT: id:1741323218379, from:30037, delay:0.0001s, distance:213.34m (Euclidean)
+[2025-03-07 13:53:45,434] [INFO] [30157] Received PREPARE: id:1741323218379, from:30011, delay:0.0001s, distance:183.05m (Euclidean)
+[2025-03-07 13:53:45,434] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,434] [INFO] [30157] Received COMMIT: id:1741323218379, from:30011, delay:0.0001s, distance:183.05m (Euclidean)
+[2025-03-07 13:53:45,461] [INFO] [30157] Received PREPARE: id:1741323218379, from:30048, delay:0.0000s, distance:87.70m (Euclidean)
+[2025-03-07 13:53:45,461] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,461] [INFO] [30157] Received COMMIT: id:1741323218379, from:30048, delay:0.0000s, distance:87.70m (Euclidean)
+[2025-03-07 13:53:45,509] [INFO] [30157] Received COMMIT: id:1741323218379, from:30035, delay:0.0001s, distance:176.77m (Euclidean)
+[2025-03-07 13:53:45,509] [INFO] [30157] Received PREPARE: id:1741323218379, from:30013, delay:0.0001s, distance:234.05m (Euclidean)
+[2025-03-07 13:53:45,509] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,509] [INFO] [30157] Received COMMIT: id:1741323218379, from:30013, delay:0.0001s, distance:234.05m (Euclidean)
+[2025-03-07 13:53:45,668] [INFO] [30157] Received PREPARE: id:1741323218379, from:30004, delay:0.0002s, distance:265.30m (Euclidean)
+[2025-03-07 13:53:45,668] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,683] [INFO] [30157] Received COMMIT: id:1741323218379, from:30004, delay:0.0002s, distance:265.30m (Euclidean)
+[2025-03-07 13:53:45,699] [INFO] [30157] Received PREPARE: id:1741323218379, from:30096, delay:0.0002s, distance:289.56m (Euclidean)
+[2025-03-07 13:53:45,699] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,699] [INFO] [30157] Received COMMIT: id:1741323218379, from:30096, delay:0.0002s, distance:289.56m (Euclidean)
+[2025-03-07 13:53:45,699] [INFO] [30157] Received PREPARE: id:1741323218379, from:30055, delay:0.0000s, distance:147.83m (Euclidean)
+[2025-03-07 13:53:45,715] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,715] [INFO] [30157] Received COMMIT: id:1741323218379, from:30055, delay:0.0000s, distance:147.83m (Euclidean)
+[2025-03-07 13:53:45,764] [INFO] [30157] Received PREPARE: id:1741323218379, from:30091, delay:0.0001s, distance:161.99m (Euclidean)
+[2025-03-07 13:53:45,764] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,764] [INFO] [30157] Received COMMIT: id:1741323218379, from:30091, delay:0.0001s, distance:161.99m (Euclidean)
+[2025-03-07 13:53:45,810] [INFO] [30157] Received PREPARE: id:1741323218379, from:30043, delay:0.0002s, distance:297.52m (Euclidean)
+[2025-03-07 13:53:45,810] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,810] [INFO] [30157] Received COMMIT: id:1741323218379, from:30043, delay:0.0002s, distance:297.52m (Euclidean)
+[2025-03-07 13:53:45,961] [INFO] [30157] Received PREPARE: id:1741323218379, from:30028, delay:0.0001s, distance:163.00m (Euclidean)
+[2025-03-07 13:53:45,961] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:45,961] [INFO] [30157] Received COMMIT: id:1741323218379, from:30028, delay:0.0001s, distance:163.00m (Euclidean)
+[2025-03-07 13:53:46,037] [INFO] [30157] Received PREPARE: id:1741323218379, from:30041, delay:0.0001s, distance:244.82m (Euclidean)
+[2025-03-07 13:53:46,037] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,037] [INFO] [30157] Received COMMIT: id:1741323218379, from:30041, delay:0.0001s, distance:244.82m (Euclidean)
+[2025-03-07 13:53:46,174] [INFO] [30157] Received PREPARE: id:1741323218379, from:30031, delay:0.0002s, distance:272.40m (Euclidean)
+[2025-03-07 13:53:46,174] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,174] [INFO] [30157] Received COMMIT: id:1741323218379, from:30031, delay:0.0002s, distance:272.40m (Euclidean)
+[2025-03-07 13:53:46,237] [INFO] [30157] Received PREPARE: id:1741323218379, from:30001, delay:0.0001s, distance:221.93m (Euclidean)
+[2025-03-07 13:53:46,237] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,237] [INFO] [30157] Received COMMIT: id:1741323218379, from:30001, delay:0.0001s, distance:221.93m (Euclidean)
+[2025-03-07 13:53:46,491] [INFO] [30157] Received PREPARE: id:1741323218379, from:30016, delay:0.0001s, distance:206.81m (Euclidean)
+[2025-03-07 13:53:46,491] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,491] [INFO] [30157] Received COMMIT: id:1741323218379, from:30016, delay:0.0001s, distance:206.81m (Euclidean)
+[2025-03-07 13:53:46,491] [INFO] [30157] Received PREPARE: id:1741323218379, from:30024, delay:0.0002s, distance:275.31m (Euclidean)
+[2025-03-07 13:53:46,491] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,491] [INFO] [30157] Received COMMIT: id:1741323218379, from:30024, delay:0.0002s, distance:275.31m (Euclidean)
+[2025-03-07 13:53:46,557] [INFO] [30157] Received PREPARE: id:1741323218379, from:30036, delay:0.0002s, distance:291.40m (Euclidean)
+[2025-03-07 13:53:46,557] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,557] [INFO] [30157] Received COMMIT: id:1741323218379, from:30036, delay:0.0002s, distance:291.40m (Euclidean)
+[2025-03-07 13:53:46,665] [INFO] [30157] Received PREPARE: id:1741323218379, from:30003, delay:0.0000s, distance:172.11m (Euclidean)
+[2025-03-07 13:53:46,665] [INFO] [30157] Missing PRE-PREPARE for REQUEST 1741323218379; ignoring PREPARE
+[2025-03-07 13:53:46,665] [INFO] [30157] Received COMMIT: id:1741323218379, from:30003, delay:0.0000s, distance:172.11m (Euclidean)
+[2025-03-07 13:53:46,681] [INFO] [30157] Received PRE-PREPARE: id:1741323218379, from:Leader(30000), delay:0.0000s, distance:195.53m (Euclidean)
+[2025-03-07 13:53:46,681] [INFO] [30157] Broadcasting PREPARE for REQUEST 1741323218379
+[2025-03-07 13:53:46,983] [INFO] [30157] Received PREPARE: id:1741323218379, from:30110, delay:0.0000s, distance:110.91m (Euclidean)
+[2025-03-07 13:53:46,983] [INFO] [30157] Broadcasting COMMIT for REQUEST 1741323218379
+[2025-03-07 13:53:47,033] [INFO] [30157] Received COMMIT: id:1741323218379, from:30110, delay:0.0000s, distance:110.91m (Euclidean)
+[2025-03-07 13:53:47,060] [INFO] [30157] Received COMMIT: id:1741323218379, from:30134, delay:0.0000s, distance:97.94m (Euclidean)
+[2025-03-07 13:53:47,060] [INFO] [30157] Received PREPARE: id:1741323218379, from:30134, delay:0.0000s, distance:97.94m (Euclidean)
+[2025-03-07 13:53:47,369] [INFO] [30157] Received PREPARE: id:1741323218379, from:30007, delay:0.0002s, distance:281.94m (Euclidean)
+[2025-03-07 13:53:47,369] [INFO] [30157] Received COMMIT: id:1741323218379, from:30007, delay:0.0002s, distance:281.94m (Euclidean)
+[2025-03-07 13:53:47,453] [INFO] [30157] Received PREPARE: id:1741323218379, from:30158, delay:0.0000s, distance:73.89m (Euclidean)
+[2025-03-07 13:53:47,455] [INFO] [30157] Received COMMIT: id:1741323218379, from:30158, delay:0.0000s, distance:73.89m (Euclidean)
+[2025-03-07 13:53:47,455] [INFO] [30157] Received PREPARE: id:1741323218379, from:30135, delay:0.0001s, distance:209.96m (Euclidean)
+[2025-03-07 13:53:47,471] [INFO] [30157] Received COMMIT: id:1741323218379, from:30135, delay:0.0001s, distance:209.96m (Euclidean)
+[2025-03-07 13:53:47,655] [INFO] [30157] Received PREPARE: id:1741323218379, from:30147, delay:0.0000s, distance:139.97m (Euclidean)
+[2025-03-07 13:53:47,850] [INFO] [30157] Received COMMIT: id:1741323218379, from:30147, delay:0.0000s, distance:139.97m (Euclidean)
+[2025-03-07 13:53:48,057] [INFO] [30157] Received PREPARE: id:1741323218379, from:30136, delay:0.0001s, distance:206.86m (Euclidean)
+[2025-03-07 13:53:48,062] [INFO] [30157] Received COMMIT: id:1741323218379, from:30136, delay:0.0001s, distance:206.86m (Euclidean)
+[2025-03-07 13:53:48,082] [INFO] [30157] Received PREPARE: id:1741323218379, from:30105, delay:0.0001s, distance:194.63m (Euclidean)
+[2025-03-07 13:53:48,087] [INFO] [30157] Received COMMIT: id:1741323218379, from:30105, delay:0.0001s, distance:194.63m (Euclidean)
+[2025-03-07 13:53:48,120] [INFO] [30157] Received PREPARE: id:1741323218379, from:30154, delay:0.0000s, distance:60.64m (Euclidean)
+[2025-03-07 13:53:48,120] [INFO] [30157] Received COMMIT: id:1741323218379, from:30154, delay:0.0000s, distance:60.64m (Euclidean)
+[2025-03-07 13:53:48,342] [INFO] [30157] Received PREPARE: id:1741323218379, from:30128, delay:0.0000s, distance:40.11m (Euclidean)
+[2025-03-07 13:53:48,342] [INFO] [30157] Received COMMIT: id:1741323218379, from:30128, delay:0.0000s, distance:40.11m (Euclidean)
+[2025-03-07 13:53:48,405] [INFO] [30157] Received PREPARE: id:1741323218379, from:30153, delay:0.0001s, distance:164.73m (Euclidean)
+[2025-03-07 13:53:48,405] [INFO] [30157] Received COMMIT: id:1741323218379, from:30153, delay:0.0001s, distance:164.73m (Euclidean)
+[2025-03-07 13:53:48,490] [INFO] [30157] Received PREPARE: id:1741323218379, from:30139, delay:0.0001s, distance:213.46m (Euclidean)
+[2025-03-07 13:53:48,490] [INFO] [30157] Received COMMIT: id:1741323218379, from:30139, delay:0.0001s, distance:213.46m (Euclidean)
+[2025-03-07 13:53:48,715] [INFO] [30157] Received PREPARE: id:1741323218379, from:30109, delay:0.0001s, distance:246.24m (Euclidean)
+[2025-03-07 13:53:48,717] [INFO] [30157] Received COMMIT: id:1741323218379, from:30109, delay:0.0001s, distance:246.24m (Euclidean)
+[2025-03-07 13:53:48,744] [INFO] [30157] Received PREPARE: id:1741323218379, from:30131, delay:0.0001s, distance:208.47m (Euclidean)
+[2025-03-07 13:53:48,750] [INFO] [30157] Received COMMIT: id:1741323218379, from:30131, delay:0.0001s, distance:208.47m (Euclidean)
+[2025-03-07 13:53:48,877] [INFO] [30157] Received PREPARE: id:1741323218379, from:30107, delay:0.0001s, distance:178.95m (Euclidean)
+[2025-03-07 13:53:48,877] [INFO] [30157] Received COMMIT: id:1741323218379, from:30107, delay:0.0001s, distance:178.95m (Euclidean)
+[2025-03-07 13:53:48,947] [INFO] [30157] Received PREPARE: id:1741323218379, from:30144, delay:0.0000s, distance:130.81m (Euclidean)
+[2025-03-07 13:53:49,094] [INFO] [30157] Received PREPARE: id:1741323218379, from:30133, delay:0.0001s, distance:196.06m (Euclidean)
+[2025-03-07 13:53:49,107] [INFO] [30157] Received COMMIT: id:1741323218379, from:30133, delay:0.0001s, distance:196.06m (Euclidean)
+[2025-03-07 13:53:49,240] [INFO] [30157] Received PREPARE: id:1741323218379, from:30112, delay:0.0000s, distance:136.59m (Euclidean)
+[2025-03-07 13:53:49,272] [INFO] [30157] Received PREPARE: id:1741323218379, from:30151, delay:0.0001s, distance:235.90m (Euclidean)
+[2025-03-07 13:53:49,304] [INFO] [30157] Received COMMIT: id:1741323218379, from:30151, delay:0.0001s, distance:235.90m (Euclidean)
+[2025-03-07 13:53:49,335] [INFO] [30157] Received COMMIT: id:1741323218379, from:30112, delay:0.0000s, distance:136.59m (Euclidean)
+[2025-03-07 13:53:49,431] [INFO] [30157] Received COMMIT: id:1741323218379, from:30144, delay:0.0000s, distance:130.81m (Euclidean)
+[2025-03-07 13:53:50,469] [INFO] [30157] Received COMMIT: id:1741323218379, from:30130, delay:0.0000s, distance:113.66m (Euclidean)
+[2025-03-07 13:53:50,469] [INFO] [30157] Received PREPARE: id:1741323218379, from:30130, delay:0.0000s, distance:113.66m (Euclidean)
+[2025-03-07 13:53:50,538] [INFO] [30157] Received COMMIT: id:1741323218379, from:30000, delay:0.0000s, distance:195.53m (Euclidean)
+[2025-03-07 13:53:50,683] [INFO] [30157] Received PREPARE: id:1741323218379, from:30015, delay:0.0001s, distance:206.15m (Euclidean)
+[2025-03-07 13:53:50,683] [INFO] [30157] Received COMMIT: id:1741323218379, from:30015, delay:0.0001s, distance:206.15m (Euclidean)
+[2025-03-07 13:53:50,965] [INFO] [30157] Received PREPARE: id:1741323218379, from:30126, delay:0.0002s, distance:267.72m (Euclidean)
+[2025-03-07 13:53:50,965] [INFO] [30157] Received COMMIT: id:1741323218379, from:30126, delay:0.0002s, distance:267.72m (Euclidean)
+[2025-03-07 13:53:50,997] [ERROR] [30157] Error sending to http://localhost:30029/prepare: Cannot connect to host localhost:30029 ssl:default [Connect call failed ('127.0.0.1', 30029)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30029)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30029 ssl:default [Connect call failed ('127.0.0.1', 30029)]
+[2025-03-07 13:53:51,139] [ERROR] [30157] Error sending to http://localhost:30023/prepare: Cannot connect to host localhost:30023 ssl:default [Connect call failed ('127.0.0.1', 30023)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30023)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30023 ssl:default [Connect call failed ('127.0.0.1', 30023)]
+[2025-03-07 13:53:51,298] [ERROR] [30157] Error sending to http://localhost:30066/prepare: Cannot connect to host localhost:30066 ssl:default [Connect call failed ('127.0.0.1', 30066)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30066)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30066 ssl:default [Connect call failed ('127.0.0.1', 30066)]
+[2025-03-07 13:53:51,313] [ERROR] [30157] Error sending to http://localhost:30063/prepare: Cannot connect to host localhost:30063 ssl:default [Connect call failed ('127.0.0.1', 30063)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30063)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30063 ssl:default [Connect call failed ('127.0.0.1', 30063)]
+[2025-03-07 13:53:51,503] [ERROR] [30157] Error sending to http://localhost:30029/commit: Cannot connect to host localhost:30029 ssl:default [Connect call failed ('::1', 30029, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30029, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30029 ssl:default [Connect call failed ('::1', 30029, 0, 0)]
+[2025-03-07 13:53:51,535] [ERROR] [30157] Error sending to http://localhost:30027/commit: Cannot connect to host localhost:30027 ssl:default [Connect call failed ('::1', 30027, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30027, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30027 ssl:default [Connect call failed ('::1', 30027, 0, 0)]
+[2025-03-07 13:53:51,535] [ERROR] [30157] Error sending to http://localhost:30027/prepare: Cannot connect to host localhost:30027 ssl:default [Connect call failed ('127.0.0.1', 30027)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30027)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30027 ssl:default [Connect call failed ('127.0.0.1', 30027)]
+[2025-03-07 13:53:51,584] [ERROR] [30157] Error sending to http://localhost:30065/prepare: Cannot connect to host localhost:30065 ssl:default [Connect call failed ('127.0.0.1', 30065)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30065)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30065 ssl:default [Connect call failed ('127.0.0.1', 30065)]
+[2025-03-07 13:53:51,709] [ERROR] [30157] Error sending to http://localhost:30065/commit: Cannot connect to host localhost:30065 ssl:default [Connect call failed ('::1', 30065, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30065, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30065 ssl:default [Connect call failed ('::1', 30065, 0, 0)]
+[2025-03-07 13:53:51,756] [ERROR] [30157] Error sending to http://localhost:30025/prepare: Cannot connect to host localhost:30025 ssl:default [Connect call failed ('127.0.0.1', 30025)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30025)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30025 ssl:default [Connect call failed ('127.0.0.1', 30025)]
+[2025-03-07 13:53:51,882] [ERROR] [30157] Error sending to http://localhost:30023/commit: Cannot connect to host localhost:30023 ssl:default [Connect call failed ('::1', 30023, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30023, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30023 ssl:default [Connect call failed ('::1', 30023, 0, 0)]
+[2025-03-07 13:53:51,898] [ERROR] [30157] Error sending to http://localhost:30071/prepare: Cannot connect to host localhost:30071 ssl:default [Connect call failed ('127.0.0.1', 30071)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30071)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30071 ssl:default [Connect call failed ('127.0.0.1', 30071)]
+[2025-03-07 13:53:51,961] [INFO] [30157] Received PREPARE: id:1741323218379, from:30119, delay:0.0002s, distance:295.49m (Euclidean)
+[2025-03-07 13:53:51,961] [INFO] [30157] Received COMMIT: id:1741323218379, from:30119, delay:0.0002s, distance:295.49m (Euclidean)
+[2025-03-07 13:53:52,024] [ERROR] [30157] Error sending to http://localhost:30076/prepare: Cannot connect to host localhost:30076 ssl:default [Connect call failed ('127.0.0.1', 30076)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30076)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30076 ssl:default [Connect call failed ('127.0.0.1', 30076)]
+[2025-03-07 13:53:52,041] [ERROR] [30157] Error sending to http://localhost:30075/prepare: Cannot connect to host localhost:30075 ssl:default [Connect call failed ('127.0.0.1', 30075)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30075)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30075 ssl:default [Connect call failed ('127.0.0.1', 30075)]
+[2025-03-07 13:53:52,236] [ERROR] [30157] Error sending to http://localhost:30075/commit: Cannot connect to host localhost:30075 ssl:default [Connect call failed ('::1', 30075, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30075, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30075 ssl:default [Connect call failed ('::1', 30075, 0, 0)]
+[2025-03-07 13:53:52,307] [ERROR] [30157] Error sending to http://localhost:30085/prepare: Cannot connect to host localhost:30085 ssl:default [Connect call failed ('127.0.0.1', 30085)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30085)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30085 ssl:default [Connect call failed ('127.0.0.1', 30085)]
+[2025-03-07 13:53:52,307] [ERROR] [30157] Error sending to http://localhost:30085/commit: Cannot connect to host localhost:30085 ssl:default [Connect call failed ('::1', 30085, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30085, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30085 ssl:default [Connect call failed ('::1', 30085, 0, 0)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30076/commit: Cannot connect to host localhost:30076 ssl:default [Connect call failed ('::1', 30076, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30076, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30076 ssl:default [Connect call failed ('::1', 30076, 0, 0)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30138/commit: Cannot connect to host localhost:30138 ssl:default [Connect call failed ('::1', 30138, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30138, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30138 ssl:default [Connect call failed ('::1', 30138, 0, 0)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30138/prepare: Cannot connect to host localhost:30138 ssl:default [Connect call failed ('127.0.0.1', 30138)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30138)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30138 ssl:default [Connect call failed ('127.0.0.1', 30138)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30140/commit: Cannot connect to host localhost:30140 ssl:default [Connect call failed ('::1', 30140, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30140, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30140 ssl:default [Connect call failed ('::1', 30140, 0, 0)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30140/prepare: Cannot connect to host localhost:30140 ssl:default [Connect call failed ('127.0.0.1', 30140)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30140)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30140 ssl:default [Connect call failed ('127.0.0.1', 30140)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30124/commit: Cannot connect to host localhost:30124 ssl:default [Connect call failed ('::1', 30124, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30124, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30124 ssl:default [Connect call failed ('::1', 30124, 0, 0)]
+[2025-03-07 13:53:52,323] [ERROR] [30157] Error sending to http://localhost:30124/prepare: Cannot connect to host localhost:30124 ssl:default [Connect call failed ('127.0.0.1', 30124)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30124)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30124 ssl:default [Connect call failed ('127.0.0.1', 30124)]
+[2025-03-07 13:53:52,338] [ERROR] [30157] Error sending to http://localhost:30063/commit: Cannot connect to host localhost:30063 ssl:default [Connect call failed ('::1', 30063, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30063, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30063 ssl:default [Connect call failed ('::1', 30063, 0, 0)]
+[2025-03-07 13:53:52,354] [ERROR] [30157] Error sending to http://localhost:30071/commit: Cannot connect to host localhost:30071 ssl:default [Connect call failed ('::1', 30071, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30071, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30071 ssl:default [Connect call failed ('::1', 30071, 0, 0)]
+[2025-03-07 13:53:52,354] [ERROR] [30157] Error sending to http://localhost:30066/commit: Cannot connect to host localhost:30066 ssl:default [Connect call failed ('::1', 30066, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30066, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30066 ssl:default [Connect call failed ('::1', 30066, 0, 0)]
+[2025-03-07 13:53:52,370] [ERROR] [30157] Error sending to http://localhost:30137/prepare: Cannot connect to host localhost:30137 ssl:default [Connect call failed ('127.0.0.1', 30137)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30137)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30137 ssl:default [Connect call failed ('127.0.0.1', 30137)]
+[2025-03-07 13:53:52,402] [ERROR] [30157] Error sending to http://localhost:30125/prepare: Cannot connect to host localhost:30125 ssl:default [Connect call failed ('127.0.0.1', 30125)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30125)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30125 ssl:default [Connect call failed ('127.0.0.1', 30125)]
+[2025-03-07 13:53:52,434] [ERROR] [30157] Error sending to http://localhost:30125/commit: Cannot connect to host localhost:30125 ssl:default [Connect call failed ('::1', 30125, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30125, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30125 ssl:default [Connect call failed ('::1', 30125, 0, 0)]
+[2025-03-07 13:53:52,449] [ERROR] [30157] Error sending to http://localhost:30143/prepare: Cannot connect to host localhost:30143 ssl:default [Connect call failed ('127.0.0.1', 30143)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30143)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30143 ssl:default [Connect call failed ('127.0.0.1', 30143)]
+[2025-03-07 13:53:52,449] [ERROR] [30157] Error sending to http://localhost:30143/commit: Cannot connect to host localhost:30143 ssl:default [Connect call failed ('::1', 30143, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30143, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30143 ssl:default [Connect call failed ('::1', 30143, 0, 0)]
+[2025-03-07 13:53:52,466] [ERROR] [30157] Error sending to http://localhost:30093/prepare: Cannot connect to host localhost:30093 ssl:default [Connect call failed ('127.0.0.1', 30093)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30093)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30093 ssl:default [Connect call failed ('127.0.0.1', 30093)]
+[2025-03-07 13:53:52,481] [ERROR] [30157] Error sending to http://localhost:30093/commit: Cannot connect to host localhost:30093 ssl:default [Connect call failed ('::1', 30093, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30093, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30093 ssl:default [Connect call failed ('::1', 30093, 0, 0)]
+[2025-03-07 13:53:52,481] [ERROR] [30157] Error sending to http://localhost:30025/commit: Cannot connect to host localhost:30025 ssl:default [Connect call failed ('::1', 30025, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30025, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30025 ssl:default [Connect call failed ('::1', 30025, 0, 0)]
+[2025-03-07 13:53:52,481] [ERROR] [30157] Error sending to http://localhost:30141/commit: Cannot connect to host localhost:30141 ssl:default [Connect call failed ('::1', 30141, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30141, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30141 ssl:default [Connect call failed ('::1', 30141, 0, 0)]
+[2025-03-07 13:53:52,497] [ERROR] [30157] Error sending to http://localhost:30137/commit: Cannot connect to host localhost:30137 ssl:default [Connect call failed ('::1', 30137, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30137, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30137 ssl:default [Connect call failed ('::1', 30137, 0, 0)]
+[2025-03-07 13:53:52,497] [ERROR] [30157] Error sending to http://localhost:30141/prepare: Cannot connect to host localhost:30141 ssl:default [Connect call failed ('127.0.0.1', 30141)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30141)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30141 ssl:default [Connect call failed ('127.0.0.1', 30141)]
+[2025-03-07 13:53:52,687] [ERROR] [30157] Error sending to http://localhost:30100/commit: Cannot connect to host localhost:30100 ssl:default [Connect call failed ('::1', 30100, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30100, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30100 ssl:default [Connect call failed ('::1', 30100, 0, 0)]
+[2025-03-07 13:53:52,687] [ERROR] [30157] Error sending to http://localhost:30101/commit: Cannot connect to host localhost:30101 ssl:default [Connect call failed ('::1', 30101, 0, 0)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('::1', 30101, 0, 0)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30101 ssl:default [Connect call failed ('::1', 30101, 0, 0)]
+[2025-03-07 13:53:52,703] [ERROR] [30157] Error sending to http://localhost:30100/prepare: Cannot connect to host localhost:30100 ssl:default [Connect call failed ('127.0.0.1', 30100)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30100)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30100 ssl:default [Connect call failed ('127.0.0.1', 30100)]
+[2025-03-07 13:53:52,703] [ERROR] [30157] Error sending to http://localhost:30101/prepare: Cannot connect to host localhost:30101 ssl:default [Connect call failed ('127.0.0.1', 30101)]
+Traceback (most recent call last):
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 980, in _wrap_create_connection
+    return await self._loop.create_connection(*args, **kwargs)  # type: ignore[return-value]  # noqa
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 948, in create_connection
+    raise exceptions[0]
+  File "D:\anaconda\envs\PBFT\lib\asyncio\base_events.py", line 935, in create_connection
+    await self.sock_connect(sock, address)
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 475, in sock_connect
+    return await fut
+  File "D:\anaconda\envs\PBFT\lib\asyncio\selector_events.py", line 505, in _sock_connect_cb
+    raise OSError(err, f'Connect call failed {address}')
+ConnectionRefusedError: [Errno 10061] Connect call failed ('127.0.0.1', 30101)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "pbft.py", line 236, in send_message
+    await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
+  File "pbft.py", line 63, in send_with_delay
+    async with session.post(url, json=data) as resp:
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 1141, in __aenter__
+    self._resp = await self._coro
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\client.py", line 537, in _request
+    req, traces=traces, timeout=real_timeout
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 540, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 901, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1206, in _create_direct_connection
+    raise last_exc
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 1187, in _create_direct_connection
+    client_error=client_error,
+  File "D:\anaconda\envs\PBFT\lib\site-packages\aiohttp\connector.py", line 988, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host localhost:30101 ssl:default [Connect call failed ('127.0.0.1', 30101)]
+[2025-03-07 13:53:52,720] [INFO] [30157] Received PREPARE: id:1741323218379, from:30118, delay:0.0000s, distance:186.60m (Euclidean)
+[2025-03-07 13:53:52,751] [INFO] [30157] Received COMMIT: id:1741323218379, from:30118, delay:0.0000s, distance:186.60m (Euclidean)
+[2025-03-07 13:53:52,862] [INFO] [30157] Received PREPARE: id:1741323218379, from:30121, delay:0.0001s, distance:161.77m (Euclidean)
+[2025-03-07 13:53:52,862] [INFO] [30157] Received COMMIT: id:1741323218379, from:30121, delay:0.0001s, distance:161.77m (Euclidean)
+[2025-03-07 13:53:53,038] [INFO] [30157] Received PREPARE: id:1741323218379, from:30129, delay:0.0001s, distance:222.22m (Euclidean)
+[2025-03-07 13:53:53,038] [INFO] [30157] Received COMMIT: id:1741323218379, from:30129, delay:0.0001s, distance:222.22m (Euclidean)
+[2025-03-07 13:53:53,070] [INFO] [30157] Received PREPARE: id:1741323218379, from:30123, delay:0.0000s, distance:101.82m (Euclidean)
+[2025-03-07 13:53:53,084] [INFO] [30157] Received COMMIT: id:1741323218379, from:30123, delay:0.0000s, distance:101.82m (Euclidean)
+[2025-03-07 13:53:53,448] [INFO] [30157] Received PREPARE: id:1741323218379, from:30113, delay:0.0000s, distance:139.43m (Euclidean)
+[2025-03-07 13:53:53,448] [INFO] [30157] Received COMMIT: id:1741323218379, from:30113, delay:0.0000s, distance:139.43m (Euclidean)
+[2025-03-07 13:53:53,574] [INFO] [30157] Received PREPARE: id:1741323218379, from:30149, delay:0.0000s, distance:127.56m (Euclidean)
+[2025-03-07 13:53:53,590] [INFO] [30157] Received COMMIT: id:1741323218379, from:30149, delay:0.0000s, distance:127.56m (Euclidean)
+[2025-03-07 13:53:53,812] [INFO] [30157] Received PREPARE: id:1741323218379, from:30142, delay:0.0001s, distance:212.32m (Euclidean)
+[2025-03-07 13:53:53,831] [INFO] [30157] Received COMMIT: id:1741323218379, from:30142, delay:0.0001s, distance:212.32m (Euclidean)
+[2025-03-07 13:53:53,939] [INFO] [30157] Received PREPARE: id:1741323218379, from:30150, delay:0.0001s, distance:232.43m (Euclidean)
+[2025-03-07 13:53:53,939] [INFO] [30157] Received COMMIT: id:1741323218379, from:30150, delay:0.0001s, distance:232.43m (Euclidean)
+[2025-03-07 13:53:54,002] [INFO] [30157] Received PREPARE: id:1741323218379, from:30127, delay:0.0001s, distance:222.17m (Euclidean)
+[2025-03-07 13:53:54,002] [INFO] [30157] Received COMMIT: id:1741323218379, from:30127, delay:0.0001s, distance:222.17m (Euclidean)
+[2025-03-07 13:53:54,314] [INFO] [30157] Received PREPARE: id:1741323218379, from:30106, delay:0.0001s, distance:234.02m (Euclidean)
+[2025-03-07 13:53:54,321] [INFO] [30157] Received COMMIT: id:1741323218379, from:30106, delay:0.0001s, distance:234.02m (Euclidean)
+[2025-03-07 13:53:54,321] [INFO] [30157] Received PREPARE: id:1741323218379, from:30115, delay:0.0001s, distance:232.87m (Euclidean)
+[2025-03-07 13:53:54,334] [INFO] [30157] Received COMMIT: id:1741323218379, from:30115, delay:0.0001s, distance:232.87m (Euclidean)
+[2025-03-07 13:53:54,485] [INFO] [30157] Received PREPARE: id:1741323218379, from:30108, delay:0.0002s, distance:263.25m (Euclidean)
+[2025-03-07 13:53:54,487] [INFO] [30157] Received PREPARE: id:1741323218379, from:30152, delay:0.0002s, distance:250.67m (Euclidean)
+[2025-03-07 13:53:54,507] [INFO] [30157] Received PREPARE: id:1741323218379, from:30146, delay:0.0001s, distance:210.94m (Euclidean)
+[2025-03-07 13:53:54,511] [INFO] [30157] Received COMMIT: id:1741323218379, from:30152, delay:0.0002s, distance:250.67m (Euclidean)
+[2025-03-07 13:53:54,511] [INFO] [30157] Received COMMIT: id:1741323218379, from:30108, delay:0.0002s, distance:263.25m (Euclidean)
+[2025-03-07 13:53:54,522] [INFO] [30157] Received PREPARE: id:1741323218379, from:30120, delay:0.0001s, distance:245.12m (Euclidean)
+[2025-03-07 13:53:54,524] [INFO] [30157] Received COMMIT: id:1741323218379, from:30146, delay:0.0001s, distance:210.94m (Euclidean)
+[2025-03-07 13:53:54,528] [INFO] [30157] Received COMMIT: id:1741323218379, from:30120, delay:0.0001s, distance:245.12m (Euclidean)
+[2025-03-07 13:53:54,543] [INFO] [30157] Received PREPARE: id:1741323218379, from:30156, delay:0.0002s, distance:260.48m (Euclidean)
+[2025-03-07 13:53:54,554] [INFO] [30157] Received COMMIT: id:1741323218379, from:30156, delay:0.0002s, distance:260.48m (Euclidean)
+[2025-03-07 13:53:54,554] [INFO] [30157] Received PREPARE: id:1741323218379, from:30111, delay:0.0000s, distance:106.93m (Euclidean)
+[2025-03-07 13:53:54,569] [INFO] [30157] Received COMMIT: id:1741323218379, from:30111, delay:0.0000s, distance:106.93m (Euclidean)
+[2025-03-07 13:53:55,660] [INFO] [30157] Received PREPARE: id:1741323218379, from:30022, delay:0.0001s, distance:236.34m (Euclidean)
+[2025-03-07 13:53:55,669] [INFO] [30157] Received COMMIT: id:1741323218379, from:30022, delay:0.0001s, distance:236.34m (Euclidean)
+[2025-03-07 13:57:45,733] [INFO] Starting node at localhost:30157 | index=158 | f=1, k=4 | Role: Replica
+[2025-03-07 13:58:48,147] [INFO] Starting node at localhost:30157 | index=158 | f=1, k=4 | Role: Replica
+[2025-03-07 13:59:02,502] [INFO] [30157] Received PRE-PREPARE: id:1741323542381, from:Leader(30000), delay:0.0000s, distance:83.71m (Euclidean)
+[2025-03-07 13:59:02,502] [INFO] [30157] Broadcasting PREPARE for REQUEST 1741323542381
+[2025-03-07 13:59:02,512] [INFO] [30157] Not broadcasting to fault node: 30077
+[2025-03-07 13:59:02,528] [INFO] [30157] Not broadcasting to fault node: 30184
+[2025-03-07 13:59:03,106] [INFO] [30157] Received PREPARE: id:1741323542381, from:30107, delay:0.0000s, distance:200.15m (Euclidean)
+[2025-03-07 13:59:03,740] [INFO] [30157] Received COMMIT: id:1741323542381, from:30107, delay:0.0000s, distance:200.15m (Euclidean)
+[2025-03-07 13:59:04,202] [INFO] [30157] Received PREPARE: id:1741323542381, from:30127, delay:0.0000s, distance:116.42m (Euclidean)
+[2025-03-07 13:59:04,202] [INFO] [30157] Broadcasting COMMIT for REQUEST 1741323542381
+[2025-03-07 13:59:04,217] [INFO] [30157] Not broadcasting to fault node: 30077
+[2025-03-07 13:59:04,229] [INFO] [30157] Not broadcasting to fault node: 30184
+[2025-03-07 13:59:04,429] [INFO] [30157] Received PREPARE: id:1741323542381, from:30126, delay:0.0001s, distance:227.73m (Euclidean)
+[2025-03-07 13:59:04,445] [INFO] [30157] Received PREPARE: id:1741323542381, from:30110, delay:0.0000s, distance:190.94m (Euclidean)
+[2025-03-07 13:59:04,445] [INFO] [30157] Received PREPARE: id:1741323542381, from:30130, delay:0.0000s, distance:46.16m (Euclidean)
+[2025-03-07 13:59:04,658] [INFO] [30157] Received PREPARE: id:1741323542381, from:30170, delay:0.0000s, distance:167.63m (Euclidean)
+[2025-03-07 13:59:04,750] [INFO] [30157] Received PREPARE: id:1741323542381, from:30133, delay:0.0000s, distance:69.78m (Euclidean)
+[2025-03-07 13:59:04,752] [INFO] [30157] Received COMMIT: id:1741323542381, from:30133, delay:0.0000s, distance:69.78m (Euclidean)
+[2025-03-07 13:59:04,752] [INFO] [LEADER 30157] Sending REPLY for REQUEST 1741323542381 to CLIENT
+[2025-03-07 13:59:04,769] [INFO] [30157] Received PREPARE: id:1741323542381, from:30007, delay:0.0000s, distance:108.51m (Euclidean)
+[2025-03-07 13:59:04,882] [INFO] [30157] Received PREPARE: id:1741323542381, from:30176, delay:0.0000s, distance:95.22m (Euclidean)
+[2025-03-07 13:59:04,891] [INFO] [30157] Received COMMIT: id:1741323542381, from:30176, delay:0.0000s, distance:95.22m (Euclidean)
+[2025-03-07 13:59:04,953] [INFO] [30157] Received COMMIT: id:1741323542381, from:30126, delay:0.0001s, distance:227.73m (Euclidean)
+[2025-03-07 13:59:05,076] [INFO] [30157] Received PREPARE: id:1741323542381, from:30041, delay:0.0000s, distance:93.09m (Euclidean)
+[2025-03-07 13:59:05,127] [INFO] [30157] Received PREPARE: id:1741323542381, from:30195, delay:0.0000s, distance:140.35m (Euclidean)
+[2025-03-07 13:59:05,136] [INFO] [30157] Received COMMIT: id:1741323542381, from:30195, delay:0.0000s, distance:140.35m (Euclidean)
+[2025-03-07 13:59:05,159] [INFO] [30157] Received PREPARE: id:1741323542381, from:30181, delay:0.0000s, distance:123.02m (Euclidean)
+[2025-03-07 13:59:05,208] [INFO] [30157] Received PREPARE: id:1741323542381, from:30029, delay:0.0001s, distance:164.86m (Euclidean)
+[2025-03-07 13:59:05,211] [INFO] [30157] Received PREPARE: id:1741323542381, from:30060, delay:0.0000s, distance:82.40m (Euclidean)
+[2025-03-07 13:59:05,268] [INFO] [30157] Received PREPARE: id:1741323542381, from:30057, delay:0.0000s, distance:148.93m (Euclidean)
+[2025-03-07 13:59:05,300] [INFO] [30157] Received PREPARE: id:1741323542381, from:30005, delay:0.0001s, distance:172.96m (Euclidean)
+[2025-03-07 13:59:05,326] [INFO] [30157] Received COMMIT: id:1741323542381, from:30057, delay:0.0000s, distance:148.93m (Euclidean)
+[2025-03-07 13:59:05,367] [INFO] [30157] Received PREPARE: id:1741323542381, from:30043, delay:0.0000s, distance:73.13m (Euclidean)
+[2025-03-07 13:59:05,398] [INFO] [30157] Received PREPARE: id:1741323542381, from:30113, delay:0.0000s, distance:80.75m (Euclidean)
+[2025-03-07 13:59:05,460] [INFO] [30157] Received COMMIT: id:1741323542381, from:30005, delay:0.0001s, distance:172.96m (Euclidean)
+[2025-03-07 13:59:05,504] [INFO] [30157] Received PREPARE: id:1741323542381, from:30144, delay:0.0001s, distance:163.42m (Euclidean)
+[2025-03-07 13:59:05,509] [INFO] [30157] Received COMMIT: id:1741323542381, from:30144, delay:0.0001s, distance:163.42m (Euclidean)
+[2025-03-07 13:59:05,597] [INFO] [30157] Received PREPARE: id:1741323542381, from:30106, delay:0.0000s, distance:114.92m (Euclidean)
+[2025-03-07 13:59:05,670] [INFO] [30157] Received PREPARE: id:1741323542381, from:30115, delay:0.0000s, distance:57.87m (Euclidean)
+[2025-03-07 13:59:05,862] [INFO] [30157] Received PREPARE: id:1741323542381, from:30136, delay:0.0001s, distance:163.56m (Euclidean)
+[2025-03-07 13:59:05,862] [INFO] [30157] Received PREPARE: id:1741323542381, from:30199, delay:0.0001s, distance:157.73m (Euclidean)
+[2025-03-07 13:59:05,862] [INFO] [30157] Received COMMIT: id:1741323542381, from:30113, delay:0.0000s, distance:80.75m (Euclidean)
+[2025-03-07 13:59:05,875] [INFO] [30157] Received PREPARE: id:1741323542381, from:30090, delay:0.0000s, distance:198.46m (Euclidean)
+[2025-03-07 13:59:05,964] [INFO] [30157] Received PREPARE: id:1741323542381, from:30037, delay:0.0001s, distance:169.16m (Euclidean)
+[2025-03-07 13:59:05,977] [INFO] [30157] Received PREPARE: id:1741323542381, from:30048, delay:0.0000s, distance:151.99m (Euclidean)
+[2025-03-07 13:59:06,036] [INFO] [30157] Received COMMIT: id:1741323542381, from:30029, delay:0.0001s, distance:164.86m (Euclidean)
+[2025-03-07 13:59:06,082] [INFO] [30157] Received COMMIT: id:1741323542381, from:30007, delay:0.0000s, distance:108.51m (Euclidean)
+[2025-03-07 13:59:06,120] [INFO] [30157] Received COMMIT: id:1741323542381, from:30136, delay:0.0001s, distance:163.56m (Euclidean)
+[2025-03-07 13:59:06,223] [INFO] [30157] Received PREPARE: id:1741323542381, from:30035, delay:0.0001s, distance:164.78m (Euclidean)
+[2025-03-07 13:59:06,223] [INFO] [30157] Received COMMIT: id:1741323542381, from:30043, delay:0.0000s, distance:73.13m (Euclidean)
+[2025-03-07 13:59:06,316] [INFO] [30157] Received PREPARE: id:1741323542381, from:30027, delay:0.0001s, distance:171.76m (Euclidean)
+[2025-03-07 13:59:06,318] [INFO] [30157] Received PREPARE: id:1741323542381, from:30025, delay:0.0000s, distance:104.70m (Euclidean)
+[2025-03-07 13:59:06,347] [INFO] [30157] Received PREPARE: id:1741323542381, from:30023, delay:0.0001s, distance:192.75m (Euclidean)
+[2025-03-07 13:59:06,373] [INFO] [30157] Received COMMIT: id:1741323542381, from:30041, delay:0.0000s, distance:93.09m (Euclidean)
+[2025-03-07 13:59:06,373] [INFO] [30157] Received PREPARE: id:1741323542381, from:30049, delay:0.0000s, distance:123.66m (Euclidean)
+[2025-03-07 13:59:06,387] [INFO] [30157] Received PREPARE: id:1741323542381, from:30046, delay:0.0000s, distance:85.40m (Euclidean)
+[2025-03-07 13:59:06,433] [INFO] [30157] Received COMMIT: id:1741323542381, from:30023, delay:0.0001s, distance:192.75m (Euclidean)
+[2025-03-07 13:59:06,472] [INFO] [30157] Received PREPARE: id:1741323542381, from:30167, delay:0.0002s, distance:258.79m (Euclidean)
+[2025-03-07 13:59:06,492] [INFO] [30157] Received PREPARE: id:1741323542381, from:30015, delay:0.0000s, distance:77.56m (Euclidean)
+[2025-03-07 13:59:06,496] [INFO] [30157] Received COMMIT: id:1741323542381, from:30025, delay:0.0000s, distance:104.70m (Euclidean)
+[2025-03-07 13:59:06,498] [INFO] [30157] Received COMMIT: id:1741323542381, from:30046, delay:0.0000s, distance:85.40m (Euclidean)
+[2025-03-07 13:59:06,539] [INFO] [30157] Received COMMIT: id:1741323542381, from:30048, delay:0.0000s, distance:151.99m (Euclidean)
+[2025-03-07 13:59:06,539] [INFO] [30157] Received PREPARE: id:1741323542381, from:30020, delay:0.0001s, distance:208.72m (Euclidean)
+[2025-03-07 13:59:06,553] [INFO] [30157] Received COMMIT: id:1741323542381, from:30027, delay:0.0001s, distance:171.76m (Euclidean)
+[2025-03-07 13:59:06,594] [INFO] [30157] Received COMMIT: id:1741323542381, from:30037, delay:0.0001s, distance:169.16m (Euclidean)
+[2025-03-07 13:59:06,614] [INFO] [30157] Received COMMIT: id:1741323542381, from:30060, delay:0.0000s, distance:82.40m (Euclidean)
+[2025-03-07 13:59:06,621] [INFO] [30157] Received PREPARE: id:1741323542381, from:30092, delay:0.0000s, distance:72.64m (Euclidean)
+[2025-03-07 13:59:06,635] [INFO] [30157] Received PREPARE: id:1741323542381, from:30116, delay:0.0001s, distance:204.59m (Euclidean)
+[2025-03-07 13:59:06,720] [INFO] [30157] Received COMMIT: id:1741323542381, from:30020, delay:0.0001s, distance:208.72m (Euclidean)
+[2025-03-07 13:59:06,720] [INFO] [30157] Received COMMIT: id:1741323542381, from:30106, delay:0.0000s, distance:114.92m (Euclidean)
+[2025-03-07 13:59:06,722] [INFO] [30157] Received COMMIT: id:1741323542381, from:30015, delay:0.0000s, distance:77.56m (Euclidean)
+[2025-03-07 13:59:06,751] [INFO] [30157] Received PREPARE: id:1741323542381, from:30062, delay:0.0001s, distance:248.42m (Euclidean)
+[2025-03-07 13:59:06,751] [INFO] [30157] Received PREPARE: id:1741323542381, from:30196, delay:0.0000s, distance:99.91m (Euclidean)
+[2025-03-07 13:59:06,772] [INFO] [30157] Received PREPARE: id:1741323542381, from:30053, delay:0.0000s, distance:139.73m (Euclidean)
+[2025-03-07 13:59:06,772] [INFO] [30157] Received COMMIT: id:1741323542381, from:30053, delay:0.0000s, distance:139.73m (Euclidean)
+[2025-03-07 13:59:06,797] [INFO] [30157] Received COMMIT: id:1741323542381, from:30196, delay:0.0000s, distance:99.91m (Euclidean)
+[2025-03-07 13:59:06,849] [INFO] [30157] Received COMMIT: id:1741323542381, from:30049, delay:0.0000s, distance:123.66m (Euclidean)
+[2025-03-07 13:59:06,878] [INFO] [30157] Received COMMIT: id:1741323542381, from:30167, delay:0.0002s, distance:258.79m (Euclidean)
+[2025-03-07 13:59:06,878] [INFO] [30157] Received COMMIT: id:1741323542381, from:30170, delay:0.0000s, distance:167.63m (Euclidean)
+[2025-03-07 13:59:06,894] [INFO] [30157] Received PREPARE: id:1741323542381, from:30066, delay:0.0000s, distance:131.13m (Euclidean)
+[2025-03-07 13:59:06,915] [INFO] [30157] Received PREPARE: id:1741323542381, from:30085, delay:0.0000s, distance:144.02m (Euclidean)
+[2025-03-07 13:59:07,033] [INFO] [30157] Received COMMIT: id:1741323542381, from:30092, delay:0.0000s, distance:72.64m (Euclidean)
+[2025-03-07 13:59:07,035] [INFO] [30157] Received COMMIT: id:1741323542381, from:30115, delay:0.0000s, distance:57.87m (Euclidean)
+[2025-03-07 13:59:07,035] [INFO] [30157] Received COMMIT: id:1741323542381, from:30066, delay:0.0000s, distance:131.13m (Euclidean)
+[2025-03-07 13:59:07,036] [INFO] [30157] Received PREPARE: id:1741323542381, from:30169, delay:0.0001s, distance:245.03m (Euclidean)
+[2025-03-07 13:59:07,140] [INFO] [30157] Received PREPARE: id:1741323542381, from:30179, delay:0.0002s, distance:256.12m (Euclidean)
+[2025-03-07 13:59:07,151] [INFO] [30157] Received COMMIT: id:1741323542381, from:30062, delay:0.0001s, distance:248.42m (Euclidean)
+[2025-03-07 13:59:07,174] [INFO] [30157] Received COMMIT: id:1741323542381, from:30110, delay:0.0000s, distance:190.94m (Euclidean)
+[2025-03-07 13:59:07,216] [INFO] [30157] Received COMMIT: id:1741323542381, from:30130, delay:0.0000s, distance:46.16m (Euclidean)
+[2025-03-07 13:59:07,226] [INFO] [30157] Received PREPARE: id:1741323542381, from:30178, delay:0.0000s, distance:172.06m (Euclidean)
+[2025-03-07 13:59:07,275] [INFO] [30157] Received COMMIT: id:1741323542381, from:30085, delay:0.0000s, distance:144.02m (Euclidean)
+[2025-03-07 13:59:07,314] [INFO] [30157] Received PREPARE: id:1741323542381, from:30070, delay:0.0000s, distance:64.56m (Euclidean)
+[2025-03-07 13:59:07,439] [INFO] [30157] Received COMMIT: id:1741323542381, from:30199, delay:0.0001s, distance:157.73m (Euclidean)
+[2025-03-07 13:59:07,467] [INFO] [30157] Received PREPARE: id:1741323542381, from:30129, delay:0.0000s, distance:64.21m (Euclidean)
+[2025-03-07 13:59:07,506] [INFO] [30157] Received COMMIT: id:1741323542381, from:30070, delay:0.0000s, distance:64.56m (Euclidean)
+[2025-03-07 13:59:07,547] [INFO] [30157] Received COMMIT: id:1741323542381, from:30129, delay:0.0000s, distance:64.21m (Euclidean)
+[2025-03-07 13:59:07,596] [INFO] [30157] Received COMMIT: id:1741323542381, from:30179, delay:0.0002s, distance:256.12m (Euclidean)
+[2025-03-07 13:59:07,673] [INFO] [30157] Received PREPARE: id:1741323542381, from:30119, delay:0.0001s, distance:242.38m (Euclidean)
+[2025-03-07 13:59:07,673] [INFO] [30157] Received COMMIT: id:1741323542381, from:30090, delay:0.0000s, distance:198.46m (Euclidean)
+[2025-03-07 13:59:07,699] [INFO] [30157] Received PREPARE: id:1741323542381, from:30155, delay:0.0002s, distance:252.34m (Euclidean)
+[2025-03-07 13:59:07,805] [INFO] [30157] Received COMMIT: id:1741323542381, from:30169, delay:0.0001s, distance:245.03m (Euclidean)
+[2025-03-07 13:59:07,822] [INFO] [30157] Received PREPARE: id:1741323542381, from:30056, delay:0.0001s, distance:218.45m (Euclidean)
+[2025-03-07 13:59:07,872] [INFO] [30157] Received PREPARE: id:1741323542381, from:30128, delay:0.0001s, distance:242.02m (Euclidean)
+[2025-03-07 13:59:07,872] [INFO] [30157] Received COMMIT: id:1741323542381, from:30119, delay:0.0001s, distance:242.38m (Euclidean)
+[2025-03-07 13:59:07,872] [INFO] [30157] Received PREPARE: id:1741323542381, from:30123, delay:0.0001s, distance:198.85m (Euclidean)
+[2025-03-07 13:59:07,904] [INFO] [30157] Received COMMIT: id:1741323542381, from:30128, delay:0.0001s, distance:242.02m (Euclidean)
+[2025-03-07 13:59:07,937] [INFO] [30157] Received PREPARE: id:1741323542381, from:30180, delay:0.0001s, distance:216.94m (Euclidean)
+[2025-03-07 13:59:07,937] [INFO] [30157] Received PREPARE: id:1741323542381, from:30161, delay:0.0000s, distance:87.53m (Euclidean)
+[2025-03-07 13:59:07,962] [INFO] [30157] Received COMMIT: id:1741323542381, from:30161, delay:0.0000s, distance:87.53m (Euclidean)
+[2025-03-07 13:59:07,962] [INFO] [30157] Received COMMIT: id:1741323542381, from:30180, delay:0.0001s, distance:216.94m (Euclidean)
+[2025-03-07 13:59:07,962] [INFO] [30157] Received PREPARE: id:1741323542381, from:30102, delay:0.0000s, distance:123.03m (Euclidean)
+[2025-03-07 13:59:07,967] [INFO] [30157] Received COMMIT: id:1741323542381, from:30102, delay:0.0000s, distance:123.03m (Euclidean)
+[2025-03-07 13:59:07,989] [INFO] [30157] Received COMMIT: id:1741323542381, from:30181, delay:0.0000s, distance:123.02m (Euclidean)
+[2025-03-07 13:59:07,989] [INFO] [30157] Received COMMIT: id:1741323542381, from:30155, delay:0.0002s, distance:252.34m (Euclidean)
+[2025-03-07 13:59:08,030] [INFO] [30157] Received COMMIT: id:1741323542381, from:30123, delay:0.0001s, distance:198.85m (Euclidean)
+[2025-03-07 13:59:08,048] [INFO] [30157] Received COMMIT: id:1741323542381, from:30127, delay:0.0000s, distance:116.42m (Euclidean)
+[2025-03-07 13:59:08,048] [INFO] [30157] Received PREPARE: id:1741323542381, from:30121, delay:0.0000s, distance:128.84m (Euclidean)
+[2025-03-07 13:59:08,062] [INFO] [30157] Received COMMIT: id:1741323542381, from:30121, delay:0.0000s, distance:128.84m (Euclidean)
+[2025-03-07 13:59:08,174] [INFO] [30157] Received PREPARE: id:1741323542381, from:30024, delay:0.0000s, distance:124.62m (Euclidean)
+[2025-03-07 13:59:08,182] [INFO] [30157] Received COMMIT: id:1741323542381, from:30024, delay:0.0000s, distance:124.62m (Euclidean)
+[2025-03-07 13:59:08,193] [INFO] [30157] Received PREPARE: id:1741323542381, from:30109, delay:0.0001s, distance:185.02m (Euclidean)
+[2025-03-07 13:59:08,246] [INFO] [30157] Received PREPARE: id:1741323542381, from:30149, delay:0.0000s, distance:165.93m (Euclidean)
+[2025-03-07 13:59:08,275] [INFO] [30157] Received COMMIT: id:1741323542381, from:30149, delay:0.0000s, distance:165.93m (Euclidean)
+[2025-03-07 13:59:08,277] [INFO] [30157] Received PREPARE: id:1741323542381, from:30189, delay:0.0000s, distance:121.21m (Euclidean)
+[2025-03-07 13:59:08,427] [INFO] [30157] Received COMMIT: id:1741323542381, from:30035, delay:0.0001s, distance:164.78m (Euclidean)
+[2025-03-07 13:59:08,496] [INFO] [30157] Received COMMIT: id:1741323542381, from:30178, delay:0.0000s, distance:172.06m (Euclidean)
+[2025-03-07 13:59:08,496] [INFO] [30157] Received COMMIT: id:1741323542381, from:30109, delay:0.0001s, distance:185.02m (Euclidean)
+[2025-03-07 13:59:08,552] [INFO] [30157] Received PREPARE: id:1741323542381, from:30118, delay:0.0000s, distance:97.35m (Euclidean)
+[2025-03-07 13:59:08,565] [INFO] [30157] Received COMMIT: id:1741323542381, from:30118, delay:0.0000s, distance:97.35m (Euclidean)
+[2025-03-07 13:59:08,842] [INFO] [30157] Received PREPARE: id:1741323542381, from:30147, delay:0.0001s, distance:166.30m (Euclidean)
+[2025-03-07 13:59:08,879] [INFO] [30157] Received COMMIT: id:1741323542381, from:30147, delay:0.0001s, distance:166.30m (Euclidean)
+[2025-03-07 13:59:08,901] [INFO] [30157] Received PREPARE: id:1741323542381, from:30108, delay:0.0000s, distance:85.93m (Euclidean)
+[2025-03-07 13:59:08,903] [INFO] [30157] Received COMMIT: id:1741323542381, from:30108, delay:0.0000s, distance:85.93m (Euclidean)
+[2025-03-07 13:59:08,903] [INFO] [30157] Received PREPARE: id:1741323542381, from:30191, delay:0.0000s, distance:147.12m (Euclidean)
+[2025-03-07 13:59:08,903] [INFO] [30157] Received COMMIT: id:1741323542381, from:30191, delay:0.0000s, distance:147.12m (Euclidean)
+[2025-03-07 13:59:09,004] [INFO] [30157] Received PREPARE: id:1741323542381, from:30171, delay:0.0000s, distance:41.63m (Euclidean)
+[2025-03-07 13:59:09,004] [INFO] [30157] Received COMMIT: id:1741323542381, from:30056, delay:0.0001s, distance:218.45m (Euclidean)
+[2025-03-07 13:59:09,004] [INFO] [30157] Received COMMIT: id:1741323542381, from:30171, delay:0.0000s, distance:41.63m (Euclidean)
+[2025-03-07 13:59:09,011] [INFO] [30157] Received PREPARE: id:1741323542381, from:30076, delay:0.0001s, distance:161.54m (Euclidean)
+[2025-03-07 13:59:09,045] [INFO] [30157] Received COMMIT: id:1741323542381, from:30076, delay:0.0001s, distance:161.54m (Euclidean)
+[2025-03-07 13:59:09,045] [INFO] [30157] Received COMMIT: id:1741323542381, from:30116, delay:0.0001s, distance:204.59m (Euclidean)
+[2025-03-07 13:59:09,045] [INFO] [30157] Received PREPARE: id:1741323542381, from:30093, delay:0.0000s, distance:56.67m (Euclidean)
+[2025-03-07 13:59:09,053] [INFO] [30157] Received COMMIT: id:1741323542381, from:30093, delay:0.0000s, distance:56.67m (Euclidean)
+[2025-03-07 13:59:09,108] [INFO] [30157] Received PREPARE: id:1741323542381, from:30168, delay:0.0000s, distance:79.50m (Euclidean)
+[2025-03-07 13:59:09,190] [INFO] [30157] Received COMMIT: id:1741323542381, from:30168, delay:0.0000s, distance:79.50m (Euclidean)
+[2025-03-07 13:59:09,316] [INFO] [30157] Received COMMIT: id:1741323542381, from:30189, delay:0.0000s, distance:121.21m (Euclidean)
+[2025-03-07 13:59:09,347] [INFO] [30157] Received PREPARE: id:1741323542381, from:30158, delay:0.0001s, distance:213.34m (Euclidean)
+[2025-03-07 13:59:09,394] [INFO] [30157] Received PREPARE: id:1741323542381, from:30154, delay:0.0000s, distance:85.54m (Euclidean)
+[2025-03-07 13:59:09,405] [INFO] [30157] Received COMMIT: id:1741323542381, from:30154, delay:0.0000s, distance:85.54m (Euclidean)
+[2025-03-07 13:59:09,448] [INFO] [30157] Received COMMIT: id:1741323542381, from:30158, delay:0.0001s, distance:213.34m (Euclidean)
+[2025-03-07 13:59:09,455] [INFO] [30157] Received PREPARE: id:1741323542381, from:30177, delay:0.0000s, distance:87.76m (Euclidean)
+[2025-03-07 13:59:09,455] [INFO] [30157] Received COMMIT: id:1741323542381, from:30177, delay:0.0000s, distance:87.76m (Euclidean)
+[2025-03-07 13:59:09,525] [INFO] [30157] Received PREPARE: id:1741323542381, from:30004, delay:0.0000s, distance:171.66m (Euclidean)
+[2025-03-07 13:59:09,527] [INFO] [30157] Received COMMIT: id:1741323542381, from:30004, delay:0.0000s, distance:171.66m (Euclidean)
+[2025-03-07 13:59:09,696] [INFO] [30157] Received PREPARE: id:1741323542381, from:30182, delay:0.0001s, distance:187.33m (Euclidean)
+[2025-03-07 13:59:09,701] [INFO] [30157] Received COMMIT: id:1741323542381, from:30182, delay:0.0001s, distance:187.33m (Euclidean)
+[2025-03-07 13:59:09,728] [INFO] [30157] Received PREPARE: id:1741323542381, from:30063, delay:0.0000s, distance:108.98m (Euclidean)
+[2025-03-07 13:59:09,728] [INFO] [30157] Received COMMIT: id:1741323542381, from:30063, delay:0.0000s, distance:108.98m (Euclidean)
+[2025-03-07 13:59:09,973] [INFO] [30157] Received PREPARE: id:1741323542381, from:30120, delay:0.0001s, distance:176.69m (Euclidean)
+[2025-03-07 13:59:09,973] [INFO] [30157] Received COMMIT: id:1741323542381, from:30120, delay:0.0001s, distance:176.69m (Euclidean)
+[2025-03-07 13:59:10,120] [INFO] [30157] Received PREPARE: id:1741323542381, from:30059, delay:0.0001s, distance:164.96m (Euclidean)
+[2025-03-07 13:59:10,120] [INFO] [30157] Received COMMIT: id:1741323542381, from:30059, delay:0.0001s, distance:164.96m (Euclidean)
+[2025-03-07 13:59:10,200] [INFO] [30157] Received PREPARE: id:1741323542381, from:30124, delay:0.0001s, distance:215.20m (Euclidean)
+[2025-03-07 13:59:10,202] [INFO] [30157] Received PREPARE: id:1741323542381, from:30013, delay:0.0000s, distance:140.09m (Euclidean)
+[2025-03-07 13:59:10,202] [INFO] [30157] Received COMMIT: id:1741323542381, from:30124, delay:0.0001s, distance:215.20m (Euclidean)
+[2025-03-07 13:59:10,202] [INFO] [30157] Received COMMIT: id:1741323542381, from:30013, delay:0.0000s, distance:140.09m (Euclidean)
+[2025-03-07 13:59:10,202] [INFO] [30157] Received PREPARE: id:1741323542381, from:30028, delay:0.0001s, distance:223.30m (Euclidean)
+[2025-03-07 13:59:10,233] [INFO] [30157] Received COMMIT: id:1741323542381, from:30028, delay:0.0001s, distance:223.30m (Euclidean)
+[2025-03-07 13:59:10,398] [INFO] [30157] Received PREPARE: id:1741323542381, from:30095, delay:0.0001s, distance:169.09m (Euclidean)
+[2025-03-07 13:59:10,398] [INFO] [30157] Received COMMIT: id:1741323542381, from:30095, delay:0.0001s, distance:169.09m (Euclidean)
+[2025-03-07 13:59:10,516] [INFO] [30157] Received COMMIT: id:1741323542381, from:30098, delay:0.0001s, distance:176.23m (Euclidean)
+[2025-03-07 13:59:10,516] [INFO] [30157] Received PREPARE: id:1741323542381, from:30098, delay:0.0001s, distance:176.23m (Euclidean)
+[2025-03-07 13:59:10,516] [INFO] [30157] Received PREPARE: id:1741323542381, from:30112, delay:0.0001s, distance:176.93m (Euclidean)
+[2025-03-07 13:59:10,516] [INFO] [30157] Received COMMIT: id:1741323542381, from:30112, delay:0.0001s, distance:176.93m (Euclidean)
+[2025-03-07 13:59:10,671] [INFO] [30157] Received PREPARE: id:1741323542381, from:30054, delay:0.0001s, distance:199.15m (Euclidean)
+[2025-03-07 13:59:10,673] [INFO] [30157] Received PREPARE: id:1741323542381, from:30100, delay:0.0001s, distance:172.66m (Euclidean)
+[2025-03-07 13:59:10,673] [INFO] [30157] Received COMMIT: id:1741323542381, from:30054, delay:0.0001s, distance:199.15m (Euclidean)
+[2025-03-07 13:59:10,673] [INFO] [30157] Received COMMIT: id:1741323542381, from:30100, delay:0.0001s, distance:172.66m (Euclidean)
+[2025-03-07 13:59:10,972] [INFO] [30157] Received PREPARE: id:1741323542381, from:30174, delay:0.0001s, distance:157.12m (Euclidean)
+[2025-03-07 13:59:10,972] [INFO] [30157] Received PREPARE: id:1741323542381, from:30040, delay:0.0001s, distance:208.41m (Euclidean)
+[2025-03-07 13:59:10,972] [INFO] [30157] Received PREPARE: id:1741323542381, from:30089, delay:0.0000s, distance:131.11m (Euclidean)
+[2025-03-07 13:59:10,977] [INFO] [30157] Received COMMIT: id:1741323542381, from:30089, delay:0.0000s, distance:131.11m (Euclidean)
+[2025-03-07 13:59:10,977] [INFO] [30157] Received COMMIT: id:1741323542381, from:30040, delay:0.0001s, distance:208.41m (Euclidean)
+[2025-03-07 13:59:11,005] [INFO] [30157] Received PREPARE: id:1741323542381, from:30111, delay:0.0000s, distance:115.29m (Euclidean)
+[2025-03-07 13:59:11,005] [INFO] [30157] Received COMMIT: id:1741323542381, from:30111, delay:0.0000s, distance:115.29m (Euclidean)
+[2025-03-07 13:59:11,078] [INFO] [30157] Received PREPARE: id:1741323542381, from:30065, delay:0.0000s, distance:102.74m (Euclidean)
+[2025-03-07 13:59:11,078] [INFO] [30157] Received COMMIT: id:1741323542381, from:30065, delay:0.0000s, distance:102.74m (Euclidean)
+[2025-03-07 13:59:11,148] [INFO] [30157] Received COMMIT: id:1741323542381, from:30174, delay:0.0001s, distance:157.12m (Euclidean)
+[2025-03-07 13:59:11,216] [INFO] [30157] Received PREPARE: id:1741323542381, from:30074, delay:0.0000s, distance:130.20m (Euclidean)
+[2025-03-07 13:59:11,216] [INFO] [30157] Received COMMIT: id:1741323542381, from:30074, delay:0.0000s, distance:130.20m (Euclidean)
+[2025-03-07 13:59:11,454] [INFO] [30157] Received PREPARE: id:1741323542381, from:30096, delay:0.0001s, distance:201.18m (Euclidean)
+[2025-03-07 13:59:11,456] [INFO] [30157] Received COMMIT: id:1741323542381, from:30096, delay:0.0001s, distance:201.18m (Euclidean)
+[2025-03-07 13:59:11,841] [INFO] [30157] Received PREPARE: id:1741323542381, from:30051, delay:0.0000s, distance:52.04m (Euclidean)
+[2025-03-07 13:59:11,843] [INFO] [30157] Received COMMIT: id:1741323542381, from:30051, delay:0.0000s, distance:52.04m (Euclidean)
+[2025-03-07 13:59:11,931] [INFO] [30157] Received PREPARE: id:1741323542381, from:30150, delay:0.0000s, distance:154.50m (Euclidean)
+[2025-03-07 13:59:11,936] [INFO] [30157] Received COMMIT: id:1741323542381, from:30150, delay:0.0000s, distance:154.50m (Euclidean)
+[2025-03-07 13:59:12,105] [INFO] [30157] Received PREPARE: id:1741323542381, from:30175, delay:0.0000s, distance:179.38m (Euclidean)
+[2025-03-07 13:59:12,118] [INFO] [30157] Received COMMIT: id:1741323542381, from:30175, delay:0.0000s, distance:179.38m (Euclidean)
+[2025-03-07 13:59:12,223] [INFO] [30157] Received PREPARE: id:1741323542381, from:30103, delay:0.0000s, distance:135.94m (Euclidean)
+[2025-03-07 13:59:12,225] [INFO] [30157] Received COMMIT: id:1741323542381, from:30103, delay:0.0000s, distance:135.94m (Euclidean)
+[2025-03-07 13:59:12,338] [INFO] [30157] Received PREPARE: id:1741323542381, from:30021, delay:0.0000s, distance:157.71m (Euclidean)
+[2025-03-07 13:59:12,338] [INFO] [30157] Received COMMIT: id:1741323542381, from:30021, delay:0.0000s, distance:157.71m (Euclidean)
+[2025-03-07 13:59:12,514] [INFO] [30157] Received COMMIT: id:1741323542381, from:30000, delay:0.0000s, distance:83.71m (Euclidean)
+[2025-03-07 13:59:12,960] [INFO] [30157] Received PREPARE: id:1741323542381, from:30011, delay:0.0000s, distance:146.63m (Euclidean)
+[2025-03-07 13:59:12,960] [INFO] [30157] Received COMMIT: id:1741323542381, from:30011, delay:0.0000s, distance:146.63m (Euclidean)
+[2025-03-07 13:59:15,946] [INFO] [30157] Received PREPARE: id:1741323542381, from:30194, delay:0.0001s, distance:211.55m (Euclidean)
+[2025-03-07 13:59:15,995] [INFO] [30157] Received PREPARE: id:1741323542381, from:30137, delay:0.0001s, distance:230.64m (Euclidean)
+[2025-03-07 13:59:15,995] [INFO] [30157] Received COMMIT: id:1741323542381, from:30137, delay:0.0001s, distance:230.64m (Euclidean)
+[2025-03-07 13:59:16,066] [INFO] [30157] Received PREPARE: id:1741323542381, from:30026, delay:0.0002s, distance:271.22m (Euclidean)
+[2025-03-07 13:59:16,072] [INFO] [30157] Received COMMIT: id:1741323542381, from:30026, delay:0.0002s, distance:271.22m (Euclidean)
+[2025-03-07 13:59:16,263] [INFO] [30157] Received PREPARE: id:1741323542381, from:30165, delay:0.0001s, distance:227.55m (Euclidean)
+[2025-03-07 13:59:16,263] [INFO] [30157] Received COMMIT: id:1741323542381, from:30165, delay:0.0001s, distance:227.55m (Euclidean)
+[2025-03-07 13:59:16,593] [INFO] [30157] Received PREPARE: id:1741323542381, from:30010, delay:0.0002s, distance:264.91m (Euclidean)
+[2025-03-07 13:59:16,596] [INFO] [30157] Received COMMIT: id:1741323542381, from:30010, delay:0.0002s, distance:264.91m (Euclidean)
+[2025-03-07 13:59:16,609] [INFO] [30157] Received PREPARE: id:1741323542381, from:30091, delay:0.0001s, distance:235.65m (Euclidean)
+[2025-03-07 13:59:16,615] [INFO] [30157] Received COMMIT: id:1741323542381, from:30091, delay:0.0001s, distance:235.65m (Euclidean)
+[2025-03-07 13:59:16,658] [INFO] [30157] Received PREPARE: id:1741323542381, from:30086, delay:0.0002s, distance:250.30m (Euclidean)
+[2025-03-07 13:59:16,660] [INFO] [30157] Received COMMIT: id:1741323542381, from:30086, delay:0.0002s, distance:250.30m (Euclidean)
+[2025-03-07 13:59:16,965] [INFO] [30157] Received PREPARE: id:1741323542381, from:30198, delay:0.0000s, distance:97.90m (Euclidean)
+[2025-03-07 13:59:16,965] [INFO] [30157] Received COMMIT: id:1741323542381, from:30198, delay:0.0000s, distance:97.90m (Euclidean)
+[2025-03-07 13:59:17,017] [INFO] [30157] Received PREPARE: id:1741323542381, from:30034, delay:0.0001s, distance:203.16m (Euclidean)
+[2025-03-07 13:59:17,026] [INFO] [30157] Received COMMIT: id:1741323542381, from:30034, delay:0.0001s, distance:203.16m (Euclidean)
+[2025-03-07 13:59:17,067] [INFO] [30157] Received PREPARE: id:1741323542381, from:30114, delay:0.0001s, distance:234.34m (Euclidean)
+[2025-03-07 13:59:17,067] [INFO] [30157] Received COMMIT: id:1741323542381, from:30114, delay:0.0001s, distance:234.34m (Euclidean)
+[2025-03-07 13:59:17,217] [INFO] [30157] Received PREPARE: id:1741323542381, from:30006, delay:0.0002s, distance:272.33m (Euclidean)
+[2025-03-07 13:59:17,229] [INFO] [30157] Received COMMIT: id:1741323542381, from:30006, delay:0.0002s, distance:272.33m (Euclidean)
+[2025-03-07 13:59:17,365] [INFO] [30157] Received PREPARE: id:1741323542381, from:30081, delay:0.0001s, distance:162.23m (Euclidean)
+[2025-03-07 13:59:17,367] [INFO] [30157] Received COMMIT: id:1741323542381, from:30081, delay:0.0001s, distance:162.23m (Euclidean)
+[2025-03-07 13:59:17,391] [INFO] [30157] Received PREPARE: id:1741323542381, from:30143, delay:0.0001s, distance:209.81m (Euclidean)
+[2025-03-07 13:59:17,399] [INFO] [30157] Received PREPARE: id:1741323542381, from:30052, delay:0.0001s, distance:215.40m (Euclidean)
+[2025-03-07 13:59:17,737] [INFO] [30157] Received COMMIT: id:1741323542381, from:30052, delay:0.0001s, distance:215.40m (Euclidean)
+[2025-03-07 13:59:17,792] [INFO] [30157] Received COMMIT: id:1741323542381, from:30143, delay:0.0001s, distance:209.81m (Euclidean)
+[2025-03-07 13:59:17,835] [INFO] [30157] Received PREPARE: id:1741323542381, from:30088, delay:0.0001s, distance:211.66m (Euclidean)
+[2025-03-07 13:59:17,835] [INFO] [30157] Received COMMIT: id:1741323542381, from:30088, delay:0.0001s, distance:211.66m (Euclidean)
+[2025-03-07 13:59:17,965] [INFO] [30157] Received PREPARE: id:1741323542381, from:30131, delay:0.0001s, distance:203.06m (Euclidean)
+[2025-03-07 13:59:18,033] [INFO] [30157] Received PREPARE: id:1741323542381, from:30117, delay:0.0002s, distance:271.47m (Euclidean)
+[2025-03-07 13:59:18,033] [INFO] [30157] Received COMMIT: id:1741323542381, from:30117, delay:0.0002s, distance:271.47m (Euclidean)
+[2025-03-07 13:59:18,049] [INFO] [30157] Received PREPARE: id:1741323542381, from:30134, delay:0.0001s, distance:246.13m (Euclidean)
+[2025-03-07 13:59:18,049] [INFO] [30157] Received COMMIT: id:1741323542381, from:30134, delay:0.0001s, distance:246.13m (Euclidean)
+[2025-03-07 13:59:18,053] [INFO] [30157] Received PREPARE: id:1741323542381, from:30087, delay:0.0002s, distance:261.73m (Euclidean)
+[2025-03-07 13:59:18,071] [INFO] [30157] Received COMMIT: id:1741323542381, from:30087, delay:0.0002s, distance:261.73m (Euclidean)
+[2025-03-07 13:59:18,121] [INFO] [30157] Received PREPARE: id:1741323542381, from:30003, delay:0.0002s, distance:264.72m (Euclidean)
+[2025-03-07 13:59:18,121] [INFO] [30157] Received COMMIT: id:1741323542381, from:30003, delay:0.0002s, distance:264.72m (Euclidean)
+[2025-03-07 13:59:18,138] [INFO] [30157] Received COMMIT: id:1741323542381, from:30194, delay:0.0001s, distance:211.55m (Euclidean)
+[2025-03-07 13:59:18,154] [INFO] [30157] Received PREPARE: id:1741323542381, from:30138, delay:0.0001s, distance:196.25m (Euclidean)
+[2025-03-07 13:59:18,156] [INFO] [30157] Received COMMIT: id:1741323542381, from:30138, delay:0.0001s, distance:196.25m (Euclidean)
+[2025-03-07 13:59:18,415] [INFO] [30157] Received PREPARE: id:1741323542381, from:30160, delay:0.0001s, distance:237.81m (Euclidean)
+[2025-03-07 13:59:18,417] [INFO] [30157] Received COMMIT: id:1741323542381, from:30160, delay:0.0001s, distance:237.81m (Euclidean)
+[2025-03-07 13:59:18,495] [INFO] [30157] Received PREPARE: id:1741323542381, from:30061, delay:0.0001s, distance:186.40m (Euclidean)
+[2025-03-07 13:59:18,496] [INFO] [30157] Received COMMIT: id:1741323542381, from:30061, delay:0.0001s, distance:186.40m (Euclidean)
+[2025-03-07 13:59:19,258] [INFO] [30157] Received PREPARE: id:1741323542381, from:30016, delay:0.0000s, distance:111.06m (Euclidean)
+[2025-03-07 13:59:19,263] [INFO] [30157] Received COMMIT: id:1741323542381, from:30016, delay:0.0000s, distance:111.06m (Euclidean)
+[2025-03-07 13:59:20,029] [INFO] [30157] Received PREPARE: id:1741323542381, from:30132, delay:0.0001s, distance:218.30m (Euclidean)
+[2025-03-07 13:59:20,033] [INFO] [30157] Received COMMIT: id:1741323542381, from:30132, delay:0.0001s, distance:218.30m (Euclidean)
+[2025-03-07 13:59:20,163] [INFO] [30157] Received COMMIT: id:1741323542381, from:30131, delay:0.0001s, distance:203.06m (Euclidean)
+[2025-03-07 13:59:20,311] [INFO] [30157] Received PREPARE: id:1741323542381, from:30166, delay:0.0002s, distance:262.08m (Euclidean)
+[2025-03-07 13:59:20,311] [INFO] [30157] Received COMMIT: id:1741323542381, from:30166, delay:0.0002s, distance:262.08m (Euclidean)
+[2025-03-07 13:59:20,434] [INFO] [30157] Received PREPARE: id:1741323542381, from:30141, delay:0.0001s, distance:193.27m (Euclidean)
+[2025-03-07 13:59:20,445] [INFO] [30157] Received COMMIT: id:1741323542381, from:30141, delay:0.0001s, distance:193.27m (Euclidean)
+[2025-03-07 13:59:20,837] [INFO] [30157] Received PREPARE: id:1741323542381, from:30039, delay:0.0002s, distance:254.36m (Euclidean)
+[2025-03-07 13:59:20,837] [INFO] [30157] Received COMMIT: id:1741323542381, from:30039, delay:0.0002s, distance:254.36m (Euclidean)
+[2025-03-07 13:59:21,066] [INFO] [30157] Received PREPARE: id:1741323542381, from:30105, delay:0.0001s, distance:164.06m (Euclidean)
+[2025-03-07 13:59:21,067] [INFO] [30157] Received COMMIT: id:1741323542381, from:30105, delay:0.0001s, distance:164.06m (Euclidean)
+[2025-03-07 13:59:21,102] [INFO] [30157] Received PREPARE: id:1741323542381, from:30008, delay:0.0001s, distance:201.78m (Euclidean)
+[2025-03-07 13:59:21,162] [INFO] [30157] Received PREPARE: id:1741323542381, from:30122, delay:0.0001s, distance:233.82m (Euclidean)
+[2025-03-07 13:59:21,162] [INFO] [30157] Received COMMIT: id:1741323542381, from:30122, delay:0.0001s, distance:233.82m (Euclidean)
+[2025-03-07 13:59:21,257] [INFO] [30157] Received PREPARE: id:1741323542381, from:30094, delay:0.0001s, distance:197.27m (Euclidean)
+[2025-03-07 13:59:21,257] [INFO] [30157] Received COMMIT: id:1741323542381, from:30094, delay:0.0001s, distance:197.27m (Euclidean)
+[2025-03-07 13:59:21,501] [INFO] [30157] Received PREPARE: id:1741323542381, from:30140, delay:0.0002s, distance:258.18m (Euclidean)
+[2025-03-07 13:59:21,501] [INFO] [30157] Received COMMIT: id:1741323542381, from:30140, delay:0.0002s, distance:258.18m (Euclidean)
+[2025-03-07 13:59:21,869] [INFO] [30157] Received PREPARE: id:1741323542381, from:30197, delay:0.0002s, distance:276.09m (Euclidean)
+[2025-03-07 13:59:21,869] [INFO] [30157] Received COMMIT: id:1741323542381, from:30197, delay:0.0002s, distance:276.09m (Euclidean)
+[2025-03-07 13:59:22,178] [INFO] [30157] Received PREPARE: id:1741323542381, from:30159, delay:0.0001s, distance:213.23m (Euclidean)
+[2025-03-07 13:59:22,179] [INFO] [30157] Received COMMIT: id:1741323542381, from:30159, delay:0.0001s, distance:213.23m (Euclidean)
+[2025-03-07 13:59:22,179] [INFO] [30157] Received PREPARE: id:1741323542381, from:30036, delay:0.0002s, distance:276.44m (Euclidean)
+[2025-03-07 13:59:22,179] [INFO] [30157] Received COMMIT: id:1741323542381, from:30036, delay:0.0002s, distance:276.44m (Euclidean)
+[2025-03-07 13:59:22,655] [INFO] [30157] Received PREPARE: id:1741323542381, from:30083, delay:0.0000s, distance:106.09m (Euclidean)
+[2025-03-07 13:59:22,657] [INFO] [30157] Received COMMIT: id:1741323542381, from:30083, delay:0.0000s, distance:106.09m (Euclidean)
+[2025-03-07 13:59:22,746] [INFO] [30157] Received PREPARE: id:1741323542381, from:30055, delay:0.0001s, distance:242.27m (Euclidean)
+[2025-03-07 13:59:22,746] [INFO] [30157] Received COMMIT: id:1741323542381, from:30055, delay:0.0001s, distance:242.27m (Euclidean)
+[2025-03-07 13:59:22,861] [INFO] [30157] Received COMMIT: id:1741323542381, from:30008, delay:0.0001s, distance:201.78m (Euclidean)
+[2025-03-07 13:59:23,052] [INFO] [30157] Received PREPARE: id:1741323542381, from:30079, delay:0.0001s, distance:230.17m (Euclidean)
+[2025-03-07 13:59:23,052] [INFO] [30157] Received COMMIT: id:1741323542381, from:30079, delay:0.0001s, distance:230.17m (Euclidean)
+[2025-03-07 13:59:23,063] [INFO] [30157] Received PREPARE: id:1741323542381, from:30173, delay:0.0002s, distance:263.10m (Euclidean)
+[2025-03-07 13:59:23,063] [INFO] [30157] Received COMMIT: id:1741323542381, from:30173, delay:0.0002s, distance:263.10m (Euclidean)
+[2025-03-07 13:59:23,101] [INFO] [30157] Received PREPARE: id:1741323542381, from:30047, delay:0.0000s, distance:249.57m (Euclidean)
+[2025-03-07 13:59:23,130] [INFO] [30157] Received PREPARE: id:1741323542381, from:30145, delay:0.0001s, distance:238.08m (Euclidean)
+[2025-03-07 13:59:23,130] [INFO] [30157] Received COMMIT: id:1741323542381, from:30145, delay:0.0001s, distance:238.08m (Euclidean)
+[2025-03-07 13:59:23,161] [INFO] [30157] Received PREPARE: id:1741323542381, from:30033, delay:0.0002s, distance:283.92m (Euclidean)
+[2025-03-07 13:59:23,161] [INFO] [30157] Received COMMIT: id:1741323542381, from:30033, delay:0.0002s, distance:283.92m (Euclidean)
+[2025-03-07 13:59:23,633] [INFO] [30157] Received PREPARE: id:1741323542381, from:30153, delay:0.0001s, distance:231.75m (Euclidean)
+[2025-03-07 13:59:23,635] [INFO] [30157] Received PREPARE: id:1741323542381, from:30019, delay:0.0001s, distance:237.73m (Euclidean)
+[2025-03-07 13:59:23,635] [INFO] [30157] Received PREPARE: id:1741323542381, from:30188, delay:0.0002s, distance:254.10m (Euclidean)
+[2025-03-07 13:59:23,635] [INFO] [30157] Received COMMIT: id:1741323542381, from:30019, delay:0.0001s, distance:237.73m (Euclidean)
+[2025-03-07 13:59:23,635] [INFO] [30157] Received COMMIT: id:1741323542381, from:30188, delay:0.0002s, distance:254.10m (Euclidean)
+[2025-03-07 13:59:23,635] [INFO] [30157] Received COMMIT: id:1741323542381, from:30153, delay:0.0001s, distance:231.75m (Euclidean)
+[2025-03-07 13:59:23,796] [INFO] [30157] Received PREPARE: id:1741323542381, from:30068, delay:0.0001s, distance:239.12m (Euclidean)
+[2025-03-07 13:59:23,796] [INFO] [30157] Received COMMIT: id:1741323542381, from:30068, delay:0.0001s, distance:239.12m (Euclidean)
+[2025-03-07 13:59:24,233] [INFO] [30157] Received PREPARE: id:1741323542381, from:30001, delay:0.0001s, distance:190.19m (Euclidean)
+[2025-03-07 13:59:24,233] [INFO] [30157] Received COMMIT: id:1741323542381, from:30001, delay:0.0001s, distance:190.19m (Euclidean)
+[2025-03-07 13:59:24,334] [INFO] [30157] Received PREPARE: id:1741323542381, from:30193, delay:0.0002s, distance:277.40m (Euclidean)
+[2025-03-07 13:59:24,372] [INFO] [30157] Received COMMIT: id:1741323542381, from:30193, delay:0.0002s, distance:277.40m (Euclidean)
+[2025-03-07 13:59:24,640] [INFO] [30157] Received PREPARE: id:1741323542381, from:30186, delay:0.0000s, distance:172.87m (Euclidean)
+[2025-03-07 13:59:24,640] [INFO] [30157] Received COMMIT: id:1741323542381, from:30186, delay:0.0000s, distance:172.87m (Euclidean)
+[2025-03-07 13:59:24,893] [INFO] [30157] Received PREPARE: id:1741323542381, from:30064, delay:0.0002s, distance:255.08m (Euclidean)
+[2025-03-07 13:59:24,893] [INFO] [30157] Received COMMIT: id:1741323542381, from:30064, delay:0.0002s, distance:255.08m (Euclidean)
+[2025-03-07 13:59:24,909] [INFO] [30157] Received PREPARE: id:1741323542381, from:30073, delay:0.0001s, distance:233.34m (Euclidean)
+[2025-03-07 13:59:24,909] [INFO] [30157] Received COMMIT: id:1741323542381, from:30073, delay:0.0001s, distance:233.34m (Euclidean)
+[2025-03-07 13:59:25,013] [INFO] [30157] Received PREPARE: id:1741323542381, from:30156, delay:0.0001s, distance:198.77m (Euclidean)
+[2025-03-07 13:59:25,013] [INFO] [30157] Received PREPARE: id:1741323542381, from:30042, delay:0.0001s, distance:206.54m (Euclidean)
+[2025-03-07 13:59:25,013] [INFO] [30157] Received COMMIT: id:1741323542381, from:30156, delay:0.0001s, distance:198.77m (Euclidean)
+[2025-03-07 13:59:25,013] [INFO] [30157] Received COMMIT: id:1741323542381, from:30042, delay:0.0001s, distance:206.54m (Euclidean)
+[2025-03-07 13:59:25,060] [INFO] [30157] Received PREPARE: id:1741323542381, from:30017, delay:0.0001s, distance:235.75m (Euclidean)
+[2025-03-07 13:59:25,060] [INFO] [30157] Received PREPARE: id:1741323542381, from:30099, delay:0.0002s, distance:281.17m (Euclidean)
+[2025-03-07 13:59:25,062] [INFO] [30157] Received COMMIT: id:1741323542381, from:30017, delay:0.0001s, distance:235.75m (Euclidean)
+[2025-03-07 13:59:25,062] [INFO] [30157] Received COMMIT: id:1741323542381, from:30099, delay:0.0002s, distance:281.17m (Euclidean)
+[2025-03-07 13:59:25,373] [INFO] [30157] Received PREPARE: id:1741323542381, from:30142, delay:0.0001s, distance:188.87m (Euclidean)
+[2025-03-07 13:59:25,374] [INFO] [30157] Received COMMIT: id:1741323542381, from:30142, delay:0.0001s, distance:188.87m (Euclidean)
+[2025-03-07 13:59:25,387] [INFO] [30157] Received PREPARE: id:1741323542381, from:30014, delay:0.0001s, distance:234.08m (Euclidean)
+[2025-03-07 13:59:25,388] [INFO] [30157] Received COMMIT: id:1741323542381, from:30014, delay:0.0001s, distance:234.08m (Euclidean)
+[2025-03-07 13:59:25,416] [INFO] [30157] Received PREPARE: id:1741323542381, from:30152, delay:0.0002s, distance:260.89m (Euclidean)
+[2025-03-07 13:59:25,416] [INFO] [30157] Received COMMIT: id:1741323542381, from:30152, delay:0.0002s, distance:260.89m (Euclidean)
+[2025-03-07 13:59:25,861] [INFO] [30157] Received PREPARE: id:1741323542381, from:30075, delay:0.0001s, distance:183.76m (Euclidean)
+[2025-03-07 13:59:25,872] [INFO] [30157] Received COMMIT: id:1741323542381, from:30075, delay:0.0001s, distance:183.76m (Euclidean)
+[2025-03-07 13:59:25,944] [INFO] [30157] Received PREPARE: id:1741323542381, from:30038, delay:0.0001s, distance:170.05m (Euclidean)
+[2025-03-07 13:59:25,944] [INFO] [30157] Received COMMIT: id:1741323542381, from:30038, delay:0.0001s, distance:170.05m (Euclidean)
+[2025-03-07 13:59:26,178] [INFO] [30157] Received PREPARE: id:1741323542381, from:30084, delay:0.0002s, distance:279.98m (Euclidean)
+[2025-03-07 13:59:26,190] [INFO] [30157] Received COMMIT: id:1741323542381, from:30084, delay:0.0002s, distance:279.98m (Euclidean)
+[2025-03-07 13:59:26,411] [INFO] [30157] Received PREPARE: id:1741323542381, from:30022, delay:0.0002s, distance:264.84m (Euclidean)
+[2025-03-07 13:59:26,411] [INFO] [30157] Received COMMIT: id:1741323542381, from:30022, delay:0.0002s, distance:264.84m (Euclidean)
+[2025-03-07 13:59:26,627] [INFO] [30157] Received PREPARE: id:1741323542381, from:30151, delay:0.0001s, distance:202.51m (Euclidean)
+[2025-03-07 13:59:26,627] [INFO] [30157] Received COMMIT: id:1741323542381, from:30151, delay:0.0001s, distance:202.51m (Euclidean)
+[2025-03-07 13:59:26,894] [INFO] [30157] Received PREPARE: id:1741323542381, from:30101, delay:0.0001s, distance:175.69m (Euclidean)
+[2025-03-07 13:59:26,900] [INFO] [30157] Received COMMIT: id:1741323542381, from:30101, delay:0.0001s, distance:175.69m (Euclidean)
+[2025-03-07 13:59:26,953] [INFO] [30157] Received PREPARE: id:1741323542381, from:30104, delay:0.0001s, distance:196.58m (Euclidean)
+[2025-03-07 13:59:26,953] [INFO] [30157] Received COMMIT: id:1741323542381, from:30104, delay:0.0001s, distance:196.58m (Euclidean)
+[2025-03-07 13:59:27,004] [INFO] [30157] Received PREPARE: id:1741323542381, from:30187, delay:0.0001s, distance:245.24m (Euclidean)
+[2025-03-07 13:59:27,005] [INFO] [30157] Received COMMIT: id:1741323542381, from:30187, delay:0.0001s, distance:245.24m (Euclidean)
+[2025-03-07 13:59:27,206] [INFO] [30157] Received PREPARE: id:1741323542381, from:30162, delay:0.0001s, distance:218.76m (Euclidean)
+[2025-03-07 13:59:27,206] [INFO] [30157] Received COMMIT: id:1741323542381, from:30162, delay:0.0001s, distance:218.76m (Euclidean)
+[2025-03-07 13:59:27,278] [INFO] [30157] Received COMMIT: id:1741323542381, from:30047, delay:0.0000s, distance:249.57m (Euclidean)
+[2025-03-07 13:59:27,526] [INFO] [30157] Received PREPARE: id:1741323542381, from:30139, delay:0.0001s, distance:241.56m (Euclidean)
+[2025-03-07 13:59:27,548] [INFO] [30157] Received COMMIT: id:1741323542381, from:30139, delay:0.0001s, distance:241.56m (Euclidean)
+[2025-03-07 13:59:27,623] [INFO] [30157] Received PREPARE: id:1741323542381, from:30009, delay:0.0000s, distance:116.93m (Euclidean)
+[2025-03-07 13:59:27,623] [INFO] [30157] Received COMMIT: id:1741323542381, from:30009, delay:0.0000s, distance:116.93m (Euclidean)
+[2025-03-07 13:59:28,520] [INFO] [30157] Received PREPARE: id:1741323542381, from:30163, delay:0.0002s, distance:255.81m (Euclidean)
+[2025-03-07 13:59:28,520] [INFO] [30157] Received PREPARE: id:1741323542381, from:30183, delay:0.0001s, distance:231.71m (Euclidean)
+[2025-03-07 13:59:28,523] [INFO] [30157] Received COMMIT: id:1741323542381, from:30183, delay:0.0001s, distance:231.71m (Euclidean)
+[2025-03-07 13:59:28,531] [INFO] [30157] Received COMMIT: id:1741323542381, from:30163, delay:0.0002s, distance:255.81m (Euclidean)
+[2025-03-07 13:59:28,810] [INFO] [30157] Received PREPARE: id:1741323542381, from:30072, delay:0.0002s, distance:295.35m (Euclidean)
+[2025-03-07 13:59:28,903] [INFO] [30157] Received PREPARE: id:1741323542381, from:30012, delay:0.0002s, distance:266.78m (Euclidean)
+[2025-03-07 13:59:28,903] [INFO] [30157] Received COMMIT: id:1741323542381, from:30072, delay:0.0002s, distance:295.35m (Euclidean)
+[2025-03-07 13:59:28,953] [INFO] [30157] Received PREPARE: id:1741323542381, from:30172, delay:0.0001s, distance:226.73m (Euclidean)
+[2025-03-07 13:59:28,959] [INFO] [30157] Received PREPARE: id:1741323542381, from:30078, delay:0.0001s, distance:243.19m (Euclidean)
+[2025-03-07 13:59:28,977] [INFO] [30157] Received COMMIT: id:1741323542381, from:30012, delay:0.0002s, distance:266.78m (Euclidean)
+[2025-03-07 13:59:28,988] [INFO] [30157] Received COMMIT: id:1741323542381, from:30078, delay:0.0001s, distance:243.19m (Euclidean)
+[2025-03-07 13:59:33,169] [INFO] [30157] Received COMMIT: id:1741323542381, from:30172, delay:0.0001s, distance:226.73m (Euclidean)
+[2025-03-07 13:59:33,301] [INFO] [30157] Received PREPARE: id:1741323542381, from:30097, delay:0.0002s, distance:258.71m (Euclidean)
+[2025-03-07 13:59:33,328] [INFO] [30157] Received PREPARE: id:1741323542381, from:30018, delay:0.0000s, distance:182.40m (Euclidean)
+[2025-03-07 13:59:38,117] [INFO] [30157] Received PREPARE: id:1741323542381, from:30002, delay:0.0001s, distance:151.16m (Euclidean)
+[2025-03-07 13:59:38,210] [INFO] [30157] Received PREPARE: id:1741323542381, from:30082, delay:0.0001s, distance:187.30m (Euclidean)
+[2025-03-07 13:59:38,210] [INFO] [30157] Received COMMIT: id:1741323542381, from:30082, delay:0.0001s, distance:187.30m (Euclidean)
+[2025-03-07 13:59:38,264] [INFO] [30157] Received PREPARE: id:1741323542381, from:30185, delay:0.0001s, distance:216.81m (Euclidean)
+[2025-03-07 13:59:38,268] [INFO] [30157] Received COMMIT: id:1741323542381, from:30185, delay:0.0001s, distance:216.81m (Euclidean)
+[2025-03-07 13:59:38,281] [INFO] [30157] Received COMMIT: id:1741323542381, from:30002, delay:0.0001s, distance:151.16m (Euclidean)
+[2025-03-07 13:59:38,287] [INFO] [30157] Received PREPARE: id:1741323542381, from:30044, delay:0.0002s, distance:278.89m (Euclidean)
+[2025-03-07 13:59:38,324] [INFO] [30157] Received COMMIT: id:1741323542381, from:30044, delay:0.0002s, distance:278.89m (Euclidean)
+[2025-03-07 13:59:38,543] [INFO] [30157] Received PREPARE: id:1741323542381, from:30164, delay:0.0002s, distance:268.72m (Euclidean)
+[2025-03-07 13:59:38,562] [INFO] [30157] Received COMMIT: id:1741323542381, from:30097, delay:0.0002s, distance:258.71m (Euclidean)
+[2025-03-07 13:59:38,675] [INFO] [30157] Received COMMIT: id:1741323542381, from:30164, delay:0.0002s, distance:268.72m (Euclidean)

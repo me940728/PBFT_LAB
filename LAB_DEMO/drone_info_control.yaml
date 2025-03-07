@@ -1,6 +1,6 @@
-protocol: pbft
+protocol: random_pbft
 f: 1
-k: 6
+k: 3
 drones:
 - host: localhost
   port: 20001
@@ -11,7 +11,7 @@ drones:
   port: 30000
   latitude: 36.6271122
   longitude: 127.4599354
-  altitude: 200
+  altitude: 150
   offset_m: 'lat: 56 m, lng: 127 m, alt: 257 m'
 - host: localhost
   port: 30001
