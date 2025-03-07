@@ -8,7 +8,7 @@ PBFT 합의 시뮬레이션 코드 (지연시간 반영 버전)
 - 나머지는 복제자(노드)로 동작합니다.
 - 로그는 현재 디렉터리의 log/pbft 폴더에 생성되며, 기존 로그 파일에 이어서 기록됩니다.
 - 클라이언트는 기본적으로 /start-protocol 엔드포인트에서 POST 요청을 받으면 합의 라운드를 시작합니다.
-  (예: 
+  (예:
     MAC : curl -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d '{"latitude": 36.6261519, "longitude": 127.4590123, "altitude": 0}'
     WIN PowerShell : curl.exe -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d '{ "latitude": 36.6261519, "longitude": 127.4590123, "altitude": 0 }'
     WIN CMD : curl -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d "{\"latitude\": 36.6261519, \"longitude\": 127.4590123, \"altitude\": 0}"
@@ -30,7 +30,6 @@ import sys
 from aiohttp import web
 from common import calculate_distance, simulate_delay
 
-# Windows 환경에서는 Selector 이벤트 루프 정책 사용
 if sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
@@ -218,22 +217,18 @@ class PBFTNode:
     def get_leader(self) -> dict:
         sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
         return sorted_replicas[0]
-    # broadcast 함수: commit 메시지는 모든 정상 노드에게 전송,
-    # 그 외 메시지는 리더와의 거리가 300m 이상인 노드 제외
+    # broadcast 함수: 모든 엔드포인트에 대해, 리더와의 거리가 300m 이상인 노드에게는 메시지를 보내지 않음
     async def broadcast(self, endpoint: str, message: dict):
         tasks = []
         leader_coords = (self.leader.get('latitude', 0), self.leader.get('longitude', 0), self.leader.get('altitude', 0))
         for replica in self.replicas:
             if replica['port'] == self.node_info['port']:
                 continue
-            if endpoint == "/commit":
-                tasks.append(self.send_message(replica, endpoint, message))
-            else:
-                replica_coords = (replica.get('latitude', 0), replica.get('longitude', 0), replica.get('altitude', 0))
-                if calculate_distance(leader_coords, replica_coords) >= 300:
-                    self.logger.info(f"[{self.node_info['port']}] Not broadcasting to fault node: {replica['port']}")
-                    continue
-                tasks.append(self.send_message(replica, endpoint, message))
+            replica_coords = (replica.get('latitude', 0), replica.get('longitude', 0), replica.get('altitude', 0))
+            if calculate_distance(leader_coords, replica_coords) >= 300:
+                self.logger.info(f"[{self.node_info['port']}] Not broadcasting to fault node: {replica['port']}")
+                continue
+            tasks.append(self.send_message(replica, endpoint, message))
         await asyncio.gather(*tasks, return_exceptions=True)
     async def send_message(self, target: dict, endpoint: str, data: dict):
         url = f"http://{target['host']}:{target['port']}{endpoint}"
@@ -317,11 +312,9 @@ class PBFTNode:
                 "timestamp": time.time(),
                 "sender": self.node_info['port']
             }
-            # 자기 자신의 commit 메시지를 상태에 추가
             self.statuses[req_id].add_commit(commit_msg)
             self.logger.info(f"[{self.node_info['port']}] Broadcasting COMMIT for REQUEST {req_id}")
             await self.broadcast('/commit', commit_msg)
-            # 리더 노드인 경우 즉시 REPLY 전송 (commit 임계치를 가정)
             if self.is_leader and not self.statuses[req_id].reply_sent:
                 self.statuses[req_id].reply_sent = True
                 reply_msg = {
@@ -460,5 +453,6 @@ async def main():
             await runner.cleanup()
         except Exception:
             logger.exception("Error during cleanup.")
+
 if __name__ == "__main__":
     asyncio.run(main())

@@ -1,0 +1,13 @@
+[2025-03-07 12:49:06,856] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-07 12:49:06,921] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-07 12:49:11,223] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
+[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30006 for Cluster 0
+[2025-03-07 12:49:11,223] [INFO] [CLIENT] Excluding Cluster 1: insufficient drones (required: 4, current: 1)
+[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30008 for Cluster 2
+[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30014 for Cluster 3
+[2025-03-07 12:49:11,271] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.271279, 'sender': 30006, 'cluster_id': 0, 'simulated_delay': 4.844444444444444e-05, 'distance': 153.35598678214782, 'message_size_bits': 872}
+[2025-03-07 12:49:11,278] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.2780423, 'sender': 30008, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.6659336932398, 'message_size_bits': 880}
+[2025-03-07 12:49:11,287] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.271279, 'sender': 30014, 'cluster_id': 3, 'simulated_delay': 2.422222222222222e-05, 'distance': 86.58992653305933, 'message_size_bits': 872}
+[2025-03-07 12:49:11,287] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-07 12:49:11,287] [INFO] [CLIENT] REPLY received from Clusters [0, 2, 3]
+[2025-03-07 12:49:11,287] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0632 seconds

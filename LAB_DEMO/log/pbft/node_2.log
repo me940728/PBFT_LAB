@@ -1,26 +1,94 @@
-[2025-03-06 11:02:42,342] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
-[2025-03-06 11:02:43,683] [INFO] [30001] Received PRE-PREPARE: id:1741226563647, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:02:43,683] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741226563647
-[2025-03-06 11:02:43,683] [INFO] [30001] Not broadcasting to fault node: 30003
-[2025-03-06 11:02:43,698] [INFO] [30001] Received PREPARE: id:1741226563647, from:30002, delay:0.0000s, distance:187.58m (Euclidean)
-[2025-03-06 11:02:43,698] [INFO] [30001] Received COMMIT: id:1741226563647, from:30000, delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:05:50,619] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
-[2025-03-06 11:05:52,642] [INFO] [30001] Received PRE-PREPARE: id:1741226752589, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:05:52,642] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741226752589
-[2025-03-06 11:05:52,642] [INFO] [30001] Not broadcasting to fault node: 30003
-[2025-03-06 11:05:52,642] [INFO] [30001] Received COMMIT: id:1741226752589, from:30000, delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:06:09,093] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
-[2025-03-06 11:06:10,962] [INFO] [30001] Received PRE-PREPARE: id:1741226770925, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:06:10,962] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741226770925
-[2025-03-06 11:06:10,962] [INFO] [30001] Not broadcasting to fault node: 30003
-[2025-03-06 11:06:10,962] [INFO] [30001] Received COMMIT: id:1741226770925, from:30000, delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:06:53,977] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
-[2025-03-06 11:07:02,071] [INFO] [30001] Received PRE-PREPARE: id:1741226822039, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:07:02,071] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741226822039
-[2025-03-06 11:07:02,071] [INFO] [30001] Not broadcasting to fault node: 30003
-[2025-03-06 11:07:02,087] [INFO] [30001] Received COMMIT: id:1741226822039, from:30000, delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:10:25,351] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
-[2025-03-06 11:10:27,231] [INFO] [30001] Received PRE-PREPARE: id:1741227027199, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
-[2025-03-06 11:10:27,231] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741227027199
-[2025-03-06 11:10:27,236] [INFO] [30001] Not broadcasting to fault node: 30002
-[2025-03-06 11:10:27,236] [INFO] [30001] Not broadcasting to fault node: 30003
+[2025-03-07 09:27:02,498] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 09:27:04,357] [INFO] [30001] Received PRE-PREPARE: id:1741307224309, from:Leader(30000), delay:0.0000s, distance:178.15m (Euclidean)
+[2025-03-07 09:27:04,357] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741307224309
+[2025-03-07 09:27:04,357] [INFO] [30001] Not broadcasting to fault node: 30003
+[2025-03-07 09:27:04,373] [INFO] [30001] Received PREPARE: id:1741307224309, from:30002, delay:0.0001s, distance:239.97m (Euclidean)
+[2025-03-07 09:27:04,377] [INFO] [30001] Received PREPARE: id:1741307224309, from:30004, delay:0.0000s, distance:45.69m (Euclidean)
+[2025-03-07 09:27:04,377] [INFO] [30001] Broadcasting COMMIT for REQUEST 1741307224309
+[2025-03-07 09:27:04,377] [INFO] [30001] Not broadcasting to fault node: 30003
+[2025-03-07 09:27:04,377] [INFO] [30001] Received COMMIT: id:1741307224309, from:30002, delay:0.0001s, distance:239.97m (Euclidean)
+[2025-03-07 09:27:04,382] [INFO] [30001] Received COMMIT: id:1741307224309, from:30000, delay:0.0000s, distance:178.15m (Euclidean)
+[2025-03-07 09:27:04,382] [INFO] [LEADER 30001] Sending REPLY for REQUEST 1741307224309 to CLIENT
+[2025-03-07 09:27:04,382] [INFO] [30001] Received COMMIT: id:1741307224309, from:30004, delay:0.0000s, distance:45.69m (Euclidean)
+[2025-03-07 10:05:19,738] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 10:06:12,009] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 10:06:41,198] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 10:06:43,834] [INFO] [30001] Received PRE-PREPARE: id:1741309603800, from:Leader(30000), delay:0.0000s, distance:105.17m (Euclidean)
+[2025-03-07 10:06:43,834] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741309603800
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30011, delay:0.0000s, distance:174.82m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30005, delay:0.0001s, distance:219.11m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Broadcasting COMMIT for REQUEST 1741309603800
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30004, delay:0.0000s, distance:78.82m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30003, delay:0.0000s, distance:32.30m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30009, delay:0.0000s, distance:158.70m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Received PREPARE: id:1741309603800, from:30006, delay:0.0000s, distance:72.85m (Euclidean)
+[2025-03-07 10:06:43,847] [INFO] [30001] Received COMMIT: id:1741309603800, from:30003, delay:0.0000s, distance:32.30m (Euclidean)
+[2025-03-07 10:06:43,862] [INFO] [30001] Received PREPARE: id:1741309603800, from:30010, delay:0.0001s, distance:282.07m (Euclidean)
+[2025-03-07 10:06:43,864] [INFO] [30001] Received PREPARE: id:1741309603800, from:30007, delay:0.0001s, distance:214.30m (Euclidean)
+[2025-03-07 10:06:43,864] [INFO] [30001] Received COMMIT: id:1741309603800, from:30009, delay:0.0000s, distance:158.70m (Euclidean)
+[2025-03-07 10:06:43,864] [INFO] [LEADER 30001] Sending REPLY for REQUEST 1741309603800 to CLIENT
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30004, delay:0.0000s, distance:78.82m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30011, delay:0.0000s, distance:174.82m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30000, delay:0.0000s, distance:105.17m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30010, delay:0.0001s, distance:282.07m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30005, delay:0.0001s, distance:219.11m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received PREPARE: id:1741309603800, from:30002, delay:0.0001s, distance:225.28m (Euclidean)
+[2025-03-07 10:06:43,866] [INFO] [30001] Received COMMIT: id:1741309603800, from:30002, delay:0.0001s, distance:225.28m (Euclidean)
+[2025-03-07 10:06:43,873] [INFO] [30001] Received COMMIT: id:1741309603800, from:30006, delay:0.0000s, distance:72.85m (Euclidean)
+[2025-03-07 10:06:43,873] [INFO] [30001] Received COMMIT: id:1741309603800, from:30007, delay:0.0001s, distance:214.30m (Euclidean)
+[2025-03-07 10:07:26,068] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 10:07:30,161] [INFO] [30001] Received PRE-PREPARE: id:1741309650122, from:Leader(30000), delay:0.0000s, distance:105.17m (Euclidean)
+[2025-03-07 10:07:30,161] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741309650122
+[2025-03-07 10:07:30,161] [INFO] [30001] Not broadcasting to fault node: 30011
+[2025-03-07 10:07:30,170] [INFO] [30001] Received PREPARE: id:1741309650122, from:30006, delay:0.0000s, distance:72.85m (Euclidean)
+[2025-03-07 10:07:30,170] [INFO] [30001] Received PREPARE: id:1741309650122, from:30007, delay:0.0001s, distance:214.30m (Euclidean)
+[2025-03-07 10:07:30,170] [INFO] [30001] Broadcasting COMMIT for REQUEST 1741309650122
+[2025-03-07 10:07:30,170] [INFO] [30001] Not broadcasting to fault node: 30011
+[2025-03-07 10:07:30,176] [INFO] [30001] Received PREPARE: id:1741309650122, from:30010, delay:0.0001s, distance:282.07m (Euclidean)
+[2025-03-07 10:07:30,176] [INFO] [30001] Received PREPARE: id:1741309650122, from:30004, delay:0.0000s, distance:78.82m (Euclidean)
+[2025-03-07 10:07:30,176] [INFO] [30001] Received PREPARE: id:1741309650122, from:30003, delay:0.0000s, distance:32.30m (Euclidean)
+[2025-03-07 10:07:30,176] [INFO] [30001] Received PREPARE: id:1741309650122, from:30009, delay:0.0000s, distance:158.70m (Euclidean)
+[2025-03-07 10:07:30,181] [INFO] [30001] Received COMMIT: id:1741309650122, from:30006, delay:0.0000s, distance:72.85m (Euclidean)
+[2025-03-07 10:07:30,187] [INFO] [30001] Received PREPARE: id:1741309650122, from:30005, delay:0.0001s, distance:219.11m (Euclidean)
+[2025-03-07 10:07:30,187] [INFO] [30001] Received COMMIT: id:1741309650122, from:30003, delay:0.0000s, distance:32.30m (Euclidean)
+[2025-03-07 10:07:30,187] [INFO] [LEADER 30001] Sending REPLY for REQUEST 1741309650122 to CLIENT
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30004, delay:0.0000s, distance:78.82m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30000, delay:0.0000s, distance:105.17m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30009, delay:0.0000s, distance:158.70m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30002, delay:0.0001s, distance:225.28m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received PREPARE: id:1741309650122, from:30002, delay:0.0001s, distance:225.28m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30007, delay:0.0001s, distance:214.30m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30010, delay:0.0001s, distance:282.07m (Euclidean)
+[2025-03-07 10:07:30,189] [INFO] [30001] Received COMMIT: id:1741309650122, from:30005, delay:0.0001s, distance:219.11m (Euclidean)
+[2025-03-07 10:35:04,085] [INFO] Starting node at localhost:30001 | index=  2 | f=1, k=6 | Role: Replica
+[2025-03-07 10:35:08,582] [INFO] [30001] Received PRE-PREPARE: id:1741311308551, from:Leader(30000), delay:0.0000s, distance:182.58m (Euclidean)
+[2025-03-07 10:35:08,582] [INFO] [30001] Broadcasting PREPARE for REQUEST 1741311308551
+[2025-03-07 10:35:08,598] [INFO] [30001] Received PREPARE: id:1741311308551, from:30009, delay:0.0000s, distance:136.62m (Euclidean)
+[2025-03-07 10:35:08,598] [INFO] [30001] Received PREPARE: id:1741311308551, from:30004, delay:0.0001s, distance:232.46m (Euclidean)
+[2025-03-07 10:35:08,598] [INFO] [30001] Broadcasting COMMIT for REQUEST 1741311308551
+[2025-03-07 10:35:08,602] [INFO] [30001] Received PREPARE: id:1741311308551, from:30010, delay:0.0000s, distance:166.87m (Euclidean)
+[2025-03-07 10:35:08,618] [INFO] [30001] Received PREPARE: id:1741311308551, from:30012, delay:0.0000s, distance:127.75m (Euclidean)
+[2025-03-07 10:35:08,618] [INFO] [30001] Received PREPARE: id:1741311308551, from:30014, delay:0.0000s, distance:121.51m (Euclidean)
+[2025-03-07 10:35:08,622] [INFO] [30001] Received COMMIT: id:1741311308551, from:30010, delay:0.0000s, distance:166.87m (Euclidean)
+[2025-03-07 10:35:08,627] [INFO] [30001] Received COMMIT: id:1741311308551, from:30000, delay:0.0000s, distance:182.58m (Euclidean)
+[2025-03-07 10:35:08,627] [INFO] [LEADER 30001] Sending REPLY for REQUEST 1741311308551 to CLIENT
+[2025-03-07 10:35:08,631] [INFO] [30001] Received PREPARE: id:1741311308551, from:30006, delay:0.0000s, distance:166.14m (Euclidean)
+[2025-03-07 10:35:08,631] [INFO] [30001] Received PREPARE: id:1741311308551, from:30008, delay:0.0001s, distance:221.63m (Euclidean)
+[2025-03-07 10:35:08,631] [INFO] [30001] Received COMMIT: id:1741311308551, from:30012, delay:0.0000s, distance:127.75m (Euclidean)
+[2025-03-07 10:35:08,631] [INFO] [30001] Received PREPARE: id:1741311308551, from:30002, delay:0.0001s, distance:262.94m (Euclidean)
+[2025-03-07 10:35:08,636] [INFO] [30001] Received COMMIT: id:1741311308551, from:30002, delay:0.0001s, distance:262.94m (Euclidean)
+[2025-03-07 10:35:08,636] [INFO] [30001] Received COMMIT: id:1741311308551, from:30006, delay:0.0000s, distance:166.14m (Euclidean)
+[2025-03-07 10:35:08,636] [INFO] [30001] Received COMMIT: id:1741311308551, from:30008, delay:0.0001s, distance:221.63m (Euclidean)
+[2025-03-07 10:35:08,636] [INFO] [30001] Received PREPARE: id:1741311308551, from:30003, delay:0.0001s, distance:276.58m (Euclidean)
+[2025-03-07 10:35:08,636] [INFO] [30001] Received COMMIT: id:1741311308551, from:30009, delay:0.0000s, distance:136.62m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received PREPARE: id:1741311308551, from:30013, delay:0.0001s, distance:267.73m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received PREPARE: id:1741311308551, from:30011, delay:0.0001s, distance:216.39m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received COMMIT: id:1741311308551, from:30014, delay:0.0000s, distance:121.51m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received COMMIT: id:1741311308551, from:30004, delay:0.0001s, distance:232.46m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received COMMIT: id:1741311308551, from:30003, delay:0.0001s, distance:276.58m (Euclidean)
+[2025-03-07 10:35:08,641] [INFO] [30001] Received COMMIT: id:1741311308551, from:30013, delay:0.0001s, distance:267.73m (Euclidean)
+[2025-03-07 10:35:08,644] [INFO] [30001] Received COMMIT: id:1741311308551, from:30011, delay:0.0001s, distance:216.39m (Euclidean)
+[2025-03-07 10:35:08,644] [INFO] [30001] Received PREPARE: id:1741311308551, from:30005, delay:0.0000s, distance:197.08m (Euclidean)
+[2025-03-07 10:35:08,644] [INFO] [30001] Received COMMIT: id:1741311308551, from:30005, delay:0.0000s, distance:197.08m (Euclidean)
+[2025-03-07 10:35:08,644] [INFO] [30001] Received PREPARE: id:1741311308551, from:30007, delay:0.0001s, distance:224.53m (Euclidean)
+[2025-03-07 10:35:08,644] [INFO] [30001] Received COMMIT: id:1741311308551, from:30007, delay:0.0001s, distance:224.53m (Euclidean)

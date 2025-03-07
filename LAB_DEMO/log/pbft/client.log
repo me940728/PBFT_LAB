@@ -1,40 +1,68 @@
-[2025-03-06 11:02:41,946] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
-[2025-03-06 11:02:41,966] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
-[2025-03-06 11:02:43,647] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
-[2025-03-06 11:02:43,647] [INFO] [CLIENT] >> REQUEST 1741226563647 ¡æ Leader(30000)
-[2025-03-06 11:02:43,710] [INFO] [CLIENT] REPLY: {'request_id': 1741226563647, 'data': 'message_1741226563647', 'timestamp': 1741226563.6982222, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 208.19437489576842, 'message_size_bits': 896}
-[2025-03-06 11:02:43,710] [INFO] [CLIENT] << REPLY received for REQUEST 1741226563647
-[2025-03-06 11:02:44,714] [INFO] [CLIENT] Round 1 completed: duration = 1.0666 seconds
-[2025-03-06 11:02:44,714] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0666 seconds
-[2025-03-06 11:02:44,716] [INFO] Fault Nodes: [30003]
-[2025-03-06 11:05:50,210] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
-[2025-03-06 11:05:50,225] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
-[2025-03-06 11:05:52,589] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
-[2025-03-06 11:05:52,589] [INFO] [CLIENT] >> REQUEST 1741226752589 ¡æ Leader(30000)
-[2025-03-06 11:05:52,653] [INFO] [CLIENT] REPLY: {'request_id': 1741226752589, 'data': 'message_1741226752589', 'timestamp': 1741226752.6421883, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 208.19437489576842, 'message_size_bits': 896}
-[2025-03-06 11:05:52,653] [INFO] [CLIENT] << REPLY received for REQUEST 1741226752589
-[2025-03-06 11:05:53,659] [INFO] [CLIENT] Round 1 completed: duration = 1.0700 seconds
-[2025-03-06 11:05:53,659] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0700 seconds
-[2025-03-06 11:05:53,659] [INFO] Fault Nodes: [30003]
-[2025-03-06 11:06:08,684] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
-[2025-03-06 11:06:08,700] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
-[2025-03-06 11:06:10,925] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
-[2025-03-06 11:06:10,925] [INFO] [CLIENT] >> REQUEST 1741226770925 ¡æ Leader(30000)
-[2025-03-06 11:06:10,973] [INFO] [CLIENT] REPLY: {'request_id': 1741226770925, 'data': 'message_1741226770925', 'timestamp': 1741226770.962101, 'sender': 30000, 'simulated_delay': 7.4e-05, 'distance': 208.19437489576842, 'message_size_bits': 888}
-[2025-03-06 11:06:10,973] [INFO] [CLIENT] << REPLY received for REQUEST 1741226770925
-[2025-03-06 11:06:11,980] [INFO] [CLIENT] Round 1 completed: duration = 1.0549 seconds
-[2025-03-06 11:06:11,980] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0549 seconds
-[2025-03-06 11:06:11,982] [INFO] Fault Nodes: [30003]
-[2025-03-06 11:06:53,574] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
-[2025-03-06 11:06:53,582] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
-[2025-03-06 11:07:02,039] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
-[2025-03-06 11:07:02,039] [INFO] [CLIENT] >> REQUEST 1741226822039 ¡æ Leader(30000)
-[2025-03-06 11:07:02,102] [INFO] [CLIENT] REPLY: {'request_id': 1741226822039, 'data': 'message_1741226822039', 'timestamp': 1741226822.087431, 'sender': 30000, 'simulated_delay': 7.4e-05, 'distance': 208.19437489576842, 'message_size_bits': 888}
-[2025-03-06 11:07:02,102] [INFO] [CLIENT] << REPLY received for REQUEST 1741226822039
-[2025-03-06 11:07:03,104] [INFO] [CLIENT] Round 1 completed: duration = 1.0655 seconds
-[2025-03-06 11:07:03,104] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0655 seconds
-[2025-03-06 11:07:03,104] [INFO] Fault Nodes: [30003]
-[2025-03-06 11:10:24,942] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
-[2025-03-06 11:10:24,955] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
-[2025-03-06 11:10:27,199] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
-[2025-03-06 11:10:27,199] [INFO] [CLIENT] >> REQUEST 1741227027199 ¡æ Leader(30000)
+[2025-03-07 09:27:02,100] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 09:27:02,116] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 09:27:04,309] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 09:27:04,309] [INFO] [CLIENT] >> REQUEST 1741307224309 ¡æ Leader(30000)
+[2025-03-07 09:27:04,382] [INFO] [CLIENT] REPLY: {'request_id': 1741307224309, 'data': 'message_1741307224309', 'timestamp': 1741307224.3820658, 'sender': 30002, 'simulated_delay': 0.00014933333333333332, 'distance': 298.586988905709, 'message_size_bits': 896}
+[2025-03-07 09:27:04,382] [INFO] [CLIENT] REPLY: {'request_id': 1741307224309, 'data': 'message_1741307224309', 'timestamp': 1741307224.3820658, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 208.19437489576842, 'message_size_bits': 896}
+[2025-03-07 09:27:04,382] [INFO] [CLIENT] REPLY: {'request_id': 1741307224309, 'data': 'message_1741307224309', 'timestamp': 1741307224.3820658, 'sender': 30004, 'simulated_delay': 0.00014933333333333332, 'distance': 297.43261060501203, 'message_size_bits': 896}
+[2025-03-07 09:27:04,382] [INFO] [CLIENT] << REPLY received for REQUEST 1741307224309
+[2025-03-07 09:27:05,395] [INFO] [CLIENT] Round 1 completed: duration = 1.0857 seconds
+[2025-03-07 09:27:05,395] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0857 seconds
+[2025-03-07 09:27:05,395] [INFO] Fault Nodes: [30003]
+[2025-03-07 10:05:19,739] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 10:05:19,780] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 10:05:22,792] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 10:05:22,792] [INFO] [CLIENT] >> REQUEST 1741309522792 ¡æ Leader(30000)
+[2025-03-07 10:06:11,606] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 10:06:11,615] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 10:06:18,221] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 10:06:18,221] [INFO] [CLIENT] >> REQUEST 1741309578221 ¡æ Leader(30000)
+[2025-03-07 10:06:40,789] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 10:06:40,807] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 10:06:43,800] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 10:06:43,800] [INFO] [CLIENT] >> REQUEST 1741309603800 ¡æ Leader(30000)
+[2025-03-07 10:06:43,866] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.8640497, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 224.73281602237893, 'message_size_bits': 896}
+[2025-03-07 10:06:43,866] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.866053, 'sender': 30005, 'simulated_delay': 3.7e-05, 'distance': 124.81359593391551, 'message_size_bits': 888}
+[2025-03-07 10:06:43,873] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.866053, 'sender': 30003, 'simulated_delay': 7.4e-05, 'distance': 241.9377886089145, 'message_size_bits': 888}
+[2025-03-07 10:06:43,873] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.866053, 'sender': 30009, 'simulated_delay': 3.7e-05, 'distance': 119.71339082510681, 'message_size_bits': 888}
+[2025-03-07 10:06:43,873] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.8640497, 'sender': 30001, 'simulated_delay': 0.00014933333333333332, 'distance': 265.5018393571468, 'message_size_bits': 896}
+[2025-03-07 10:06:43,873] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.866053, 'sender': 30002, 'simulated_delay': 0.000148, 'distance': 263.6008582494013, 'message_size_bits': 888}
+[2025-03-07 10:06:43,879] [INFO] [CLIENT] REPLY: {'request_id': 1741309603800, 'data': 'message_1741309603800', 'timestamp': 1741309603.8732631, 'sender': 30007, 'simulated_delay': 0.00014933333333333332, 'distance': 298.57212088398165, 'message_size_bits': 896}
+[2025-03-07 10:06:43,879] [INFO] [CLIENT] << REPLY received for REQUEST 1741309603800
+[2025-03-07 10:06:44,886] [INFO] [CLIENT] Round 1 completed: duration = 1.0861 seconds
+[2025-03-07 10:06:44,886] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0861 seconds
+[2025-03-07 10:06:44,886] [INFO] Fault Nodes: []
+[2025-03-07 10:07:25,655] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 10:07:25,671] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 10:07:30,122] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 10:07:30,122] [INFO] [CLIENT] >> REQUEST 1741309650122 ¡æ Leader(30000)
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1874864, 'sender': 30003, 'simulated_delay': 7.466666666666666e-05, 'distance': 241.9377886089145, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1874864, 'sender': 30009, 'simulated_delay': 3.733333333333333e-05, 'distance': 119.71339082510681, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1874864, 'sender': 30001, 'simulated_delay': 0.00014933333333333332, 'distance': 265.5018393571468, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1894922, 'sender': 30007, 'simulated_delay': 0.00014933333333333332, 'distance': 298.57212088398165, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1894922, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 224.73281602237893, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1894922, 'sender': 30002, 'simulated_delay': 0.00014933333333333332, 'distance': 263.6008582494013, 'message_size_bits': 896}
+[2025-03-07 10:07:30,189] [INFO] [CLIENT] REPLY: {'request_id': 1741309650122, 'data': 'message_1741309650122', 'timestamp': 1741309650.1874864, 'sender': 30005, 'simulated_delay': 3.733333333333333e-05, 'distance': 124.81359593391551, 'message_size_bits': 896}
+[2025-03-07 10:07:30,201] [INFO] [CLIENT] << REPLY received for REQUEST 1741309650122
+[2025-03-07 10:07:31,209] [INFO] [CLIENT] Round 1 completed: duration = 1.0869 seconds
+[2025-03-07 10:07:31,209] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0869 seconds
+[2025-03-07 10:07:31,211] [INFO] Fault Nodes: [30011]
+[2025-03-07 10:35:04,024] [INFO] PBFT Scenario: f=1, k=6 | Role: CLIENT
+[2025-03-07 10:35:04,054] [INFO] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-07 10:35:08,550] [INFO] [][][][][][]============> /start-protocol request received: Starting consensus round
+[2025-03-07 10:35:08,550] [INFO] [CLIENT] >> REQUEST 1741311308551 ¡æ Leader(30000)
+[2025-03-07 10:35:08,631] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6187594, 'sender': 30000, 'simulated_delay': 7.466666666666666e-05, 'distance': 244.36534361835533, 'message_size_bits': 896}
+[2025-03-07 10:35:08,641] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6271472, 'sender': 30002, 'simulated_delay': 0.00014933333333333332, 'distance': 280.22362877237487, 'message_size_bits': 896}
+[2025-03-07 10:35:08,641] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6271472, 'sender': 30012, 'simulated_delay': 0.00014933333333333332, 'distance': 286.18376836249803, 'message_size_bits': 896}
+[2025-03-07 10:35:08,641] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6271472, 'sender': 30006, 'simulated_delay': 4.977777777777778e-05, 'distance': 153.35598678214782, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6291518, 'sender': 30009, 'simulated_delay': 0.00014933333333333332, 'distance': 279.4234063430088, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6315238, 'sender': 30014, 'simulated_delay': 2.488888888888889e-05, 'distance': 86.58992653305933, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6315238, 'sender': 30010, 'simulated_delay': 4.977777777777778e-05, 'distance': 170.75518327259334, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6271472, 'sender': 30001, 'simulated_delay': 4.977777777777778e-05, 'distance': 171.87172476121302, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6271472, 'sender': 30008, 'simulated_delay': 7.466666666666666e-05, 'distance': 242.6659336932398, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6315238, 'sender': 30007, 'simulated_delay': 0.00014933333333333332, 'distance': 274.97896523750694, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] REPLY: {'request_id': 1741311308551, 'data': 'message_1741311308551', 'timestamp': 1741311308.6366055, 'sender': 30005, 'simulated_delay': 0.00014933333333333332, 'distance': 267.57668750673594, 'message_size_bits': 896}
+[2025-03-07 10:35:08,644] [INFO] [CLIENT] << REPLY received for REQUEST 1741311308551
+[2025-03-07 10:35:09,649] [INFO] [CLIENT] Round 1 completed: duration = 1.0981 seconds
+[2025-03-07 10:35:09,649] [INFO] [][][][][][]============> CONSENSUS COMPLETED: Total Time = 1.0981 seconds
+[2025-03-07 10:35:09,649] [INFO] Fault Nodes: []
