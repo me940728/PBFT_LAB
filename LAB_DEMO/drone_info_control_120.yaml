@@ -1,4 +1,4 @@
-protocol: random_pbft
+protocol: llapbft
 f: 1
 k: 4
 drones:

@@ -131,10 +131,13 @@ class PBFTClient:
         self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
         self.bandwidth_data = load_bandwidth_data(bandwidth_file)
         self.total_rounds = 1
+        # reply_events를 {요청ID: {"event": 이벤트 객체, "count": 응답 개수}} 형태로 사용
         self.reply_events = {}
+
     def get_leader(self) -> dict:
         sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
         return sorted_replicas[0]
+
     async def send_request(self):
         req_id = int(time.time() * 1000)
         leader = self.get_leader()
@@ -145,14 +148,16 @@ class PBFTClient:
             "data": f"message_{req_id}"
         }
         self.logger.info(f"[CLIENT] >> REQUEST {req_id} → Leader({leader['port']})")
-        event = asyncio.Event()
-        self.reply_events[req_id] = event
+        # ※ 변경: f+1개의 REPLY를 기다리기 위해 이벤트와 응답 카운터를 초기화합니다.
+        self.reply_events[req_id] = {"event": asyncio.Event(), "count": 0}
         await send_with_delay(self.session, self.client, leader, url, data, self.bandwidth_data)
         try:
-            await event.wait()
+            # ※ 변경: f+1개의 REPLY가 수신될 때까지 대기합니다.
+            await self.reply_events[req_id]["event"].wait()
         except asyncio.TimeoutError:
             self.logger.error(f"[CLIENT] Timeout waiting for REPLY for request {req_id}")
-        self.logger.info(f"[CLIENT] << REPLY received for REQUEST {req_id}")
+        self.logger.info(f"[CLIENT] << f+1 REPLY received for REQUEST {req_id}")
+
     async def start_protocol(self, request: web.Request):
         self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus round")
         total_start_time = time.time()
@@ -180,6 +185,7 @@ class PBFTClient:
             "round_times": round_times,
             "fault_nodes": fault_nodes
         })
+
     async def handle_reply(self, request: web.Request):
         try:
             data = await request.json()
@@ -189,8 +195,12 @@ class PBFTClient:
         req_id = data.get("request_id")
         self.logger.info(f"[CLIENT] REPLY: {data}")
         if req_id in self.reply_events:
-            self.reply_events[req_id].set()
+            # ※ 변경: reply 수신 카운트를 증가시키고, f+1개가 도달하면 이벤트를 set
+            self.reply_events[req_id]["count"] += 1
+            if self.reply_events[req_id]["count"] >= self.f + 1:
+                self.reply_events[req_id]["event"].set()
         return web.json_response({"status": "reply received"})
+
     async def close(self):
         try:
             await self.session.close()
@@ -214,9 +224,11 @@ class PBFTNode:
         self.statuses = {}
         self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
         self.bandwidth_data = load_bandwidth_data(bandwidth_file)
+
     def get_leader(self) -> dict:
         sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
         return sorted_replicas[0]
+
     # broadcast 함수: 모든 엔드포인트에 대해, 리더와의 거리가 300m 이상인 노드에게는 메시지를 보내지 않음
     async def broadcast(self, endpoint: str, message: dict):
         tasks = []
@@ -230,12 +242,14 @@ class PBFTNode:
                 continue
             tasks.append(self.send_message(replica, endpoint, message))
         await asyncio.gather(*tasks, return_exceptions=True)
+
     async def send_message(self, target: dict, endpoint: str, data: dict):
         url = f"http://{target['host']}:{target['port']}{endpoint}"
         try:
             await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
         except Exception as e:
             self.logger.exception(f"[{self.node_info['port']}] Error sending to {url}: {e}")
+
     # 모든 노드가 자체적으로 요청 처리하여 합의 프로토콜에 참여 (리다이렉트 제거)
     async def handle_request(self, request: web.Request):
         try:
@@ -257,6 +271,7 @@ class PBFTNode:
         self.logger.info(f"[{self.node_info['port']}] Broadcasting PRE-PREPARE for REQUEST {req_id}")
         await self.broadcast('/preprepare', preprepare_msg)
         return web.json_response({"status": "PRE-PREPARE broadcasted"})
+
     async def handle_preprepare(self, request: web.Request):
         try:
             data = await request.json()
@@ -283,6 +298,7 @@ class PBFTNode:
         self.logger.info(f"[{self.node_info['port']}] Broadcasting PREPARE for REQUEST {req_id}")
         await self.broadcast('/prepare', prepare_msg)
         return web.json_response({"status": "PREPARE broadcasted"})
+
     async def handle_prepare(self, request: web.Request):
         try:
             data = await request.json()
@@ -327,6 +343,7 @@ class PBFTNode:
                 self.logger.info(f"[LEADER {self.node_info['port']}] Sending REPLY for REQUEST {req_id} to CLIENT")
                 await self.send_message(client, '/reply', reply_msg)
         return web.json_response({"status": "PREPARE processed"})
+
     async def handle_commit(self, request: web.Request):
         try:
             data = await request.json()
@@ -357,6 +374,7 @@ class PBFTNode:
             self.logger.info(f"[LEADER {self.node_info['port']}] Sending REPLY for REQUEST {req_id} to CLIENT")
             await self.send_message(client, '/reply', reply_msg)
         return web.json_response({"status": "COMMIT processed"})
+
     async def handle_reply(self, request: web.Request):
         try:
             data = await request.json()
@@ -365,6 +383,7 @@ class PBFTNode:
             return web.json_response({"status": "error parsing reply"}, status=400)
         self.logger.info(f"[{self.node_info['port']}] Received REPLY (for logging): {data}")
         return web.json_response({"status": "REPLY received"})
+
     async def close(self):
         try:
             await self.session.close()

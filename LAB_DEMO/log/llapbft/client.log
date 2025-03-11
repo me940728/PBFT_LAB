@@ -1,427 +1,148 @@
-[2025-03-07 12:49:06,856] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 12:49:06,921] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 12:49:11,223] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30006 for Cluster 0
-[2025-03-07 12:49:11,223] [INFO] [CLIENT] Excluding Cluster 1: insufficient drones (required: 4, current: 1)
-[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30008 for Cluster 2
-[2025-03-07 12:49:11,223] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30014 for Cluster 3
-[2025-03-07 12:49:11,271] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.271279, 'sender': 30006, 'cluster_id': 0, 'simulated_delay': 4.844444444444444e-05, 'distance': 153.35598678214782, 'message_size_bits': 872}
-[2025-03-07 12:49:11,278] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.2780423, 'sender': 30008, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.6659336932398, 'message_size_bits': 880}
-[2025-03-07 12:49:11,287] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741319351223, 'data': None, 'timestamp': 1741319351.271279, 'sender': 30014, 'cluster_id': 3, 'simulated_delay': 2.422222222222222e-05, 'distance': 86.58992653305933, 'message_size_bits': 872}
-[2025-03-07 12:49:11,287] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 12:49:11,287] [INFO] [CLIENT] REPLY received from Clusters [0, 2, 3]
-[2025-03-07 12:49:11,287] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0632 seconds
-[2025-03-07 14:04:57,786] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:04:58,610] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:05:29,740] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:05:29,740] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30074 for Cluster 0
-[2025-03-07 14:05:29,740] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30128 for Cluster 1
-[2025-03-07 14:05:29,740] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30029 for Cluster 2
-[2025-03-07 14:05:29,740] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30136 for Cluster 3
-[2025-03-07 14:05:33,156] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741323929740, 'data': None, 'timestamp': 1741323932.8990257, 'sender': 30128, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 239.36662166415846, 'message_size_bits': 880}
-[2025-03-07 14:05:33,632] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741323929740, 'data': None, 'timestamp': 1741323933.3708012, 'sender': 30136, 'cluster_id': 3, 'simulated_delay': 7.333333333333333e-05, 'distance': 211.36842835977933, 'message_size_bits': 880}
-[2025-03-07 14:05:34,454] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741323929740, 'data': None, 'timestamp': 1741323934.2044826, 'sender': 30029, 'cluster_id': 2, 'simulated_delay': 1.6296296296296297e-05, 'distance': 47.614639036492115, 'message_size_bits': 880}
-[2025-03-07 14:05:37,035] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741323929740, 'data': None, 'timestamp': 1741323936.9004471, 'sender': 30074, 'cluster_id': 0, 'simulated_delay': 3.6666666666666666e-05, 'distance': 111.38048415657745, 'message_size_bits': 880}
-[2025-03-07 14:05:37,224] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:05:37,535] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 14:05:37,535] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 7.7947 seconds
-[2025-03-07 14:06:28,585] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:06:28,683] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:07:02,032] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:07:02,032] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30043 for Cluster 0
-[2025-03-07 14:07:02,032] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30018 for Cluster 1
-[2025-03-07 14:07:02,032] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30159 for Cluster 2
-[2025-03-07 14:07:02,032] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30132 for Cluster 3
-[2025-03-07 14:07:03,663] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741324022032, 'data': None, 'timestamp': 1741324023.610056, 'sender': 30018, 'cluster_id': 1, 'simulated_delay': 2.422222222222222e-05, 'distance': 53.81748759659956, 'message_size_bits': 872}
-[2025-03-07 14:07:05,252] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741324022032, 'data': None, 'timestamp': 1741324025.0929804, 'sender': 30159, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 234.04685304115463, 'message_size_bits': 880}
-[2025-03-07 14:07:05,409] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741324022032, 'data': None, 'timestamp': 1741324025.276039, 'sender': 30043, 'cluster_id': 0, 'simulated_delay': 4.844444444444444e-05, 'distance': 162.44949548854285, 'message_size_bits': 872}
-[2025-03-07 14:07:05,409] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741324022032, 'data': None, 'timestamp': 1741324025.3395808, 'sender': 30132, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 108.03498891897607, 'message_size_bits': 880}
-[2025-03-07 14:07:06,082] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:07:06,082] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 14:07:06,082] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 4.0496 seconds
-[2025-03-07 14:07:36,923] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:07:37,021] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:08:02,792] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:08:02,792] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 14:08:02,792] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 14:08:02,792] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 14:08:02,792] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 14:08:03,593] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741324082792, 'data': None, 'timestamp': 1741324083.511384, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.266666666666667e-05, 'distance': 243.86202586853446, 'message_size_bits': 872}
-[2025-03-07 14:08:03,748] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741324082792, 'data': None, 'timestamp': 1741324083.6680949, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 14:08:04,030] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741324082792, 'data': None, 'timestamp': 1741324083.9786832, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 14:08:04,253] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741324082792, 'data': None, 'timestamp': 1741324084.2336583, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 14:08:04,464] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:08:04,464] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 14:08:04,464] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 1.6724 seconds
-[2025-03-07 14:08:31,431] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:08:31,522] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:08:48,870] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:08:48,870] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30027 for Cluster 0
-[2025-03-07 14:08:48,870] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30011 for Cluster 1
-[2025-03-07 14:08:48,870] [INFO] [CLIENT] Excluding Cluster 2: distance between client and manager (30066) is 301.97m (>= 300m)
-[2025-03-07 14:08:48,870] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30057 for Cluster 3
-[2025-03-07 14:08:49,074] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741324128870, 'data': None, 'timestamp': 1741324129.0547924, 'sender': 30027, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 230.02180563154812, 'message_size_bits': 880}
-[2025-03-07 14:08:49,101] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741324128870, 'data': None, 'timestamp': 1741324129.0627303, 'sender': 30011, 'cluster_id': 1, 'simulated_delay': 2.4444444444444445e-05, 'distance': 89.58951684778354, 'message_size_bits': 880}
-[2025-03-07 14:08:49,210] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741324128870, 'data': None, 'timestamp': 1741324129.2009175, 'sender': 30057, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 139.89895202411657, 'message_size_bits': 880}
-[2025-03-07 14:08:49,295] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:08:49,295] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 3]
-[2025-03-07 14:08:49,295] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4250 seconds
-[2025-03-07 14:09:13,724] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:09:13,794] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:09:23,679] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:09:23,679] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 14:09:23,689] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 14:09:23,689] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 14:09:23,689] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 14:09:23,753] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741324163679, 'data': None, 'timestamp': 1741324163.7400036, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 14:09:23,806] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741324163679, 'data': None, 'timestamp': 1741324163.8008254, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 14:09:23,810] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741324163679, 'data': None, 'timestamp': 1741324163.8103201, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 14:09:23,817] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741324163679, 'data': None, 'timestamp': 1741324163.8103201, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 14:09:23,832] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:09:23,832] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 14:09:23,832] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1526 seconds
-[2025-03-07 14:11:05,372] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 14:11:05,372] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 14:11:05,372] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 14:11:05,372] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 14:11:05,372] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 14:11:05,443] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741324265372, 'data': None, 'timestamp': 1741324265.4287603, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 14:11:05,495] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741324265372, 'data': None, 'timestamp': 1741324265.4806247, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 14:11:05,495] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741324265372, 'data': None, 'timestamp': 1741324265.4806247, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 14:11:05,508] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741324265372, 'data': None, 'timestamp': 1741324265.5030453, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 14:11:05,524] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:11:05,524] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 14:11:05,524] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1520 seconds
-[2025-03-07 14:39:46,139] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:39:46,608] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:44:48,749] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 14:44:48,816] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 14:44:57,759] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round (Random Clustering)
-[2025-03-07 14:44:57,759] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30000 for Random Cluster 0
-[2025-03-07 14:44:57,759] [INFO] [CLIENT] Excluding Cluster 1: distance between client and manager (30021) is 408.20m (>= 300m)
-[2025-03-07 14:44:57,759] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30037 for Random Cluster 2
-[2025-03-07 14:44:57,759] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30005 for Random Cluster 3
-[2025-03-07 14:44:57,824] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741326297759, 'data': None, 'timestamp': 1741326297.8146577, 'sender': 30037, 'cluster_id': 2, 'simulated_delay': 0.00014666666666666666, 'distance': 263.6008922739603, 'message_size_bits': 880}
-[2025-03-07 14:44:57,842] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741326297759, 'data': None, 'timestamp': 1741326297.8389218, 'sender': 30005, 'cluster_id': 3, 'simulated_delay': 0.00014666666666666666, 'distance': 293.45298636435115, 'message_size_bits': 880}
-[2025-03-07 14:44:57,842] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741326297759, 'data': None, 'timestamp': 1741326297.8389218, 'sender': 30000, 'cluster_id': 0, 'simulated_delay': 0.00014666666666666666, 'distance': 295.3026203673792, 'message_size_bits': 880}
-[2025-03-07 14:44:57,842] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 14:44:57,842] [INFO] [CLIENT] REPLY received from Clusters [0, 2, 3]
-[2025-03-07 14:44:57,842] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0829 seconds
-[2025-03-07 15:56:10,886] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 15:56:11,833] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 15:56:15,582] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:15,582] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:15,582] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:15,582] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:15,582] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:15,636] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330575582, 'data': None, 'timestamp': 1741330575.6310475, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 15:56:15,691] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330575582, 'data': None, 'timestamp': 1741330575.684296, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.633333333333333e-05, 'distance': 144.11785108343742, 'message_size_bits': 872}
-[2025-03-07 15:56:15,707] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330575582, 'data': None, 'timestamp': 1741330575.6919036, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 15:56:15,709] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330575582, 'data': None, 'timestamp': 1741330575.706124, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014533333333333333, 'distance': 259.1548781104504, 'message_size_bits': 872}
-[2025-03-07 15:56:15,738] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:15,738] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:15,738] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1567 seconds
-[2025-03-07 15:56:16,713] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:16,713] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:16,713] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:16,713] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:16,713] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:16,747] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330576713, 'data': None, 'timestamp': 1741330576.7476377, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 15:56:16,782] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330576713, 'data': None, 'timestamp': 1741330576.7826147, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 15:56:16,784] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330576713, 'data': None, 'timestamp': 1741330576.78061, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.2e-05, 'distance': 242.03364502094496, 'message_size_bits': 864}
-[2025-03-07 15:56:16,786] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330576713, 'data': None, 'timestamp': 1741330576.7866244, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 15:56:16,792] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:16,792] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:16,792] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0787 seconds
-[2025-03-07 15:56:17,655] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:17,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:17,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:17,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:17,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:17,701] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330577655, 'data': None, 'timestamp': 1741330577.6989527, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 15:56:17,727] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330577655, 'data': None, 'timestamp': 1741330577.721063, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014533333333333333, 'distance': 259.1548781104504, 'message_size_bits': 872}
-[2025-03-07 15:56:17,727] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330577655, 'data': None, 'timestamp': 1741330577.725076, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.266666666666667e-05, 'distance': 242.03364502094496, 'message_size_bits': 872}
-[2025-03-07 15:56:17,727] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330577655, 'data': None, 'timestamp': 1741330577.7270813, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 15:56:17,732] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:17,732] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:17,732] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0771 seconds
-[2025-03-07 15:56:18,467] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:18,467] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:18,467] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:18,467] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:18,467] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:18,515] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330578467, 'data': None, 'timestamp': 1741330578.5133214, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 15:56:18,537] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330578467, 'data': None, 'timestamp': 1741330578.5351467, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 15:56:18,539] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330578467, 'data': None, 'timestamp': 1741330578.5351467, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 15:56:18,541] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330578467, 'data': None, 'timestamp': 1741330578.5371518, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 15:56:18,549] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:18,549] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:18,549] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0814 seconds
-[2025-03-07 15:56:19,629] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:19,629] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:19,629] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:19,629] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:19,629] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:19,676] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330579629, 'data': None, 'timestamp': 1741330579.661408, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.266666666666667e-05, 'distance': 242.24148016562086, 'message_size_bits': 872}
-[2025-03-07 15:56:19,697] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330579629, 'data': None, 'timestamp': 1741330579.6951659, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 15:56:19,703] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330579629, 'data': None, 'timestamp': 1741330579.6991873, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 15:56:19,705] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330579629, 'data': None, 'timestamp': 1741330579.701209, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.633333333333333e-05, 'distance': 144.11785108343742, 'message_size_bits': 872}
-[2025-03-07 15:56:19,709] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:19,709] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:19,709] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0803 seconds
-[2025-03-07 15:56:20,698] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:56:20,698] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
-[2025-03-07 15:56:20,698] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
-[2025-03-07 15:56:20,698] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
-[2025-03-07 15:56:20,698] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
-[2025-03-07 15:56:20,747] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330580698, 'data': None, 'timestamp': 1741330580.7451003, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
-[2025-03-07 15:56:20,763] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330580698, 'data': None, 'timestamp': 1741330580.7610486, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
-[2025-03-07 15:56:20,768] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330580698, 'data': None, 'timestamp': 1741330580.7665694, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
-[2025-03-07 15:56:20,774] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330580698, 'data': None, 'timestamp': 1741330580.7706428, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
-[2025-03-07 15:56:20,777] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:56:20,777] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:56:20,777] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0791 seconds
-[2025-03-07 15:58:26,349] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
-[2025-03-07 15:58:26,440] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 15:58:51,175] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:51,175] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:51,175] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:51,175] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:51,175] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:58:51,921] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330731175, 'data': None, 'timestamp': 1741330731.8611147, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:58:52,015] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330731175, 'data': None, 'timestamp': 1741330731.9333878, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 15:58:52,311] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330731175, 'data': None, 'timestamp': 1741330732.275296, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 15:58:52,414] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330731175, 'data': None, 'timestamp': 1741330732.351558, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 15:58:52,819] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:58:52,819] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:58:52,819] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 1.6439 seconds
-[2025-03-07 15:58:53,621] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:53,621] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:53,621] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:53,621] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:53,621] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:58:53,754] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330733621, 'data': None, 'timestamp': 1741330733.7501926, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:58:53,755] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330733621, 'data': None, 'timestamp': 1741330733.7501926, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 15:58:53,767] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330733621, 'data': None, 'timestamp': 1741330733.7639768, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 15:58:53,773] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330733621, 'data': None, 'timestamp': 1741330733.7639768, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:58:54,048] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:58:54,048] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:58:54,048] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4272 seconds
-[2025-03-07 15:58:54,760] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:54,760] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:54,760] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:54,760] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:54,760] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:58:54,935] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330734760, 'data': None, 'timestamp': 1741330734.930327, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 15:58:54,939] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330734760, 'data': None, 'timestamp': 1741330734.9373577, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:58:54,943] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330734760, 'data': None, 'timestamp': 1741330734.9418957, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:58:54,960] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330734760, 'data': None, 'timestamp': 1741330734.9564636, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 15:58:55,334] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:58:55,334] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:58:55,334] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5739 seconds
-[2025-03-07 15:58:56,133] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:56,133] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:56,133] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:56,133] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:56,133] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:58:56,239] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330736133, 'data': None, 'timestamp': 1741330736.237363, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.266666666666667e-05, 'distance': 243.86202586853446, 'message_size_bits': 872}
-[2025-03-07 15:58:56,243] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330736133, 'data': None, 'timestamp': 1741330736.2413764, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 15:58:56,247] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330736133, 'data': None, 'timestamp': 1741330736.2453878, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:58:56,302] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330736133, 'data': None, 'timestamp': 1741330736.300411, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 15:58:56,669] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:58:56,681] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:58:56,681] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5472 seconds
-[2025-03-07 15:58:57,312] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:57,312] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:57,312] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:57,312] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:57,312] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:58:57,392] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330737312, 'data': None, 'timestamp': 1741330737.3884342, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:58:57,446] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330737312, 'data': None, 'timestamp': 1741330737.444294, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 15:58:57,496] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330737312, 'data': None, 'timestamp': 1741330737.494713, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 15:58:57,501] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330737312, 'data': None, 'timestamp': 1741330737.5012522, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:58:58,596] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:58:58,596] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:58:58,596] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 1.2835 seconds
-[2025-03-07 15:58:59,909] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:58:59,909] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:58:59,909] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:58:59,909] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:58:59,909] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:59:00,026] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330739909, 'data': None, 'timestamp': 1741330740.0228667, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 15:59:00,051] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330739909, 'data': None, 'timestamp': 1741330740.049006, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 15:59:00,098] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330739909, 'data': None, 'timestamp': 1741330740.0964508, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:59:00,101] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330739909, 'data': None, 'timestamp': 1741330740.1019614, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 15:59:00,464] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:59:00,464] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:59:00,464] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5552 seconds
-[2025-03-07 15:59:01,395] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:59:01,395] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:59:01,395] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:59:01,395] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:59:01,395] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:59:01,474] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330741395, 'data': None, 'timestamp': 1741330741.4724724, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 15:59:01,528] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330741395, 'data': None, 'timestamp': 1741330741.5260649, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:59:01,570] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330741395, 'data': None, 'timestamp': 1741330741.5642548, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:59:01,570] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330741395, 'data': None, 'timestamp': 1741330741.566258, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 15:59:01,968] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:59:01,968] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:59:01,968] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5735 seconds
-[2025-03-07 15:59:02,706] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 15:59:02,706] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 15:59:02,706] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 15:59:02,706] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 15:59:02,706] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 15:59:02,783] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741330742706, 'data': None, 'timestamp': 1741330742.7803304, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 15:59:02,865] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741330742706, 'data': None, 'timestamp': 1741330742.861723, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 15:59:02,883] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741330742706, 'data': None, 'timestamp': 1741330742.881795, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 15:59:02,958] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741330742706, 'data': None, 'timestamp': 1741330742.9560835, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 15:59:03,211] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 15:59:03,211] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 15:59:03,211] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5050 seconds
-[2025-03-07 16:13:32,803] [INFO] LLAPBFT Scenario: f=None, k=4 | Role: CLIENT
-[2025-03-07 16:13:32,893] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
-[2025-03-07 16:15:43,351] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:43,351] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:43,351] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:43,351] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:43,351] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:44,107] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331743351, 'data': None, 'timestamp': 1741331744.0486639, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:44,527] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331743351, 'data': None, 'timestamp': 1741331744.4086113, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:44,527] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331743351, 'data': None, 'timestamp': 1741331744.478984, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 16:15:44,750] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331743351, 'data': None, 'timestamp': 1741331744.7243965, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:44,803] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:44,803] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:44,803] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 1.4523 seconds
-[2025-03-07 16:15:45,744] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:45,744] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:45,744] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:45,744] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:45,744] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:45,870] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331745744, 'data': None, 'timestamp': 1741331745.8650844, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:45,882] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331745744, 'data': None, 'timestamp': 1741331745.8788667, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:45,882] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331745744, 'data': None, 'timestamp': 1741331745.8808727, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:45,894] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331745744, 'data': None, 'timestamp': 1741331745.892075, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 16:15:46,128] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:46,128] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:46,128] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.3837 seconds
-[2025-03-07 16:15:49,453] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:49,453] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:49,453] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:49,453] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:49,453] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:49,545] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331749453, 'data': None, 'timestamp': 1741331749.543555, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 16:15:49,545] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331749453, 'data': None, 'timestamp': 1741331749.54155, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4e-05, 'distance': 58.03218371871648, 'message_size_bits': 864}
-[2025-03-07 16:15:49,598] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331749453, 'data': None, 'timestamp': 1741331749.5949218, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:49,642] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331749453, 'data': None, 'timestamp': 1741331749.6402555, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:49,934] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:49,934] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:49,934] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4810 seconds
-[2025-03-07 16:15:51,034] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:51,034] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:51,034] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:51,034] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:51,034] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:51,161] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331751034, 'data': None, 'timestamp': 1741331751.1594512, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:51,175] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331751034, 'data': None, 'timestamp': 1741331751.171228, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 16:15:51,183] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331751034, 'data': None, 'timestamp': 1741331751.1769829, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:51,200] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331751034, 'data': None, 'timestamp': 1741331751.1987858, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:51,541] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:51,541] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:51,541] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5070 seconds
-[2025-03-07 16:15:52,067] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:52,067] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:52,067] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:52,067] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:52,067] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:52,180] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331752067, 'data': None, 'timestamp': 1741331752.1762803, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:52,192] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331752067, 'data': None, 'timestamp': 1741331752.1887343, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:52,197] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331752067, 'data': None, 'timestamp': 1741331752.195839, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.266666666666667e-05, 'distance': 243.86202586853446, 'message_size_bits': 872}
-[2025-03-07 16:15:52,230] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331752067, 'data': None, 'timestamp': 1741331752.2280126, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:52,531] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:52,531] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:52,531] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4644 seconds
-[2025-03-07 16:15:53,080] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:53,080] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:53,080] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:53,080] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:53,080] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:53,240] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331753080, 'data': None, 'timestamp': 1741331753.2360759, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:53,244] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331753080, 'data': None, 'timestamp': 1741331753.2420864, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:53,252] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331753080, 'data': None, 'timestamp': 1741331753.2501547, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:53,274] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331753080, 'data': None, 'timestamp': 1741331753.2702644, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:53,633] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:53,633] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:53,633] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.5534 seconds
-[2025-03-07 16:15:54,154] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:54,154] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:54,154] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:54,157] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:54,157] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:54,295] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331754154, 'data': None, 'timestamp': 1741331754.2912037, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:54,303] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331754154, 'data': None, 'timestamp': 1741331754.301241, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 16:15:54,305] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331754154, 'data': None, 'timestamp': 1741331754.3037453, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:54,325] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331754154, 'data': None, 'timestamp': 1741331754.323341, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 16:15:54,621] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:54,621] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:54,621] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4669 seconds
-[2025-03-07 16:15:55,121] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:55,121] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:55,121] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:55,131] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:55,131] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:55,293] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331755121, 'data': None, 'timestamp': 1741331755.2883701, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:55,306] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331755121, 'data': None, 'timestamp': 1741331755.3044705, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:55,314] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331755121, 'data': None, 'timestamp': 1741331755.3100073, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:55,342] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331755121, 'data': None, 'timestamp': 1741331755.340711, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 16:15:55,578] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:55,578] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:55,578] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4564 seconds
-[2025-03-07 16:15:56,090] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:56,090] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:56,090] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:56,090] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:56,090] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:56,168] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331756090, 'data': None, 'timestamp': 1741331756.166881, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 16:15:56,200] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331756090, 'data': None, 'timestamp': 1741331756.1964843, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:56,207] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331756090, 'data': None, 'timestamp': 1741331756.2030127, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:56,227] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331756090, 'data': None, 'timestamp': 1741331756.2254045, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:56,770] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:56,770] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:56,770] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.6803 seconds
-[2025-03-07 16:15:57,199] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:57,199] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:57,199] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:57,199] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:57,199] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:57,286] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331757199, 'data': None, 'timestamp': 1741331757.281377, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 16:15:57,315] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331757199, 'data': None, 'timestamp': 1741331757.3135414, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:15:57,323] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331757199, 'data': None, 'timestamp': 1741331757.3216472, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:57,393] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331757199, 'data': None, 'timestamp': 1741331757.391066, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
-[2025-03-07 16:15:57,661] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:57,661] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:57,661] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4613 seconds
-[2025-03-07 16:15:58,137] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:15:58,137] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:15:58,137] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:15:58,137] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:15:58,137] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:15:58,227] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331758137, 'data': None, 'timestamp': 1741331758.2235277, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
-[2025-03-07 16:15:58,231] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331758137, 'data': None, 'timestamp': 1741331758.229547, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 872}
-[2025-03-07 16:15:58,270] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331758137, 'data': None, 'timestamp': 1741331758.2668846, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:15:58,312] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331758137, 'data': None, 'timestamp': 1741331758.3102374, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:15:58,530] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:15:58,530] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:15:58,530] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.3933 seconds
-[2025-03-07 16:16:00,977] [INFO] [][][][] LLAPBFT /start-protocol request received: Starting consensus round
-[2025-03-07 16:16:00,977] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
-[2025-03-07 16:16:00,977] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
-[2025-03-07 16:16:00,977] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
-[2025-03-07 16:16:00,977] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
-[2025-03-07 16:16:01,072] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741331760977, 'data': None, 'timestamp': 1741331761.066766, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.422222222222222e-05, 'distance': 58.03218371871648, 'message_size_bits': 872}
-[2025-03-07 16:16:01,078] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741331760977, 'data': None, 'timestamp': 1741331761.0765386, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
-[2025-03-07 16:16:01,094] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741331760977, 'data': None, 'timestamp': 1741331761.0923295, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
-[2025-03-07 16:16:01,151] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741331760977, 'data': None, 'timestamp': 1741331761.1496205, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.6666666666666666e-05, 'distance': 129.01428176780635, 'message_size_bits': 880}
-[2025-03-07 16:16:01,371] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
-[2025-03-07 16:16:01,371] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
-[2025-03-07 16:16:01,371] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.3942 seconds
+[2025-03-11 16:53:03,165] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 16:53:03,239] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 16:53:11,723] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 16:53:11,723] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 16:53:11,723] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 16:53:11,723] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 16:53:11,723] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 16:53:11,787] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741679591723, 'data': None, 'timestamp': 1741679591.77891, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.2e-05, 'distance': 242.24148016562086, 'message_size_bits': 864}
+[2025-03-11 16:53:11,849] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741679591723, 'data': None, 'timestamp': 1741679591.8372107, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
+[2025-03-11 16:53:11,849] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741679591723, 'data': None, 'timestamp': 1741679591.8497128, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 16:53:11,865] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741679591723, 'data': None, 'timestamp': 1741679591.8497128, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
+[2025-03-11 16:53:11,865] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 16:53:11,865] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 2, 3]
+[2025-03-11 16:53:11,865] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1415 seconds
+[2025-03-11 17:06:42,192] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:06:42,268] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:06:50,987] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:06:50,987] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:06:50,987] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:06:50,987] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:06:50,987] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:06:51,036] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741680410987, 'data': None, 'timestamp': 1741680411.0369885, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
+[2025-03-11 17:06:51,081] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741680410987, 'data': None, 'timestamp': 1741680411.074826, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.633333333333333e-05, 'distance': 144.11785108343742, 'message_size_bits': 872}
+[2025-03-11 17:06:51,090] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741680410987, 'data': None, 'timestamp': 1741680411.09067, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.000144, 'distance': 259.1548781104504, 'message_size_bits': 864}
+[2025-03-11 17:06:51,108] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741680410987, 'data': None, 'timestamp': 1741680411.1063755, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:06:51,128] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:06:51,128] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1409 seconds
+[2025-03-11 17:06:55,666] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:06:55,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:06:55,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:06:55,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:06:55,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:06:55,703] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741680415666, 'data': None, 'timestamp': 1741680415.7037296, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
+[2025-03-11 17:06:55,711] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741680415666, 'data': None, 'timestamp': 1741680415.7115521, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
+[2025-03-11 17:06:55,737] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741680415666, 'data': None, 'timestamp': 1741680415.7355695, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:06:55,737] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741680415666, 'data': None, 'timestamp': 1741680415.737008, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.633333333333333e-05, 'distance': 144.11785108343742, 'message_size_bits': 872}
+[2025-03-11 17:06:55,743] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:06:55,743] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.0762 seconds
+[2025-03-11 17:07:09,100] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:07:09,170] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:07:26,655] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:07:26,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:07:26,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:07:26,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:07:26,655] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:07:26,708] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741680446655, 'data': None, 'timestamp': 1741680446.7081895, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
+[2025-03-11 17:07:26,766] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741680446655, 'data': None, 'timestamp': 1741680446.7596135, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
+[2025-03-11 17:07:26,766] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741680446655, 'data': None, 'timestamp': 1741680446.7665262, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
+[2025-03-11 17:07:26,782] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741680446655, 'data': None, 'timestamp': 1741680446.7665262, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:07:26,808] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:07:26,808] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1523 seconds
+[2025-03-11 17:09:36,948] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:09:37,020] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:09:47,271] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:09:47,271] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:09:47,271] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:09:47,271] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:09:47,271] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:09:47,370] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741680587271, 'data': None, 'timestamp': 1741680587.3628614, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
+[2025-03-11 17:09:47,384] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741680587271, 'data': None, 'timestamp': 1741680587.3702574, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
+[2025-03-11 17:09:47,399] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741680587271, 'data': None, 'timestamp': 1741680587.393088, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014533333333333333, 'distance': 259.1548781104504, 'message_size_bits': 872}
+[2025-03-11 17:09:47,404] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741680587271, 'data': None, 'timestamp': 1741680587.3995464, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:09:47,432] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:09:47,432] [INFO] [CLIENT] REPLY received from Clusters [2, 3, 1, 0]
+[2025-03-11 17:09:47,432] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1605 seconds
+[2025-03-11 17:36:25,593] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:36:25,671] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:37:20,025] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:37:20,025] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:37:20,025] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:37:20,025] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:37:20,025] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:37:20,088] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741682240025, 'data': None, 'timestamp': 1741682240.0788934, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.24148016562086, 'message_size_bits': 880}
+[2025-03-11 17:37:20,135] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682240025, 'data': None, 'timestamp': 1741682240.1355078, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 144.11785108343742, 'message_size_bits': 880}
+[2025-03-11 17:37:20,151] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682240025, 'data': None, 'timestamp': 1741682240.1355078, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:37:20,159] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682240025, 'data': None, 'timestamp': 1741682240.151142, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014533333333333333, 'distance': 259.1548781104504, 'message_size_bits': 872}
+[2025-03-11 17:37:20,182] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:37:20,182] [INFO] [CLIENT] REPLY received from Clusters [2, 3, 0, 1]
+[2025-03-11 17:37:20,182] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1576 seconds
+[2025-03-11 17:37:31,029] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:37:31,096] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:37:41,221] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:37:41,221] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30024 for Cluster 0
+[2025-03-11 17:37:41,221] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30009 for Cluster 1
+[2025-03-11 17:37:41,221] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30030 for Cluster 2
+[2025-03-11 17:37:41,221] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30012 for Cluster 3
+[2025-03-11 17:37:41,329] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741682261221, 'data': None, 'timestamp': 1741682261.318416, 'sender': 30030, 'cluster_id': 2, 'simulated_delay': 7.266666666666667e-05, 'distance': 242.24148016562086, 'message_size_bits': 872}
+[2025-03-11 17:37:41,338] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682261221, 'data': None, 'timestamp': 1741682261.318416, 'sender': 30012, 'cluster_id': 3, 'simulated_delay': 3.633333333333333e-05, 'distance': 144.11785108343742, 'message_size_bits': 872}
+[2025-03-11 17:37:41,349] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682261221, 'data': None, 'timestamp': 1741682261.3448777, 'sender': 30024, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 242.03364502094496, 'message_size_bits': 880}
+[2025-03-11 17:37:41,349] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682261221, 'data': None, 'timestamp': 1741682261.3448777, 'sender': 30009, 'cluster_id': 1, 'simulated_delay': 0.00014666666666666666, 'distance': 259.1548781104504, 'message_size_bits': 880}
+[2025-03-11 17:37:41,376] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:37:41,376] [INFO] [CLIENT] REPLY received from Clusters [2, 3, 0, 1]
+[2025-03-11 17:37:41,376] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.1552 seconds
+[2025-03-11 17:38:47,774] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:38:47,852] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:39:04,536] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:39:04,536] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30027 for Cluster 0
+[2025-03-11 17:39:04,536] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30011 for Cluster 1
+[2025-03-11 17:39:04,536] [INFO] [CLIENT] Excluding Cluster 2: distance between client and manager (30066) is 301.97m (>= 300m)
+[2025-03-11 17:39:04,536] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30057 for Cluster 3
+[2025-03-11 17:39:04,700] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682344536, 'data': None, 'timestamp': 1741682344.6727133, 'sender': 30027, 'cluster_id': 0, 'simulated_delay': 7.333333333333333e-05, 'distance': 230.02180563154812, 'message_size_bits': 880}
+[2025-03-11 17:39:04,894] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682344536, 'data': None, 'timestamp': 1741682344.8613, 'sender': 30011, 'cluster_id': 1, 'simulated_delay': 2.3777777777777777e-05, 'distance': 89.58951684778354, 'message_size_bits': 856}
+[2025-03-11 17:39:04,900] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682344536, 'data': None, 'timestamp': 1741682344.8847914, 'sender': 30057, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 139.89895202411657, 'message_size_bits': 880}
+[2025-03-11 17:39:04,960] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:39:04,960] [INFO] [CLIENT] REPLY received from Clusters [0, 1, 3]
+[2025-03-11 17:39:04,960] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 0.4236 seconds
+[2025-03-11 17:42:04,421] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:42:04,513] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:42:52,224] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:42:52,224] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30049 for Cluster 0
+[2025-03-11 17:42:52,224] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30038 for Cluster 1
+[2025-03-11 17:42:52,224] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30087 for Cluster 2
+[2025-03-11 17:42:52,224] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30100 for Cluster 3
+[2025-03-11 17:42:53,015] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682572224, 'data': None, 'timestamp': 1741682572.9672902, 'sender': 30038, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 243.86202586853446, 'message_size_bits': 880}
+[2025-03-11 17:42:53,102] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682572224, 'data': None, 'timestamp': 1741682573.0571105, 'sender': 30049, 'cluster_id': 0, 'simulated_delay': 2.4444444444444445e-05, 'distance': 58.03218371871648, 'message_size_bits': 880}
+[2025-03-11 17:42:53,410] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682572224, 'data': None, 'timestamp': 1741682573.3833542, 'sender': 30100, 'cluster_id': 3, 'simulated_delay': 0, 'distance': 150.57529292869185, 'message_size_bits': 880}
+[2025-03-11 17:42:53,467] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741682572224, 'data': None, 'timestamp': 1741682573.426622, 'sender': 30087, 'cluster_id': 2, 'simulated_delay': 3.633333333333333e-05, 'distance': 129.01428176780635, 'message_size_bits': 872}
+[2025-03-11 17:42:53,711] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:42:53,711] [INFO] [CLIENT] REPLY received from Clusters [1, 0, 3, 2]
+[2025-03-11 17:42:53,711] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 1.4872 seconds
+[2025-03-11 17:45:48,820] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:45:48,935] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:46:22,924] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:46:22,924] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30043 for Cluster 0
+[2025-03-11 17:46:22,924] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30018 for Cluster 1
+[2025-03-11 17:46:22,924] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30159 for Cluster 2
+[2025-03-11 17:46:22,924] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30132 for Cluster 3
+[2025-03-11 17:46:24,173] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682782924, 'data': None, 'timestamp': 1741682784.0574298, 'sender': 30018, 'cluster_id': 1, 'simulated_delay': 2.4444444444444445e-05, 'distance': 53.81748759659956, 'message_size_bits': 880}
+[2025-03-11 17:46:25,750] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682782924, 'data': None, 'timestamp': 1741682785.6537788, 'sender': 30132, 'cluster_id': 3, 'simulated_delay': 3.6666666666666666e-05, 'distance': 108.03498891897607, 'message_size_bits': 880}
+[2025-03-11 17:46:25,752] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741682782924, 'data': None, 'timestamp': 1741682785.6223388, 'sender': 30159, 'cluster_id': 2, 'simulated_delay': 7.333333333333333e-05, 'distance': 234.04685304115463, 'message_size_bits': 880}
+[2025-03-11 17:46:25,999] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682782924, 'data': None, 'timestamp': 1741682785.9065807, 'sender': 30043, 'cluster_id': 0, 'simulated_delay': 4.888888888888889e-05, 'distance': 162.44949548854285, 'message_size_bits': 880}
+[2025-03-11 17:46:26,349] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:46:26,349] [INFO] [CLIENT] REPLY received from Clusters [1, 3, 2, 0]
+[2025-03-11 17:46:26,349] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 3.4245 seconds
+[2025-03-11 17:48:56,044] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-11 17:48:56,153] [INFO] Client: Waiting for /start-protocol trigger (e.g., using curl)
+[2025-03-11 17:49:37,666] [INFO] Precomputed cluster information available. Starting consensus round.
+[2025-03-11 17:49:37,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30074 for Cluster 0
+[2025-03-11 17:49:37,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30128 for Cluster 1
+[2025-03-11 17:49:37,666] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30029 for Cluster 2
+[2025-03-11 17:49:37,673] [INFO] [CLIENT] Sending PRE-REQUEST to Cluster Manager 30136 for Cluster 3
+[2025-03-11 17:49:40,577] [INFO] [CLIENT] REPLY received from Cluster 1: {'request_id': 1741682977666, 'data': None, 'timestamp': 1741682980.3207808, 'sender': 30128, 'cluster_id': 1, 'simulated_delay': 7.333333333333333e-05, 'distance': 239.36662166415846, 'message_size_bits': 880}
+[2025-03-11 17:49:42,377] [INFO] [CLIENT] REPLY received from Cluster 3: {'request_id': 1741682977666, 'data': None, 'timestamp': 1741682982.2371218, 'sender': 30136, 'cluster_id': 3, 'simulated_delay': 7.333333333333333e-05, 'distance': 211.36842835977933, 'message_size_bits': 880}
+[2025-03-11 17:49:43,425] [INFO] [CLIENT] REPLY received from Cluster 2: {'request_id': 1741682977666, 'data': None, 'timestamp': 1741682983.2435365, 'sender': 30029, 'cluster_id': 2, 'simulated_delay': 1.6296296296296297e-05, 'distance': 47.614639036492115, 'message_size_bits': 880}
+[2025-03-11 17:49:44,850] [INFO] [CLIENT] REPLY received from Cluster 0: {'request_id': 1741682977666, 'data': None, 'timestamp': 1741682984.7916002, 'sender': 30074, 'cluster_id': 0, 'simulated_delay': 3.6666666666666666e-05, 'distance': 111.38048415657745, 'message_size_bits': 880}
+[2025-03-11 17:49:44,992] [INFO] All PRE-REQUEST messages sent ¡æ Waiting for REPLY from cluster managers
+[2025-03-11 17:49:44,992] [INFO] [CLIENT] REPLY received from Clusters [1, 3, 2, 0]
+[2025-03-11 17:49:44,992] [INFO] [][][][] LLAPBFT Consensus completed: Total time = 7.3263 seconds

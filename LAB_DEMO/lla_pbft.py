@@ -142,8 +142,12 @@ class LLAPBFTClient:
         self.k = config.get('k', 1)
         self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
         self.bandwidth_data = load_bandwidth_data(bandwidth_file)
-        self.reply_events = {}  # cluster_id -> asyncio.Event
+        self.reply_events = {}  # 기존 reply_events (필요 시 유지)
         self.replies_received = 0
+        # 추가: reply 도착 즉시 처리 위한 변수들
+        self.reply_count = 0
+        self.reply_cluster_ids = []  # 각 reply의 클러스터 ID 저장 리스트
+        self.reply_condition = asyncio.Condition()
         # Clustering log setup (clustering.log)
         self.cluster_logger = setup_logging("Clustering", "clustering.log")
         # Perform clustering and store valid clusters
@@ -163,8 +167,8 @@ class LLAPBFTClient:
             indices = [i for i, lbl in enumerate(labels) if lbl == cluster_id]
             cluster_drones = [self.drones[i] for i in indices]
             # Cluster manager: the drone closest to the client
-            client_coords = (self.client.get('latitude',0), self.client.get('longitude',0), self.client.get('altitude',0))
-            distances = [calculate_distance(client_coords, (d.get('latitude',0), d.get('longitude',0), d.get('altitude',0))) for d in cluster_drones]
+            client_coords = (self.client.get('latitude', 0), self.client.get('longitude', 0), self.client.get('altitude', 0))
+            distances = [calculate_distance(client_coords, (d.get('latitude', 0), d.get('longitude', 0), d.get('altitude', 0))) for d in cluster_drones]
             manager_index = int(np.argmin(distances))
             cluster_manager = cluster_drones[manager_index]
             # Cluster leader: from the remaining drones, the one closest to the cluster center
@@ -194,9 +198,9 @@ class LLAPBFTClient:
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: insufficient drones (required: {3*self.f+1}, current: {len(cluster['cluster_ports'])})")
             return
         # Exclude cluster if the distance between client and manager is 300m or more
-        client_coords = (self.client.get('latitude',0), self.client.get('longitude',0), self.client.get('altitude',0))
+        client_coords = (self.client.get('latitude', 0), self.client.get('longitude', 0), self.client.get('altitude', 0))
         manager = cluster["cluster_manager"]
-        manager_coords = (manager.get('latitude',0), manager.get('longitude',0), manager.get('altitude',0))
+        manager_coords = (manager.get('latitude', 0), manager.get('longitude', 0), manager.get('altitude', 0))
         distance = calculate_distance(client_coords, manager_coords)
         if distance >= 300:
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: distance between client and manager ({manager['port']}) is {distance:.2f}m (>= 300m)")
@@ -219,38 +223,27 @@ class LLAPBFTClient:
         await send_with_delay(self.session, self.client, manager, url, data, self.bandwidth_data)
 
     async def start_protocol(self, request: web.Request):
-        self.logger.info("[][][][] LLAPBFT /start-protocol request received: Starting consensus round")
-        total_start_time = time.time()
+        self.logger.info("Precomputed cluster information available. Starting consensus round.")
+        total_start_time = time.time()  # Start measuring consensus round time
         request_id = int(time.time() * 1000)
-        # Send PRE-REQUEST message for each valid cluster
         tasks = []
         for cluster in self.clusters:
             tasks.append(self.send_request_to_cluster(cluster, request_id))
         await asyncio.gather(*tasks, return_exceptions=True)
         self.logger.info("All PRE-REQUEST messages sent → Waiting for REPLY from cluster managers")
-        # Wait until f+1 REPLY messages are received (for f=1, 2 replies)
+        
+        # Wait until f+1 REPLY messages are received using asyncio.Condition
         required_replies = self.f + 1
-        try:
-            timeout = 30
-            start_wait = time.time()
-            while (time.time() - start_wait) < timeout:
-                if len([cid for cid, e in self.reply_events.items() if e.is_set()]) >= required_replies:
-                    break
-                await asyncio.sleep(0.5)
-            replies = [cid for cid, e in self.reply_events.items() if e.is_set()]
-            self.replies_received = len(replies)
-            if self.replies_received >= required_replies:
-                self.logger.info(f"[CLIENT] REPLY received from Clusters {replies}")
-            else:
-                self.logger.info(f"[CLIENT] REPLY wait timeout (received: {self.replies_received})")
-        except Exception as e:
-            self.logger.exception(f"Error while waiting for REPLY: {e}")
-        total_duration = time.time() - total_start_time
+        async with self.reply_condition:
+            await self.reply_condition.wait_for(lambda: self.reply_count >= required_replies)
+        
+        self.logger.info(f"[CLIENT] REPLY received from Clusters {self.reply_cluster_ids}")
+        total_duration = time.time() - total_start_time  # End measuring consensus round time
         self.logger.info(f"[][][][] LLAPBFT Consensus completed: Total time = {total_duration:.4f} seconds")
         return web.json_response({
             "status": "protocol started",
             "total_time": total_duration,
-            "reply_count": self.replies_received
+            "reply_count": self.reply_count
         })
 
     async def handle_reply(self, request: web.Request):
@@ -261,8 +254,10 @@ class LLAPBFTClient:
             return web.json_response({"status": "error parsing reply"}, status=400)
         cluster_id = data.get("cluster_id")
         self.logger.info(f"[CLIENT] REPLY received from Cluster {cluster_id}: {data}")
-        if cluster_id in self.reply_events:
-            self.reply_events[cluster_id].set()
+        async with self.reply_condition:
+            self.reply_count += 1
+            self.reply_cluster_ids.append(cluster_id)
+            self.reply_condition.notify_all()
         return web.json_response({"status": "reply received"})
 
     async def close(self):

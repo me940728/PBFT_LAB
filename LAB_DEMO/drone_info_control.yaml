@@ -1,6 +1,6 @@
-protocol: random_pbft
+protocol: llapbft
 f: 1
-k: 3
+k: 4
 drones:
 - host: localhost
   port: 20001

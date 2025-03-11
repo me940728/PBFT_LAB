@@ -4,7 +4,7 @@
 # 해당 포트를 사용 중인 프로세스를 자동으로 종료하는 스크립트입니다.
 
 # 드론 설정 파일
-CONFIG_FILE="drone_info_control_6.yaml"
+CONFIG_FILE="drone_info_control_200.yaml"
 
 # CONFIG_FILE 존재 여부 확인
 if [ ! -f "$CONFIG_FILE" ]; then

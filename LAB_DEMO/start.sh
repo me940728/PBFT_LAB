@@ -10,7 +10,7 @@ PY_CMD="/mnt/d/anaconda/envs/PBFT/python.exe" # Win OS Conda 사용
 # PY_CMD="Python" # Mac OS 사용
 
 # 드론 설정 파일 및 대역폭 파일
-DRONE_CONFIG_FILE="drone_info_control_120.yaml"
+DRONE_CONFIG_FILE="drone_info_control_200.yaml"
 BANDWIDTH_FILE="bandwidth_info.yaml"
 
 # protocol 값 추출
