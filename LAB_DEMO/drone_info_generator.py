@@ -31,10 +31,14 @@ CLIENT_INFO = {
 
 REPLICA_PORT_START = 30000  # replica 드론의 포트 할당 시작 번호
 
-# 랜덤 offset 제한 (미터 단위)
-MAX_LAT_OFFSET_M = 300    # 위도 최대 300m
-MAX_LNG_OFFSET_M = 300    # 경도 최대 300m
-MAX_ALTITUDE_M   = 300    # 고도 최대 300m
+'''
+랜덤 offset 제한 (미터 단위)
+172 x 172 x 172로 유클리드 거리를 산출하면 최악의 경우 299m까지 나옴
+wifi 대역폭 최대 300m 이내에 들어오도록 설계할 수 있음
+'''
+MAX_LAT_OFFSET_M = 172    # 위도 최대 300m
+MAX_LNG_OFFSET_M = 172    # 경도 최대 300m
+MAX_ALTITUDE_M   = 172    # 고도 최대 300m
 
 MIN_OFFSET_M = 1  # 오프셋의 최소값 (0보다 큰 값)
 

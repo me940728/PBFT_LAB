@@ -1,22 +1,20 @@
 #!/usr/bin/env python3
 """
-LLAPBFT Consensus Simulation Code (with k-means clustering)
-- The client performs k-means clustering based on the positions of the drones (excluding the client),
-  and in each cluster selects a cluster manager (the drone closest to the client) and
-  a cluster leader (the drone closest to the cluster center, excluding the manager).
-- The client sends a PRE-REQUEST message to the cluster manager.
-- The cluster manager receives the PRE-REQUEST message from the client and sends a REQUEST message to the cluster leader.
-- The leader broadcasts a PRE-PREPARE message to the followers in the cluster (excluding the manager),
-  then proceeds with the PREPARE and COMMIT phases, and finally sends a PRE-REPLY to the cluster manager.
-- The cluster manager, upon receiving f+1 PRE-REPLY messages from the cluster nodes (including the leader),
-  immediately sends the final REPLY to the client.
-- A cluster is excluded from consensus if the distance between the client and the cluster manager is 300m or more,
-  or if the cluster size is less than 3f+1.
-- The transmission applies simulate_delay as before, and clustering information is logged in a separate log file (clustering.log).
+LLAPBFT 합의 시뮬레이션 코드 (k-means 클러스터링 적용)
+- 클라이언트는 드론 위치(클라이언트를 제외한)를 기반으로 k-means 클러스터링을 수행하고,
+  각 클러스터에서 클라이언트와 가장 가까운 드론을 클러스터 매니저로, 클러스터 중심에 가장 가까운 드론(매니저 제외)을 클러스터 리더로 선정합니다.
+- 클라이언트는 클러스터 매니저에게 PRE-REQUEST 메시지를 전송합니다.
+- 클러스터 매니저는 클라이언트로부터 PRE-REQUEST 메시지를 수신한 후, 이를 클러스터 리더에게 REQUEST 메시지로 전달합니다.
+- 클러스터 리더는 클러스터 내(매니저 제외) 팔로워들에게 PRE-PREPARE 메시지를 브로드캐스트하고,
+  이후 PREPARE 및 COMMIT 단계를 진행한 후 클러스터 매니저에게 PRE-REPLY 메시지를 전송합니다.
+- 클러스터 매니저는 클러스터 노드(리더 포함)로부터 f+1개의 PRE-REPLY 메시지를 수신하면 최종 REPLY를 클라이언트에게 전송합니다.
+- 클러스터 매니저와 클라이언트 사이의 거리가 300m 이상이거나 클러스터 크기가 3f+1 미만인 경우, 해당 클러스터는 합의에서 제외됩니다.
+- 전송 시 simulate_delay가 적용되며, 클러스터링 정보는 별도의 로그 파일(clustering.log)에 기록됩니다.
 """
 
 import asyncio
 import aiohttp
+from aiohttp import TCPConnector, web
 import logging
 import time
 import argparse
@@ -24,7 +22,6 @@ import os
 import yaml
 import json
 import sys
-from aiohttp import web
 from common import calculate_distance, simulate_delay
 import numpy as np
 try:
@@ -37,7 +34,7 @@ if sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 ##########################################################################
-# Helper function: Send message with simulated delay (same as in pbft)
+# 유틸리티 함수: 시뮬레이션 지연을 적용하여 메시지 전송
 ##########################################################################
 async def send_with_delay(session: aiohttp.ClientSession, source: dict, target: dict, url: str, data: dict, bandwidth_data: dict):
     if bandwidth_data:
@@ -70,35 +67,35 @@ async def send_with_delay(session: aiohttp.ClientSession, source: dict, target: 
         raise
 
 ##########################################################################
-# Logging setup
+# 유틸리티 함수: 로깅 설정
 ##########################################################################
-def setup_logging(name: str, log_file_name: str) -> logging.Logger:
+def setup_logging(logger_name: str, log_filename: str) -> logging.Logger:
     log_dir = os.path.join(os.getcwd(), "log", "llapbft")
     os.makedirs(log_dir, exist_ok=True)
-    log_file_path = os.path.join(log_dir, log_file_name)
-    logger = logging.getLogger(name)
+    log_file_path = os.path.join(log_dir, log_filename)
+    logger = logging.getLogger(logger_name)
     if not logger.handlers:
         logger.setLevel(logging.INFO)
         formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s')
-        ch = logging.StreamHandler()
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
-        fh = logging.FileHandler(log_file_path, mode='a')
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logger.addHandler(stream_handler)
+        file_handler = logging.FileHandler(log_file_path, mode='a')
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
     return logger
 
 ##########################################################################
-# Load bandwidth data
+# 유틸리티 함수: 대역폭 데이터 로드
 ##########################################################################
-def load_bandwidth_data(bandwidth_file: str) -> dict:
-    if bandwidth_file and os.path.exists(bandwidth_file):
-        with open(bandwidth_file, 'r', encoding='utf-8') as f:
+def load_bandwidth_data(bandwidth_filepath: str) -> dict:
+    if bandwidth_filepath and os.path.exists(bandwidth_filepath):
+        with open(bandwidth_filepath, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
     return None
 
 ##########################################################################
-# Consensus status class (similar to PBFT)
+# 합의 상태 클래스 (PBFT 유사)
 ##########################################################################
 class Status:
     PREPREPARED = 'pre-prepared'
@@ -124,37 +121,38 @@ class Status:
         return len(self.prepare_msgs) >= (2 * self.f)
     def is_committed(self) -> bool:
         return len(self.commit_msgs) >= (2 * self.f + 1)
-    # 수정: PRE-REPLY 조건은 f+1 메시지 도달 (예: f=1이면 2개)
     def is_prereplied(self) -> bool:
         return len(self.prereply_msgs) >= (self.f + 1)
 
 ##########################################################################
-# LLAPBFT Client class
+# LLAPBFT 클라이언트 클래스
 ##########################################################################
 class LLAPBFTClient:
     def __init__(self, config: dict, logger: logging.Logger, bandwidth_file: str = None):
         self.config = config
         self.logger = logger
-        # Client is the node with port 20001
         self.client = next(d for d in config['drones'] if d['port'] == 20001)
         self.drones = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
         self.k = config.get('k', 1)
-        self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
+        self.session = aiohttp.ClientSession(
+            connector=TCPConnector(limit=0, force_close=False),
+            timeout=aiohttp.ClientTimeout(total=9999)
+        )
         self.bandwidth_data = load_bandwidth_data(bandwidth_file)
-        self.reply_events = {}  # 기존 reply_events (필요 시 유지)
-        self.replies_received = 0
-        # 추가: reply 도착 즉시 처리 위한 변수들
+        self.reply_events = {}
         self.reply_count = 0
-        self.reply_cluster_ids = []  # 각 reply의 클러스터 ID 저장 리스트
+        self.reply_cluster_ids = []
         self.reply_condition = asyncio.Condition()
-        # Clustering log setup (clustering.log)
+        # 클러스터링 로그 설정
         self.cluster_logger = setup_logging("Clustering", "clustering.log")
-        # Perform clustering and store valid clusters
+        # 클러스터 정보 생성
         self.clusters = self.perform_clustering()
+        # 실제 측정 라운드 수
+        self.total_rounds = 100
 
+    # k-means 클러스터링을 수행하여 유효한 클러스터 정보를 생성
     def perform_clustering(self):
-        # Use k-means to cluster drone positions (excluding the client)
         positions = []
         for drone in self.drones:
             positions.append([drone['latitude'], drone['longitude'], drone['altitude']])
@@ -166,12 +164,10 @@ class LLAPBFTClient:
         for cluster_id in range(self.k):
             indices = [i for i, lbl in enumerate(labels) if lbl == cluster_id]
             cluster_drones = [self.drones[i] for i in indices]
-            # Cluster manager: the drone closest to the client
             client_coords = (self.client.get('latitude', 0), self.client.get('longitude', 0), self.client.get('altitude', 0))
             distances = [calculate_distance(client_coords, (d.get('latitude', 0), d.get('longitude', 0), d.get('altitude', 0))) for d in cluster_drones]
             manager_index = int(np.argmin(distances))
             cluster_manager = cluster_drones[manager_index]
-            # Cluster leader: from the remaining drones, the one closest to the cluster center
             remaining = cluster_drones[:manager_index] + cluster_drones[manager_index+1:]
             if remaining:
                 center = centers[cluster_id]
@@ -192,12 +188,11 @@ class LLAPBFTClient:
             })
         return clusters
 
+    # 각 클러스터 매니저에게 PRE-REQUEST 메시지를 전송
     async def send_request_to_cluster(self, cluster, request_id):
-        # Exclude cluster if the number of drones is less than 3f+1
         if len(cluster["cluster_ports"]) < (3 * self.f + 1):
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: insufficient drones (required: {3*self.f+1}, current: {len(cluster['cluster_ports'])})")
             return
-        # Exclude cluster if the distance between client and manager is 300m or more
         client_coords = (self.client.get('latitude', 0), self.client.get('longitude', 0), self.client.get('altitude', 0))
         manager = cluster["cluster_manager"]
         manager_coords = (manager.get('latitude', 0), manager.get('longitude', 0), manager.get('altitude', 0))
@@ -205,7 +200,6 @@ class LLAPBFTClient:
         if distance >= 300:
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: distance between client and manager ({manager['port']}) is {distance:.2f}m (>= 300m)")
             return
-        # Create PRE-REQUEST message with cluster information
         data = {
             "request_id": request_id,
             "timestamp": time.time(),
@@ -218,34 +212,60 @@ class LLAPBFTClient:
         }
         url = f"http://{manager['host']}:{manager['port']}/request"
         self.logger.info(f"[CLIENT] Sending PRE-REQUEST to Cluster Manager {manager['port']} for Cluster {cluster['cluster_id']}")
-        event = asyncio.Event()
-        self.reply_events[cluster["cluster_id"]] = event
+        self.reply_events[cluster["cluster_id"]] = asyncio.Event()
         await send_with_delay(self.session, self.client, manager, url, data, self.bandwidth_data)
 
-    async def start_protocol(self, request: web.Request):
-        self.logger.info("Precomputed cluster information available. Starting consensus round.")
-        total_start_time = time.time()  # Start measuring consensus round time
-        request_id = int(time.time() * 1000)
+    # 사전 연결을 통해 각 클러스터 매니저와 연결을 미리 확립
+    async def prewarm_connections(self):
+        managers = [cluster["cluster_manager"] for cluster in self.clusters]
         tasks = []
-        for cluster in self.clusters:
-            tasks.append(self.send_request_to_cluster(cluster, request_id))
+        for manager in managers:
+            url = f"http://{manager['host']}:{manager['port']}/ping"
+            tasks.append(send_with_delay(self.session, self.client, manager, url, {"ping": True}, self.bandwidth_data))
         await asyncio.gather(*tasks, return_exceptions=True)
-        self.logger.info("All PRE-REQUEST messages sent → Waiting for REPLY from cluster managers")
-        
-        # Wait until f+1 REPLY messages are received using asyncio.Condition
-        required_replies = self.f + 1
+        self.logger.info("Prewarm connections completed.")
+
+    # 합의 프로토콜 시작 함수 (워밍업 라운드 포함, 타이밍 측정 재설정)
+    async def start_protocol(self, request: web.Request):
+        self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus rounds")
+        # 사전 연결 실행
+        await self.prewarm_connections()
+        # 워밍업 라운드 실행 (측정에 포함하지 않음)
+        self.logger.info("Starting warm-up round to stabilize connections...")
+        dummy_request_id = int(time.time() * 1000)
+        dummy_tasks = [self.send_request_to_cluster(cluster, dummy_request_id) for cluster in self.clusters]
+        await asyncio.gather(*dummy_tasks, return_exceptions=True)
         async with self.reply_condition:
-            await self.reply_condition.wait_for(lambda: self.reply_count >= required_replies)
-        
-        self.logger.info(f"[CLIENT] REPLY received from Clusters {self.reply_cluster_ids}")
-        total_duration = time.time() - total_start_time  # End measuring consensus round time
-        self.logger.info(f"[][][][] LLAPBFT Consensus completed: Total time = {total_duration:.4f} seconds")
+            await self.reply_condition.wait_for(lambda: self.reply_count >= (self.f + 1))
+        self.reply_count = 0  # 워밍업 후 카운트 초기화
+        self.logger.info("Warm-up round completed. Starting measured rounds...")
+        # 타이밍 측정 재설정
+        total_start_time = time.time()
+        round_times = []
+        for round_num in range(1, self.total_rounds + 1):
+            round_start = time.time()
+            request_id = int(time.time() * 1000)
+            tasks = [self.send_request_to_cluster(cluster, request_id) for cluster in self.clusters]
+            await asyncio.gather(*tasks, return_exceptions=True)
+            self.logger.info("All PRE-REQUEST messages sent → Waiting for REPLY from cluster managers")
+            async with self.reply_condition:
+                await self.reply_condition.wait_for(lambda: self.reply_count >= (self.f + 1))
+            round_duration = time.time() - round_start
+            round_times.append(round_duration)
+            self.logger.info(f"[CLIENT] Round {round_num} completed: duration = {round_duration:.4f} seconds")
+            self.reply_count = 0
+        total_duration = time.time() - total_start_time
+        avg_round_time = sum(round_times) / len(round_times)
+        self.logger.info(f"[][][][] LLAPBFT Consensus completed: Total time = {total_duration:.4f} seconds, "
+                         f"Average Round Time = {avg_round_time:.4f} seconds")
         return web.json_response({
             "status": "protocol started",
             "total_time": total_duration,
+            "round_times": round_times,
             "reply_count": self.reply_count
         })
 
+    # REPLY 메시지 처리 (클라이언트)
     async def handle_reply(self, request: web.Request):
         try:
             data = await request.json()
@@ -267,19 +287,26 @@ class LLAPBFTClient:
             self.logger.exception("Error closing client session.")
 
 ##########################################################################
-# LLAPBFT Node class (Drone role)
+# LLAPBFT 노드 클래스 (드론 역할)
 ##########################################################################
 class LLAPBFTNode:
-    def __init__(self, index: int, config: dict, logger: logging.Logger, bandwidth_file: str = None):
+    def __init__(self, index: int, config: dict, logger: logging.Logger, bandwidth_filepath: str = None):
         self.index = index
         self.config = config
         self.logger = logger
         self.node_info = config['drones'][index]
         self.f = config.get('f', 1)
-        self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
-        self.bandwidth_data = load_bandwidth_data(bandwidth_file)
-        self.statuses = {}  # Consensus status per request_id
-        self.cluster_info = None  # Cluster info will be set upon receiving a PRE-REQUEST
+        self.session = aiohttp.ClientSession(
+            connector=TCPConnector(limit=0, force_close=False),
+            timeout=aiohttp.ClientTimeout(total=9999)
+        )
+        self.bandwidth_data = load_bandwidth_data(bandwidth_filepath)
+        self.statuses = {}
+        self.cluster_info = None  # PRE-REQUEST 수신 시 설정
+
+    # /ping 엔드포인트 핸들러 (사전 연결 지원)
+    async def handle_ping(self, request: web.Request):
+        return web.json_response({"status": "pong"})
 
     async def send_message(self, target: dict, endpoint: str, data: dict):
         url = f"http://{target['host']}:{target['port']}{endpoint}"
@@ -294,7 +321,6 @@ class LLAPBFTNode:
             return
         tasks = []
         for port in self.cluster_info["cluster_ports"]:
-            # Exclude the cluster manager if its information is available
             if self.cluster_info.get("cluster_manager") and port == self.cluster_info["cluster_manager"]['port']:
                 continue
             if port == self.node_info['port']:
@@ -304,7 +330,7 @@ class LLAPBFTNode:
                 tasks.append(self.send_message(target, endpoint, message))
         await asyncio.gather(*tasks, return_exceptions=True)
 
-    # REQUEST endpoint used by both cluster manager and leader
+    # REQUEST 엔드포인트 핸들러 (클러스터 매니저 및 리더 공용)
     async def handle_request(self, request: web.Request):
         try:
             data = await request.json()
@@ -313,7 +339,7 @@ class LLAPBFTNode:
             return web.json_response({"status": "error parsing request"}, status=400)
         origin = data.get("origin")
         if origin == "client":
-            # Must be the cluster manager (check if self is in the cluster)
+            # 클라이언트로부터의 PRE-REQUEST를 수신: 자신이 클러스터 매니저 역할임
             cluster_ports = data.get("cluster_ports", [])
             if self.node_info['port'] not in cluster_ports:
                 self.logger.info(f"[{self.node_info['port']}] PRE-REQUEST: Not a cluster member")
@@ -321,11 +347,10 @@ class LLAPBFTNode:
             self.cluster_info = {
                 "cluster_id": data.get("cluster_id"),
                 "cluster_ports": cluster_ports,
-                "cluster_manager": self.node_info,  # self as manager
+                "cluster_manager": self.node_info,  # 매니저로서 자신 지정
                 "leader": None
             }
             self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] PRE-REQUEST received: {data}")
-            # Send REQUEST to the designated leader (change origin)
             leader_port = data.get("leader")
             self.cluster_info["leader"] = next((d for d in self.config['drones'] if d['port'] == leader_port), None)
             if not self.cluster_info["leader"]:
@@ -338,7 +363,7 @@ class LLAPBFTNode:
             await send_with_delay(self.session, self.node_info, self.cluster_info["leader"], url, data, self.bandwidth_data)
             return web.json_response({"status": "PRE-REQUEST forwarded by manager"})
         elif origin == "manager":
-            # Cluster leader receives the forwarded PRE-REQUEST
+            # 클러스터 리더가 전달받은 PRE-REQUEST 처리
             cluster_ports = data.get("cluster_ports", [])
             if self.node_info['port'] not in cluster_ports:
                 self.logger.info(f"[{self.node_info['port']}] Forwarded PRE-REQUEST: Not a cluster member")
@@ -347,10 +372,9 @@ class LLAPBFTNode:
                 "cluster_id": data.get("cluster_id"),
                 "cluster_ports": data.get("cluster_ports"),
                 "cluster_manager": data.get("cluster_manager"),
-                "leader": self.node_info   # self as leader
+                "leader": self.node_info   # 리더로서 자신 지정
             }
             self.logger.info(f"[CLUSTER LEADER {self.node_info['port']}] Forwarded PRE-REQUEST received: {data}")
-            # Leader creates and broadcasts the PRE-PREPARE message including cluster info
             preprepare_msg = {
                 "request_id": data.get("request_id"),
                 "data": data.get("data"),
@@ -379,7 +403,6 @@ class LLAPBFTNode:
             return web.json_response({"status": "error parsing preprepare"}, status=400)
         req_id = data.get("request_id")
         self.logger.info(f"[{self.node_info['port']}] PRE-PREPARE received: {data}")
-        # If cluster info is not set, update it from the message
         if not self.cluster_info:
             self.cluster_info = {
                 "cluster_id": data.get("cluster_id"),
@@ -389,7 +412,7 @@ class LLAPBFTNode:
         if req_id not in self.statuses:
             self.statuses[req_id] = Status(self.f)
         self.statuses[req_id].preprepare_msg = data
-        # Immediately add self's PREPARE message for self-counting
+        # 즉시 자신에 대한 PREPARE 메시지 추가 (자체 카운팅)
         self.statuses[req_id].add_prepare({
             "request_id": req_id,
             "data": data.get("data"),
@@ -451,7 +474,6 @@ class LLAPBFTNode:
         self.statuses[req_id].add_commit(data)
         if self.statuses[req_id].is_committed() and not self.statuses[req_id].reply_sent:
             self.statuses[req_id].reply_sent = True
-            # Non-manager nodes send PRE-REPLY directly to the cluster manager.
             if self.cluster_info:
                 manager = self.cluster_info["cluster_manager"]
                 prereply_msg = {
@@ -478,22 +500,17 @@ class LLAPBFTNode:
         if req_id not in self.statuses:
             self.statuses[req_id] = Status(self.f)
         self.statuses[req_id].add_prereply(data)
-        # 수신된 PRE-REPLY 메시지를 보낸 노드의 목록을 추출
         senders = [msg.get("sender") for msg in self.statuses[req_id].prereply_msgs]
         self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] PRE-REPLY senders for req_id {req_id}: {senders}")
-        
-        # f+1개의 PRE-REPLY 메시지가 도착했고, 아직 최종 REPLY가 전송되지 않은 경우
         if self.statuses[req_id].is_prereplied() and not self.statuses[req_id].reply_sent:
             self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Condition met for req_id {req_id} (f+1 messages).")
-            self.statuses[req_id].reply_sent = True  # 중복 전송 방지
+            self.statuses[req_id].reply_sent = True
             try:
-                # 클라이언트를 올바르게 찾는지 확인 (데이터 타입도 확인)
                 client = next(d for d in self.config['drones'] if int(d['port']) == 20001)
                 self.logger.info(f"[CLUSTER MANAGER {self.node_info['port']}] Client found: {client}")
             except StopIteration:
                 self.logger.error("Client (port 20001) not found!")
                 return web.json_response({"status": "client not found"}, status=400)
-            # 최종 REPLY 메시지 생성
             reply_msg = {
                 "request_id": req_id,
                 "data": self.statuses[req_id].preprepare_msg.get("data") if self.statuses[req_id].preprepare_msg else None,
@@ -508,7 +525,6 @@ class LLAPBFTNode:
             except Exception as e:
                 self.logger.exception(f"[CLUSTER MANAGER {self.node_info['port']}] Failed to send final REPLY for req_id {req_id}: {e}")
         return web.json_response({"status": "PRE-REPLY processed"})
-
 
     async def handle_reply(self, request: web.Request):
         try:
@@ -526,14 +542,14 @@ class LLAPBFTNode:
             self.logger.exception("Error closing node session.")
 
 ##########################################################################
-# Load configuration file
+# 설정 파일 로드 함수
 ##########################################################################
-def load_config(path: str) -> dict:
-    with open(path, 'r') as f:
+def load_config(config_filepath: str) -> dict:
+    with open(config_filepath, 'r') as f:
         return yaml.safe_load(f)
 
 ##########################################################################
-# Web server runner helper: Start app and return runner (for cleanup)
+# 웹 서버 실행 헬퍼: 앱 실행 및 Runner 반환 (종료 시 cleanup용)
 ##########################################################################
 async def serve_app(app: web.Application, host: str, port: int, logger: logging.Logger) -> web.AppRunner:
     runner = web.AppRunner(app, access_log=None)
@@ -543,7 +559,7 @@ async def serve_app(app: web.Application, host: str, port: int, logger: logging.
     return runner
 
 ##########################################################################
-# Main function: Run as client or node based on role
+# 메인 함수: 역할(클라이언트 vs. 노드)에 따라 실행
 ##########################################################################
 async def main():
     parser = argparse.ArgumentParser(description="LLAPBFT Simulation")
@@ -552,8 +568,8 @@ async def main():
     parser.add_argument("--bandwidth", type=str, default="bandwidth_info.yaml", help="Path to bandwidth info YAML file")
     args = parser.parse_args()
     config = load_config(args.config)
-    if config.get("protocol", "").lower() != "llapbft":
-        print("Error: Only llapbft protocol is supported.")
+    if config.get("protocol", "").lower() != "lla_pbft":
+        print("Error: Only lla_pbft protocol is supported.")
         return
     node = config["drones"][args.index]
     role = "client" if node["port"] == 20001 else "node"
@@ -567,6 +583,8 @@ async def main():
             web.post('/reply', client.handle_reply),
             web.post('/start-protocol', client.start_protocol)
         ])
+        # 클라이언트에서 /ping 엔드포인트 추가 (필요 시)
+        app.add_routes([web.get('/ping', lambda request: web.json_response({"status": "pong"}))])
         client_addr = client.client
         runner = await serve_app(app, client_addr['host'], client_addr['port'], logger)
         logger.info("Client: Waiting for /start-protocol trigger (e.g., using curl)")
@@ -575,7 +593,7 @@ async def main():
     else:
         logger = setup_logging(f"Node_{args.index}", f"node_{args.index}.log")
         logger.info(f"Node started: {node['host']}:{node['port']} | index={args.index} | f={config.get('f')}, k={config.get('k')}")
-        node_instance = LLAPBFTNode(args.index, config, logger, bandwidth_file=args.bandwidth)
+        node_instance = LLAPBFTNode(args.index, config, logger, bandwidth_filepath=args.bandwidth)
         app = web.Application()
         app.add_routes([
             web.post('/request', node_instance.handle_request),
@@ -583,7 +601,8 @@ async def main():
             web.post('/prepare', node_instance.handle_prepare),
             web.post('/commit', node_instance.handle_commit),
             web.post('/prereply', node_instance.handle_prereply),
-            web.post('/reply', node_instance.handle_reply)
+            web.post('/reply', node_instance.handle_reply),
+            web.get('/ping', node_instance.handle_ping)
         ])
         node_addr = node_instance.node_info
         runner = await serve_app(app, node_addr['host'], node_addr['port'], logger)

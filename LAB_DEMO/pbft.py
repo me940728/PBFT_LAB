@@ -130,7 +130,7 @@ class PBFTClient:
         self.f = config.get('f', 1)
         self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
         self.bandwidth_data = load_bandwidth_data(bandwidth_file)
-        self.total_rounds = 1
+        self.total_rounds = 100  # 라운드 수를 100으로 수정
         # reply_events를 {요청ID: {"event": 이벤트 객체, "count": 응답 개수}} 형태로 사용
         self.reply_events = {}
 
@@ -148,29 +148,31 @@ class PBFTClient:
             "data": f"message_{req_id}"
         }
         self.logger.info(f"[CLIENT] >> REQUEST {req_id} → Leader({leader['port']})")
-        # ※ 변경: f+1개의 REPLY를 기다리기 위해 이벤트와 응답 카운터를 초기화합니다.
+        # f+1개의 REPLY를 기다리기 위해 이벤트와 응답 카운터 초기화
         self.reply_events[req_id] = {"event": asyncio.Event(), "count": 0}
         await send_with_delay(self.session, self.client, leader, url, data, self.bandwidth_data)
         try:
-            # ※ 변경: f+1개의 REPLY가 수신될 때까지 대기합니다.
             await self.reply_events[req_id]["event"].wait()
         except asyncio.TimeoutError:
             self.logger.error(f"[CLIENT] Timeout waiting for REPLY for request {req_id}")
         self.logger.info(f"[CLIENT] << f+1 REPLY received for REQUEST {req_id}")
 
     async def start_protocol(self, request: web.Request):
-        self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus round")
+        self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus rounds")
         total_start_time = time.time()
         round_times = []
         for i in range(1, self.total_rounds + 1):
             round_start = time.time()
             await self.send_request()
+            # 각 라운드 간 간격 (1초)
             await asyncio.sleep(1)
             round_duration = time.time() - round_start
             round_times.append(round_duration)
             self.logger.info(f"[CLIENT] Round {i} completed: duration = {round_duration:.4f} seconds")
         total_duration = time.time() - total_start_time
-        self.logger.info(f"[][][][][][]============> CONSENSUS COMPLETED: Total Time = {total_duration:.4f} seconds")
+        avg_round_time = sum(round_times) / len(round_times)
+        self.logger.info(f"[][][][][][]============> CONSENSUS COMPLETED: Total Time = {total_duration:.4f} seconds, "
+                         f"Average Round Time = {avg_round_time:.4f} seconds")
         fault_nodes = []
         leader = self.get_leader()
         leader_coords = (leader.get('latitude', 0), leader.get('longitude', 0), leader.get('altitude', 0))
@@ -179,12 +181,25 @@ class PBFTClient:
             if calculate_distance(leader_coords, replica_coords) >= 300:
                 fault_nodes.append(replica['port'])
         self.logger.info(f"Fault Nodes: {fault_nodes}")
+
+        # 클라이언트 종료를 위한 clean-up을 호출 (서버 종료)
+        asyncio.create_task(self.shutdown())
+
         return web.json_response({
-            "status": "protocol started",
+            "status": "protocol completed",
             "total_time": total_duration,
             "round_times": round_times,
+            "average_round_time": avg_round_time,
             "fault_nodes": fault_nodes
         })
+
+    async def shutdown(self):
+        await asyncio.sleep(2)  # 남은 요청 처리 시간 대기
+        await self.close()
+        self.logger.info("Client shutdown complete.")
+        # 서버도 종료하도록 프로세스 종료 (예: 이벤트 루프 중지)
+        loop = asyncio.get_event_loop()
+        loop.stop()
 
     async def handle_reply(self, request: web.Request):
         try:
@@ -195,7 +210,6 @@ class PBFTClient:
         req_id = data.get("request_id")
         self.logger.info(f"[CLIENT] REPLY: {data}")
         if req_id in self.reply_events:
-            # ※ 변경: reply 수신 카운트를 증가시키고, f+1개가 도달하면 이벤트를 set
             self.reply_events[req_id]["count"] += 1
             if self.reply_events[req_id]["count"] >= self.f + 1:
                 self.reply_events[req_id]["event"].set()
@@ -250,7 +264,6 @@ class PBFTNode:
         except Exception as e:
             self.logger.exception(f"[{self.node_info['port']}] Error sending to {url}: {e}")
 
-    # 모든 노드가 자체적으로 요청 처리하여 합의 프로토콜에 참여 (리다이렉트 제거)
     async def handle_request(self, request: web.Request):
         try:
             data = await request.json()
@@ -443,8 +456,8 @@ async def main():
             client_addr = client.client
             runner = await serve_app(app, client_addr['host'], client_addr['port'], logger)
             logger.info("Waiting for /start-protocol trigger (use curl to start consensus)...")
-            while True:
-                await asyncio.sleep(3600)
+            # 클라이언트는 /start-protocol 호출 시 100라운드 수행 후 종료됨.
+            await asyncio.Event().wait()  # shutdown이 호출될 때까지 대기
         else:
             node_instance = PBFTNode(args.index, config, logger, bandwidth_file=args.bandwidth)
             app = web.Application()

@@ -20,10 +20,15 @@ echo "사용할 프로토콜: $PROTOCOL"
 # protocol 값에 따라 실행할 Python 스크립트 선택
 if [ "$PROTOCOL" = "pbft" ]; then
     PYTHON_SCRIPT="pbft.py"
-elif [ "$PROTOCOL" = "llapbft" ]; then
+# 위도/경도/고도 클러스터링
+elif [ "$PROTOCOL" = "lla_pbft" ]; then
     PYTHON_SCRIPT="lla_pbft.py"
+# 랜덤 클러스터링
 elif [ "$PROTOCOL" = "random_pbft" ]; then
     PYTHON_SCRIPT="random_pbft.py"
+# 위도/경도 클러스터링
+elif [ "$PROTOCOL" = "ll_pbft" ]; then
+    PYTHON_SCRIPT="ll_pbft.py"
 else
     echo "알 수 없는 프로토콜: $PROTOCOL"
     exit 1
