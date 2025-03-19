@@ -3,6 +3,11 @@
 # 1) https://inet.omnetpp.org/docs/showcases/wireless/errorrate/doc/index.html
 # 2) Performance Evaluation of the IEEE802.11ax Amendment WiFi Bitrates
 # 저대역 통신할 경우
+# 각 거리별 대역폭 정의(Mbps 1 = 10^6 = 1,000,000 bit)
+# 관련 근거 : 
+# 1) https://inet.omnetpp.org/docs/showcases/wireless/errorrate/doc/index.html
+# 2) Performance Evaluation of the IEEE802.11ax Amendment WiFi Bitrates
+# 저대역 통신할 경우
 bandwidth_by_distance:
   - range: "0-50"
     bandwidth: 54
@@ -36,4 +41,3 @@ bandwidth_by_long_distance:
     bandwidth: 20   # 매우 장거리 통신의 실제 예상 속도
   - range: "15001-"
     bandwidth: 5    # 극장거리 통신의 제한적인 속도
-

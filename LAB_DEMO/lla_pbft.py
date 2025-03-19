@@ -11,7 +11,7 @@ LLAPBFT 합의 시뮬레이션 코드 (k-means 클러스터링 적용)
 - 클러스터 매니저와 클라이언트 사이의 거리가 300m 이상이거나 클러스터 크기가 3f+1 미만인 경우, 해당 클러스터는 합의에서 제외됩니다.
 - 전송 시 simulate_delay가 적용되며, 클러스터링 정보는 별도의 로그 파일(clustering.log)에 기록됩니다.
 """
-
+# 워밍업 라운드를 추가 하였음 => 로컬 PC에서 한정된 자원을 사용하기 떄문에 정확한 성능 측정을 위해 내부 캐시 및 리소스를 초기화
 import asyncio
 import aiohttp
 from aiohttp import TCPConnector, web

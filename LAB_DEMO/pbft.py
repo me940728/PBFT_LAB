@@ -3,23 +3,17 @@
 pbft.py
 
 PBFT 합의 시뮬레이션 코드 (지연시간 반영 버전)
-- YAML 구성 파일에는 protocol: pbft, ostype: win 또는 mac, f: 4, k: 6, drones: 리스트가 있습니다.
-- drones 리스트 중 port가 20001인 항목은 클라이언트 역할을 담당합니다.
-- 나머지는 복제자(노드)로 동작합니다.
-- 로그는 현재 디렉터리의 log/pbft 폴더에 생성되며, 기존 로그 파일에 이어서 기록됩니다.
-- 클라이언트는 기본적으로 /start-protocol 엔드포인트에서 POST 요청을 받으면 합의 라운드를 시작합니다.
-  (예:
-    MAC : curl -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d '{"latitude": 36.6261519, "longitude": 127.4590123, "altitude": 0}'
-    WIN PowerShell : curl.exe -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d '{ "latitude": 36.6261519, "longitude": 127.4590123, "altitude": 0 }'
-    WIN CMD : curl -X POST http://localhost:20001/start-protocol -H "Content-Type: application/json" -d "{\"latitude\": 36.6261519, \"longitude\": 127.4590123, \"altitude\": 0}"
-  )
-- 모든 합의 라운드가 종료되면 클라이언트는 ★★★ 와 같은 특수문자를 포함하여 전체 소요 시간을 로그에 남기고,
-  fault 노드의 포트 리스트도 함께 출력합니다.
-- 전송 시, 각 노드간 거리에 따른 지연시간(simulate_delay)이 적용되며, 그 결과(거리, delay 등)는 수신측 로그 맨 끝에 출력됩니다.
+- YAML 구성 파일에는 protocol, ostype, f, k, drones 등이 포함됨
+- drones 리스트 중 port가 20001인 항목은 클라이언트 역할, 나머지는 복제자(노드)로 동작함
+- 로그는 log/pbft 폴더에 기록되며, 송신/수신/예외 로그와 각 라운드 소요시간 및 최종 평균이 출력됨
+- 수신 로그 예:
+  [2025-03-19 12:23:35,879] [INFO] [30017] Received COMMIT: id:1742354615195, from:30019, delay:00.0001s, distance:142.11m (Euclidean), mes_siz_bit:8388608
+- 클라이언트는 /start-protocol POST 요청으로 합의 라운드를 시작함
 """
 
 import asyncio
 import aiohttp
+from aiohttp import TCPConnector, web
 import logging
 import time
 import argparse
@@ -27,77 +21,73 @@ import os
 import yaml
 import json
 import sys
-from aiohttp import web
-from common import calculate_distance, simulate_delay
+from common import calculate_distance, simulate_delay, dump_message
 
 if sys.platform.startswith('win'):
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())  # Windows용 이벤트 루프 정책 적용됨
 
 ##########################################################################
-# 헬퍼 함수: 지연시간 적용 후 메시지 전송
+# 송신 및 지연 적용 함수 (필요시 딜레이를 적용하여 메시지를 전송함)
 ##########################################################################
-async def send_with_delay(session: aiohttp.ClientSession, source: dict, target: dict, url: str, data: dict, bandwidth_data: dict):
-    if bandwidth_data:
-        source_coords = (source.get('latitude', 0), source.get('longitude', 0), source.get('altitude', 0))
-        target_coords = (target.get('latitude', 0), target.get('longitude', 0), target.get('altitude', 0))
-        distance = calculate_distance(source_coords, target_coords)
-        if distance >= 300:
-            delay_logger = logging.getLogger("DelayLogger")
-            delay_logger.info(
-                f"[FAULT] Sender: Port{source['port']} → Receiver: Port{target['port']} | "
-                f"Distance: {distance:.2f} m exceeds threshold; message marked as fault"
+async def send_with_delay(session: aiohttp.ClientSession, sender: dict, receiver: dict, url: str, message: dict, bw_data: dict):
+    if bw_data:
+        sender_coords = (sender.get('latitude', 0), sender.get('longitude', 0), sender.get('altitude', 0))
+        receiver_coords = (receiver.get('latitude', 0), receiver.get('longitude', 0), receiver.get('altitude', 0))
+        dist = calculate_distance(sender_coords, receiver_coords)
+        # 300m 이상이면 fault 처리됨
+        if dist >= 300:
+            logging.getLogger("DelayLogger").info(
+                f"[FAULT] Sender: Port{sender['port']} → Receiver: Port{receiver['port']} | "
+                f"Distance: {dist:.2f} m exceeds threshold; message marked as fault"
             )
-            data["fault"] = True
+            message["fault"] = True
             return "Fault: Message not delivered due to extreme distance"
-        message_size_bits = len(json.dumps(data)) * 8
-        delay = await simulate_delay(distance, message_size_bits, bandwidth_data)
-        delay_logger = logging.getLogger("DelayLogger")
-        delay_logger.info(
-            f"[DELAY] Sender: Port{source['port']} → Receiver: Port{target['port']} | "
-            f"Distance: {distance:.2f} m | Message size: {message_size_bits} bit | Delay: {delay:.4f} sec"
-        )
-        data["simulated_delay"] = delay
-        data["distance"] = distance
-        data["message_size_bits"] = message_size_bits
+        # 메시지 크기를 JSON 직렬화 후 비트 단위로 계산됨
+        msg_size_bits = len(json.dumps(message)) * 8
+        delay = await simulate_delay(dist, msg_size_bits, bw_data)
+        # 딜레이, 거리, 메시지 크기 정보를 메시지에 추가함
+        message["simulated_delay"] = delay
+        message["distance"] = dist
+        message["message_size_bits"] = msg_size_bits
     try:
-        async with session.post(url, json=data) as resp:
+        async with session.post(url, json=message) as resp:
             return await resp.text()
     except Exception as e:
         logging.getLogger("DelayLogger").exception(f"Error in send_with_delay: {e}")
         raise
 
 ##########################################################################
-# 로깅 설정
+# 로깅 설정 함수 (지정된 경로에 로그를 기록함)
 ##########################################################################
-def setup_logging(name: str, log_file_name: str) -> logging.Logger:
-    log_dir = os.path.join(os.getcwd(), "log", "pbft")
-    os.makedirs(log_dir, exist_ok=True)
-    log_file_path = os.path.join(log_dir, log_file_name)
+def setup_logging(name: str, log_filename: str) -> logging.Logger:
+    log_directory = os.path.join(os.getcwd(), "log", "pbft")
+    os.makedirs(log_directory, exist_ok=True)
+    log_path = os.path.join(log_directory, log_filename)
     logger = logging.getLogger(name)
     if not logger.handlers:
         logger.setLevel(logging.INFO)
-        formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s')
-        ch = logging.StreamHandler()
-        ch.setFormatter(formatter)
-        logger.addHandler(ch)
-        fh = logging.FileHandler(log_file_path, mode='a')
-        fh.setFormatter(formatter)
-        logger.addHandler(fh)
+        fmt = logging.Formatter('[%(asctime)s] [%(levelname)s] [%(name)s] %(message)s')
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(fmt)
+        logger.addHandler(stream_handler)
+        file_handler = logging.FileHandler(log_path, mode='a')
+        file_handler.setFormatter(fmt)
+        logger.addHandler(file_handler)
     return logger
 
 ##########################################################################
-# Bandwidth 데이터 로딩 헬퍼 함수
+# 대역폭 데이터 로드 함수 (YAML 파일에서 대역폭 정보를 읽어옴)
 ##########################################################################
-def load_bandwidth_data(bandwidth_file: str) -> dict:
-    if bandwidth_file and os.path.exists(bandwidth_file):
-        with open(bandwidth_file, 'r', encoding='utf-8') as f:
+def load_bw_data(filepath: str) -> dict:
+    if filepath and os.path.exists(filepath):
+        with open(filepath, 'r', encoding='utf-8') as f:
             return yaml.safe_load(f)
     return None
 
 ##########################################################################
-# PBFT 합의 단계 상태 클래스
+# 합의 상태 클래스 (각 합의 요청의 상태를 관리함)
 ##########################################################################
-class Status:
+class ConsensusStatus:
     PREPREPARED = 'pre-prepared'
     PREPARED = 'prepared'
     COMMITTED = 'committed'
@@ -119,96 +109,108 @@ class Status:
         return len(self.commit_msgs) >= (2 * self.f + 1)
 
 ##########################################################################
-# PBFT Client 클래스 (클라이언트 역할: port 20001)
+# PBFT 클라이언트 클래스 (합의 요청 생성 및 응답 대기)
 ##########################################################################
 class PBFTClient:
-    def __init__(self, config: dict, logger: logging.Logger, bandwidth_file: str = None):
+    def __init__(self, config: dict, logger: logging.Logger, bw_filepath: str = None):
         self.config = config
         self.logger = logger
-        self.client = next(d for d in config['drones'] if d['port'] == 20001)
+        # 클라이언트 역할은 port 20001인 드론임
+        self.client_info = next(d for d in config['drones'] if d['port'] == 20001)
         self.replicas = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
-        self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
-        self.bandwidth_data = load_bandwidth_data(bandwidth_file)
-        self.total_rounds = 100  # 라운드 수를 100으로 수정
-        # reply_events를 {요청ID: {"event": 이벤트 객체, "count": 응답 개수}} 형태로 사용
-        self.reply_events = {}
+        self.session = aiohttp.ClientSession(
+            connector=TCPConnector(limit=0, force_close=False),
+            timeout=aiohttp.ClientTimeout(total=9999)
+        )
+        self.bw_data = load_bw_data(bw_filepath)
+        self.total_rounds = 3  # 합의 라운드 수임
+        self.reply_events = {}  # {request_id: {"event": asyncio.Event(), "count": int}}
+        self.semaphore = asyncio.Semaphore(500)
+        self.m = config.get('m', 1)  # 최종 메시지 크기 (MB 단위임)
 
     def get_leader(self) -> dict:
-        sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
-        return sorted_replicas[0]
+        # 리더는 복제자 중 port가 가장 작은 노드임
+        return sorted(self.replicas, key=lambda d: d['port'])[0]
 
-    async def send_request(self):
-        req_id = int(time.time() * 1000)
+    async def send_request(self, req_id: int = None, padded_payload: dict = None):
+        if req_id is None:
+            req_id = int(time.time() * 1000)
         leader = self.get_leader()
         url = f"http://{leader['host']}:{leader['port']}/request"
-        data = {
-            "request_id": req_id,
-            "timestamp": time.time(),
-            "data": f"message_{req_id}"
-        }
-        self.logger.info(f"[CLIENT] >> REQUEST {req_id} → Leader({leader['port']})")
-        # f+1개의 REPLY를 기다리기 위해 이벤트와 응답 카운터 초기화
+        # padded_payload가 있으면 이를 사용함, 없으면 기본 메시지에 대해 dump_message 호출함
+        if padded_payload is not None:
+            message_content = json.dumps(padded_payload)
+            request_data = {
+                "request_id": req_id,
+                "timestamp": time.time(),
+                "data": message_content
+            }
+        else:
+            request_data = {
+                "request_id": req_id,
+                "timestamp": time.time(),
+                "data": f"message_{req_id}"
+            }
+            request_data = dump_message(request_data, self.m)
         self.reply_events[req_id] = {"event": asyncio.Event(), "count": 0}
-        await send_with_delay(self.session, self.client, leader, url, data, self.bandwidth_data)
+        async with self.semaphore:
+            await send_with_delay(self.session, self.client_info, leader, url, request_data, self.bw_data)
         try:
             await self.reply_events[req_id]["event"].wait()
         except asyncio.TimeoutError:
-            self.logger.error(f"[CLIENT] Timeout waiting for REPLY for request {req_id}")
-        self.logger.info(f"[CLIENT] << f+1 REPLY received for REQUEST {req_id}")
+            self.logger.error(f"Timeout waiting for REPLY for request {req_id}")
+
+    async def prewarm_connections(self):
+        leader = self.get_leader()
+        url = f"http://{leader['host']}:{leader['port']}/ping"
+        async with self.semaphore:
+            await send_with_delay(self.session, self.client_info, leader, url, {"ping": True}, self.bw_data)
 
     async def start_protocol(self, request: web.Request):
-        self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus rounds")
-        total_start_time = time.time()
-        round_times = []
-        for i in range(1, self.total_rounds + 1):
+        # 클라이언트 요청에서 위도, 경도, 고도 등의 페이로드를 읽음임
+        payload = await request.json()
+        self.logger.info(f"/start-protocol 입력값: {payload}임")
+        await self.prewarm_connections()
+        # 패딩 작업은 합의 측정 시간에 포함되지 않도록 미리 수행함
+        padded_payload = dump_message(payload, self.m)
+        # 워밍업 라운드 (실제 측정에 포함되지 않음임)
+        dummy_req_id = int(time.time() * 1000)
+        await self.send_request(dummy_req_id, padded_payload=padded_payload)
+        total_start = time.time()
+        round_durations = []
+        for rnd in range(1, self.total_rounds + 1):
             round_start = time.time()
-            await self.send_request()
-            # 각 라운드 간 간격 (1초)
+            req_id = int(time.time() * 1000)
+            await self.send_request(req_id, padded_payload=padded_payload)
             await asyncio.sleep(1)
-            round_duration = time.time() - round_start
-            round_times.append(round_duration)
-            self.logger.info(f"[CLIENT] Round {i} completed: duration = {round_duration:.4f} seconds")
-        total_duration = time.time() - total_start_time
-        avg_round_time = sum(round_times) / len(round_times)
-        self.logger.info(f"[][][][][][]============> CONSENSUS COMPLETED: Total Time = {total_duration:.4f} seconds, "
-                         f"Average Round Time = {avg_round_time:.4f} seconds")
+            duration = time.time() - round_start
+            round_durations.append(duration)
+            self.logger.info(f"Round {rnd}: {duration:.4f} seconds임")
+        total_duration = time.time() - total_start
+        avg_duration = sum(round_durations) / len(round_durations)
+        self.logger.info(f"★★★ CONSENSUS COMPLETED in {total_duration:.4f} seconds, Average Round: {avg_duration:.4f} seconds임")
         fault_nodes = []
-        leader = self.get_leader()
-        leader_coords = (leader.get('latitude', 0), leader.get('longitude', 0), leader.get('altitude', 0))
+        leader_info = self.get_leader()
+        leader_coords = (leader_info.get('latitude', 0), leader_info.get('longitude', 0), leader_info.get('altitude', 0))
         for replica in self.replicas:
             replica_coords = (replica.get('latitude', 0), replica.get('longitude', 0), replica.get('altitude', 0))
             if calculate_distance(leader_coords, replica_coords) >= 300:
                 fault_nodes.append(replica['port'])
-        self.logger.info(f"Fault Nodes: {fault_nodes}")
-
-        # 클라이언트 종료를 위한 clean-up을 호출 (서버 종료)
-        asyncio.create_task(self.shutdown())
-
         return web.json_response({
             "status": "protocol completed",
             "total_time": total_duration,
-            "round_times": round_times,
-            "average_round_time": avg_round_time,
+            "round_times": round_durations,
             "fault_nodes": fault_nodes
         })
 
-    async def shutdown(self):
-        await asyncio.sleep(2)  # 남은 요청 처리 시간 대기
-        await self.close()
-        self.logger.info("Client shutdown complete.")
-        # 서버도 종료하도록 프로세스 종료 (예: 이벤트 루프 중지)
-        loop = asyncio.get_event_loop()
-        loop.stop()
-
     async def handle_reply(self, request: web.Request):
         try:
-            data = await request.json()
+            reply = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_reply")
+            self.logger.error("Error parsing JSON in handle_reply임")
             return web.json_response({"status": "error parsing reply"}, status=400)
-        req_id = data.get("request_id")
-        self.logger.info(f"[CLIENT] REPLY: {data}")
+        req_id = reply.get("request_id")
         if req_id in self.reply_events:
             self.reply_events[req_id]["count"] += 1
             if self.reply_events[req_id]["count"] >= self.f + 1:
@@ -216,34 +218,36 @@ class PBFTClient:
         return web.json_response({"status": "reply received"})
 
     async def close(self):
-        try:
-            await self.session.close()
-        except Exception:
-            logging.getLogger("Client").exception("Error closing client session.")
+        await self.session.close()
 
 ##########################################################################
-# PBFT Node 클래스 (복제자 역할)
+# PBFT 노드 클래스 (복제자 역할; 수신 로그를 고정폭 형식으로 출력함)
 ##########################################################################
 class PBFTNode:
-    def __init__(self, index: int, config: dict, logger: logging.Logger, bandwidth_file: str = None):
+    def __init__(self, index: int, config: dict, logger: logging.Logger, bw_filepath: str = None):
         self.index = index
         self.config = config
         self.logger = logger
         self.node_info = config['drones'][index]
         self.replicas = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
-        self.k = config.get('k', None)
-        self.leader = self.get_leader()
+        self.leader = sorted(self.replicas, key=lambda d: d['port'])[0]
         self.is_leader = (self.node_info['port'] == self.leader['port'])
         self.statuses = {}
-        self.session = aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=9999))
-        self.bandwidth_data = load_bandwidth_data(bandwidth_file)
+        self.session = aiohttp.ClientSession(
+            connector=TCPConnector(limit=0, force_close=False),
+            timeout=aiohttp.ClientTimeout(total=9999)
+        )
+        self.bw_data = load_bw_data(bw_filepath)
+        self.semaphore = asyncio.Semaphore(500)
 
-    def get_leader(self) -> dict:
-        sorted_replicas = sorted(self.replicas, key=lambda d: d['port'])
-        return sorted_replicas[0]
+    def _log_received(self, msg_type: str, req_id: int, sender: int, delay: str, distance: float, msg_size_bits: int):
+        # 수신 로그를 고정폭으로 출력함 (sender: 5자리, delay: 문자열 그대로, distance: 7자리(소수점 이하 2자리), 메시지 크기: 7자리)
+        self.logger.info(
+            f"Received {msg_type}: id:{req_id}, from:{sender:5d}, delay:{delay}, "
+            f"distance:{distance:07.2f}m (Euclidean), mes_siz_bit:{msg_size_bits:07d}"
+        )
 
-    # broadcast 함수: 모든 엔드포인트에 대해, 리더와의 거리가 300m 이상인 노드에게는 메시지를 보내지 않음
     async def broadcast(self, endpoint: str, message: dict):
         tasks = []
         leader_coords = (self.leader.get('latitude', 0), self.leader.get('longitude', 0), self.leader.get('altitude', 0))
@@ -252,89 +256,81 @@ class PBFTNode:
                 continue
             replica_coords = (replica.get('latitude', 0), replica.get('longitude', 0), replica.get('altitude', 0))
             if calculate_distance(leader_coords, replica_coords) >= 300:
-                self.logger.info(f"[{self.node_info['port']}] Not broadcasting to fault node: {replica['port']}")
                 continue
             tasks.append(self.send_message(replica, endpoint, message))
         await asyncio.gather(*tasks, return_exceptions=True)
 
-    async def send_message(self, target: dict, endpoint: str, data: dict):
+    async def send_message(self, target: dict, endpoint: str, message: dict):
         url = f"http://{target['host']}:{target['port']}{endpoint}"
-        try:
-            await send_with_delay(self.session, self.node_info, target, url, data, self.bandwidth_data)
-        except Exception as e:
-            self.logger.exception(f"[{self.node_info['port']}] Error sending to {url}: {e}")
+        async with self.semaphore:
+            try:
+                await send_with_delay(self.session, self.node_info, target, url, message, self.bw_data)
+            except Exception as e:
+                self.logger.error(f"Error sending to {url}: {e}")
 
     async def handle_request(self, request: web.Request):
         try:
-            data = await request.json()
+            req_data = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_request")
+            self.logger.error("Error parsing JSON in handle_request임")
             return web.json_response({"status": "error parsing request"}, status=400)
-        req_id = data.get("request_id")
-        self.logger.info(f"[{self.node_info['port']}] Received REQUEST {req_id}")
+        req_id = req_data.get("request_id")
+        self.logger.info(f"Received REQUEST: id:{req_id}")
         preprepare_msg = {
             "request_id": req_id,
-            "data": data.get("data"),
+            "data": req_data.get("data"),
             "timestamp": time.time(),
             "leader": self.node_info['port']
         }
-        self.statuses[req_id] = Status(self.f)
-        self.statuses[req_id].phase = Status.PREPREPARED
+        self.statuses[req_id] = ConsensusStatus(self.f)
+        self.statuses[req_id].phase = ConsensusStatus.PREPREPARED
         self.statuses[req_id].preprepare_msg = preprepare_msg
-        self.logger.info(f"[{self.node_info['port']}] Broadcasting PRE-PREPARE for REQUEST {req_id}")
         await self.broadcast('/preprepare', preprepare_msg)
         return web.json_response({"status": "PRE-PREPARE broadcasted"})
 
     async def handle_preprepare(self, request: web.Request):
         try:
-            data = await request.json()
+            preprep_data = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_preprepare")
+            self.logger.error("Error parsing JSON in handle_preprepare임")
             return web.json_response({"status": "error parsing preprepare"}, status=400)
-        req_id = data.get("request_id")
-        if "simulated_delay" in data and "distance" in data:
-            self.logger.info(
-                f"[{self.node_info['port']}] Received PRE-PREPARE: id:{req_id}, from:Leader({data.get('leader')}), "
-                f"delay:{data['simulated_delay']:.4f}s, distance:{data['distance']:.2f}m (Euclidean)"
-            )
-        else:
-            self.logger.info(f"[{self.node_info['port']}] Received PRE-PREPARE: id:{req_id}, from:Leader({data.get('leader')})")
+        req_id = preprep_data.get("request_id")
+        sender = preprep_data.get("leader", 0)
+        delay = preprep_data.get("simulated_delay", "0.0000s")
+        distance = preprep_data.get("distance", 0.0)
+        msg_size_bits = preprep_data.get("message_size_bits", 0)
+        self._log_received("PRE-PREPARE", req_id, sender, delay, distance, msg_size_bits)
         if req_id not in self.statuses:
-            self.statuses[req_id] = Status(self.f)
-        self.statuses[req_id].preprepare_msg = data
+            self.statuses[req_id] = ConsensusStatus(self.f)
+        self.statuses[req_id].preprepare_msg = preprep_data
         prepare_msg = {
             "request_id": req_id,
-            "data": data.get("data"),
+            "data": preprep_data.get("data"),
             "timestamp": time.time(),
             "sender": self.node_info['port']
         }
-        self.logger.info(f"[{self.node_info['port']}] Broadcasting PREPARE for REQUEST {req_id}")
         await self.broadcast('/prepare', prepare_msg)
         return web.json_response({"status": "PREPARE broadcasted"})
 
     async def handle_prepare(self, request: web.Request):
         try:
-            data = await request.json()
+            prep_data = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_prepare")
+            self.logger.error("Error parsing JSON in handle_prepare임")
             return web.json_response({"status": "error parsing prepare"}, status=400)
-        req_id = data.get("request_id")
-        sender = data.get("sender")
-        if "simulated_delay" in data and "distance" in data:
-            self.logger.info(
-                f"[{self.node_info['port']}] Received PREPARE: id:{req_id}, from:{sender}, "
-                f"delay:{data['simulated_delay']:.4f}s, distance:{data['distance']:.2f}m (Euclidean)"
-            )
-        else:
-            self.logger.info(f"[{self.node_info['port']}] Received PREPARE: id:{req_id}, from:{sender}")
+        req_id = prep_data.get("request_id")
+        sender = prep_data.get("sender", 0)
+        delay = prep_data.get("simulated_delay", "0.0000s")
+        distance = prep_data.get("distance", 0.0)
+        msg_size_bits = prep_data.get("message_size_bits", 0)
+        self._log_received("PREPARE", req_id, sender, delay, distance, msg_size_bits)
         if req_id not in self.statuses:
-            self.statuses[req_id] = Status(self.f)
-        self.statuses[req_id].add_prepare(data)
+            self.statuses[req_id] = ConsensusStatus(self.f)
+        self.statuses[req_id].add_prepare(prep_data)
         if self.statuses[req_id].preprepare_msg is None:
-            self.logger.info(f"[{self.node_info['port']}] Missing PRE-PREPARE for REQUEST {req_id}; ignoring PREPARE")
             return web.json_response({"status": "PREPARE ignored due to missing PRE-PREPARE"})
-        if self.statuses[req_id].is_prepared() and self.statuses[req_id].phase != Status.PREPARED:
-            self.statuses[req_id].phase = Status.PREPARED
+        if self.statuses[req_id].is_prepared() and self.statuses[req_id].phase != ConsensusStatus.PREPARED:
+            self.statuses[req_id].phase = ConsensusStatus.PREPARED
             commit_msg = {
                 "request_id": req_id,
                 "data": self.statuses[req_id].preprepare_msg.get("data"),
@@ -342,7 +338,6 @@ class PBFTNode:
                 "sender": self.node_info['port']
             }
             self.statuses[req_id].add_commit(commit_msg)
-            self.logger.info(f"[{self.node_info['port']}] Broadcasting COMMIT for REQUEST {req_id}")
             await self.broadcast('/commit', commit_msg)
             if self.is_leader and not self.statuses[req_id].reply_sent:
                 self.statuses[req_id].reply_sent = True
@@ -352,29 +347,25 @@ class PBFTNode:
                     "timestamp": time.time(),
                     "sender": self.node_info['port']
                 }
-                client = next(d for d in self.config['drones'] if d['port'] == 20001)
-                self.logger.info(f"[LEADER {self.node_info['port']}] Sending REPLY for REQUEST {req_id} to CLIENT")
-                await self.send_message(client, '/reply', reply_msg)
+                client_info = next(d for d in self.config['drones'] if d['port'] == 20001)
+                await self.send_message(client_info, '/reply', reply_msg)
         return web.json_response({"status": "PREPARE processed"})
 
     async def handle_commit(self, request: web.Request):
         try:
-            data = await request.json()
+            commit_data = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_commit")
+            self.logger.error("Error parsing JSON in handle_commit임")
             return web.json_response({"status": "error parsing commit"}, status=400)
-        req_id = data.get("request_id")
-        sender = data.get("sender")
-        if "simulated_delay" in data and "distance" in data:
-            self.logger.info(
-                f"[{self.node_info['port']}] Received COMMIT: id:{req_id}, from:{sender}, "
-                f"delay:{data['simulated_delay']:.4f}s, distance:{data['distance']:.2f}m (Euclidean)"
-            )
-        else:
-            self.logger.info(f"[{self.node_info['port']}] Received COMMIT: id:{req_id}, from:{sender}")
+        req_id = commit_data.get("request_id")
+        sender = commit_data.get("sender", 0)
+        delay = commit_data.get("simulated_delay", "0.0000s")
+        distance = commit_data.get("distance", 0.0)
+        msg_size_bits = commit_data.get("message_size_bits", 0)
+        self._log_received("COMMIT", req_id, sender, delay, distance, msg_size_bits)
         if req_id not in self.statuses:
-            self.statuses[req_id] = Status(self.f)
-        self.statuses[req_id].add_commit(data)
+            self.statuses[req_id] = ConsensusStatus(self.f)
+        self.statuses[req_id].add_commit(commit_data)
         if self.statuses[req_id].is_committed() and not self.statuses[req_id].reply_sent:
             self.statuses[req_id].reply_sent = True
             reply_msg = {
@@ -383,37 +374,33 @@ class PBFTNode:
                 "timestamp": time.time(),
                 "sender": self.node_info['port']
             }
-            client = next(d for d in self.config['drones'] if d['port'] == 20001)
-            self.logger.info(f"[LEADER {self.node_info['port']}] Sending REPLY for REQUEST {req_id} to CLIENT")
-            await self.send_message(client, '/reply', reply_msg)
+            client_info = next(d for d in self.config['drones'] if d['port'] == 20001)
+            await self.send_message(client_info, '/reply', reply_msg)
         return web.json_response({"status": "COMMIT processed"})
 
     async def handle_reply(self, request: web.Request):
         try:
-            data = await request.json()
+            reply_data = await request.json()
         except Exception:
-            self.logger.exception("Error parsing JSON in handle_reply (node)")
+            self.logger.error("Error parsing JSON in handle_reply (node)임")
             return web.json_response({"status": "error parsing reply"}, status=400)
-        self.logger.info(f"[{self.node_info['port']}] Received REPLY (for logging): {data}")
+        self.logger.info(f"REPLY received (log): {reply_data}")
         return web.json_response({"status": "REPLY received"})
 
     async def close(self):
-        try:
-            await self.session.close()
-        except Exception:
-            self.logger.exception("Error closing node session.")
+        await self.session.close()
 
 ##########################################################################
-# 설정 파일 파싱 함수
+# 설정 파일 로드 함수 (YAML 파일에서 설정을 읽어옴)
 ##########################################################################
-def load_config(path: str) -> dict:
-    with open(path, 'r') as f:
+def load_config(filepath: str) -> dict:
+    with open(filepath, 'r') as f:
         return yaml.safe_load(f)
 
 ##########################################################################
-# 웹 서버 실행 헬퍼: 앱을 실행하고 runner를 반환 (cleanup 용)
+# 웹 애플리케이션 실행 헬퍼 (애플리케이션을 실행하고 Runner를 반환함)
 ##########################################################################
-async def serve_app(app: web.Application, host: str, port: int, logger: logging.Logger) -> web.AppRunner:
+async def run_app(app: web.Application, host: str, port: int, logger: logging.Logger) -> web.AppRunner:
     runner = web.AppRunner(app, access_log=None)
     await runner.setup()
     site = web.TCPSite(runner, host=host, port=port)
@@ -421,7 +408,7 @@ async def serve_app(app: web.Application, host: str, port: int, logger: logging.
     return runner
 
 ##########################################################################
-# 메인 함수: 역할(클라이언트 vs. 노드)에 따라 웹 서버를 실행
+# 메인 함수 (클라이언트와 노드 역할에 따라 애플리케이션을 실행함)
 ##########################################################################
 async def main():
     parser = argparse.ArgumentParser(description="PBFT Simulation")
@@ -433,45 +420,43 @@ async def main():
     if config.get("protocol", "").lower() != "pbft":
         print("Error: Only pbft protocol is supported in this simulation.")
         return
-    node = config["drones"][args.index]
-    role = "client" if node["port"] == 20001 else "node"
+    node_info = config["drones"][args.index]
+    role = "client" if node_info["port"] == 20001 else "node"
     scenario_info = f"PBFT Scenario: f={config.get('f', 'N/A')}, k={config.get('k', 'N/A')}"
     if role == "client":
         logger = setup_logging("Client", "client.log")
         logger.info(f"{scenario_info} | Role: CLIENT")
+        client = PBFTClient(config, logger, bw_filepath=args.bandwidth)
+        # 클라이언트 웹 앱 생성 (client_max_size를 10MB로 설정하여 큰 메시지 허용됨)
+        app = web.Application(client_max_size=10 * 1024 * 1024)
+        app.add_routes([
+            web.post('/reply', client.handle_reply),
+            web.post('/start-protocol', client.start_protocol)
+        ])
+        client_addr = client.client_info
+        runner = await run_app(app, client_addr['host'], client_addr['port'], logger)
+        logger.info("Waiting for /start-protocol trigger (use curl to start consensus)...")
+        while True:
+            await asyncio.sleep(3600)
     else:
-        replicas = [d for d in config["drones"] if d["port"] != 20001]
-        leader_port = sorted(replicas, key=lambda d: d["port"])[0]["port"]
-        role_str = "Leader" if node["port"] == leader_port else "Replica"
-        logger = setup_logging(f"Node_{args.index}", f"node_{args.index}.log")
-        logger.info(f"Starting node at {node['host']}:{node['port']} | index={args.index:3} | f={config.get('f')}, k={config.get('k')} | Role: {role_str}")
+        logger = setup_logging(f"Node_{args.index:3}", f"node_{args.index}.log")
+        logger.info(f"Starting node at {node_info['host']}:{node_info['port']} | index={args.index:3} | f={config.get('f')}, k={config.get('k')}")
+        node_instance = PBFTNode(args.index, config, logger, bw_filepath=args.bandwidth)
+        app = web.Application(client_max_size=10 * 1024 * 1024)
+        app.add_routes([
+            web.post('/request', node_instance.handle_request),
+            web.post('/preprepare', node_instance.handle_preprepare),
+            web.post('/prepare', node_instance.handle_prepare),
+            web.post('/commit', node_instance.handle_commit),
+            web.post('/reply', node_instance.handle_reply),
+            web.get('/ping', lambda req: web.json_response({"status": "pong"}))
+        ])
+        node_addr = node_instance.node_info
+        runner = await run_app(app, node_addr['host'], node_addr['port'], logger)
+        while True:
+            await asyncio.sleep(3600)
     try:
-        if role == "client":
-            client = PBFTClient(config, logger, bandwidth_file=args.bandwidth)
-            app = web.Application()
-            app.add_routes([
-                web.post('/reply', client.handle_reply),
-                web.post('/start-protocol', client.start_protocol)
-            ])
-            client_addr = client.client
-            runner = await serve_app(app, client_addr['host'], client_addr['port'], logger)
-            logger.info("Waiting for /start-protocol trigger (use curl to start consensus)...")
-            # 클라이언트는 /start-protocol 호출 시 100라운드 수행 후 종료됨.
-            await asyncio.Event().wait()  # shutdown이 호출될 때까지 대기
-        else:
-            node_instance = PBFTNode(args.index, config, logger, bandwidth_file=args.bandwidth)
-            app = web.Application()
-            app.add_routes([
-                web.post('/request', node_instance.handle_request),
-                web.post('/preprepare', node_instance.handle_preprepare),
-                web.post('/prepare', node_instance.handle_prepare),
-                web.post('/commit', node_instance.handle_commit),
-                web.post('/reply', node_instance.handle_reply),
-            ])
-            node_addr = node_instance.node_info
-            runner = await serve_app(app, node_addr['host'], node_addr['port'], logger)
-            while True:
-                await asyncio.sleep(3600)
+        pass
     except asyncio.CancelledError:
         logger.info("Shutdown signal received.")
     except Exception:

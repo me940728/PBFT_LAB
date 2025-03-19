@@ -1,6 +1,7 @@
 protocol: pbft
 f: 1
 k: 4
+g: 20
 drones:
 - host: localhost
   port: 20001

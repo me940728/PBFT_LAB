@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-랜덤 PBFT 합의 시뮬레이션 코드 (랜덤 클러스터링 적용)
-- 클라이언트는 드론(클라이언트를 제외한)들을 무작위로 k개의 클러스터로 분할합니다.
-- 각 클러스터에서 클라이언트와 가장 가까운 드론을 클러스터 매니저로, 매니저를 제외한 드론 중 클러스터 센터(위도, 경도, 고도의 평균)와 가장 가까운 드론을 클러스터 리더로 선정합니다.
+LLAPBFT 합의 시뮬레이션 코드 (랜덤 클러스터링 적용)
+- 클라이언트는 드론 위치(클라이언트를 제외한)를 무작위로 k개의 클러스터로 분할하고,
+  각 클러스터에서 클라이언트와의 거리는 고려하지 않고, 클러스터 내 드론들 중 임의로 매니저 드론을 선출하며,
+  매니저 드론을 제외한 클러스터 구성원 중 임의로 리더 드론을 선출합니다.
 - 클라이언트는 클러스터 매니저에게 PRE-REQUEST 메시지를 전송합니다.
-- 클러스터 매니저는 클라이언트로부터 PRE-REQUEST 메시지를 수신하면, 이를 클러스터 리더에게 REQUEST 메시지로 전달합니다.
+- 클러스터 매니저는 클라이언트로부터 PRE-REQUEST 메시지를 수신한 후, 이를 클러스터 리더에게 REQUEST 메시지로 전달합니다.
 - 클러스터 리더는 클러스터 내(매니저 제외) 팔로워들에게 PRE-PREPARE 메시지를 브로드캐스트하고,
   이후 PREPARE 및 COMMIT 단계를 진행한 후 클러스터 매니저에게 PRE-REPLY 메시지를 전송합니다.
 - 클러스터 매니저는 클러스터 노드(리더 포함)로부터 f+1개의 PRE-REPLY 메시지를 수신하면 최종 REPLY를 클라이언트에게 전송합니다.
 - 클러스터 매니저와 클라이언트 사이의 거리가 300m 이상이거나 클러스터 크기가 3f+1 미만이면 해당 클러스터는 합의에서 제외됩니다.
 - 전송 시 simulate_delay가 적용되며, 클러스터링 정보는 별도의 로그 파일(clustering.log)에 기록됩니다.
+- 워밍업 라운드를 포함하여 내부 캐시 및 리소스를 초기화함으로써 정확한 성능 측정을 목표로 합니다.
 """
 
 import asyncio
@@ -22,14 +24,9 @@ import os
 import yaml
 import json
 import sys
+import random  # 랜덤 클러스터링을 위해 추가
 from common import calculate_distance, simulate_delay
-import random
 import numpy as np
-try:
-    from sklearn.cluster import KMeans
-except ImportError:
-    print("scikit-learn is required. Please install it and run again.")
-    sys.exit(1)
 
 if sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -126,19 +123,18 @@ class Status:
         return len(self.prereply_msgs) >= (self.f + 1)
 
 ##########################################################################
-# 랜덤 PBFT 클라이언트 클래스
+# LLAPBFT 클라이언트 클래스 (랜덤 클러스터링 방식)
 ##########################################################################
-class RandomLLAPBFTClient:
+class LLAPBFTClient:
     def __init__(self, config: dict, logger: logging.Logger, bandwidth_file: str = None):
         self.config = config
         self.logger = logger
-        # 클라이언트는 port가 20001인 드론
+        # 클라이언트는 포트 20001인 드론으로 지정
         self.client = next(d for d in config['drones'] if d['port'] == 20001)
         # 클라이언트를 제외한 모든 드론
         self.drones = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
         self.k = config.get('k', 1)
-        # TCPConnector를 사용하여 연결 재사용 최적화
         self.session = aiohttp.ClientSession(
             connector=TCPConnector(limit=0, force_close=False),
             timeout=aiohttp.ClientTimeout(total=9999)
@@ -150,23 +146,18 @@ class RandomLLAPBFTClient:
         self.reply_condition = asyncio.Condition()
         # 클러스터링 로그 설정
         self.cluster_logger = setup_logging("Clustering", "clustering.log")
-        # 랜덤 클러스터링 수행 (무작위로 클러스터 할당)
-        self.clusters = self.perform_random_clustering()
-        self.total_rounds = 10 # 라운드 수
+        # 랜덤 클러스터링 수행: 클러스터 및 매니저, 리더 선출
+        self.clusters = self.perform_clustering()
+        # 실제 측정 라운드 수
+        self.total_rounds = 100
 
-    # 랜덤 클러스터링 수행 함수
-    def perform_random_clustering(self):
-        """
-        무작위 클러스터링:
-         - 각 드론에 대해 0부터 k-1까지 무작위 클러스터 ID 할당
-         - 할당된 클러스터별로 그룹화 후,
-             * 클러스터 매니저: 클라이언트와의 거리가 가장 짧은 드론 선출.
-             * 클러스터 센터: 클러스터 내 드론들의 위도, 경도, 고도의 평균 계산.
-             * 클러스터 리더: 매니저 제외 후, 클러스터 센터와의 거리가 가장 짧은 드론 선출.
-        """
+    # 랜덤 클러스터링을 수행하여 유효한 클러스터 정보를 생성
+    def perform_clustering(self):
+        # 각 드론에 대해 0부터 k-1 사이의 무작위 클러스터 ID 할당
         drones_copy = self.drones.copy()
         for d in drones_copy:
             d['cluster_id'] = random.randint(0, self.k - 1)
+        # 클러스터 ID별로 드론 그룹화
         clusters_dict = {}
         for d in drones_copy:
             cid = d['cluster_id']
@@ -175,29 +166,22 @@ class RandomLLAPBFTClient:
         for cluster_id, group in clusters_dict.items():
             if not group:
                 continue
-            avg_lat = sum(d['latitude'] for d in group) / len(group)
-            avg_lng = sum(d['longitude'] for d in group) / len(group)
-            avg_alt = sum(d['altitude'] for d in group) / len(group)
-            center = (avg_lat, avg_lng, avg_alt)
-            client_coords = (self.client['latitude'], self.client['longitude'], self.client['altitude'])
-            distances_to_client = [calculate_distance(client_coords, (d['latitude'], d['longitude'], d['altitude'])) for d in group]
-            manager_index = int(np.argmin(distances_to_client))
-            cluster_manager = group[manager_index]
-            remaining = [d for d in group if d != cluster_manager]
+            # 클러스터 매니저: 그룹 내에서 무작위로 선정
+            cluster_manager = random.choice(group)
+            # 클러스터 리더: 매니저 제외한 그룹 내 드론 중 무작위 선정 (없으면 매니저로 대체)
+            remaining = [drone for drone in group if drone != cluster_manager]
             if remaining:
-                distances_to_center = [calculate_distance((d['latitude'], d['longitude'], d['altitude']), center) for d in remaining]
-                leader_index = int(np.argmin(distances_to_center))
-                cluster_leader = remaining[leader_index]
+                cluster_leader = random.choice(remaining)
             else:
                 cluster_leader = cluster_manager
-            cluster_ports = [d['port'] for d in group]
+            cluster_ports = [drone['port'] for drone in group]
             self.cluster_logger.info(f"Random Cluster {cluster_id}: Manager: {cluster_manager['port']}, Leader: {cluster_leader['port']}, Members: {cluster_ports}")
             clusters.append({
                 "cluster_id": cluster_id,
                 "cluster_manager": cluster_manager,
                 "cluster_leader": cluster_leader,
                 "cluster_ports": cluster_ports,
-                "center": center
+                "center": None  # 랜덤 방식에서는 클러스터 센터 계산 생략
             })
         return clusters
 
@@ -206,9 +190,9 @@ class RandomLLAPBFTClient:
         if len(cluster["cluster_ports"]) < (3 * self.f + 1):
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: insufficient drones (required: {3*self.f+1}, current: {len(cluster['cluster_ports'])})")
             return
-        client_coords = (self.client['latitude'], self.client['longitude'], self.client['altitude'])
+        client_coords = (self.client.get('latitude', 0), self.client.get('longitude', 0), self.client.get('altitude', 0))
         manager = cluster["cluster_manager"]
-        manager_coords = (manager['latitude'], manager['longitude'], manager['altitude'])
+        manager_coords = (manager.get('latitude', 0), manager.get('longitude', 0), manager.get('altitude', 0))
         distance = calculate_distance(client_coords, manager_coords)
         if distance >= 300:
             self.logger.info(f"[CLIENT] Excluding Cluster {cluster['cluster_id']}: distance between client and manager ({manager['port']}) is {distance:.2f}m (>= 300m)")
@@ -224,11 +208,11 @@ class RandomLLAPBFTClient:
             "origin": "client"
         }
         url = f"http://{manager['host']}:{manager['port']}/request"
-        self.logger.info(f"[CLIENT] Sending PRE-REQUEST to Cluster Manager {manager['port']} for Random Cluster {cluster['cluster_id']}")
+        self.logger.info(f"[CLIENT] Sending PRE-REQUEST to Cluster Manager {manager['port']} for Cluster {cluster['cluster_id']}")
         self.reply_events[cluster["cluster_id"]] = asyncio.Event()
         await send_with_delay(self.session, self.client, manager, url, data, self.bandwidth_data)
 
-    # 사전 연결을 통해 각 클러스터 매니저와 연결을 미리 확립
+    # 사전 연결: 각 클러스터 매니저와 미리 연결
     async def prewarm_connections(self):
         managers = [cluster["cluster_manager"] for cluster in self.clusters]
         tasks = []
@@ -238,9 +222,9 @@ class RandomLLAPBFTClient:
         await asyncio.gather(*tasks, return_exceptions=True)
         self.logger.info("Prewarm connections completed.")
 
-    # 합의 프로토콜 시작 함수 (워밍업 라운드 포함, 타이밍 측정 재설정)
+    # 합의 프로토콜 시작 (워밍업 라운드 포함)
     async def start_protocol(self, request: web.Request):
-        self.logger.info("Precomputed cluster information available. Starting consensus rounds (Random Clustering)")
+        self.logger.info("[][][][][][]============> /start-protocol request received: Starting consensus rounds")
         # 사전 연결 실행
         await self.prewarm_connections()
         # 워밍업 라운드 실행 (측정에 포함하지 않음)
@@ -300,10 +284,10 @@ class RandomLLAPBFTClient:
             self.logger.exception("Error closing client session.")
 
 ##########################################################################
-# 랜덤 PBFT 노드 클래스 (드론 역할)
+# LLAPBFT 노드 클래스 (드론 역할)
 ##########################################################################
-class RandomLLAPBFTNode:
-    def __init__(self, index: int, config: dict, logger: logging.Logger, bandwidth_file: str = None):
+class LLAPBFTNode:
+    def __init__(self, index: int, config: dict, logger: logging.Logger, bandwidth_filepath: str = None):
         self.index = index
         self.config = config
         self.logger = logger
@@ -313,7 +297,7 @@ class RandomLLAPBFTNode:
             connector=TCPConnector(limit=0, force_close=False),
             timeout=aiohttp.ClientTimeout(total=9999)
         )
-        self.bandwidth_data = load_bandwidth_data(bandwidth_file)
+        self.bandwidth_data = load_bandwidth_data(bandwidth_filepath)
         self.statuses = {}
         self.cluster_info = None  # PRE-REQUEST 수신 시 설정
 
@@ -425,6 +409,7 @@ class RandomLLAPBFTNode:
         if req_id not in self.statuses:
             self.statuses[req_id] = Status(self.f)
         self.statuses[req_id].preprepare_msg = data
+        # 즉시 자신에 대한 PREPARE 메시지 추가 (자체 카운팅)
         self.statuses[req_id].add_prepare({
             "request_id": req_id,
             "data": data.get("data"),
@@ -551,13 +536,13 @@ class RandomLLAPBFTNode:
         try:
             await self.session.close()
         except Exception:
-            self.logger.exception("Error closing client session.")
+            self.logger.exception("Error closing node session.")
 
 ##########################################################################
 # 설정 파일 로드 함수
 ##########################################################################
-def load_config(filepath: str) -> dict:
-    with open(filepath, 'r') as f:
+def load_config(config_filepath: str) -> dict:
+    with open(config_filepath, 'r') as f:
         return yaml.safe_load(f)
 
 ##########################################################################
@@ -581,7 +566,7 @@ async def main():
     args = parser.parse_args()
     config = load_config(args.config)
     if config.get("protocol", "").lower() != "random_pbft":
-        print("Error: Only random_pbft protocol is supported.")
+        print("Error: Only lla_pbft protocol is supported.")
         return
     node = config["drones"][args.index]
     role = "client" if node["port"] == 20001 else "node"
@@ -589,13 +574,13 @@ async def main():
     if role == "client":
         logger = setup_logging("Client", "client.log")
         logger.info(f"{scenario_info} | Role: CLIENT")
-        client = RandomLLAPBFTClient(config, logger, bandwidth_file=args.bandwidth)
+        client = LLAPBFTClient(config, logger, bandwidth_file=args.bandwidth)
         app = web.Application()
         app.add_routes([
             web.post('/reply', client.handle_reply),
-            web.post('/start-protocol', client.start_protocol),
-            web.get('/ping', lambda request: web.json_response({"status": "pong"}))
+            web.post('/start-protocol', client.start_protocol)
         ])
+        app.add_routes([web.get('/ping', lambda request: web.json_response({"status": "pong"}))])
         client_addr = client.client
         runner = await serve_app(app, client_addr['host'], client_addr['port'], logger)
         logger.info("Client: Waiting for /start-protocol trigger (e.g., using curl)")
@@ -604,7 +589,7 @@ async def main():
     else:
         logger = setup_logging(f"Node_{args.index}", f"node_{args.index}.log")
         logger.info(f"Node started: {node['host']}:{node['port']} | index={args.index} | f={config.get('f')}, k={config.get('k')}")
-        node_instance = RandomLLAPBFTNode(args.index, config, logger, bandwidth_file=args.bandwidth)
+        node_instance = LLAPBFTNode(args.index, config, logger, bandwidth_filepath=args.bandwidth)
         app = web.Application()
         app.add_routes([
             web.post('/request', node_instance.handle_request),
