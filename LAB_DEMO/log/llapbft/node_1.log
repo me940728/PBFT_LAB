@@ -1,50 +1,170 @@
-[2025-03-19 08:39:36,311] [INFO] Node started: localhost:30000 | index=1 | f=1, k=2
-[2025-03-19 08:47:32,962] [INFO] Node started: localhost:30000 | index=1 | f=1, k=2
-[2025-03-19 08:47:36,230] [INFO] [CLUSTER MANAGER 30000] PRE-REQUEST received: {'request_id': 1742341656214, 'timestamp': 1742341656.2146392, 'data': 'llapbft_message_1742341656214', 'cluster_id': 1, 'cluster_ports': [30000, 30001, 30002, 30003], 'leader': 30001, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00010044444444444444, 'distance': 172.37871435219859, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,230] [INFO] [CLUSTER MANAGER 30000] Sending REQUEST to Leader 30001
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30003 for req_id 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656214: [30003]
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30001 for req_id 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656214: [30003, 30001]
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] Condition met for req_id 1742341656214 (f+1 messages).
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30000] Sending final REPLY for req_id 1742341656214 to Client 20001.
-[2025-03-19 08:47:36,309] [INFO] [CLUSTER MANAGER 30000] Final REPLY for req_id 1742341656214 sent successfully.
-[2025-03-19 08:47:36,309] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30002 for req_id 1742341656214
-[2025-03-19 08:47:36,309] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656214: [30003, 30001, 30002]
-[2025-03-19 08:47:36,325] [INFO] [CLUSTER MANAGER 30000] PRE-REQUEST received: {'request_id': 1742341656309, 'timestamp': 1742341656.3094046, 'data': 'llapbft_message_1742341656309', 'cluster_id': 1, 'cluster_ports': [30000, 30001, 30002, 30003], 'leader': 30001, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00010044444444444444, 'distance': 172.37871435219859, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,325] [INFO] [CLUSTER MANAGER 30000] Sending REQUEST to Leader 30001
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30002 for req_id 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656309: [30002]
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30003 for req_id 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656309: [30002, 30003]
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] Condition met for req_id 1742341656309 (f+1 messages).
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30000] Sending final REPLY for req_id 1742341656309 to Client 20001.
-[2025-03-19 08:47:36,404] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30001 for req_id 1742341656309
-[2025-03-19 08:47:36,404] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656309: [30002, 30003, 30001]
-[2025-03-19 08:47:36,404] [INFO] [CLUSTER MANAGER 30000] Final REPLY for req_id 1742341656309 sent successfully.
-[2025-03-19 08:47:36,432] [INFO] [CLUSTER MANAGER 30000] PRE-REQUEST received: {'request_id': 1742341656414, 'timestamp': 1742341656.4147444, 'data': 'llapbft_message_1742341656414', 'cluster_id': 1, 'cluster_ports': [30000, 30001, 30002, 30003], 'leader': 30001, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00010044444444444444, 'distance': 172.37871435219859, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,432] [INFO] [CLUSTER MANAGER 30000] Sending REQUEST to Leader 30001
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30001 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656414: [30001]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30003 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656414: [30001, 30003]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Condition met for req_id 1742341656414 (f+1 messages).
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Sending final REPLY for req_id 1742341656414 to Client 20001.
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30002 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656414: [30001, 30003, 30002]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30000] Final REPLY for req_id 1742341656414 sent successfully.
-[2025-03-19 08:47:36,496] [INFO] [CLUSTER MANAGER 30000] PRE-REQUEST received: {'request_id': 1742341656488, 'timestamp': 1742341656.4889226, 'data': 'llapbft_message_1742341656488', 'cluster_id': 1, 'cluster_ports': [30000, 30001, 30002, 30003], 'leader': 30001, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00010044444444444444, 'distance': 172.37871435219859, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,496] [INFO] [CLUSTER MANAGER 30000] Sending REQUEST to Leader 30001
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30003 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656488: [30003]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30002 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656488: [30003, 30002]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Condition met for req_id 1742341656488 (f+1 messages).
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Sending final REPLY for req_id 1742341656488 to Client 20001.
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Received PRE-REPLY from 30001 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] PRE-REPLY senders for req_id 1742341656488: [30003, 30002, 30001]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30000] Final REPLY for req_id 1742341656488 sent successfully.
+[2025-03-20 12:12:12,279] [INFO] Node started: localhost:30000 | index=  1 | f=1, k=4
+[2025-03-20 12:12:23,480] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781104 bit
+[2025-03-20 12:12:23,484] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:23,788] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:23,796] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:23,839] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:23,854] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:23,879] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,006] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:24,022] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:24,158] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:24,170] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778984 bit
+[2025-03-20 12:12:24,170] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:24,196] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:12:24,243] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,245] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:24,368] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:24,388] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:24,558] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,558] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,558] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,605] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:27,087] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:12:27,087] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:27,430] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:27,432] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:27,761] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778984 bit
+[2025-03-20 12:12:27,793] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:27,832] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:28,168] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16778984 bit
+[2025-03-20 12:12:28,205] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778984 bit
+[2025-03-20 12:12:28,452] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778984 bit
+[2025-03-20 12:12:28,502] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:28,559] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:28,660] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16778984 bit
+[2025-03-20 12:12:28,676] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.41 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:28,739] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:28,782] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:28,837] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:28,878] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778984 bit
+[2025-03-20 12:12:28,909] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:28,930] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:28,949] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:35,125] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:12:35,130] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:35,500] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:35,512] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:35,862] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:35,895] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:36,057] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:12:36,089] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:36,117] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:36,554] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:36,592] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:36,619] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:36,629] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:36,694] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:36,748] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:36,780] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:36,833] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:36,855] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:36,886] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:36,902] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:36,923] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:43,124] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781104 bit
+[2025-03-20 12:12:43,130] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:43,523] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:43,535] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778152 bit
+[2025-03-20 12:12:43,904] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:43,939] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:43,976] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:44,076] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:44,108] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:44,518] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:44,636] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:44,651] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.41 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:12:44,718] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,748] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:44,773] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:44,811] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:12:44,840] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:44,884] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,918] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:12:44,938] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,964] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:19:37,118] [INFO] Node started: localhost:30000 | index=  1 | f=1, k=4
+[2025-03-20 12:20:46,313] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:20:46,317] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:20:46,633] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:46,633] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:20:46,679] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:46,695] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:46,726] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:46,854] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:20:46,871] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:46,966] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,005] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,010] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.41 m | Delay: 0.6991s | Size: 16778144 bit
+[2025-03-20 12:20:47,077] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778984 bit
+[2025-03-20 12:20:47,088] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,154] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,227] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:47,389] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,398] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,410] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,416] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,449] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:20:50,008] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:20:50,011] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778152 bit
+[2025-03-20 12:20:50,246] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:50,259] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:20:50,425] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:50,447] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:50,512] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:50,611] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:50,657] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:50,725] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:50,846] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:50,857] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778152 bit
+[2025-03-20 12:20:50,902] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:51,157] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,192] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778984 bit
+[2025-03-20 12:20:51,231] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:51,316] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:51,401] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:51,441] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,467] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,490] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:20:57,889] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:20:57,894] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778152 bit
+[2025-03-20 12:20:58,224] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:58,237] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:20:58,548] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:58,583] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:58,622] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:58,780] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:58,932] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:59,139] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:59,215] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:59,231] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:20:59,296] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:20:59,332] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,428] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:59,486] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:59,529] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:59,580] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,613] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:59,659] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778976 bit
+[2025-03-20 12:20:59,684] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:05,894] [INFO] Phase: PRE-PREPARE | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16781112 bit
+[2025-03-20 12:21:05,898] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:21:06,267] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:06,282] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30000 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:21:06,447] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:06,608] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:06,643] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:21:06,781] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:06,872] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:21:07,100] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30009 | Distance:  128.56 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:07,226] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:21:07,293] [INFO] Phase: PREPARE | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,418] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30033 | Distance:  103.22 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:07,434] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778160 bit
+[2025-03-20 12:21:07,533] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30021 | Distance:  103.41 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:07,560] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30018 | Distance:   17.30 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:21:07,602] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30011 | Distance:   85.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,634] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30026 | Distance:  103.22 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:21:07,659] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30003 | Distance:   55.55 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,680] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30015 | Distance:   27.63 m | Delay: 0.3107s | Size: 16778968 bit
+[2025-03-20 12:21:07,692] [INFO] Phase: COMMIT | Receiver: 30000 | Sender: 30019 | Distance:   70.07 m | Delay: 0.4661s | Size: 16778992 bit

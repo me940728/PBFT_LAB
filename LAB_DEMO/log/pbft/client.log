@@ -6760,3 +6760,13 @@
 [2025-03-19 13:29:56,324] [INFO] [Client] Round 2: 9.9170 seconds임
 [2025-03-19 13:30:06,284] [INFO] [Client] Round 3: 9.9600 seconds임
 [2025-03-19 13:30:06,284] [INFO] [Client] ★★★ CONSENSUS COMPLETED in 29.6660 seconds, Average Round: 9.8887 seconds임
+[2025-03-20 09:55:38,559] [INFO] [Client] PBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-20 09:55:38,590] [INFO] [Client] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-20 09:55:47,047] [INFO] [Client] /start-protocol 입력값: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 09:55:57,716] [INFO] [Client] PBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-20 09:55:57,727] [INFO] [Client] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-20 09:56:06,264] [INFO] [Client] /start-protocol 입력값: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 09:56:27,412] [INFO] [Client] Round 1: 11.2083 seconds
+[2025-03-20 09:56:40,582] [INFO] [Client] Round 2: 11.1570 seconds
+[2025-03-20 09:56:53,677] [INFO] [Client] Round 3: 11.0758 seconds
+[2025-03-20 09:56:55,679] [INFO] [Client] [][][][]===> CONSENSUS COMPLETED in 33.4750 seconds, Average Round: 11.1470 seconds

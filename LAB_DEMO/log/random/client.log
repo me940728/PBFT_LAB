@@ -1,0 +1,134 @@
+[2025-03-20 12:06:05,581] [INFO] Random PBFT scenario: f=1, k=4 | Role: RANDOM CLIENT
+[2025-03-20 12:06:05,597] [INFO] Random client: Waiting for /start-protocol trigger
+[2025-03-20 12:06:18,117] [INFO] /start-protocol input (random): {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 12:06:18,188] [INFO] Random connections pre-warmed.
+[2025-03-20 12:06:18,188] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30036 | Cluster 0 | Distance:  217.76 m | Delay: 1.3983s | Size: 16779464 bit
+[2025-03-20 12:06:18,683] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30036 | Distance:  195.04 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:06:18,834] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30036 | Cluster 0 | Distance:  217.76 m | Delay: 1.3983s | Size: 16779464 bit
+[2025-03-20 12:06:18,847] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30009 | Cluster 1 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779464 bit
+[2025-03-20 12:06:18,861] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30016 | Cluster 2 | Distance:  187.68 m | Delay: 0.9322s | Size: 16779456 bit
+[2025-03-20 12:06:18,867] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30023 | Cluster 3 | Distance:   91.46 m | Delay: 0.4661s | Size: 16779464 bit
+[2025-03-20 12:06:20,394] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30036 | Distance:  195.04 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:06:20,673] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30023 | Distance:  100.59 m | Delay: 0.0000s | Size: 16778056 bit
+[2025-03-20 12:06:20,734] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:20,755] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30016 | Distance:  146.67 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:21,868] [INFO] Random round 1: 3.0513 seconds
+[2025-03-20 12:06:23,874] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30036 | Cluster 0 | Distance:  217.76 m | Delay: 1.3983s | Size: 16779456 bit
+[2025-03-20 12:06:23,888] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30009 | Cluster 1 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779464 bit
+[2025-03-20 12:06:23,902] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30016 | Cluster 2 | Distance:  187.68 m | Delay: 0.9322s | Size: 16779456 bit
+[2025-03-20 12:06:23,916] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30023 | Cluster 3 | Distance:   91.46 m | Delay: 0.4661s | Size: 16779464 bit
+[2025-03-20 12:06:25,461] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30016 | Distance:  146.67 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:25,548] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30036 | Distance:  195.04 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:06:25,662] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30023 | Distance:  100.59 m | Delay: 0.0000s | Size: 16778056 bit
+[2025-03-20 12:06:25,680] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:26,846] [INFO] Random round 2: 2.9758 seconds
+[2025-03-20 12:06:28,849] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30036 | Cluster 0 | Distance:  217.76 m | Delay: 1.3983s | Size: 16779456 bit
+[2025-03-20 12:06:28,865] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30009 | Cluster 1 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779456 bit
+[2025-03-20 12:06:28,865] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30016 | Cluster 2 | Distance:  187.68 m | Delay: 0.9322s | Size: 16779464 bit
+[2025-03-20 12:06:28,881] [INFO] [RANDOM CLIENT] Sending PRE-REQUEST: Manager 30023 | Cluster 3 | Distance:   91.46 m | Delay: 0.4661s | Size: 16779464 bit
+[2025-03-20 12:06:30,333] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30016 | Distance:  146.67 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:30,399] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30036 | Distance:  195.04 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:06:30,517] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30023 | Distance:  100.59 m | Delay: 0.0000s | Size: 16778056 bit
+[2025-03-20 12:06:30,630] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:06:31,844] [INFO] Random round 3: 2.9946 seconds
+[2025-03-20 12:06:33,867] [INFO] ====> Random consensus completed: Total 9.0500 seconds, Average round: 3.0072 seconds
+[2025-03-20 12:16:40,322] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-20 12:16:40,338] [INFO] Client: Waiting for /start-protocol trigger
+[2025-03-20 12:16:48,838] [INFO] /start-protocol 입력값: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 12:16:50,281] [INFO] Prewarm connections completed.
+[2025-03-20 12:16:50,285] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:16:55,916] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:16:55,932] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:16:55,932] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:16:55,948] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:16:55,964] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:17:00,745] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:00,829] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:01,157] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:01,702] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:02,715] [INFO] Round 1: 6.7993 seconds
+[2025-03-20 12:17:04,733] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:04,746] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:17:04,748] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:04,765] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:17:09,536] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:09,691] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:10,013] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:10,535] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:11,560] [INFO] Round 2: 6.8286 seconds
+[2025-03-20 12:17:13,569] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:13,575] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:17:13,584] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:13,603] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:17:18,386] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:18,431] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:18,862] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:19,330] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:20,352] [INFO] Round 3: 6.7836 seconds
+[2025-03-20 12:17:22,370] [INFO] [][][][]===> CONSENSUS COMPLETED in 20.4544 seconds, Average Round: 6.8038 seconds
+[2025-03-20 12:17:25,816] [INFO] /start-protocol 입력값: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 12:17:27,245] [INFO] Prewarm connections completed.
+[2025-03-20 12:17:27,245] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:32,846] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:32,853] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:32,869] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:17:32,877] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779200 bit
+[2025-03-20 12:17:32,885] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:17:37,698] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:37,748] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:38,134] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:38,664] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:39,688] [INFO] Round 1: 6.8348 seconds
+[2025-03-20 12:17:41,699] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:41,717] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:17:41,725] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:41,737] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779200 bit
+[2025-03-20 12:17:46,569] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:46,611] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:47,020] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:47,554] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:48,576] [INFO] Round 2: 6.8767 seconds
+[2025-03-20 12:17:50,598] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30012 for Cluster 0 | Distance:  174.36 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:50,607] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30034 for Cluster 1 | Distance:  122.68 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:17:50,612] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30038 for Cluster 2 | Distance:  187.75 m | Delay: 0.9322s | Size: 16779208 bit
+[2025-03-20 12:17:50,628] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30014 for Cluster 3 | Distance:  206.06 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:17:55,404] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30038 | Distance:  165.12 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:55,504] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30014 | Distance:  160.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:55,929] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30034 | Distance:  154.49 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:17:56,459] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30012 | Distance:  159.67 m | Delay: 0.9321s | Size: 16778056 bit
+[2025-03-20 12:17:57,475] [INFO] Round 3: 6.8813 seconds
+[2025-03-20 12:17:59,502] [INFO] [][][][]===> CONSENSUS COMPLETED in 20.6492 seconds, Average Round: 6.8643 seconds
+[2025-03-20 12:18:52,112] [INFO] LLAPBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-20 12:18:52,132] [INFO] Client: Waiting for /start-protocol trigger
+[2025-03-20 12:19:01,085] [INFO] /start-protocol 입력값: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 12:19:02,511] [INFO] Prewarm connections completed.
+[2025-03-20 12:19:02,511] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30024 for Cluster 0 | Distance:  126.12 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:19:06,712] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30024 | Distance:  138.56 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:06,714] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30024 for Cluster 0 | Distance:  126.12 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:19:06,726] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30033 for Cluster 1 | Distance:  224.05 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:06,726] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30020 for Cluster 2 | Distance:  206.09 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:06,742] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30009 for Cluster 3 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779208 bit
+[2025-03-20 12:19:10,051] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:10,920] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30024 | Distance:  138.56 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:11,946] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30033 | Distance:  198.68 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:19:12,199] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30020 | Distance:  186.29 m | Delay: 0.9321s | Size: 16778040 bit
+[2025-03-20 12:19:13,211] [INFO] Round 1: 6.4971 seconds
+[2025-03-20 12:19:15,219] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30024 for Cluster 0 | Distance:  126.12 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:19:15,219] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30033 for Cluster 1 | Distance:  224.05 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:15,235] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30020 for Cluster 2 | Distance:  206.09 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:15,250] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30009 for Cluster 3 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779208 bit
+[2025-03-20 12:19:18,568] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:19,502] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30024 | Distance:  138.56 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:20,453] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30033 | Distance:  198.68 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:19:20,706] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30020 | Distance:  186.29 m | Delay: 0.9321s | Size: 16778040 bit
+[2025-03-20 12:19:21,719] [INFO] Round 2: 6.5002 seconds
+[2025-03-20 12:19:23,745] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30024 for Cluster 0 | Distance:  126.12 m | Delay: 0.6991s | Size: 16779208 bit
+[2025-03-20 12:19:23,755] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30033 for Cluster 1 | Distance:  224.05 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:23,764] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30020 for Cluster 2 | Distance:  206.09 m | Delay: 1.3983s | Size: 16779208 bit
+[2025-03-20 12:19:23,772] [INFO] [CLIENT] Sending PRE-REQUEST to Manager 30009 for Cluster 3 | Distance:  150.68 m | Delay: 0.0000s | Size: 16779208 bit
+[2025-03-20 12:19:27,155] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30009 | Distance:  110.18 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:27,975] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30024 | Distance:  138.56 m | Delay: 0.6991s | Size: 16778056 bit
+[2025-03-20 12:19:29,129] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30033 | Distance:  198.68 m | Delay: 0.9321s | Size: 16778048 bit
+[2025-03-20 12:19:29,187] [INFO] Phase: REPLY | Receiver: 20001 | Sender: 30020 | Distance:  186.29 m | Delay: 0.9321s | Size: 16778040 bit
+[2025-03-20 12:19:30,201] [INFO] Round 3: 6.4617 seconds
+[2025-03-20 12:19:32,212] [INFO] [][][][]===> CONSENSUS COMPLETED in 19.4972 seconds, Average Round: 6.4863 seconds

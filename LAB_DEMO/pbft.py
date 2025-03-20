@@ -22,6 +22,7 @@ import yaml
 import json
 import sys
 from common import calculate_distance, simulate_delay, dump_message
+import gc
 
 if sys.platform.startswith('win'):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())  # Windows용 이벤트 루프 정책 적용됨
@@ -99,6 +100,7 @@ class ConsensusStatus:
         self.prepare_msgs = []
         self.commit_msgs = []
         self.reply_sent = False
+        self.finished = False  # 합의 완료 여부 플래그['25.3.19 Mem 관리 조치]
     def add_prepare(self, msg: dict):
         self.prepare_msgs.append(msg)
     def add_commit(self, msg: dict):
@@ -113,9 +115,10 @@ class ConsensusStatus:
 ##########################################################################
 class PBFTClient:
     def __init__(self, config: dict, logger: logging.Logger, bw_filepath: str = None):
+        self.sleep_time = 2
         self.config = config
         self.logger = logger
-        # 클라이언트 역할은 port 20001인 드론임
+        # 클라이언트 역할은 port 20001인 드론
         self.client_info = next(d for d in config['drones'] if d['port'] == 20001)
         self.replicas = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
@@ -124,13 +127,21 @@ class PBFTClient:
             timeout=aiohttp.ClientTimeout(total=9999)
         )
         self.bw_data = load_bw_data(bw_filepath)
-        self.total_rounds = 3  # 합의 라운드 수임
+        self.total_rounds = 3  # 합의 라운드 수
         self.reply_events = {}  # {request_id: {"event": asyncio.Event(), "count": int}}
         self.semaphore = asyncio.Semaphore(500)
-        self.m = config.get('m', 1)  # 최종 메시지 크기 (MB 단위임)
+        self.m = config.get('m', 1)  # 최종 메시지 크기 (MB 단위)
+
+    async def cleanup_finished_statuses(self):
+        finished_requests = [req_id for req_id, status in self.statuses.items() if status.finished]
+        for req_id in finished_requests:
+            del self.statuses[req_id]
+        # 필요하면 가비지 컬렉션도 호출
+        import gc
+        gc.collect()
 
     def get_leader(self) -> dict:
-        # 리더는 복제자 중 port가 가장 작은 노드임
+        # 리더는 복제자 중 port가 가장 작은 노드
         return sorted(self.replicas, key=lambda d: d['port'])[0]
 
     async def send_request(self, req_id: int = None, padded_payload: dict = None):
@@ -168,13 +179,10 @@ class PBFTClient:
             await send_with_delay(self.session, self.client_info, leader, url, {"ping": True}, self.bw_data)
 
     async def start_protocol(self, request: web.Request):
-        # 클라이언트 요청에서 위도, 경도, 고도 등의 페이로드를 읽음임
         payload = await request.json()
-        self.logger.info(f"/start-protocol 입력값: {payload}임")
+        self.logger.info(f"/start-protocol 입력값: {payload}")
         await self.prewarm_connections()
-        # 패딩 작업은 합의 측정 시간에 포함되지 않도록 미리 수행함
         padded_payload = dump_message(payload, self.m)
-        # 워밍업 라운드 (실제 측정에 포함되지 않음임)
         dummy_req_id = int(time.time() * 1000)
         await self.send_request(dummy_req_id, padded_payload=padded_payload)
         total_start = time.time()
@@ -186,10 +194,15 @@ class PBFTClient:
             await asyncio.sleep(1)
             duration = time.time() - round_start
             round_durations.append(duration)
-            self.logger.info(f"Round {rnd}: {duration:.4f} seconds임")
-        total_duration = time.time() - total_start
+            self.logger.info(f"Round {rnd}: {duration:.4f} seconds")
+            # 라운드가 종료되면 자원 정리 및 잠시 휴식
+            self.reply_events.clear()
+            gc.collect()
+            await asyncio.sleep(self.sleep_time)  # 라운드 사이 휴식
+        total_sleep = self.total_rounds * self.sleep_time
+        total_duration = (time.time() - total_start) - total_sleep
         avg_duration = sum(round_durations) / len(round_durations)
-        self.logger.info(f"★★★ CONSENSUS COMPLETED in {total_duration:.4f} seconds, Average Round: {avg_duration:.4f} seconds임")
+        self.logger.info(f"[][][][]===> CONSENSUS COMPLETED in {total_duration:.4f} seconds, Average Round: {avg_duration:.4f} seconds")
         fault_nodes = []
         leader_info = self.get_leader()
         leader_coords = (leader_info.get('latitude', 0), leader_info.get('longitude', 0), leader_info.get('altitude', 0))
@@ -208,7 +221,7 @@ class PBFTClient:
         try:
             reply = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_reply임")
+            self.logger.error("Error parsing JSON in handle_reply")
             return web.json_response({"status": "error parsing reply"}, status=400)
         req_id = reply.get("request_id")
         if req_id in self.reply_events:
@@ -241,6 +254,13 @@ class PBFTNode:
         self.bw_data = load_bw_data(bw_filepath)
         self.semaphore = asyncio.Semaphore(500)
 
+    async def cleanup_finished_statuses(self):
+        finished_requests = [req_id for req_id, status in self.statuses.items() if status.finished]
+        for req_id in finished_requests:
+            del self.statuses[req_id]
+        gc.collect()
+        self.logger.info(f"Cleaned up {len(finished_requests)} finished statuses")
+
     def _log_received(self, msg_type: str, req_id: int, sender: int, delay: str, distance: float, msg_size_bits: int):
         # 수신 로그를 고정폭으로 출력함 (sender: 5자리, delay: 문자열 그대로, distance: 7자리(소수점 이하 2자리), 메시지 크기: 7자리)
         self.logger.info(
@@ -272,7 +292,7 @@ class PBFTNode:
         try:
             req_data = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_request임")
+            self.logger.error("Error parsing JSON in handle_request")
             return web.json_response({"status": "error parsing request"}, status=400)
         req_id = req_data.get("request_id")
         self.logger.info(f"Received REQUEST: id:{req_id}")
@@ -292,7 +312,7 @@ class PBFTNode:
         try:
             preprep_data = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_preprepare임")
+            self.logger.error("Error parsing JSON in handle_preprepare")
             return web.json_response({"status": "error parsing preprepare"}, status=400)
         req_id = preprep_data.get("request_id")
         sender = preprep_data.get("leader", 0)
@@ -316,7 +336,7 @@ class PBFTNode:
         try:
             prep_data = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_prepare임")
+            self.logger.error("Error parsing JSON in handle_prepare")
             return web.json_response({"status": "error parsing prepare"}, status=400)
         req_id = prep_data.get("request_id")
         sender = prep_data.get("sender", 0)
@@ -355,7 +375,7 @@ class PBFTNode:
         try:
             commit_data = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_commit임")
+            self.logger.error("Error parsing JSON in handle_commit")
             return web.json_response({"status": "error parsing commit"}, status=400)
         req_id = commit_data.get("request_id")
         sender = commit_data.get("sender", 0)
@@ -368,21 +388,27 @@ class PBFTNode:
         self.statuses[req_id].add_commit(commit_data)
         if self.statuses[req_id].is_committed() and not self.statuses[req_id].reply_sent:
             self.statuses[req_id].reply_sent = True
+            preprepare_data = self.statuses[req_id].preprepare_msg
             reply_msg = {
                 "request_id": req_id,
-                "data": self.statuses[req_id].preprepare_msg.get("data"),
+                "data": preprepare_data.get("data") if preprepare_data else None,
                 "timestamp": time.time(),
                 "sender": self.node_info['port']
             }
             client_info = next(d for d in self.config['drones'] if d['port'] == 20001)
             await self.send_message(client_info, '/reply', reply_msg)
+            self.statuses[req_id].finished = True
+            # 한 라운드가 끝난 후 cleanup 및 지연 처리
+            await self.cleanup_finished_statuses()
+            await asyncio.sleep(2)  # 2초 휴식 (필요에 따라 조정)
         return web.json_response({"status": "COMMIT processed"})
+
 
     async def handle_reply(self, request: web.Request):
         try:
             reply_data = await request.json()
         except Exception:
-            self.logger.error("Error parsing JSON in handle_reply (node)임")
+            self.logger.error("Error parsing JSON in handle_reply (node)")
             return web.json_response({"status": "error parsing reply"}, status=400)
         self.logger.info(f"REPLY received (log): {reply_data}")
         return web.json_response({"status": "REPLY received"})

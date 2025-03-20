@@ -1,30 +1,186 @@
-[2025-03-19 08:39:36,316] [INFO] Node started: localhost:30006 | index=7 | f=1, k=2
-[2025-03-19 08:47:32,962] [INFO] Node started: localhost:30006 | index=7 | f=1, k=2
-[2025-03-19 08:47:36,261] [INFO] [30006] PRE-PREPARE received: {'request_id': 1742341656214, 'data': 'llapbft_message_1742341656214', 'timestamp': 1742341656.246232, 'leader': 30005, 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'cluster_manager': {'host': 'localhost', 'port': 30004, 'latitude': 36.6271122, 'longitude': 127.4599354, 'altitude': 150, 'offset_m': 'lat: 56 m, lng: 127 m, alt: 257 m'}, 'simulated_delay': 5.274074074074074e-05, 'distance': 0.0, 'message_size_bits': 2848}
-[2025-03-19 08:47:36,261] [INFO] [30006] Broadcasting PREPARE: REQUEST 1742341656214
-[2025-03-19 08:47:36,277] [INFO] [30006] PREPARE received from 30007 for REQUEST 1742341656214
-[2025-03-19 08:47:36,277] [INFO] [30006] Broadcasting COMMIT: REQUEST 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [30006] COMMIT received from 30007 for REQUEST 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [30006] COMMIT received from 30005 for REQUEST 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [30006] COMMIT complete. Sending PRE-REPLY: REQUEST 1742341656214 directly to Manager 30004
-[2025-03-19 08:47:36,356] [INFO] [30006] PRE-PREPARE received: {'request_id': 1742341656309, 'data': 'llapbft_message_1742341656309', 'timestamp': 1742341656.340899, 'leader': 30005, 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'cluster_manager': {'host': 'localhost', 'port': 30004, 'latitude': 36.6271122, 'longitude': 127.4599354, 'altitude': 150, 'offset_m': 'lat: 56 m, lng: 127 m, alt: 257 m'}, 'simulated_delay': 5.274074074074074e-05, 'distance': 0.0, 'message_size_bits': 2848}
-[2025-03-19 08:47:36,356] [INFO] [30006] Broadcasting PREPARE: REQUEST 1742341656309
-[2025-03-19 08:47:36,372] [INFO] [30006] PREPARE received from 30007 for REQUEST 1742341656309
-[2025-03-19 08:47:36,372] [INFO] [30006] Broadcasting COMMIT: REQUEST 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [30006] COMMIT received from 30005 for REQUEST 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [30006] COMMIT received from 30007 for REQUEST 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [30006] COMMIT complete. Sending PRE-REPLY: REQUEST 1742341656309 directly to Manager 30004
-[2025-03-19 08:47:36,464] [INFO] [30006] PRE-PREPARE received: {'request_id': 1742341656414, 'data': 'llapbft_message_1742341656414', 'timestamp': 1742341656.4515378, 'leader': 30005, 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'cluster_manager': {'host': 'localhost', 'port': 30004, 'latitude': 36.6271122, 'longitude': 127.4599354, 'altitude': 150, 'offset_m': 'lat: 56 m, lng: 127 m, alt: 257 m'}, 'simulated_delay': 5.288888888888889e-05, 'distance': 0.0, 'message_size_bits': 2856}
-[2025-03-19 08:47:36,464] [INFO] [30006] Broadcasting PREPARE: REQUEST 1742341656414
-[2025-03-19 08:47:36,480] [INFO] [30006] PREPARE received from 30007 for REQUEST 1742341656414
-[2025-03-19 08:47:36,480] [INFO] [30006] Broadcasting COMMIT: REQUEST 1742341656414
-[2025-03-19 08:47:36,480] [INFO] [30006] COMMIT received from 30007 for REQUEST 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [30006] COMMIT received from 30005 for REQUEST 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [30006] COMMIT complete. Sending PRE-REPLY: REQUEST 1742341656414 directly to Manager 30004
-[2025-03-19 08:47:36,527] [INFO] [30006] PRE-PREPARE received: {'request_id': 1742341656488, 'data': 'llapbft_message_1742341656488', 'timestamp': 1742341656.5118284, 'leader': 30005, 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'cluster_manager': {'host': 'localhost', 'port': 30004, 'latitude': 36.6271122, 'longitude': 127.4599354, 'altitude': 150, 'offset_m': 'lat: 56 m, lng: 127 m, alt: 257 m'}, 'simulated_delay': 5.288888888888889e-05, 'distance': 0.0, 'message_size_bits': 2856}
-[2025-03-19 08:47:36,527] [INFO] [30006] Broadcasting PREPARE: REQUEST 1742341656488
-[2025-03-19 08:47:36,543] [INFO] [30006] PREPARE received from 30007 for REQUEST 1742341656488
-[2025-03-19 08:47:36,543] [INFO] [30006] Broadcasting COMMIT: REQUEST 1742341656488
-[2025-03-19 08:47:36,543] [INFO] [30006] COMMIT received from 30007 for REQUEST 1742341656488
-[2025-03-19 08:47:36,543] [INFO] [30006] COMMIT received from 30005 for REQUEST 1742341656488
-[2025-03-19 08:47:36,543] [INFO] [30006] COMMIT complete. Sending PRE-REPLY: REQUEST 1742341656488 directly to Manager 30004
+[2025-03-20 12:12:13,427] [INFO] Node started: localhost:30006 | index=  7 | f=1, k=4
+[2025-03-20 12:12:22,031] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:12:22,036] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:12:24,552] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:24,552] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000]
+[2025-03-20 12:12:24,669] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,669] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021]
+[2025-03-20 12:12:24,669] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,764] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:24,764] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009]
+[2025-03-20 12:12:24,907] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:24,907] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003]
+[2025-03-20 12:12:24,923] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:24,923] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026]
+[2025-03-20 12:12:25,001] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:25,001] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026, 30033]
+[2025-03-20 12:12:25,001] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:25,001] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026, 30033, 30018]
+[2025-03-20 12:12:25,017] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:25,017] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026, 30033, 30018, 30015]
+[2025-03-20 12:12:25,130] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:25,130] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026, 30033, 30018, 30015, 30019]
+[2025-03-20 12:12:25,130] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:25,130] [INFO] PRE-REPLY senders for req_id 1742440341541: [30000, 30021, 30009, 30003, 30026, 30033, 30018, 30015, 30019, 30011]
+[2025-03-20 12:12:25,665] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:12:25,665] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:12:29,010] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:29,012] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021]
+[2025-03-20 12:12:29,035] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:29,035] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003]
+[2025-03-20 12:12:29,044] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:29,083] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:29,083] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009]
+[2025-03-20 12:12:29,099] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:29,099] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000]
+[2025-03-20 12:12:29,114] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:29,114] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033]
+[2025-03-20 12:12:29,146] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:29,146] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033, 30018]
+[2025-03-20 12:12:29,257] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:29,257] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033, 30018, 30015]
+[2025-03-20 12:12:29,272] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:29,272] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033, 30018, 30015, 30026]
+[2025-03-20 12:12:29,336] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:29,336] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033, 30018, 30015, 30026, 30019]
+[2025-03-20 12:12:29,590] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:29,590] [INFO] PRE-REPLY senders for req_id 1742440345176: [30021, 30003, 30009, 30000, 30033, 30018, 30015, 30026, 30019, 30011]
+[2025-03-20 12:12:33,655] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:12:33,669] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:12:36,978] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:36,978] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000]
+[2025-03-20 12:12:37,032] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:37,032] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021]
+[2025-03-20 12:12:37,042] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:37,089] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:12:37,089] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003]
+[2025-03-20 12:12:37,184] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:37,184] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009]
+[2025-03-20 12:12:37,311] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:37,311] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018]
+[2025-03-20 12:12:37,358] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:37,358] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018, 30015]
+[2025-03-20 12:12:37,406] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:37,406] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018, 30015, 30026]
+[2025-03-20 12:12:37,438] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:37,438] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018, 30015, 30026, 30033]
+[2025-03-20 12:12:37,612] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16778984 bit
+[2025-03-20 12:12:37,612] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018, 30015, 30026, 30033, 30019]
+[2025-03-20 12:12:37,612] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778976 bit
+[2025-03-20 12:12:37,612] [INFO] PRE-REPLY senders for req_id 1742440353173: [30000, 30021, 30003, 30009, 30018, 30015, 30026, 30033, 30019, 30011]
+[2025-03-20 12:12:41,674] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:12:41,674] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:12:45,041] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:12:45,041] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000]
+[2025-03-20 12:12:45,131] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:45,131] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021]
+[2025-03-20 12:12:45,135] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:45,178] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:45,178] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003]
+[2025-03-20 12:12:45,208] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:12:45,208] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026]
+[2025-03-20 12:12:45,223] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:45,223] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009]
+[2025-03-20 12:12:45,291] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:45,291] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009, 30033]
+[2025-03-20 12:12:45,308] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:45,308] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009, 30033, 30018]
+[2025-03-20 12:12:45,317] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:45,317] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009, 30033, 30018, 30019]
+[2025-03-20 12:12:45,324] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:12:45,324] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009, 30033, 30018, 30019, 30015]
+[2025-03-20 12:12:45,613] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:12:45,613] [INFO] PRE-REPLY senders for req_id 1742440361184: [30000, 30021, 30003, 30026, 30009, 30033, 30018, 30019, 30015, 30011]
+[2025-03-20 12:19:38,284] [INFO] Node started: localhost:30006 | index=  7 | f=1, k=4
+[2025-03-20 12:20:44,889] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780080 bit
+[2025-03-20 12:20:44,901] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781440 bit
+[2025-03-20 12:20:47,376] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16778984 bit
+[2025-03-20 12:20:47,376] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000]
+[2025-03-20 12:20:47,503] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,503] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021]
+[2025-03-20 12:20:47,507] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,605] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:47,605] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009]
+[2025-03-20 12:20:47,726] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,726] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003]
+[2025-03-20 12:20:47,736] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:47,736] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026]
+[2025-03-20 12:20:47,859] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:47,859] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026, 30033]
+[2025-03-20 12:20:47,968] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:20:47,968] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026, 30033, 30015]
+[2025-03-20 12:20:47,977] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16778984 bit
+[2025-03-20 12:20:47,977] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026, 30033, 30015, 30019]
+[2025-03-20 12:20:47,996] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:47,996] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026, 30033, 30015, 30019, 30018]
+[2025-03-20 12:20:48,002] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:20:48,003] [INFO] PRE-REPLY senders for req_id 1742440844406: [30000, 30021, 30009, 30003, 30026, 30033, 30015, 30019, 30018, 30011]
+[2025-03-20 12:20:48,492] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:20:48,508] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:20:51,299] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16778992 bit
+[2025-03-20 12:20:51,299] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000]
+[2025-03-20 12:20:51,623] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:51,623] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003]
+[2025-03-20 12:20:51,636] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:51,669] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,669] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021]
+[2025-03-20 12:20:51,829] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,829] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009]
+[2025-03-20 12:20:51,903] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:51,903] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033]
+[2025-03-20 12:20:52,027] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:52,027] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033, 30019]
+[2025-03-20 12:20:52,027] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:52,027] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033, 30019, 30018]
+[2025-03-20 12:20:52,073] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:20:52,074] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033, 30019, 30018, 30026]
+[2025-03-20 12:20:52,112] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:52,112] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033, 30019, 30018, 30026, 30015]
+[2025-03-20 12:20:52,339] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:20:52,339] [INFO] PRE-REPLY senders for req_id 1742440848005: [30000, 30003, 30021, 30009, 30033, 30019, 30018, 30026, 30015, 30011]
+[2025-03-20 12:20:56,445] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780088 bit
+[2025-03-20 12:20:56,450] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781448 bit
+[2025-03-20 12:20:59,658] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,659] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021]
+[2025-03-20 12:20:59,693] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:59,694] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000]
+[2025-03-20 12:20:59,702] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:20:59,900] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,900] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009]
+[2025-03-20 12:20:59,909] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:20:59,909] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003]
+[2025-03-20 12:20:59,956] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:20:59,956] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019]
+[2025-03-20 12:21:00,001] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16778984 bit
+[2025-03-20 12:21:00,001] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019, 30018]
+[2025-03-20 12:21:00,090] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:21:00,090] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019, 30018, 30033]
+[2025-03-20 12:21:00,119] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:21:00,119] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019, 30018, 30033, 30015]
+[2025-03-20 12:21:00,186] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:21:00,186] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019, 30018, 30033, 30015, 30026]
+[2025-03-20 12:21:00,281] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778992 bit
+[2025-03-20 12:21:00,281] [INFO] PRE-REPLY senders for req_id 1742440855956: [30021, 30000, 30009, 30003, 30019, 30018, 30033, 30015, 30026, 30011]
+[2025-03-20 12:21:04,424] [INFO] Phase: PRE-REQUEST | Receiver: 30006 | Sender: 20001 | Distance:    0.00 m | Delay: N/A | Size: 16780080 bit
+[2025-03-20 12:21:04,441] [INFO] Phase: REQUEST | Receiver: 30003 | Sender: 20001(FWDR: 30006) | Distance:  121.13 m | Delay: 0.6992s | Size: 16781440 bit
+[2025-03-20 12:21:07,740] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30021 | Distance:   89.73 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,740] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021]
+[2025-03-20 12:21:07,756] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30003 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:07,756] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003]
+[2025-03-20 12:21:07,772] [INFO] Phase: FINAL REPLY | Receiver: 20001 | Sender: 30006 | Distance:  121.13 m | Delay: 0.6991s | Size: 16779000 bit
+[2025-03-20 12:21:07,807] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30000 | Distance:   24.57 m | Delay: 0.3107s | Size: 16779000 bit
+[2025-03-20 12:21:07,807] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000]
+[2025-03-20 12:21:07,926] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30018 | Distance:  161.20 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:21:07,926] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018]
+[2025-03-20 12:21:07,942] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30009 | Distance:   64.58 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:21:07,942] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009]
+[2025-03-20 12:21:07,960] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30019 | Distance:  156.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:21:07,960] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009, 30019]
+[2025-03-20 12:21:08,047] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30015 | Distance:  174.27 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:21:08,047] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009, 30019, 30015]
+[2025-03-20 12:21:08,092] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30033 | Distance:  165.25 m | Delay: 0.9321s | Size: 16779000 bit
+[2025-03-20 12:21:08,092] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009, 30019, 30015, 30033]
+[2025-03-20 12:21:08,112] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30026 | Distance:  108.54 m | Delay: 0.6991s | Size: 16778992 bit
+[2025-03-20 12:21:08,112] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009, 30019, 30015, 30033, 30026]
+[2025-03-20 12:21:08,112] [INFO] Phase: PRE-REPLY | Receiver: 30006 | Sender: 30011 | Distance:  155.97 m | Delay: 0.9321s | Size: 16778984 bit
+[2025-03-20 12:21:08,112] [INFO] PRE-REPLY senders for req_id 1742440863953: [30021, 30003, 30000, 30018, 30009, 30019, 30015, 30033, 30026, 30011]

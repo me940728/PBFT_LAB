@@ -1,50 +1,44 @@
-[2025-03-19 08:39:36,298] [INFO] Node started: localhost:30004 | index=5 | f=1, k=2
-[2025-03-19 08:47:32,962] [INFO] Node started: localhost:30004 | index=5 | f=1, k=2
-[2025-03-19 08:47:36,230] [INFO] [CLUSTER MANAGER 30004] PRE-REQUEST received: {'request_id': 1742341656214, 'timestamp': 1742341656.2146392, 'data': 'llapbft_message_1742341656214', 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'leader': 30005, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00015066666666666668, 'distance': 205.4614834019186, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,230] [INFO] [CLUSTER MANAGER 30004] Sending REQUEST to Leader 30005
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30007 for req_id 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656214: [30007]
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30006 for req_id 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656214: [30007, 30006]
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Condition met for req_id 1742341656214 (f+1 messages).
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Sending final REPLY for req_id 1742341656214 to Client 20001.
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30005 for req_id 1742341656214
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656214: [30007, 30006, 30005]
-[2025-03-19 08:47:36,293] [INFO] [CLUSTER MANAGER 30004] Final REPLY for req_id 1742341656214 sent successfully.
-[2025-03-19 08:47:36,325] [INFO] [CLUSTER MANAGER 30004] PRE-REQUEST received: {'request_id': 1742341656309, 'timestamp': 1742341656.3094046, 'data': 'llapbft_message_1742341656309', 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'leader': 30005, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00015066666666666668, 'distance': 205.4614834019186, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,325] [INFO] [CLUSTER MANAGER 30004] Sending REQUEST to Leader 30005
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30005 for req_id 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656309: [30005]
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30006 for req_id 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656309: [30005, 30006]
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Condition met for req_id 1742341656309 (f+1 messages).
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Sending final REPLY for req_id 1742341656309 to Client 20001.
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30007 for req_id 1742341656309
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656309: [30005, 30006, 30007]
-[2025-03-19 08:47:36,388] [INFO] [CLUSTER MANAGER 30004] Final REPLY for req_id 1742341656309 sent successfully.
-[2025-03-19 08:47:36,432] [INFO] [CLUSTER MANAGER 30004] PRE-REQUEST received: {'request_id': 1742341656414, 'timestamp': 1742341656.4147444, 'data': 'llapbft_message_1742341656414', 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'leader': 30005, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00015066666666666668, 'distance': 205.4614834019186, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,432] [INFO] [CLUSTER MANAGER 30004] Sending REQUEST to Leader 30005
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30007 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656414: [30007]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30006 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656414: [30007, 30006]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Condition met for req_id 1742341656414 (f+1 messages).
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Sending final REPLY for req_id 1742341656414 to Client 20001.
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30005 for req_id 1742341656414
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656414: [30007, 30006, 30005]
-[2025-03-19 08:47:36,488] [INFO] [CLUSTER MANAGER 30004] Final REPLY for req_id 1742341656414 sent successfully.
-[2025-03-19 08:47:36,496] [INFO] [CLUSTER MANAGER 30004] PRE-REQUEST received: {'request_id': 1742341656488, 'timestamp': 1742341656.4889226, 'data': 'llapbft_message_1742341656488', 'cluster_id': 0, 'cluster_ports': [30004, 30005, 30006, 30007], 'leader': 30005, 'client_port': 20001, 'origin': 'client', 'simulated_delay': 0.00015066666666666668, 'distance': 205.4614834019186, 'message_size_bits': 1808}
-[2025-03-19 08:47:36,496] [INFO] [CLUSTER MANAGER 30004] Sending REQUEST to Leader 30005
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30005 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656488: [30005]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30007 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656488: [30005, 30007]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Condition met for req_id 1742341656488 (f+1 messages).
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Client found: {'host': 'localhost', 'port': 20001, 'latitude': 36.6266, 'longitude': 127.4585, 'altitude': 0}
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Sending final REPLY for req_id 1742341656488 to Client 20001.
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Received PRE-REPLY from 30006 for req_id 1742341656488
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] PRE-REPLY senders for req_id 1742341656488: [30005, 30007, 30006]
-[2025-03-19 08:47:36,548] [INFO] [CLUSTER MANAGER 30004] Final REPLY for req_id 1742341656488 sent successfully.
+[2025-03-20 12:12:13,027] [INFO] Node started: localhost:30004 | index=  5 | f=1, k=4
+[2025-03-20 12:12:27,141] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780744 bit
+[2025-03-20 12:12:27,157] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:27,996] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:28,016] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778152 bit
+[2025-03-20 12:12:28,444] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:28,837] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:28,850] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:35,162] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780744 bit
+[2025-03-20 12:12:35,170] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778144 bit
+[2025-03-20 12:12:35,974] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:12:35,992] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:36,454] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:36,809] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:36,817] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:43,209] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780736 bit
+[2025-03-20 12:12:43,210] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:44,050] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,062] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:12:44,454] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,856] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:12:44,867] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:19:37,886] [INFO] Node started: localhost:30004 | index=  5 | f=1, k=4
+[2025-03-20 12:20:50,001] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780744 bit
+[2025-03-20 12:20:50,009] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778152 bit
+[2025-03-20 12:20:50,805] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:50,813] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:20:51,225] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,636] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:51,645] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:20:57,961] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780736 bit
+[2025-03-20 12:20:57,969] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:20:58,770] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778984 bit
+[2025-03-20 12:20:58,782] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:20:59,147] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,586] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:20:59,592] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:21:05,931] [INFO] Phase: PRE-PREPARE | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16780744 bit
+[2025-03-20 12:21:05,931] [INFO] Phase: PREPARE-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:21:06,739] [INFO] Phase: PREPARE | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:06,762] [INFO] Phase: COMMIT-BROADCAST | Receiver: ALL | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
+[2025-03-20 12:21:07,113] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30020 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,571] [INFO] Phase: COMMIT | Receiver: 30004 | Sender: 30038 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778992 bit
+[2025-03-20 12:21:07,578] [INFO] Phase: PRE-REPLY | Receiver: 30012 | Sender: 30004 | Distance:   58.30 m | Delay: 0.4661s | Size: 16778160 bit
