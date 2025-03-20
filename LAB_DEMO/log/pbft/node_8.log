@@ -17270,3 +17270,266 @@
 [2025-03-20 09:56:50,637] [INFO] [Node_  8] Received COMMIT: id:1742432202601, from:30031, delay:0.6991s, distance:0111.71m (Euclidean), mes_siz_bit:16778848
 [2025-03-20 09:56:50,637] [INFO] [Node_  8] Received COMMIT: id:1742432202601, from:30033, delay:0.6991s, distance:0133.37m (Euclidean), mes_siz_bit:16778864
 [2025-03-20 09:56:50,637] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:41:36,242] [INFO] [Node_  8] Starting node at localhost:30007 | index=  8 | f=1, k=4
+[2025-03-20 12:42:01,907] [INFO] [Node_  8] Received PRE-PREPARE: id:1742442121036, from:30000, delay:1.3982s, distance:0207.54m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:14,213] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30020, delay:0.6991s, distance:0124.76m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:14,229] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30018, delay:1.3982s, distance:0201.99m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,263] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30010, delay:0.6991s, distance:0138.28m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:14,279] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30083, delay:0.9322s, distance:0163.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,299] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30022, delay:0.9322s, distance:0196.42m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,312] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30021, delay:0.9322s, distance:0181.40m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,330] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30081, delay:0.6991s, distance:0116.52m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,348] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30079, delay:0.9322s, distance:0172.46m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:14,364] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30084, delay:0.6991s, distance:0109.85m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:14,378] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30011, delay:0.6991s, distance:0118.43m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:14,391] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30023, delay:0.9322s, distance:0165.11m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:17,628] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30041, delay:1.3982s, distance:0202.17m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:17,648] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30080, delay:1.3982s, distance:0206.98m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:17,661] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30085, delay:0.6991s, distance:0148.82m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:17,677] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30082, delay:0.9322s, distance:0169.39m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:23,566] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30030, delay:0.6991s, distance:0118.72m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:23,631] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30086, delay:0.6991s, distance:0136.94m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:23,693] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30002, delay:0.4661s, distance:0094.64m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:23,728] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30091, delay:1.3982s, distance:0210.48m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:23,776] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30039, delay:0.9322s, distance:0163.19m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:24,234] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30048, delay:0.9322s, distance:0195.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:24,269] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30115, delay:0.9322s, distance:0155.15m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:24,316] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30037, delay:0.9322s, distance:0170.16m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:25,101] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30009, delay:0.9322s, distance:0179.72m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:25,423] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30096, delay:0.3107s, distance:0029.35m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:25,788] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30114, delay:0.9322s, distance:0188.27m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:26,636] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30117, delay:0.9322s, distance:0163.53m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:26,897] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30109, delay:0.6991s, distance:0113.01m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,102] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30050, delay:0.6991s, distance:0127.95m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,160] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30057, delay:0.9322s, distance:0169.85m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:27,192] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30105, delay:0.3107s, distance:0045.49m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,221] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30058, delay:0.6991s, distance:0106.43m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:27,262] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30045, delay:0.9322s, distance:0156.40m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,300] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30093, delay:0.9322s, distance:0163.63m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,355] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30033, delay:0.9322s, distance:0183.46m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,381] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30119, delay:0.6991s, distance:0147.73m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,408] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30066, delay:1.3982s, distance:0214.61m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,446] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30113, delay:0.9322s, distance:0171.36m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,479] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30004, delay:0.9322s, distance:0185.32m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,740] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30075, delay:0.9322s, distance:0155.71m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,778] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30070, delay:0.9322s, distance:0160.98m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:27,906] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30106, delay:0.6991s, distance:0103.31m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:27,941] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30042, delay:0.9322s, distance:0181.56m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:27,969] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30060, delay:0.9322s, distance:0161.11m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:27,990] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30108, delay:0.6991s, distance:0136.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,016] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30019, delay:1.3982s, distance:0205.69m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,038] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30100, delay:0.9322s, distance:0159.88m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,469] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30014, delay:0.0000s, distance:0150.55m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,488] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30051, delay:0.9322s, distance:0184.23m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,506] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30049, delay:1.3982s, distance:0208.43m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,541] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30107, delay:0.0000s, distance:0150.52m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,562] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30067, delay:1.3982s, distance:0224.83m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:28,587] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30059, delay:0.6991s, distance:0135.33m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,617] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30102, delay:0.6991s, distance:0142.56m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,643] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30003, delay:0.6991s, distance:0140.63m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:28,664] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30001, delay:0.9322s, distance:0182.53m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,706] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30055, delay:0.6991s, distance:0143.92m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,755] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30031, delay:0.6991s, distance:0145.83m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:28,793] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30025, delay:0.4661s, distance:0080.83m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,819] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30005, delay:0.4661s, distance:0063.28m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:28,844] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30013, delay:0.6991s, distance:0145.94m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,868] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30065, delay:0.9322s, distance:0152.72m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,894] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30012, delay:0.6991s, distance:0131.81m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:28,939] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30074, delay:0.9322s, distance:0166.37m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:28,962] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30036, delay:0.6991s, distance:0118.95m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:28,996] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30073, delay:1.3982s, distance:0233.15m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,018] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30032, delay:0.9322s, distance:0156.01m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,053] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30118, delay:0.9322s, distance:0152.62m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,087] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30089, delay:0.6991s, distance:0146.64m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:29,109] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30111, delay:0.9322s, distance:0166.06m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,132] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30034, delay:0.6991s, distance:0145.86m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,164] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30101, delay:0.6991s, distance:0124.24m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,189] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30056, delay:0.9322s, distance:0186.02m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,213] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30022, delay:0.9322s, distance:0196.42m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,261] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30084, delay:0.6991s, distance:0109.85m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,318] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30018, delay:1.3982s, distance:0201.99m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,344] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30104, delay:0.9322s, distance:0193.88m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,377] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30076, delay:0.9322s, distance:0175.74m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,405] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30087, delay:0.9322s, distance:0159.90m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,430] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30006, delay:0.4661s, distance:0095.93m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,452] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30015, delay:0.9322s, distance:0154.74m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,472] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30088, delay:0.9322s, distance:0174.67m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,492] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30043, delay:0.9322s, distance:0192.37m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,516] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30040, delay:0.4661s, distance:0053.49m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,537] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30099, delay:0.9322s, distance:0191.70m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,561] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30027, delay:1.3982s, distance:0203.32m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,585] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30068, delay:0.6991s, distance:0141.01m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:29,610] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30024, delay:0.9322s, distance:0163.28m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:29,632] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30077, delay:1.3982s, distance:0205.66m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,656] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30072, delay:0.6991s, distance:0144.22m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,680] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30047, delay:1.3982s, distance:0207.81m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,703] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30112, delay:0.9322s, distance:0185.53m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,723] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30116, delay:1.3982s, distance:0215.21m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,743] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30008, delay:0.9322s, distance:0187.89m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:29,765] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30095, delay:0.6991s, distance:0134.50m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,790] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30110, delay:0.6991s, distance:0124.77m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:29,810] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30090, delay:0.6991s, distance:0128.58m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:30,842] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30096, delay:0.3107s, distance:0029.35m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:30,876] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30048, delay:0.9322s, distance:0195.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:30,929] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30026, delay:0.3107s, distance:0046.66m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:30,955] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30097, delay:0.3107s, distance:0014.05m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:30,975] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30103, delay:0.6991s, distance:0149.39m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:30,996] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30062, delay:0.6991s, distance:0144.18m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,024] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30053, delay:0.6991s, distance:0138.58m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:31,062] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30029, delay:0.6991s, distance:0130.26m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,097] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30052, delay:0.6991s, distance:0112.14m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:31,119] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30064, delay:0.6991s, distance:0110.83m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,150] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30094, delay:0.9322s, distance:0160.33m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,170] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30061, delay:0.4661s, distance:0097.28m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,194] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30044, delay:0.9322s, distance:0176.32m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,218] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30071, delay:0.4661s, distance:0088.14m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,244] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30028, delay:0.6991s, distance:0121.07m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:31,267] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30098, delay:0.3107s, distance:0044.37m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:31,289] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30092, delay:0.6991s, distance:0139.49m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:31,323] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30063, delay:0.4661s, distance:0078.27m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:31,530] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30081, delay:0.6991s, distance:0116.52m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:31,744] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30083, delay:0.9322s, distance:0163.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:32,467] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30020, delay:0.6991s, distance:0124.76m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:33,867] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30035, delay:0.6991s, distance:0118.43m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:34,715] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30038, delay:0.9322s, distance:0165.38m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:34,978] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30017, delay:0.9322s, distance:0169.26m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:35,372] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30054, delay:0.9322s, distance:0157.05m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:35,499] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30079, delay:0.9322s, distance:0172.46m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,386] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30010, delay:0.6991s, distance:0138.28m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:36,465] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30016, delay:0.4661s, distance:0083.03m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,495] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30078, delay:0.9322s, distance:0181.65m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,517] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30085, delay:0.6991s, distance:0148.82m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,536] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30113, delay:0.9322s, distance:0171.36m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,604] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30011, delay:0.6991s, distance:0118.43m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:36,623] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30109, delay:0.6991s, distance:0113.01m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,657] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30069, delay:0.9322s, distance:0182.10m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,690] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30117, delay:0.9322s, distance:0163.53m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:36,767] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30080, delay:1.3982s, distance:0206.98m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,789] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30093, delay:0.9322s, distance:0163.63m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,812] [INFO] [Node_  8] Received PREPARE: id:1742442121036, from:30046, delay:0.4661s, distance:0067.26m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,835] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30037, delay:0.9322s, distance:0170.16m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:36,869] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30115, delay:0.9322s, distance:0155.15m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,894] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30033, delay:0.9322s, distance:0183.46m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,910] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30021, delay:0.9322s, distance:0181.40m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,928] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30091, delay:1.3982s, distance:0210.48m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:36,953] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30114, delay:0.9322s, distance:0188.27m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:36,975] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30002, delay:0.4661s, distance:0094.64m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:36,998] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30057, delay:0.9322s, distance:0169.85m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:37,056] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30030, delay:0.6991s, distance:0118.72m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:37,077] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30082, delay:0.9322s, distance:0169.39m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:37,093] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30009, delay:0.9322s, distance:0179.72m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:37,109] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30086, delay:0.6991s, distance:0136.94m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:37,135] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30041, delay:1.3982s, distance:0202.17m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:37,153] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30105, delay:0.3107s, distance:0045.49m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:37,170] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30023, delay:0.9322s, distance:0165.11m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:37,188] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30039, delay:0.9322s, distance:0163.19m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:37,386] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30110, delay:0.6991s, distance:0124.77m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:37,714] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30066, delay:1.3982s, distance:0214.61m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:37,917] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30025, delay:0.4661s, distance:0080.83m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:39,013] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30100, delay:0.9322s, distance:0159.88m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:39,349] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30050, delay:0.6991s, distance:0127.95m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:39,535] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30051, delay:0.9322s, distance:0184.23m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:39,925] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30015, delay:0.9322s, distance:0154.74m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:40,346] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30031, delay:0.6991s, distance:0145.83m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:41,761] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:41,875] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30060, delay:0.9322s, distance:0161.11m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:41,893] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30063, delay:0.4661s, distance:0078.27m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:41,909] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30119, delay:0.6991s, distance:0147.73m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:41,925] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30047, delay:1.3982s, distance:0207.81m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:42,548] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:43,236] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30040, delay:0.4661s, distance:0053.49m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:43,260] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30067, delay:1.3982s, distance:0224.83m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:43,284] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30003, delay:0.6991s, distance:0140.63m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:43,313] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30076, delay:0.9322s, distance:0175.74m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:43,398] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:43,462] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30058, delay:0.6991s, distance:0106.43m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:43,492] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30107, delay:0.0000s, distance:0150.52m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:43,515] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30094, delay:0.9322s, distance:0160.33m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:43,539] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30118, delay:0.9322s, distance:0152.62m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:43,604] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30027, delay:1.3982s, distance:0203.32m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:43,640] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30008, delay:0.9322s, distance:0187.89m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:43,668] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30054, delay:0.9322s, distance:0157.05m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:43,802] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30102, delay:0.6991s, distance:0142.56m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:43,890] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30014, delay:0.0000s, distance:0150.55m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:44,103] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:44,184] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30055, delay:0.6991s, distance:0143.92m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:44,200] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30101, delay:0.6991s, distance:0124.24m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:44,222] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30017, delay:0.9322s, distance:0169.26m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:44,414] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:44,987] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30075, delay:0.9322s, distance:0155.71m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:45,153] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30006, delay:0.4661s, distance:0095.93m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:45,175] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30042, delay:0.9322s, distance:0181.56m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:45,347] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:45,442] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30049, delay:1.3982s, distance:0208.43m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:45,458] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30005, delay:0.4661s, distance:0063.28m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:45,472] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30036, delay:0.6991s, distance:0118.95m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:45,567] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:45,638] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30038, delay:0.9322s, distance:0165.38m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:45,662] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30064, delay:0.6991s, distance:0110.83m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:46,167] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30044, delay:0.9322s, distance:0176.32m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:46,402] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:46,582] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30016, delay:0.4661s, distance:0083.03m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:47,632] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30004, delay:0.9322s, distance:0185.32m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:47,685] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30045, delay:0.9322s, distance:0156.40m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:47,767] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30069, delay:0.9322s, distance:0182.10m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:47,787] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30068, delay:0.6991s, distance:0141.01m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:47,873] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:47,891] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30088, delay:0.9322s, distance:0174.67m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:48,210] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30001, delay:0.9322s, distance:0182.53m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:48,391] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30089, delay:0.6991s, distance:0146.64m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:48,463] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:49,001] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30097, delay:0.3107s, distance:0014.05m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:50,240] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30053, delay:0.6991s, distance:0138.58m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:50,254] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30059, delay:0.6991s, distance:0135.33m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:50,278] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30070, delay:0.9322s, distance:0160.98m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:50,303] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30043, delay:0.9322s, distance:0192.37m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:50,382] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:50,404] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30073, delay:1.3982s, distance:0233.15m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:50,487] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30052, delay:0.6991s, distance:0112.14m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:50,682] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30032, delay:0.9322s, distance:0156.01m (Euclidean), mes_siz_bit:16778848
+[2025-03-20 12:42:50,777] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:50,818] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30077, delay:1.3982s, distance:0205.66m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:50,846] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30087, delay:0.9322s, distance:0159.90m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:51,081] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30046, delay:0.4661s, distance:0067.26m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:51,172] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:51,375] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30028, delay:0.6991s, distance:0121.07m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:52,000] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30092, delay:0.6991s, distance:0139.49m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:52,122] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30065, delay:0.9322s, distance:0152.72m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:52,240] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:52,272] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30074, delay:0.9322s, distance:0166.37m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:52,835] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30061, delay:0.4661s, distance:0097.28m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:53,277] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30035, delay:0.6991s, distance:0118.43m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:53,396] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:53,451] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30072, delay:0.6991s, distance:0144.22m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:53,460] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30106, delay:0.6991s, distance:0103.31m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:53,527] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30090, delay:0.6991s, distance:0128.58m (Euclidean), mes_siz_bit:16778840
+[2025-03-20 12:42:53,590] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:54,799] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30108, delay:0.6991s, distance:0136.80m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:55,578] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30078, delay:0.9322s, distance:0181.65m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:56,300] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30024, delay:0.9322s, distance:0163.28m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:56,382] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:56,734] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30104, delay:0.9322s, distance:0193.88m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:56,769] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30000, delay:1.3982s, distance:0207.54m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:57,466] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30019, delay:1.3982s, distance:0205.69m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:42:57,550] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:58,138] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30116, delay:1.3982s, distance:0215.21m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:58,428] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30026, delay:0.3107s, distance:0046.66m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:58,776] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30095, delay:0.6991s, distance:0134.50m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:58,849] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:42:59,485] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30062, delay:0.6991s, distance:0144.18m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:42:59,936] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30071, delay:0.4661s, distance:0088.14m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:02,957] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30098, delay:0.3107s, distance:0044.37m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:03,013] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:43:03,459] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30111, delay:0.9322s, distance:0166.06m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:43:03,522] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30034, delay:0.6991s, distance:0145.86m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:03,588] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30099, delay:0.9322s, distance:0191.70m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:03,633] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:43:03,667] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30103, delay:0.6991s, distance:0149.39m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:43:05,840] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30012, delay:0.6991s, distance:0131.81m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:06,440] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30029, delay:0.6991s, distance:0130.26m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:06,470] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:43:06,542] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30056, delay:0.9322s, distance:0186.02m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:43:06,854] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30112, delay:0.9322s, distance:0185.53m (Euclidean), mes_siz_bit:16778856
+[2025-03-20 12:43:18,205] [INFO] [Node_  8] Received COMMIT: id:1742442121036, from:30013, delay:0.6991s, distance:0145.94m (Euclidean), mes_siz_bit:16778864
+[2025-03-20 12:43:18,321] [INFO] [Node_  8] Cleaned up 1 finished statuses
+[2025-03-20 12:43:22,473] [INFO] [Node_  8] Received PRE-PREPARE: id:1742442201625, from:30000, delay:1.3982s, distance:0207.54m (Euclidean), mes_siz_bit:16778864

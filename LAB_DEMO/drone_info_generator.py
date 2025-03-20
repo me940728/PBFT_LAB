@@ -3,7 +3,7 @@
 drone_info_generator.py
 파일 설명:
 1. 클라이언트 정보를 첫번째 포트로 사용하고, 나머지 replica(Follwer) 드론은 랜덤 offset (최소 MIN_OFFSET_M 이상, 최대 제한 값)을 적용하여 생성함.
-2. YAML 파일에는 "protocol", "f", "k", "drones" 항목만 포함되며,
+2. YAML 파일에는 "protocol", "f", "k", "g", "m", "drones" 항목만 포함되며,
    - drones 리스트의 첫번째 항목은 클라이언트 정보 (포트: 20001)
    - 이후 replica(Follower) 드론 정보에는 "offset_m" 속성이 포함되어 위도/경도/고도의 오프셋(미터 단위, 고도는 정수로 절삭) 값을 표시함.
 3. 전체 드론 수는 TOTAL_DRONES (클라이언트를 포함)로 지정 만약 80이면 79개 드론이 생성되는 것임 1개는 클라이언트
@@ -16,10 +16,14 @@ import os
 import yaml
 
 # --- 설정 파라미터 ---
-TOTAL_DRONES = 201     # 클라이언트를 포함한 전체 드론 수
+TOTAL_DRONES = 101     # 클라이언트를 포함한 전체 드론 수
 K = 4                  # 군집 내 드론은 3f+1개 이상이어야 함
-PROTOCOL = "pbft"   # 프로토콜: "llapbft" || "pbft" || "random"
-F_VALUE = 1           # 허용되는 악의적 드론 수
+PROTOCOL = "pbft"      # 프로토콜: "llapbft" || "pbft" || "random"
+F_VALUE = 1            # 허용되는 악의적 드론 수
+
+# 추가: g와 m 값
+G_VALUE = 20           # 그룹 수 사용 X g
+M_VALUE = 2            # 메시지 크기 MB 단위(dump : 0으로 패딩 되어 메시지 크기를 키움)
 
 CLIENT_INFO = {
     "host": "localhost",
@@ -114,11 +118,13 @@ def main():
     # drones 리스트 생성: 첫번째 항목은 클라이언트 정보, 이후 replica 드론들
     drones = generate_drones(TOTAL_DRONES, CLIENT_INFO)
     
-    # YAML 데이터 구성 (clients 항목 없이 protocol, f, k, drones만 포함)
+    # YAML 데이터 구성: protocol, f, k, g, m, drones 항목만 포함
     data = {
         "protocol": PROTOCOL,
         "f": F_VALUE,
         "k": K,
+        "g": G_VALUE,
+        "m": M_VALUE,
         "drones": drones
     }
     

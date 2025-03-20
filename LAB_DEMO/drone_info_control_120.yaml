@@ -1,4 +1,4 @@
-protocol: lla_pbft
+protocol: pbft
 f: 1
 k: 4
 g: 30

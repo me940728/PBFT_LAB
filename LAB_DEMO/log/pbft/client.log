@@ -6770,3 +6770,8 @@
 [2025-03-20 09:56:40,582] [INFO] [Client] Round 2: 11.1570 seconds
 [2025-03-20 09:56:53,677] [INFO] [Client] Round 3: 11.0758 seconds
 [2025-03-20 09:56:55,679] [INFO] [Client] [][][][]===> CONSENSUS COMPLETED in 33.4750 seconds, Average Round: 11.1470 seconds
+[2025-03-20 12:41:34,645] [INFO] [Client] PBFT Scenario: f=1, k=4 | Role: CLIENT
+[2025-03-20 12:41:34,645] [INFO] [Client] Waiting for /start-protocol trigger (use curl to start consensus)...
+[2025-03-20 12:42:01,020] [INFO] [Client] /start-protocol ÀÔ·Â°ª: {'latitude': 36.6261519, 'longitude': 127.4590123, 'altitude': 0}
+[2025-03-20 12:44:14,671] [ERROR] [Client] Error parsing JSON in handle_reply
+[2025-03-20 12:44:21,494] [ERROR] [Client] Error parsing JSON in handle_reply
