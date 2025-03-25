@@ -189,7 +189,8 @@ class LLAPBFTClient:
         self.client = next(d for d in config['drones'] if d['port'] == 20001)
         self.drones = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
-        self.k = config.get('k', 1)
+        #self.k = config.get('k', 1)
+        self.k = 2 #['25.3.25] 최별규 파일이 많은 관계로 코드 레벨에서 해결
         self.padding_mb = config.get("m", 1)
         self.session = aiohttp.ClientSession(
             connector=TCPConnector(limit=0, force_close=False),
@@ -202,7 +203,8 @@ class LLAPBFTClient:
         self.reply_condition = asyncio.Condition()
         self.cluster_logger = setup_logging("Clustering", "clustering.log")
         self.clusters = self.perform_clustering()
-        self.total_rounds = 3
+        #self.total_rounds = config.get('r', 1) # 합의 라운드 수 yaml r 속성
+        self.total_rounds = 1
         self.padded_payload = None
 
     # 이 부분만 변경 클러스터링 방식
@@ -323,9 +325,13 @@ class LLAPBFTClient:
             "status": "protocol completed",
             "total_time": total_duration,
             "round_times": round_durations,
-            "fault_nodes": fault_nodes
+            "fault_nodes": fault_nodes,
+            "protocol": {
+                "name": "random_pbft",
+                "rounds": self.total_rounds,
+                "average_time": avg_duration
+            }
         })
-
     async def handle_reply(self, request: web.Request):
         try:
             data = await request.json()

@@ -3,8 +3,8 @@
 # 드론 설정 YAML 파일 (drone_info_control.yaml)에서 모든 드론의 포트를 추출하여,
 # 해당 포트를 사용 중인 프로세스를 자동으로 종료하는 스크립트입니다.
 
-# 드론 설정 파일
-CONFIG_FILE="drone_info_control_200.yaml"
+# 실행 시 첫 번째 인자로 CONFIG_FILE을 전달, 없으면 기본값 사용
+CONFIG_FILE=${1:-drone_info_control_200.yaml}
 
 # CONFIG_FILE 존재 여부 확인
 if [ ! -f "$CONFIG_FILE" ]; then

@@ -3,10 +3,10 @@
 drone_info_generator.py
 파일 설명:
 1. 클라이언트 정보를 첫번째 포트로 사용하고, 나머지 replica(Follwer) 드론은 랜덤 offset (최소 MIN_OFFSET_M 이상, 최대 제한 값)을 적용하여 생성함.
-2. YAML 파일에는 "protocol", "f", "k", "g", "m", "drones" 항목만 포함되며,
+2. YAML 파일에는 "protocol", "f", "k", "g", "m", "r", "drones" 항목만 포함되며,
    - drones 리스트의 첫번째 항목은 클라이언트 정보 (포트: 20001)
    - 이후 replica(Follower) 드론 정보에는 "offset_m" 속성이 포함되어 위도/경도/고도의 오프셋(미터 단위, 고도는 정수로 절삭) 값을 표시함.
-3. 전체 드론 수는 TOTAL_DRONES (클라이언트를 포함)로 지정 만약 80이면 79개 드론이 생성되는 것임 1개는 클라이언트
+3. 전체 드론 수는 TOTAL_DRONES (클라이언트를 포함)로 지정 (예: 101이면 100개의 replica 드론과 1개의 클라이언트)
 4. 동일한 파일명이 존재하면 drone_info_control_0.yaml, _1.yaml, ... 과 같이 PostFIX 0 > 1 > 2 순차 증가
 """
 
@@ -16,14 +16,26 @@ import os
 import yaml
 
 # --- 설정 파라미터 ---
-TOTAL_DRONES = 101     # 클라이언트를 포함한 전체 드론 수
-K = 4                  # 군집 내 드론은 3f+1개 이상이어야 함
-PROTOCOL = "pbft"      # 프로토콜: "llapbft" || "pbft" || "random"
+PROTOCOL = "pbft"  # 프로토콜: "llapbft" || "pbft" || "random"
 F_VALUE = 1            # 허용되는 악의적 드론 수
+K = 4                  # 군집 내 드론은 3f+1개 이상이어야 함
+TOTAL_DRONES = 21     # 클라이언트를 포함한 전체 드론 수
 
-# 추가: g와 m 값
-G_VALUE = 20           # 그룹 수 사용 X g
-M_VALUE = 2            # 메시지 크기 MB 단위(dump : 0으로 패딩 되어 메시지 크기를 키움)
+# 추가: g, m, r 값
+G_VALUE = 10           # g 값 (예: 그룹 수)
+M_VALUE = 1            # m 값 (메시지 크기 MB 단위; dump: 0으로 패딩되어 메시지 크기를 키움)
+R_VALUE = 2            # 추가로 r 값을 출력
+
+'''
+랜덤 offset 제한 (미터 단위)
+172 x 172 x 172로 유클리드 거리를 산출하면 최악의 경우 299m까지 나옴.
+wifi 대역폭 최대 300m 이내에 들어오도록 설계할 수 있음.
+'''
+MAX_LAT_OFFSET_M = 172    # 위도 최대 300m
+MAX_LNG_OFFSET_M = 172    # 경도 최대 300m
+MAX_ALTITUDE_M   = 172    # 고도 최대 300m
+
+MIN_OFFSET_M = 1  # 오프셋의 최소값 (0보다 큰 값)
 
 CLIENT_INFO = {
     "host": "localhost",
@@ -34,17 +46,6 @@ CLIENT_INFO = {
 }
 
 REPLICA_PORT_START = 30000  # replica 드론의 포트 할당 시작 번호
-
-'''
-랜덤 offset 제한 (미터 단위)
-172 x 172 x 172로 유클리드 거리를 산출하면 최악의 경우 299m까지 나옴
-wifi 대역폭 최대 300m 이내에 들어오도록 설계할 수 있음
-'''
-MAX_LAT_OFFSET_M = 172    # 위도 최대 300m
-MAX_LNG_OFFSET_M = 172    # 경도 최대 300m
-MAX_ALTITUDE_M   = 172    # 고도 최대 300m
-
-MIN_OFFSET_M = 1  # 오프셋의 최소값 (0보다 큰 값)
 
 # --- 헬퍼 함수 ---
 def meters_to_degrees_lat(meters):
@@ -61,9 +62,9 @@ def generate_random_offset(max_m):
 
 def generate_replica_drone(client_info, replica_id):
     """
-    클라이언트 정보를 기준으로 랜덤 오프셋을 적용해 replica 드론 정보를 생성합니다.
-    replica_id는 0부터 시작하며, 드론의 포트는 REPLICA_PORT_START + replica_id로 지정됩니다.
-    생성된 오프셋 값은 "offset_m" 속성으로 저장되며, 고도는 정수로 절삭됩니다.
+    클라이언트 정보를 기준으로 랜덤 오프셋을 적용해 replica 드론 정보를 생성
+    replica_id는 0부터 시작하며, 드론의 포트는 REPLICA_PORT_START + replica_id로 지정
+    생성된 오프셋 값은 "offset_m" 속성으로 저장되며, 고도는 정수로 절삭
     """
     base_lat = client_info["latitude"]
     base_lng = client_info["longitude"]
@@ -87,7 +88,7 @@ def generate_replica_drone(client_info, replica_id):
 
 def generate_drones(total_drones, client_info):
     """
-    첫번째 드론은 클라이언트 정보로 사용하고, 나머지 드론들은 replica 드론으로 생성합니다.
+    첫번째 드론은 클라이언트 정보로 사용하고, 나머지 드론들은 replica 드론으로 생성
     """
     drones = [client_info]  # 첫번째 드론: 클라이언트 정보
     num_replicas = total_drones - 1
@@ -98,7 +99,7 @@ def generate_drones(total_drones, client_info):
 
 def get_output_filename(base_name="drone_info_control.yaml"):
     """
-    동일한 파일명이 존재하면 drone_info_control_0.yaml, _1.yaml, ... 형태로 파일명을 생성합니다.
+    동일한 파일명이 존재하면 drone_info_control_0.yaml, _1.yaml, ... 형태로 파일명을 생성
     """
     script_dir = os.path.dirname(os.path.abspath(__file__))
     base_path = os.path.join(script_dir, base_name)
@@ -118,13 +119,14 @@ def main():
     # drones 리스트 생성: 첫번째 항목은 클라이언트 정보, 이후 replica 드론들
     drones = generate_drones(TOTAL_DRONES, CLIENT_INFO)
     
-    # YAML 데이터 구성: protocol, f, k, g, m, drones 항목만 포함
+    # YAML 데이터 구성: protocol, f, k, g, m, r, drones 항목만 포함
     data = {
         "protocol": PROTOCOL,
         "f": F_VALUE,
         "k": K,
         "g": G_VALUE,
         "m": M_VALUE,
+        "r": R_VALUE,
         "drones": drones
     }
     

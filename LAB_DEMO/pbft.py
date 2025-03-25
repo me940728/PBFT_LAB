@@ -127,7 +127,8 @@ class PBFTClient:
             timeout=aiohttp.ClientTimeout(total=9999)
         )
         self.bw_data = load_bw_data(bw_filepath)
-        self.total_rounds = 1  # 합의 라운드 수
+        #self.total_rounds = config.get('r', 1) # 합의 라운드 수 yaml r 속성
+        self.total_rounds = 1
         self.reply_events = {}  # {request_id: {"event": asyncio.Event(), "count": int}}
         self.semaphore = asyncio.Semaphore(500)
         self.m = config.get('m', 1)  # 최종 메시지 크기 (MB 단위)
@@ -214,7 +215,12 @@ class PBFTClient:
             "status": "protocol completed",
             "total_time": total_duration,
             "round_times": round_durations,
-            "fault_nodes": fault_nodes
+            "fault_nodes": fault_nodes,
+            "protocol": {
+                "name": self.config.get("protocol", "unknown"),
+                "rounds": self.total_rounds,
+                "average_time": avg_duration
+            }
         })
 
     async def handle_reply(self, request: web.Request):

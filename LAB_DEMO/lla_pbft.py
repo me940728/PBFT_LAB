@@ -1,16 +1,6 @@
 #!/usr/bin/env python3
 """
 LLAPBFT 합의 시뮬레이션 코드 (k-means 클러스터링 적용 + 메시지 패딩 및 지연 적용)
-- 클라이언트는 드론 위치(클라이언트를 제외한)를 기반으로 k-means 클러스터링을 수행하고,
-  각 클러스터에서 클라이언트와 가장 가까운 드론을 클러스터 매니저로, 클러스터 중심에 가장 가까운 드론(매니저 제외)을 클러스터 리더로 선정합니다.
-- 클라이언트는 클러스터 매니저에게 PRE-REQUEST 메시지를 전송합니다.
-- 클러스터 매니저는 클라이언트로부터 PRE-REQUEST 메시지를 수신한 후, 이를 클러스터 리더에게 REQUEST 메시지로 전달합니다.
-- 클러스터 리더는 클러스터 내(매니저 제외) 팔로워들에게 PRE-PREPARE 메시지를 브로드캐스트하고,
-  이후 PREPARE 및 COMMIT 단계를 진행한 후 클러스터 매니저에게 PRE-REPLY 메시지를 전송합니다.
-- 클러스터 매니저는 클러스터 노드(리더 포함)로부터 f+1개의 PRE-REPLY 메시지를 수신하면 최종 REPLY를 클라이언트에게 전송합니다.
-- 클러스터 매니저와 클라이언트 사이의 거리가 300m 이상이거나 클러스터 크기가 3f+1 미만인 경우, 해당 클러스터는 합의에서 제외됩니다.
-- 전송 시 simulate_delay가 적용되며, 메시지 전송 전에 메시지를 m MB 크기로 패딩합니다.
-- 클러스터링 정보는 별도의 로그 파일(clustering.log)에 기록됩니다.
 """
 
 import asyncio
@@ -167,7 +157,8 @@ class LLAPBFTClient:
         self.client = next(d for d in config['drones'] if d['port'] == 20001)
         self.drones = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
-        self.k = config.get('k', 1)
+        #self.k = config.get('k', 1)
+        self.k = 2 #['25.3.25] 최별규 파일이 많은 관계로 코드 레벨에서 해결
         self.padding_mb = config.get("m", 1)
         self.session = aiohttp.ClientSession(
             connector=TCPConnector(limit=0, force_close=False),
@@ -180,7 +171,8 @@ class LLAPBFTClient:
         self.reply_condition = asyncio.Condition()
         self.cluster_logger = setup_logging("Clustering", "clustering.log")
         self.clusters = self.perform_clustering()
-        self.total_rounds = 3
+        #self.total_rounds = config.get('r', 1) # 합의 라운드 수 yaml r 속성
+        self.total_rounds = 1
         self.padded_payload = None
 
     def perform_clustering(self):
@@ -307,9 +299,14 @@ class LLAPBFTClient:
             "status": "protocol completed",
             "total_time": total_duration,
             "round_times": round_durations,
-            "fault_nodes": fault_nodes
+            "fault_nodes": fault_nodes,
+            "protocol": {
+                "name": "lla_pbft",
+                "rounds": self.total_rounds,
+                "average_time": avg_duration
+            }
         })
-
+    
     async def handle_reply(self, request: web.Request):
         try:
             data = await request.json()

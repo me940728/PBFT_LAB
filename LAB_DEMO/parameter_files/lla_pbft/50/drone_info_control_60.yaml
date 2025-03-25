@@ -1,0 +1,372 @@
+protocol: lla_pbft
+f: 1
+k: 4
+g: 10
+m: 1
+r: 2
+drones:
+- host: localhost
+  port: 20001
+  latitude: 36.6266
+  longitude: 127.4585
+  altitude: 0
+- host: localhost
+  port: 30000
+  latitude: 36.6266463
+  longitude: 127.4587294
+  altitude: 14
+  offset_m: 'lat: 5 m, lng: 20 m, alt: 14 m'
+- host: localhost
+  port: 30001
+  latitude: 36.6267098
+  longitude: 127.4585849
+  altitude: 24
+  offset_m: 'lat: 12 m, lng: 7 m, alt: 24 m'
+- host: localhost
+  port: 30002
+  latitude: 36.626677
+  longitude: 127.4585957
+  altitude: 13
+  offset_m: 'lat: 8 m, lng: 8 m, alt: 13 m'
+- host: localhost
+  port: 30003
+  latitude: 36.6266262
+  longitude: 127.4586558
+  altitude: 17
+  offset_m: 'lat: 2 m, lng: 13 m, alt: 17 m'
+- host: localhost
+  port: 30004
+  latitude: 36.6266566
+  longitude: 127.4585187
+  altitude: 7
+  offset_m: 'lat: 6 m, lng: 1 m, alt: 7 m'
+- host: localhost
+  port: 30005
+  latitude: 36.6266307
+  longitude: 127.458699
+  altitude: 6
+  offset_m: 'lat: 3 m, lng: 17 m, alt: 6 m'
+- host: localhost
+  port: 30006
+  latitude: 36.6266558
+  longitude: 127.4586381
+  altitude: 11
+  offset_m: 'lat: 6 m, lng: 12 m, alt: 11 m'
+- host: localhost
+  port: 30007
+  latitude: 36.6266823
+  longitude: 127.4587475
+  altitude: 15
+  offset_m: 'lat: 9 m, lng: 22 m, alt: 15 m'
+- host: localhost
+  port: 30008
+  latitude: 36.6267656
+  longitude: 127.4585619
+  altitude: 11
+  offset_m: 'lat: 18 m, lng: 5 m, alt: 11 m'
+- host: localhost
+  port: 30009
+  latitude: 36.6268274
+  longitude: 127.4586233
+  altitude: 14
+  offset_m: 'lat: 25 m, lng: 10 m, alt: 14 m'
+- host: localhost
+  port: 30010
+  latitude: 36.6267266
+  longitude: 127.45866
+  altitude: 25
+  offset_m: 'lat: 14 m, lng: 14 m, alt: 25 m'
+- host: localhost
+  port: 30011
+  latitude: 36.6267262
+  longitude: 127.4585936
+  altitude: 5
+  offset_m: 'lat: 14 m, lng: 8 m, alt: 5 m'
+- host: localhost
+  port: 30012
+  latitude: 36.6266656
+  longitude: 127.4587676
+  altitude: 20
+  offset_m: 'lat: 7 m, lng: 23 m, alt: 20 m'
+- host: localhost
+  port: 30013
+  latitude: 36.6266748
+  longitude: 127.4585775
+  altitude: 18
+  offset_m: 'lat: 8 m, lng: 6 m, alt: 18 m'
+- host: localhost
+  port: 30014
+  latitude: 36.6266326
+  longitude: 127.4587073
+  altitude: 3
+  offset_m: 'lat: 3 m, lng: 18 m, alt: 3 m'
+- host: localhost
+  port: 30015
+  latitude: 36.6266408
+  longitude: 127.4586122
+  altitude: 8
+  offset_m: 'lat: 4 m, lng: 9 m, alt: 8 m'
+- host: localhost
+  port: 30016
+  latitude: 36.626625
+  longitude: 127.4587796
+  altitude: 10
+  offset_m: 'lat: 2 m, lng: 24 m, alt: 10 m'
+- host: localhost
+  port: 30017
+  latitude: 36.6266916
+  longitude: 127.4587079
+  altitude: 16
+  offset_m: 'lat: 10 m, lng: 18 m, alt: 16 m'
+- host: localhost
+  port: 30018
+  latitude: 36.6267378
+  longitude: 127.4587766
+  altitude: 24
+  offset_m: 'lat: 15 m, lng: 24 m, alt: 24 m'
+- host: localhost
+  port: 30019
+  latitude: 36.6267511
+  longitude: 127.4586527
+  altitude: 27
+  offset_m: 'lat: 16 m, lng: 13 m, alt: 27 m'
+- host: localhost
+  port: 30020
+  latitude: 36.6266655
+  longitude: 127.4586282
+  altitude: 4
+  offset_m: 'lat: 7 m, lng: 11 m, alt: 4 m'
+- host: localhost
+  port: 30021
+  latitude: 36.626829
+  longitude: 127.4587319
+  altitude: 3
+  offset_m: 'lat: 25 m, lng: 20 m, alt: 3 m'
+- host: localhost
+  port: 30022
+  latitude: 36.6268
+  longitude: 127.4586985
+  altitude: 2
+  offset_m: 'lat: 22 m, lng: 17 m, alt: 2 m'
+- host: localhost
+  port: 30023
+  latitude: 36.6266554
+  longitude: 127.4585646
+  altitude: 13
+  offset_m: 'lat: 6 m, lng: 5 m, alt: 13 m'
+- host: localhost
+  port: 30024
+  latitude: 36.6266968
+  longitude: 127.4586418
+  altitude: 9
+  offset_m: 'lat: 10 m, lng: 12 m, alt: 9 m'
+- host: localhost
+  port: 30025
+  latitude: 36.6266221
+  longitude: 127.4585285
+  altitude: 8
+  offset_m: 'lat: 2 m, lng: 2 m, alt: 8 m'
+- host: localhost
+  port: 30026
+  latitude: 36.6268062
+  longitude: 127.4585651
+  altitude: 18
+  offset_m: 'lat: 22 m, lng: 5 m, alt: 18 m'
+- host: localhost
+  port: 30027
+  latitude: 36.6267579
+  longitude: 127.4587902
+  altitude: 3
+  offset_m: 'lat: 17 m, lng: 25 m, alt: 3 m'
+- host: localhost
+  port: 30028
+  latitude: 36.6267313
+  longitude: 127.4587795
+  altitude: 9
+  offset_m: 'lat: 14 m, lng: 24 m, alt: 9 m'
+- host: localhost
+  port: 30029
+  latitude: 36.626829
+  longitude: 127.458695
+  altitude: 23
+  offset_m: 'lat: 25 m, lng: 17 m, alt: 23 m'
+- host: localhost
+  port: 30030
+  latitude: 36.6267165
+  longitude: 127.4587547
+  altitude: 23
+  offset_m: 'lat: 12 m, lng: 22 m, alt: 23 m'
+- host: localhost
+  port: 30031
+  latitude: 36.626695
+  longitude: 127.4586504
+  altitude: 4
+  offset_m: 'lat: 10 m, lng: 13 m, alt: 4 m'
+- host: localhost
+  port: 30032
+  latitude: 36.6267303
+  longitude: 127.4586475
+  altitude: 3
+  offset_m: 'lat: 14 m, lng: 13 m, alt: 3 m'
+- host: localhost
+  port: 30033
+  latitude: 36.6266546
+  longitude: 127.4586741
+  altitude: 11
+  offset_m: 'lat: 6 m, lng: 15 m, alt: 11 m'
+- host: localhost
+  port: 30034
+  latitude: 36.626679
+  longitude: 127.4586133
+  altitude: 23
+  offset_m: 'lat: 8 m, lng: 10 m, alt: 23 m'
+- host: localhost
+  port: 30035
+  latitude: 36.6266414
+  longitude: 127.4586316
+  altitude: 8
+  offset_m: 'lat: 4 m, lng: 11 m, alt: 8 m'
+- host: localhost
+  port: 30036
+  latitude: 36.6268179
+  longitude: 127.4587185
+  altitude: 1
+  offset_m: 'lat: 24 m, lng: 19 m, alt: 1 m'
+- host: localhost
+  port: 30037
+  latitude: 36.6268374
+  longitude: 127.4586072
+  altitude: 24
+  offset_m: 'lat: 26 m, lng: 9 m, alt: 24 m'
+- host: localhost
+  port: 30038
+  latitude: 36.6267531
+  longitude: 127.4585795
+  altitude: 25
+  offset_m: 'lat: 16 m, lng: 7 m, alt: 25 m'
+- host: localhost
+  port: 30039
+  latitude: 36.6268018
+  longitude: 127.4585137
+  altitude: 4
+  offset_m: 'lat: 22 m, lng: 1 m, alt: 4 m'
+- host: localhost
+  port: 30040
+  latitude: 36.6266748
+  longitude: 127.4587326
+  altitude: 15
+  offset_m: 'lat: 8 m, lng: 20 m, alt: 15 m'
+- host: localhost
+  port: 30041
+  latitude: 36.626633
+  longitude: 127.45862
+  altitude: 20
+  offset_m: 'lat: 3 m, lng: 10 m, alt: 20 m'
+- host: localhost
+  port: 30042
+  latitude: 36.6267901
+  longitude: 127.4587856
+  altitude: 16
+  offset_m: 'lat: 21 m, lng: 25 m, alt: 16 m'
+- host: localhost
+  port: 30043
+  latitude: 36.6266217
+  longitude: 127.4587977
+  altitude: 4
+  offset_m: 'lat: 2 m, lng: 26 m, alt: 4 m'
+- host: localhost
+  port: 30044
+  latitude: 36.6267236
+  longitude: 127.4586101
+  altitude: 1
+  offset_m: 'lat: 13 m, lng: 9 m, alt: 1 m'
+- host: localhost
+  port: 30045
+  latitude: 36.6267284
+  longitude: 127.4587899
+  altitude: 9
+  offset_m: 'lat: 14 m, lng: 25 m, alt: 9 m'
+- host: localhost
+  port: 30046
+  latitude: 36.626838
+  longitude: 127.4587682
+  altitude: 17
+  offset_m: 'lat: 26 m, lng: 23 m, alt: 17 m'
+- host: localhost
+  port: 30047
+  latitude: 36.6267233
+  longitude: 127.4587686
+  altitude: 7
+  offset_m: 'lat: 13 m, lng: 23 m, alt: 7 m'
+- host: localhost
+  port: 30048
+  latitude: 36.6267404
+  longitude: 127.4587899
+  altitude: 25
+  offset_m: 'lat: 15 m, lng: 25 m, alt: 25 m'
+- host: localhost
+  port: 30049
+  latitude: 36.6267968
+  longitude: 127.4586496
+  altitude: 25
+  offset_m: 'lat: 21 m, lng: 13 m, alt: 25 m'
+- host: localhost
+  port: 30050
+  latitude: 36.6266243
+  longitude: 127.4587775
+  altitude: 10
+  offset_m: 'lat: 2 m, lng: 24 m, alt: 10 m'
+- host: localhost
+  port: 30051
+  latitude: 36.6266772
+  longitude: 127.4586662
+  altitude: 2
+  offset_m: 'lat: 8 m, lng: 14 m, alt: 2 m'
+- host: localhost
+  port: 30052
+  latitude: 36.6268097
+  longitude: 127.458751
+  altitude: 24
+  offset_m: 'lat: 23 m, lng: 22 m, alt: 24 m'
+- host: localhost
+  port: 30053
+  latitude: 36.626812
+  longitude: 127.4587797
+  altitude: 27
+  offset_m: 'lat: 23 m, lng: 24 m, alt: 27 m'
+- host: localhost
+  port: 30054
+  latitude: 36.6266795
+  longitude: 127.4586242
+  altitude: 11
+  offset_m: 'lat: 8 m, lng: 11 m, alt: 11 m'
+- host: localhost
+  port: 30055
+  latitude: 36.6267567
+  longitude: 127.4586814
+  altitude: 9
+  offset_m: 'lat: 17 m, lng: 16 m, alt: 9 m'
+- host: localhost
+  port: 30056
+  latitude: 36.6267613
+  longitude: 127.4585566
+  altitude: 20
+  offset_m: 'lat: 17 m, lng: 5 m, alt: 20 m'
+- host: localhost
+  port: 30057
+  latitude: 36.626848
+  longitude: 127.4586407
+  altitude: 11
+  offset_m: 'lat: 27 m, lng: 12 m, alt: 11 m'
+- host: localhost
+  port: 30058
+  latitude: 36.6266784
+  longitude: 127.4586458
+  altitude: 22
+  offset_m: 'lat: 8 m, lng: 12 m, alt: 22 m'
+- host: localhost
+  port: 30059
+  latitude: 36.6267735
+  longitude: 127.4587028
+  altitude: 26
+  offset_m: 'lat: 19 m, lng: 18 m, alt: 26 m'
