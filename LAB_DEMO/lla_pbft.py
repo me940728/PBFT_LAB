@@ -158,7 +158,7 @@ class LLAPBFTClient:
         self.drones = [d for d in config['drones'] if d['port'] != 20001]
         self.f = config.get('f', 1)
         #self.k = config.get('k', 1)
-        self.k = 2 #['25.3.25] 최별규 파일이 많은 관계로 코드 레벨에서 해결
+        self.k = 3 #['25.3.25] 최별규 파일이 많은 관계로 코드 레벨에서 해결
         self.padding_mb = config.get("m", 1)
         self.session = aiohttp.ClientSession(
             connector=TCPConnector(limit=0, force_close=False),
